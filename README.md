@@ -1,6 +1,7 @@
+<a name="top_marker"/>
 <img src=".github/showcase_photo.png" alt="showcase">
 
-<a name="top_marker"/>
+
 # fibreglass (v0.3)
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 ![bad coding](https://img.shields.io/badge/code_quality-very_bad-blue?color=74be88&style=for-the-badge&labelColor=1B1919)
