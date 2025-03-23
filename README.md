@@ -2,7 +2,7 @@
 <img src=".github/showcase_photo.png" alt="showcase">
 
 
-# fibreglass (v0.3)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Product+Sans&weight=600&size=25&duration=3500&pause=2000&color=FFFFFF&width=435&lines=fibreglass+(v0.3))](https://git.io/typing-svg)
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 ![bad coding](https://img.shields.io/badge/code_quality-very_bad-blue?color=74be88&style=for-the-badge&labelColor=1B1919)
 ![code size](https://img.shields.io/github/languages/code-size/dealerofallthecats/fibreglass?color=e1b56a&style=for-the-badge&labelColor=1B1919)
@@ -53,8 +53,8 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 | dunst | thunar | mocp |
 | eww | oh-my-posh | amberol | 
 | rofi | zinit | cava |
-| feh | | cavalier |
-| kitty | | fcitx5 |
+| feh | zen | cavalier |
+| kitty | firefox | fcitx5 |
 | zsh | | krita |
 | | | gimp |
 
@@ -110,7 +110,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [Eve](https://github.com/CelestialCrafter), for being my general helpline and for also critiquing my design.
 - [MarioRRom](https://github.com/MarioRRom), for the dunst notification script.
 
-## ~~Allowing me to steal designs~~ Inspirations
+## ~~Who I stole designs from~~ Inspirations
 - [Namishh](https://github.com/namishh), for widget design and colours.
 - [Saimoon](https://github.com/saimoomedits), for the colourscheme.
 - [Failed](https://github.com/Failedex) (again), for widget design.
