@@ -17,3 +17,5 @@
 - **Terminal** -> kitty
 - **Compositor** -> picom
 
+
+https://github.com/dealerofallthecats/fibreglass/.github/showcase.mp4
