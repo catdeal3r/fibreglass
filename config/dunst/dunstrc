@@ -1,0 +1,78 @@
+[global]
+
+    # Align icons left/right/off
+    icon_position = left 
+
+    # Scale larger icons down to this size, set to 0 to disable
+    max_icon_size = 40
+    icon_corner_radius = 10
+
+    icon_path = "/home/catdealer/.config/dunst/"
+    
+    override_pause_level = 60
+
+    monitor = 0
+    follow = mouse 
+    width = (300,400)
+    origin = top-right
+    offset = 0x80 
+    notification_limit = 0
+    progress_bar = true
+    progress_bar_height = 12
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    word_wrap = true 
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 15
+    padding = 15
+    horizontal_padding = 15
+    text_icon_padding = 0
+    frame_width = 0
+    separator_color = "#FF000000"
+    sort = yes
+    font = Product Sans 
+    line_height = 4 
+    markup = full
+    alignment = left 
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    stack_duplicates = true
+    hide_duplicate_count = true 
+    ignore_newline = no
+    show_indicators = no
+    sticky_history = yes
+    history_length = 6
+    browser = /usr/bin/firefox -new-tab
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 5
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = true
+
+[urgency_low]
+    background = "#101012"
+    foreground = "#ffffff"
+    icon = "/home/catdealer/.config/dunst/notification_icon.png"
+    timeout = 3
+
+[urgency_normal]
+    background = "#101012"
+    foreground = "#ffffff"
+    icon = "/home/catdealer/.config/dunst/notification_icon.png"
+    timeout = 3
+
+[urgency_critical]
+    background = "#101012"
+    foreground = "#ffffff"
+    timeout = 0
+
+# vim: ft=cfg

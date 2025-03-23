@@ -1,0 +1,73 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+final_space = true
+version = 2
+
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "path"
+    style = "plain"
+    background = "transparent"
+    foreground = "blue"
+    template = "   {{ .Path }}"
+    
+    [blocks.segments.properties]
+      style = "full"
+
+[[blocks]]
+  type = "rprompt"
+  overflow = "hidden"
+  
+  [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    foreground = "yellow"
+    background = "transparent"
+    template = "{{ div .Ms 1000 }}s 󱎫 "
+    
+    [blocks.segments.properties]
+      threshold = 1000
+
+  [[blocks.segments]]
+    type = "battery"
+    style = "plain"
+    foreground = "magenta"
+    background = "transparent"
+    template = " {{ if not .Error }}{{ .Percentage }} {{ .Icon }}{{ end }} "
+    
+      [blocks.segments.properties]
+        discharging_icon = "󰂌"
+        charging_icon = "󰂄"
+        charged_icon = "󰁹"
+
+
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}magenta{{end}}"
+    ] 
+    background = "transparent"
+    template = " ❯"
+
+[transient_prompt]
+  foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}magenta{{end}}"
+  ] 
+  background = "transparent"
+  template = " ❯ "
+
+[secondary_prompt]
+  foreground = "magenta"
+  background = "transparent"
+  template = " ❯❯ "

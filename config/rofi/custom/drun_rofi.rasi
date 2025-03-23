@@ -1,0 +1,81 @@
+configuration {
+  display-drun: " 󰍉 ";
+  drun-display-format: "{name}";
+  font: "Product Sans Semibold 10";
+  modi: "window,run,drun";
+  show-icons: true;
+  location: 7;
+  yoffset: -80;
+  xoffset: 32;
+}
+
+@theme "~/.config/rofi/custom/theme_rofi.rasi"
+@import "~/.config/rofi/custom/accent_rofi.rasi"
+
+window {
+  width: 400;
+  border-radius: 5;
+}
+
+element {
+  padding: 15 15 10 15;
+  text-color: @fg;
+  background-color: @bg-alt;
+  border-radius: 10;
+  orientation: horizontal;
+}
+
+element selected {
+  text-color: @bg;
+  background-color: @accent;
+}
+
+element-text {
+  background-color: inherit;
+  padding: 0 5 5 0;
+  text-color: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0;
+}
+
+element-icon {
+  size: 30;
+  margin: 0 0 5 0;
+  horizontal-align: 0.5;
+  background-color: inherit;
+
+}
+
+entry {
+  background-color: @bg;
+  placeholder: "Search ...";
+  padding: 12 12 12 0;
+  border-radius: 10;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  padding: 0 15 15 15;
+  background-color: @bg;
+  columns: 2;
+  lines: 5;
+  fixed-lines: true;
+  //fixed-columns: true;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @bg;
+  enabled: true;
+  padding: 12 12 12 12;
+  text-color: @fg;
+}
+

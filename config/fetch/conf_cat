@@ -1,0 +1,11 @@
+#!/bin/sh
+
+conf() {
+  printf "$(c 0 0)
+  |\\__/,|   (\`\\    $(c 0 31) os $(c 0 0) $(Os)
+  |_ _  |.--.) )    $(c 0 32)kr $(c 0 0) $(Kernel)
+  ( T   )     /     $(c 0 33)wm $(c 0 0) $(Desktop)
+ (((^_(((/(((_/     $(c 0 34)sh $(c 0 0) $(Shell)
+ $(c 0 35) usr $(c 0 0) catdealer   $(c 0 36) up $(c 0 0) $(Uptime)
+"
+}
