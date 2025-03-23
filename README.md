@@ -1,7 +1,7 @@
 <a name="top_marker"/>
 <img src=".github/showcase_photo.png" alt="showcase">
 
-<br>
+<br><br>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Product+Sans&weight=600&size=35&duration=3500&pause=2000&color=FFFFFF&width=435&lines=fibreglass+(v0.3))](https://github.com/dealerofallthecats/fibreglass)
 
