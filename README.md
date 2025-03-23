@@ -11,6 +11,8 @@
 
 ## Table of Contents
 - [Features](#Features)
+- [Featuring](#Featuring)
+- [Video Showcase](#Video_Showcase)
 
 ---
 
