@@ -32,15 +32,19 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 ---
 
 ## In-depth infomation
-| Programs required | Supporting Programs | Others |
+| Programs required | Supporting Programs | Tools I use |
 | - | - | - |
 | bspwm | playerctl | Geany |
 | sxhkd | mocp | NVim |
-| picom | | |
-| dunst | | |
-| eww | | | 
-| rofi | | |
-| feh | | |
+| picom | CUrl | Portmaster |
+| dunst | thunar | mocp |
+| eww | oh-my-posh | amberol | 
+| rofi | zinit | cava |
+| feh | | cavalier |
+| kitty | | fcitx5 |
+| zsh | | krita |
+| | | gimp |
+
 
 ---
 
