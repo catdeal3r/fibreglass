@@ -1,6 +1,6 @@
 <img src=".github/showcase_photo.png" alt="showcase">
 
-# fibreglass
+# fibreglass (v0.3)
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 ![bad coding](https://img.shields.io/badge/coding-very_bad-blue?color=74be88&style=for-the-badge&labelColor=1B1919)
 ![code size](https://img.shields.io/github/languages/code-size/dealerofallthecats/fibreglass?color=e1b56a&style=for-the-badge&labelColor=1B1919)
@@ -9,6 +9,11 @@
 > This project is in very early stages, so expect many bugs.
 
 ## Features
+- *Smooth* animations (thanks failed)
+- Clean but functional bar
+- Bspwm config with all the basic fixes you need.
+
+## Featuring
 - **Distro** -> Fedora 41
 - **WM** -> bspwm
 - **Shell** -> zsh
