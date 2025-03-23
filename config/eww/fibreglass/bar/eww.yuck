@@ -19,7 +19,7 @@
   (box :class "wsbox"
     :orientation "h"
     :halign "center"
-    :valign "start"
+    :valign "center"
     :space-evenly false
     :spacing "-5"
     (for i in {[0, 1, 2, 3, 4]}
@@ -45,7 +45,7 @@
 (defwidget statuses []
 (button :onclick "./fibreglass/bar/scripts/open_dashboard.sh &"
   (box :orientation "h"
-    :valign "end"
+    :valign "center"
     :class "statuses-box"
     :space-evenly false
     :spacing 2
@@ -98,7 +98,7 @@
 (defwidget systemtray []
   (box :orientation "h"
     :class "systemtray"
-    :valign "end"
+    :valign "center"
     (systray :orientation "h"
       :class "systemtray-two"
       :icon-size "20"
@@ -136,6 +136,7 @@
         :valign "center"
       )
       (button :onclick "bash ~/.config/rofi/custom/launcher.sh --drun &"
+        :valign "center"
         :class "launcher-button"
         "󱓞"
       )
@@ -158,6 +159,7 @@
         (systemtray)
       )
       (button :class "systray_button"
+        :valign "center"
         :onclick { reveal_systray != false ? "eww update reveal_systray=false" : "eww update reveal_systray=true" }
         { reveal_systray != false ? "" : "" }
       )
