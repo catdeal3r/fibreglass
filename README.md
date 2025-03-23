@@ -10,7 +10,7 @@
 > This project is in very early stages, so expect many bugs.
 
 ## Table of Contents
-- [[#Features]]
+- [Features](#Features)
 
 ---
 
