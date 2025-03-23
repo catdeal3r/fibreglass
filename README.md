@@ -8,6 +8,8 @@
 > [!WARNING]
 > This project is in very early stages, so expect many bugs.
 
+---
+
 ## Features
 - *Smooth* animations (thanks failed)
 - Clean but functional bar
@@ -24,6 +26,17 @@
 
 ## Video Showcase
 https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
+
+---
+
+## Todo
+- [ ] Create userboard and notification center.
+- [ ] Fix some css styling bugs on the dashboard buttons.
+- [ ] Add jgmenu support -> probably using a eww window that covers the desktop.
+- [ ] Implement desktop icons in eww.
+- [ ] Create settings menu. 
+
+---
 
 ## Credits
 - [Failed](https://github.com/Failedex), for being my much-abused eww helpline, and for providing some scripts.
