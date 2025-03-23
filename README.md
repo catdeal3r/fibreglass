@@ -9,8 +9,8 @@
 > [!WARNING]
 > This project is in very early stages, so expect many bugs.
 
-> [!NOTE] Table of Contents
-> - [[#Features]]
+## Table of Contents
+- [[#Features]]
 
 ---
 
