@@ -12,6 +12,7 @@
 - *Smooth* animations (thanks failed)
 - Clean but functional bar
 - Bspwm config with all the basic fixes you need.
+- Aesthetic dashboard
 
 ## Featuring
 - **Distro**     -> Fedora 41
@@ -30,8 +31,8 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [Eve](https://github.com/CelestialCrafter), for being my general helpline and for also critiquing my design.
 
 ## ~~Allowing me to steal designs~~ Inspirations
-- [Namishh](https://github.com/namishh)
-- [Saimoon](https://github.com/saimoomedits)
-- [Failed](https://github.com/Failedex) (again)
-- [Rayhan](https://github.com/raexera)
-- [Tokyob0t](https://github.com/tokyob0t)
+- [Namishh](https://github.com/namishh), for widget design and colours.
+- [Saimoon](https://github.com/saimoomedits), for the colourscheme.
+- [Failed](https://github.com/Failedex) (again), for widget design.
+- [Rayhan](https://github.com/raexera), for widget design and colours.
+- [Tokyob0t](https://github.com/tokyob0t), for widget design.
