@@ -2,4 +2,4 @@
 <img src=".github/photo.png" alt="showcase">
 
 # fibreglass
-Fibreglass is a desktop shell created in eww, meant to replicate a desktop environment.
+![GitHub top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
