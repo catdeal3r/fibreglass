@@ -3,7 +3,7 @@
 
 <br><br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Product+Sans&weight=600&size=35&duration=3500&pause=2000&color=FFFFFF&width=435&lines=fibreglass+(v0.3))](https://github.com/dealerofallthecats/fibreglass)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Product+Sans&weight=600&size=35&duration=3500&pause=2000&color=FFFFFF&width=435&lines=fibreglass+(v0.31))](https://github.com/dealerofallthecats/fibreglass)
 
 ---
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
@@ -87,6 +87,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [x] Style dashboard's music widget. *v0.2*
 - [x] Extend the bar's functionality. *v0.27*
 - [x] Fix styling of the statuses on bar. *v0.3*
+- [x] Fix padding and margin on bar. *v0.31*
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
