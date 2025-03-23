@@ -2,7 +2,7 @@
 
 # fibreglass (v0.3)
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
-![bad coding](https://img.shields.io/badge/coding-very_bad-blue?color=74be88&style=for-the-badge&labelColor=1B1919)
+![bad coding](https://img.shields.io/badge/code_quality-very_bad-blue?color=74be88&style=for-the-badge&labelColor=1B1919)
 ![code size](https://img.shields.io/github/languages/code-size/dealerofallthecats/fibreglass?color=e1b56a&style=for-the-badge&labelColor=1B1919)
 ![stars](https://img.shields.io/github/stars/dealerofallthecats/fibreglass?color=74be88&style=for-the-badge&labelColor=1B1919)
 
@@ -41,11 +41,13 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
+- [ ] Reposition notifications
 
 ### Still todo
-- [ ] Create userboard and notification center.
+- [ ] Create userboard, productivity-board and notification center.
 - [ ] Restyle rofi or switch it out for eww.
 - [ ] Fix some css styling bugs on the dashboard buttons.
+- [ ] Create custom lockscreen widgets to be overlayed on top of i3lock-color, or create a custom lockscreen with just eww.
 - [ ] Add jgmenu support -> probably using a eww window that covers the desktop.
 - [ ] Implement desktop icons in eww.
 - [ ] Create settings menu. 
