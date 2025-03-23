@@ -30,7 +30,20 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 ---
 
 ## Todo
+### Done
+- [x] Create bar. *v0.1*
+- [x] Add dashboard. *v0.15*
+- [x] Restyle the dashboard's quick toggles. *v0.2*
+- [x] Style dashboard's music widget. *v0.2*
+- [x] Extend the bar's functionality. *v0.27*
+- [x] Fix styling of the statuses on bar. *v0.3*
+
+### In progress
+- [ ] Add hover styling for the bar's statuses and date.
+
+### Still todo
 - [ ] Create userboard and notification center.
+- [ ] Restyle rofi or switch it out for eww.
 - [ ] Fix some css styling bugs on the dashboard buttons.
 - [ ] Add jgmenu support -> probably using a eww window that covers the desktop.
 - [ ] Implement desktop icons in eww.
