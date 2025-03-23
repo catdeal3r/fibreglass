@@ -9,6 +9,9 @@
 > [!WARNING]
 > This project is in very early stages, so expect many bugs.
 
+> [!NOTE] Table of Contents
+> - [[#Features]]
+
 ---
 
 ## Features
@@ -17,6 +20,7 @@
 - Bspwm config with all the basic fixes you need.
 - Aesthetic dashboard.
 - Custom colourscheme, fibreglass, based off Awesthetic-dark (*from Saimoonedits*).
+- Reliability build in - this project is suitable for daily use.
 
 ## Featuring
 - **Distro**     -> Fedora 41
@@ -55,7 +59,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 > **Q**: *Why does (such-and-such) not work?*
 
-**A**: This setup, while being made as flexible as possible, is bound to have some bugs. Please report all of them in the "Issues" tab.
+**A**: This setup, while being made as flexible and reliable as possible, is bound to have some bugs. Please report all of them in the "Issues" tab.
 
 > **Q**: *How do I replicate (such-and-such) part of this config?*
 
