@@ -21,7 +21,7 @@
 https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 ## Credits
-- [Failed](https://github.com/Failedex), for being my much-abused eww helpline.
+- [Failed](https://github.com/Failedex), for being my much-abused eww helpline, and for providing some scripts.
 - [Kate](https://github.com/jiyutake), for critiquing my design.
 - [Eve](https://github.com/CelestialCrafter), for being my general helpline and for also critiquing my design.
 
@@ -30,3 +30,4 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [Saimoon](https://github.com/saimoomedits)
 - [Failed](https://github.com/Failedex) (again)
 - [Rayhan](https://github.com/raexera)
+- [Tokyob0t](https://github.com/tokyob0t)
