@@ -1,8 +1,8 @@
 
 .wsbox {
     font-size: .7em;
-    margin: 1em .5em 1em .5em;
-    padding: 1em .5em 1em .5em;
+    margin: .5em .5em .5em .5em;
+    padding: .5em .5em .5em .5em;
     border-radius: 10px;
     background-color: $bg-alt;
 
@@ -61,7 +61,7 @@
   font-size: 1.2em;
   font-weight: 600;
   background-color: $bg-alt;
-  padding: .6em .9em .6em .7em;
+  padding: .5em .5em .5em .5em;
   margin: .5em .5em .5em .5em;
   border-radius: $crounding;
 }
@@ -75,8 +75,8 @@
 }
 
 .time-box {
-  margin: .5em .5em .5em .5em;
-  padding: .6em .5em .6em .5em;
+  margin: .5em 0em .5em 0em;
+  padding: .5em .5em .5em .5em;
   border-radius: 5px;
   background-color: $bg-alt;
   font-size: 1.1em;
@@ -85,8 +85,8 @@
 }
 
 .statuses-box {
-  margin: 0em .5em .75em .5em;
-  padding: .5em .5em .5em .75em;
+  margin: .5em 0em .5em .5em;
+  padding: .5em .5em .5em .5em;
   background-color: $bg-alt;
   border-radius: 5px;
 
@@ -191,8 +191,8 @@
 }
 
 .systemtray {
-  margin: .5em .5em .85em .5em;
-  padding: .25em .25em;
+  margin: .5em .5em .5em .5em;
+  padding: .5em .5em .5em .5em;
   border-radius: $crounding;
   background-color: $bg;
   font-size: 1.1em;
@@ -204,16 +204,16 @@
 
 
 .systray_button {
-  font-size: 1em;
+  font-size: .8em;
   font-weight: 600;
-  background-color: $bg-alt;
-  padding: .2em .9em .2em .7em;
-  margin: .6em 0em .6em 0em;
+  background-color: $bg;
+  padding: .5em .5em .5em .5em;
+  margin: .5em 0em .5em 0em;
   border-radius: $crounding;
 }
 
 .systray_button:hover {
-  background-color: $bg-alt-three;
+  background-color: $bg-alt-two;
 }
 
 .systemtray-two menu {
