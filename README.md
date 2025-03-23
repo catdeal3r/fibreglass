@@ -32,8 +32,15 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 ---
 
 ## In-depth infomation
+| Programs required | Supporting Programs | Others |
 | - | - | - |
-| hello | sdf | sdf |
+| bspwm | playerctl | Geany |
+| sxhkd | mocp | NVim |
+| picom | | |
+| dunst | | |
+| eww | | | 
+| rofi | | |
+| feh | | |
 
 ---
 
@@ -46,7 +53,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 **A**: This setup, while being made as flexible as possible, is bound to have some bugs. Please report all of them in the "Issues" tab.
 
-> **Q**: *How do I repelicate (such-and-such) part of this config?*
+> **Q**: *How do I replicate (such-and-such) part of this config?*
 
 **A**: The code is all there; read through it. 
 
