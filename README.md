@@ -17,6 +17,7 @@
 - **[FAQ](#faq)**
 - [Todo](#todo)
 - [Credits](#credits)
+- [Inspirations](#allowing-me-to-steal-designs-inspirations)
 
 ---
 
@@ -113,3 +114,6 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [Failed](https://github.com/Failedex) (again), for widget design.
 - [Rayhan](https://github.com/raexera), for widget design and colours.
 - [Tokyob0t](https://github.com/tokyob0t), for widget design.
+
+---
+*[Back to top](#fibreglass)*
