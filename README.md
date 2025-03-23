@@ -16,6 +16,5 @@
 - **Shell** -> zsh
 - **Terminal** -> kitty
 - **Compositor** -> picom
-
-
-https://github.com/dealerofallthecats/fibreglass/.github/showcase.mp4
+-
+- https://github.com/dealerofallthecats/fibreglass/raw/refs/heads/main/.github/showcase.mp4
