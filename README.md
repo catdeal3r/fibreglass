@@ -1,4 +1,4 @@
-<img src=".github/photo.png" alt="showcase">
+<img src=".github/showcase_photo.png" alt="showcase">
 
 <br>
 
