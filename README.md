@@ -18,3 +18,7 @@
 - **Compositor** -> picom
 
 https://raw.githubusercontent.com/dealerofallthecats/fibreglass/refs/heads/main/.github/showcase.mp4
+
+
+https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
+
