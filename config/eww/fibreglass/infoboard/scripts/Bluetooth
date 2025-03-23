@@ -1,0 +1,27 @@
+#!/bin/bash
+
+is_on() {
+  bluetoothctl show | grep 'PowerState' | tr -d 'PwerState: \t' | tail -c+2
+}
+
+toggle() {
+  if [[ "$(is_on)" == "on" ]]; then
+    bluetoothctl power off
+  else
+    bluetoothctl power on
+  fi
+}
+
+if [[ "$(is_on)" == "on" ]]; then
+  STATUS="On"
+  ICON="󰂯"
+else
+  STATUS="Off"
+  ICON="󰂲"
+fi
+
+case "$1" in
+--status) echo "$STATUS" ;;
+--icon) echo "$ICON" ;;
+--toggle) toggle ;;
+esac
