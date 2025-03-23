@@ -1,0 +1,90 @@
+#!/bin/bash
+
+if [[ $(pidof mocp) ]]; then
+  SONG_COVER=""
+
+  SONG_TITLE=$(mocp --format=%song)
+  if [[ "$SONG_TITLE" == "" ]]; then
+    SONG_TITLE="Unknown Song"
+  fi
+
+  SONG_ARTIST=$(mocp --format=%artist)
+  if [[ "$SONG_ARTIST" == "" ]]; then
+    SONG_ARTIST="Unknown artist"
+  fi
+
+  if [[ $(mocp --info | grep "PLAY") ]]; then
+    SONG_STATUS="Playing"
+  elif [[ $(mocp --info | grep "PAUSE") ]]; then
+    SONG_STATUS="Paused"
+  fi
+
+  if [[ "$SONG_STATUS" == "Playing" ]]; then
+    PLAY_BUTTON=""
+  elif [[ "$SONG_STATUS" == "Paused" ]]; then
+    PLAY_BUTTON=""
+  fi
+
+  SONG_LENGTH=$(mocp --info | grep "TotalSec" | tail -c+11)
+  SONG_POSITION_CUR=$(mocp --info | grep "CurrentSec" | tail -c+13)
+else
+  if [[ $(playerctl status 2>/dev/null) ]]; then
+    SONG_COVER=$(playerctl metadata | grep "artUrl" | tail -c+42)
+    SONG_TITLE=$(playerctl metadata | grep "title" | tail -c+35)
+    SONG_ARTIST=$(playerctl metadata | grep "artist" | tail -c+35)
+    SONG_LENGTH=$(playerctl metadata | grep "length" | tail -c+35 | head -c-7)
+    SONG_POSITION_CUR=$(playerctl position | head -c-8)
+    SONG_STATUS=$(playerctl status)
+
+    if [[ "$SONG_STATUS" == "Playing" ]]; then
+      PLAY_BUTTON=""
+    elif [[ "$SONG_STATUS" == "Paused" ]]; then
+      PLAY_BUTTON=""
+    fi
+  else
+    SONG_COVER=""
+    SONG_TITLE="No media playing"
+    SONG_ARTIST="No media playing"
+    SONG_STATUS="off"
+    SONG_LENGTH="100"
+    SONG_POSITION_CUR="100"
+    PLAY_BUTTON=""
+  fi
+fi
+
+toggle() {
+  if [[ $(pidof mocp) ]]; then
+    mocp -G
+  else
+    playerctl play-pause
+  fi
+}
+
+next_func() {
+  if [[ $(pgrep mocp) ]]; then
+    mocp -f
+  else
+    playerctl next
+  fi
+}
+
+previous_func() {
+  if [[ $(pgrep mocp) ]]; then
+    mocp -r
+  else
+    playerctl previous
+  fi
+}
+
+case $1 in
+--cover) echo "$SONG_COVER" ;;
+--title) echo "$SONG_TITLE" ;;
+--artist) echo "$SONG_ARTIST" ;;
+--status) echo "$SONG_STATUS" ;;
+--playing-icon) echo "$PLAY_BUTTON" ;;
+--current-position) echo "$SONG_POSITION_CUR" ;;
+--length) echo "$SONG_LENGTH" ;;
+--toggle) toggle ;;
+--next) next_func ;;
+--back) previous_func ;;
+esac

@@ -1,0 +1,483 @@
+
+.infoboard {
+  border-radius: 0 5px 5px 0;
+  margin: .1em .1em .1em;
+  padding: .25em .25em;
+  background-color: $bg;
+  font-size: 1.4em;
+  color: $fg;
+}
+
+// Box styles
+.db-main-box {
+  background-color: $bg;
+  border-radius: $crounding;
+  margin: .5rem .5rem .5rem .5rem;
+}
+
+// Notification styles
+
+.notif_main_box {
+  border-radius: $crounding;
+  background-color: $bg-alt;
+  padding: 1em .5em 1em .5em;
+  margin: 0 .5em 0 .5em;
+
+  .notif_box {
+    border-radius: $crounding;
+    margin: 0 .5em .5em .5em;
+    padding: .5em .25em .5em .25em;
+    background-color: $bg-alt-two;
+
+    .notif_image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 55px;
+      min-width: 55px;
+      border-radius: 9px;
+      margin: .5em .5em .5em;
+    }
+
+    .notif_sum {
+      font-size: .7em;
+      margin-left: .3em;
+      font-weight: 600;
+      margin-top: 1em;
+    }
+
+    .notif_body {
+      font-size: .6em;
+      margin-left: .3em;
+      margin-top: .2em;
+      margin-bottom: .5em;
+      color: $accent;
+    }
+
+    .notif_box_clear {
+      font-size: .6em;
+      margin-top: .2em;
+      padding-right: .5em;
+      color: $fg;
+      background-color: $bg-alt-two;
+    }
+
+    .notif_box_clear:hover {
+      color: $red;
+    }
+  }
+
+  .notif_box_title {
+    font-size: .8em;
+    margin: .5em .5em .5em .7em;
+    padding: .25em .25em;
+  }
+
+  .notif_clear_button {
+    border-radius: $crounding;
+    margin: .5em 0 .5em 12em;
+    background-color: $bg-alt;
+    padding: 10px;
+    font-size: .7em;
+    color: $fg;
+  }
+
+  .notif_clear_button:hover {
+    background-color: $bg-alt-two;
+  }
+}
+
+// Calendar styles
+.cal-box-db {
+  font-size: .9rem;
+  border-radius: $crounding;
+  padding: 1em .5em 1em .5em;
+  color: $fg;
+  background-color: $bg-alt;
+  margin: .9rem 0 .9rem .0rem;
+  min-width: 350px;
+  min-height: 250px;
+
+  .cal-db {
+    background-color: inherit;
+    padding: .5rem .15rem .2rem;
+    padding-top: .9rem;
+    margin-left: 10px;
+    color: $fg;
+    font-family: "Product Sans";
+
+    &>* {
+      border: solid 0px transparent;
+    }
+
+    &.header {
+      color: $accent;
+    }
+
+    &.highlight {
+      padding: 10rem;
+      font-weight: 600;
+      color: $accent;
+    }
+    &:selected {
+      color: $accent;
+      font-weight: bold;
+    }
+    &:indeterminate {
+      color: $disab;
+    }
+  }
+}
+
+
+// User box styles
+.top-box-db {
+  background-color: $bg;
+  border-radius: $crounding; 
+  padding: .5em .25em .5em .25em;
+  margin: 0 .5em 0 .5em;
+}
+
+.top-box-db-two {
+  margin: 9px 10px 10px 10px;
+}
+
+.image-pfp {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 65px;
+  min-width: 65px;
+  border: 3px solid $bg-alt-two;
+  border-radius: $crounding;
+  margin: 10px 10px 10px 0px;
+}
+
+.user-greeting-box {
+  margin: 0;
+}
+
+.user-greeting {
+  font-weight: 600;
+  font-size: .7em;
+}
+
+.uptime-text {
+  font-size: .6em;
+  font-weight: 600;
+  color: $accent;
+}
+
+.power-box-db {
+  padding: 0 .5em 0 .5em;
+  margin-left: 1em;
+  background-color: $bg;
+  border-radius: $crounding;
+}
+
+.power-box-button-db {
+  background-color: $bg;
+  color: $disab;
+  font-size: .9em;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.power-box-button-db:hover {
+  color: $accent;
+}
+
+.power-box-button-dan-db {
+  background-color: $bg;
+  color: $disab;
+  font-size: .8em;
+  margin-left: .5em;
+  padding: 0;
+  font-weight: 400;
+}
+
+.power-box-button-dan-db:hover {
+  color: $red;
+}
+
+// Tools Styles
+
+.tools-sec {
+  background-color: $bg;
+  border-radius: $crounding;
+  padding: 0em .5em 1em .5em;
+  margin: 0 0 0 0;
+}
+
+
+.tools-box {
+  background-color: $bg;
+  border-radius: $crounding;
+}
+
+
+$tools-box-buttons-rounding: $crounding;
+
+// Wifi button
+
+.wifi-btn {
+  background-color: $accent;
+  color: $bg-alt;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: .9em;
+
+  button {
+    color: $bg-alt;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $accent;
+    padding-right: 6px;
+  }
+}
+
+.no-wifi-btn {
+  background-color: $bg-alt-two;
+  color: $disab;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: .9em;
+
+  button {
+    color: $disab;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $bg-alt-two;
+    padding-right: 6px;
+  }
+
+  button:hover {
+    color: $accent;
+  }
+}
+
+
+// Bluetooth button
+
+.bluetooth-btn {
+  background-color: $accent;
+  color: $bg-alt;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: .9em;
+
+  button {
+    color: $bg-alt;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $accent;
+  }
+}
+
+.no-bluetooth-btn {
+  background-color: $bg-alt-two;
+  color: $disab;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: .9em;
+
+  button {
+    color: $disab;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $bg-alt-two;
+  }
+
+  button:hover {
+    color: $accent;
+  }
+}
+
+
+// Night mode button 
+.nightmode-btn {
+  background-color: $accent;
+  color: $bg-alt;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: 1.1em;
+
+  button {
+    color: $bg-alt;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $accent;
+    padding-left: 1px;
+  }
+}
+
+.no-nightmode-btn {
+  background-color: $bg-alt-two;
+  color: $disab;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: 1.1em;
+
+  button {
+    color: $disab;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $bg-alt-two;
+    padding-right: 4px;
+  }
+
+  button:hover {
+    color: $accent;
+  }
+}
+
+// DND mode button 
+.dnd-btn {
+  background-color: $accent;
+  color: $bg-alt;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: 1.1em;
+
+  button {
+    color: $bg-alt;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $accent;
+    padding-right: 5px;
+  }
+}
+
+.no-dnd-btn {
+  background-color: $bg-alt-two;
+  color: $disab;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: 1.1em;
+
+  button {
+    color: $disab;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $bg-alt-two;
+    padding-right: 4px;
+  }
+
+  button:hover {
+    color: $accent;
+  }
+}
+
+
+// Music box styles
+.music-box-db {
+  border-radius: $crounding;
+  background-color: $bg-alt;
+  margin: 0 .5em .25em .5em;
+
+  .music-box-two-db {
+    border-radius: $crounding;
+    background-color: $bg-alt;
+    padding: 1em 1em 1em .5em;
+    margin: 0 .5em 0 .5em;
+
+    .music-cover-db {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 85px;
+      min-width: 85px;
+      border-radius: $crounding;
+      margin: 10px 10px 10px 0;
+    }
+
+    .music-title {
+      font-size: .7em;
+      font-weight: 600;
+    }
+
+    .music-artist {
+      font-size: .6em;
+      color: $accent
+    }
+
+    .music-play-button {
+      background-color: $bg-alt;
+      color: $fg;
+      font-size: .7em;
+      margin-left: .6em;
+    }
+
+    .music-play-button:hover {
+      color: $accent;
+    }
+
+    .music-nextback-button {
+      background-color: $bg-alt;
+      color: $fg;
+      font-size: .5em;
+      margin-left: .7em;
+    }
+
+    .music-nextback-button:hover {
+      color: $accent;
+    }
+  }
+}
+
+.music-slider {
+  trough {
+    padding: .2em;
+    background-color: $bg-alt;
+    border-radius: $crounding;
+  }
+
+  highlight {
+    padding: .15em;
+    background-color: $accent;
+    border-radius: $crounding;
+  }
+}
+
+// Slider box styles
+
+.sliders-box-db {
+  border-radius: $crounding;
+  background-color: $bg-alt;
+  padding: 1em .5em 1em .5em;
+  margin: 0 .5em .25em .5em;
+}
+
+.sliders-text {
+  font-size: .7em;
+}
+
+.sliders-text-end {
+  font-size: .6em;
+}
+
+// Volume
+
+.sliders-volume-db {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  trough {
+    padding: .2em;
+    background-color: $bg-alt-two;
+    border-radius: $crounding;
+  }
+
+  highlight {
+    padding: .15em;
+    background-color: $accent;
+    border-radius: $crounding;
+  }
+}
+
+
+// Brightness
+
+.sliders-brightness-db {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  trough {
+    padding: .2em;
+    background-color: $bg-alt-two;
+    border-radius: $crounding;
+  }
+
+  highlight {
+    padding: .15em;
+    background-color: $accent;
+    border-radius: $crounding;
+  }
+}
+
+

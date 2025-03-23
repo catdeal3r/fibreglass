@@ -1,0 +1,339 @@
+
+
+;; Time
+;;(defpoll curtime :interval "2s" "date '+%I:%M'")
+;;(defpoll curtimetwo :interval "2s" "date '+%p'")
+;;(defpoll curtimelong :interval "10s" "date '+%A %_d of %B, %Y.'")
+
+;; Calendar
+;;(defpoll calendar_day :interval "3s" "date '+%d'")
+;;(defpoll calendar_month :interval "3s" "date '+%m'")
+;;(defpoll calendar_year :interval "3s" "date '+%Y'")
+
+;; Sliders
+(defpoll sliders-volume :interval "100ms" "amixer get Master | grep -oP '\\d+%' | head -1 | tr -d '%'")
+(defpoll sliders-brightness :interval "100ms" "brightnessctl i | grep -oP '(\\d+%)' | tr -d '% '")
+
+;; Music controls 
+(defpoll music-cover :interval "1s" "./modern-dark/dashboard/scripts/music --cover")
+(defpoll music-title :interval "1s" "./modern-dark/dashboard/scripts/music --title")
+(defpoll music-artist :interval "1s" "./modern-dark/dashboard/scripts/music --artist")
+(defpoll playing-icon :interval "500ms" "./modern-dark/dashboard/scripts/music --playing-icon")
+(defpoll music-position :interval "500ms" "./modern-dark/dashboard/scripts/music --current-position")
+(defpoll music-length :interval "1s" "./modern-dark/dashboard/scripts/music --length")
+
+;; Notification center
+(deflisten notif_script "./modern-dark/dashboard/scripts/notifications")
+
+(defwidget notification_single [?title ?content ?image ?id]
+  (box :orientation 'h' 
+    :space-evenly 'false' 
+    :class "notif_box" 
+    (box :style "background-image: url('${image}');"
+      :class 'notif_image'
+      :space-evenly 'false'
+      :vexpand 'false'
+      :halign 'start'
+      :valign 'center'
+    )
+    (box :orientation 'v'
+      :space-evenly 'false' 
+      (box :orientation 'h' 
+        :space-evenly 'false' 
+        (scroll :hexpand 'true' 
+          :hscroll 'true' 
+          :vscroll 'false' 
+          :width 300 
+          (label :halign 'start' 
+            :xalign 0 
+            :hexpand 'true' 
+            :class 'notif_sum' 
+            :text "${title}"
+          )
+        )
+        (button :halign 'end' 
+          :class 'notif_box_clear' 
+          :onclick 'dunstctl history-rm ${id}' 
+          '󰅖'
+        )
+      )
+      (label :wrap true 
+        :halign 'start' 
+        :class 'notif_body' 
+        :text "${content}"
+      )
+    )
+  )
+)
+
+
+(defwidget topdb []
+  (box :orientation "v"
+    :space-evenly false
+    :vexpand false 
+    :spacing 17
+    :width 120
+    :class "top-box-db"
+    (box :orientation "h" 
+      :space-evenly "false"
+      :spacing 10
+      :class "top-box-db-two"
+      :halign "start"
+      :valign "center"
+      (box :style "background-image: url('${IMAGE}')"
+        :class "image-pfp"
+        :halign "start"
+        :valign "center"
+      )
+      (box :orientation "v"
+        :space-evenly "false"
+        :spacing 1
+        :valign "center"
+        :halign "start"
+        :class "user-greeting-box"
+        (label :halign "start" :class "user-greeting" :text "${user_name}") 
+        (label :halign "start" :class "uptime-text" :text "Up: ${uptime}")
+      )
+      (box :orientation "h"
+        :halign "center"
+        :class "power-box-db"
+        (button :class "power-box-button-db" 
+          :onclick "$HOME/scripts/tools/lockbspwm --suspend"
+          "󰤄"
+        )
+        (button :class "power-box-button-db" 
+          :onclick "bspc quit"
+          "󰗽"
+        )
+        (button :class "power-box-button-dan-db" 
+          :onclick "systemctl poweroff"
+          ""
+        )
+      )
+    )
+  )
+)
+
+
+(defwidget notificationsboxdb []
+  (box :orientation "v"
+    :width 270
+    :class "notif_main_box"
+    :space-evenly "false"
+    :spacing 1
+    (box :orientation "h"
+      :space-evenly "false"
+      (label :halign "start" :class "notif_box_title" :text "Notifications")
+      (button :halign "end" :class "notif_clear_button" :onclick "dunstctl history-clear" "󰎟  Clear")
+    )
+    (scroll :height 300
+      (literal :content notif_script)
+    )
+  )
+)
+
+(defwidget toolsdb []
+  (box :orientation "h"
+    :class "tools-sec"
+      (box :orientation "v"
+        :space-evenly true 
+        :spacing 2
+        :class "tools-main"
+        (eventbox :class { net_status != "Offline" ? "wifi-btn" : "no-wifi-btn" }
+          :width 90
+          :height 90
+          :halign "center"
+          :cursor "pointer"
+          :tooltip "Wifi toggle"
+          (button :class "tool-button"
+            :onclick "./modern-dark/dashboard/scripts/Network --toggle &"
+            "${net_icon}"
+          )
+        )
+      )
+      (box :orientation "v"
+        :space-evenly false
+        :spacing 2
+        :class "tools-main"
+        (eventbox :class { blue_status != "Off" ? "bluetooth-btn" : "no-bluetooth-btn" }
+          :width 90
+          :height 90
+          :halign "center"
+          :cursor "pointer"
+          :tooltip "Bluetooth toggle"
+          (button :class "tool-button"
+            :onclick "./modern-dark/dashboard/scripts/Bluetooth --toggle &"
+            "${blue_icon}"
+          )
+        )
+      )
+      (box :orientation "v"
+        :space-evenly false
+        :spacing 2
+        :class "tools-main"
+        (eventbox :class { night_status != "off" ? "nightmode-btn" : "no-nightmode-btn" }
+          :width 90
+          :height 90
+          :halign "center"
+          :cursor "pointer"
+          :tooltip "Nightmode toggle"
+          (button
+            :onclick "./modern-dark/dashboard/scripts/Nightmode --toggle &"
+            "${night_icon}"
+          )
+        )
+      )
+      (box :orientation "v"
+        :space-evenly false
+        :spacing 2
+        :class "tools-main"
+        (eventbox :class { dnd_status != "off" ? "dnd-btn" : "no-dnd-btn" }
+          :width 90
+          :height 90
+          :halign "center"
+          :cursor "pointer"
+          :tooltip "DND toggle"
+          (button
+            :onclick "./modern-dark/dashboard/scripts/DND --toggle &"
+            "${dnd_icon}"
+          )
+        )
+      )
+  )
+)
+
+(defwidget slidersdb []
+  (box :orientation "v"
+    :space-evenly "false"
+    :spacing 10
+    :class "sliders-box-db"
+    (box :orientation "h"
+      :space-evenly "false"
+      (label :class "sliders-text" :text "")
+      (scale :min 0
+        :max 101
+        :class "sliders-volume-db"
+        :orientation "h"
+        :value sliders-volume
+        :width 400
+        :height 10
+        :marks true
+        :tooltip "Volume: ${sliders-volume}%"
+        :onchange "amixer set Master {}%"
+      )
+      (label :class "sliders-text-end" :text "${sliders-volume}%")
+    )
+    (box :orientation "h"
+      :space-evenly "false"
+      (label :class "sliders-text" :text "󰖙" :style "font-size: .9em; margin-right: 1px;")
+      (scale :min 0
+        :max 101
+        :class "sliders-brightness-db"
+        :orientation "h"
+        :value sliders-brightness
+        :width 400
+        :height 10
+        :marks true
+        :tooltip "Volume: ${sliders-brightness}%"
+        :onchange "brightnessctl set {}%"
+      )
+      (label :class "sliders-text-end" :text "${sliders-brightness}%")
+    )
+  )
+)
+
+(defwidget calendardb []
+  (box :orientation "v"
+    :space-evenly "false"
+    :spacing 10
+    :class "cal-box-db"
+    (calendar :class "cal-db")
+  )
+)
+
+(defwidget musicboxdb []
+  (box :orientation "v"
+    :space-evenly "false"
+    :class "music-box-db"
+    (box :orientation "h"
+      :class "music-box-two-db"
+      :spacing 7
+      :space-evenly "false"
+      (box :style "background-image: url('${music-cover}')"
+          :class "music-cover-db"
+          :halign "start"
+          :valign "center"
+      )
+      (box :orientation "v"
+        :width 220
+        :space-evenly "false"
+        :spacing 7
+        :halign "start"
+        :valign "center"
+        (scroll :hscroll "true"
+          :vscroll "false"
+          :width 220
+          (label :halign "start" :class "music-title" :text music-title)
+        )
+        (label :halign "start" :class "music-artist" :text music-artist)
+      )
+      (button :class "music-nextback-button" 
+        :onclick "./modern-dark/dashboard/scripts/music --back"
+        "" 
+      )
+      (button :class "music-play-button" 
+        :onclick "./modern-dark/dashboard/scripts/music --toggle &"
+        "${playing-icon}" 
+      )
+      (button :class "music-nextback-button" 
+        :onclick "./modern-dark/dashboard/scripts/music --next"
+        "" 
+      )
+    )
+    (box :space-evenly "true"
+      :orientation "h"
+      (scale :min 0
+        :max music-length 
+        :class "music-slider"
+        :orientation "h"
+        :value music-position 
+        :width 300
+        :height 10
+        :onchange "playerctl position {}"
+      )
+    )
+  )
+)
+
+(defwidget contentdb []
+  (box :orientation "v"
+    :space-evenly "false"
+    :class "db-main-box"
+    :spacing 7
+    (topdb)
+    (toolsdb)
+    (slidersdb)
+    (musicboxdb)
+    (notificationsboxdb)
+  )
+)
+
+(defwidget hoverlostdb []
+  (eventbox :onhoverlost "./bar/scripts/open_dashboard.sh &"
+    (contentdb)
+  )
+)
+
+(defwindow infoboard
+  :monitor 1 
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore false
+  :geometry (geometry :x "3%"
+              :y "-2.8%"
+              :width "30px"
+              :height "60%"
+              :anchor "bottom left")
+  (contentdb)
+)
+

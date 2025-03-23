@@ -1,0 +1,30 @@
+#!/bin/bash
+
+is_dnd() {
+  dunstctl is-paused
+}
+
+toggle() {
+  if [[ "$(is_dnd)" == "true" ]]; then
+    dunstctl set-paused false
+    notify-send "DND disabled" "You will receive notifications now."
+  else
+    notify-send "DND enabled" "Notifications paused."
+    sleep 3
+    dunstctl set-paused true
+  fi
+}
+
+if [[ "$(is_dnd)" == "true" ]]; then
+  STATUS="on"
+  ICON="󰂛"
+else
+  STATUS="off"
+  ICON="󰂚"
+fi
+
+case "$1" in
+--status) echo "$STATUS" ;;
+--icon) echo "$ICON" ;;
+--toggle) toggle ;;
+esac
