@@ -10,9 +10,13 @@
 > This project is in very early stages, so expect many bugs.
 
 ## Table of Contents
-- [Features](#Features)
-- [Featuring](#Featuring)
-- [Video Showcase](#Video_Showcase)
+- **[Features](#features)**
+- [Featuring](#featuring)
+- **[Video Showcase](#video-showcase)**
+- [In-depth Infomation](#in-depth-infomation)
+- **[FAQ](#faq)**
+- [Todo](#todo)
+- [Credits](#credits)
 
 ---
 
