@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [Kate](https://github.com/jiyutake), for critiquing my design.
 - [Eve](https://github.com/CelestialCrafter), for being my general helpline and for also critiquing my design.
 
-## ~~Stolen code~~ Inspirations
+## ~~Allowing me to steal designs~~ Inspirations
 - [Namishh](https://github.com/namishh)
 - [Saimoon](https://github.com/saimoomedits)
 - [Failed](https://github.com/Failedex) (again)
