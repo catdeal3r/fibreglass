@@ -13,9 +13,10 @@
 
 ## Features
 - *Smooth* animations (thanks failed)
-- Clean but functional bar
+- Clean but functional bar.
 - Bspwm config with all the basic fixes you need.
-- Aesthetic dashboard
+- Aesthetic dashboard.
+- Custom colourscheme, fibreglass, based off Awesthetic-dark (*from Saimoonedits*).
 
 ## Featuring
 - **Distro**     -> Fedora 41
@@ -45,6 +46,9 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 ### Still todo
 - [ ] Create userboard, productivity-board and notification center.
+- [ ] Add button on bar to open the productivity-board.
+- [ ] Use mako or something instead of dunst for flatpak support.
+- [ ] Refactor/clean up the code
 - [ ] Change all icons to material icons.
 - [ ] Restyle rofi or switch it out for eww.
 - [ ] Fix some css styling bugs on the dashboard buttons.
@@ -59,6 +63,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [Failed](https://github.com/Failedex), for being my much-abused eww helpline, and for providing some scripts.
 - [Kate](https://github.com/jiyutake), for critiquing my design.
 - [Eve](https://github.com/CelestialCrafter), for being my general helpline and for also critiquing my design.
+- [MarioRRom](https://github.com/MarioRRom), for the dunst notification script.
 
 ## ~~Allowing me to steal designs~~ Inspirations
 - [Namishh](https://github.com/namishh), for widget design and colours.
