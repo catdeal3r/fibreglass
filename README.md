@@ -14,11 +14,12 @@
 - Bspwm config with all the basic fixes you need.
 
 ## Featuring
-- **Distro** -> Fedora 41
-- **WM** -> bspwm
-- **Shell** -> zsh
-- **Terminal** -> kitty
+- **Distro**     -> Fedora 41
+- **WM**         -> bspwm
+- **Shell**      -> zsh
+- **Terminal**   -> kitty
 - **Compositor** -> picom
+- **Widgets**    -> eww
 
 ## Video Showcase
 https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
