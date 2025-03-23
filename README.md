@@ -1,4 +1,3 @@
-
 <img src=".github/photo.png" alt="showcase">
 
 <br>
@@ -8,11 +7,8 @@
 ![bad coding](https://img.shields.io/badge/coding-very_bad-blue?color=74be88&style=for-the-badge&labelColor=1B1919)
 ![code size](https://img.shields.io/github/languages/code-size/dealerofallthecats/fibreglass?color=e1b56a&style=for-the-badge&labelColor=1B1919)
 
-# Warning ⚠️
-This project is in very early stages, so expect many bugs.
-
-> [!IMPORTANT]
-> New Changes Soon.
+> [!WARNING]
+> This project is in very early stages, so expect many bugs.
 
 ## Features
 - **Distro** -> Fedora 41
@@ -20,3 +16,4 @@ This project is in very early stages, so expect many bugs.
 - **Shell** -> zsh
 - **Terminal** -> kitty
 - **Compositor** -> picom
+
