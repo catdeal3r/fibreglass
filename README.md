@@ -1,4 +1,4 @@
-<div align="center">
+
 <img src=".github/photo.png" alt="showcase">
 
 <br>
