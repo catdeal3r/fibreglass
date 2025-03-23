@@ -8,7 +8,7 @@
 ![bad coding](https://img.shields.io/badge/coding-very_bad-blue?color=74be88&style=for-the-badge&labelColor=1B1919)
 ![code size](https://img.shields.io/github/languages/code-size/dealerofallthecats/fibreglass?color=e1b56a&style=for-the-badge&labelColor=1B1919)
 
-> ![Important]
+> [!Warning]
 >
 > This project is in very early stages, so expect many bugs.
 
