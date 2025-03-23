@@ -45,6 +45,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 ### Still todo
 - [ ] Create userboard, productivity-board and notification center.
+- [ ] Change all icons to material icons.
 - [ ] Restyle rofi or switch it out for eww.
 - [ ] Fix some css styling bugs on the dashboard buttons.
 - [ ] Create custom lockscreen widgets to be overlayed on top of i3lock-color, or create a custom lockscreen with just eww.
