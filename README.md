@@ -39,12 +39,15 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 ## FAQ
 > **Q**: *Why is there no installation script/instructions?*
+
 **A**: This project is currently in pre-release stages; hence no installation script or instructions are needed.
 
 > **Q**: *Why does (such-and-such) not work?*
+
 **A**: This setup, while being made as flexible as possible, is bound to have some bugs. Please report all of them in the "Issues" tab.
 
 > **Q**: *How do I repelicate (such-and-such) part of this config?*
+
 **A**: The code is all there; read through it. 
 
 ---
