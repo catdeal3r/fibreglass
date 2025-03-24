@@ -101,6 +101,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 ### Still todo
 - [ ] Create userboard and productivity-board.
+- [ ] Restyle quicktoggles.
 - [ ] Add indicator on the side on date to show the amount of notifications in the notification center.
 - [ ] Add button on bar to open the productivity-board.
 - [ ] Use mako or something instead of dunst for flatpak support.
