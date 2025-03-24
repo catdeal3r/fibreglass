@@ -87,14 +87,17 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [x] Style dashboard's music widget. *v0.2*
 - [x] Extend the bar's functionality. *v0.27*
 - [x] Fix styling of the statuses on bar. *v0.3*
-- [x] Fix padding and margin on bar. *v0.31*
+- [x] Fix padding and margin on bar. (Thanks Kate) *v0.31*
+- [x] Reposition notifications. *v0.31*
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
-- [ ] Reposition notifications
+- [ ] Optimize dashboard's quick toggles
+- [ ] Creating notification center.
 
 ### Still todo
-- [ ] Create userboard, productivity-board and notification center.
+- [ ] Create userboard and productivity-board.
+- [ ] Add indicator on the side on date to show the amount of notifications in the notification center.
 - [ ] Add button on bar to open the productivity-board.
 - [ ] Use mako or something instead of dunst for flatpak support.
 - [ ] Refactor/clean up the code
@@ -113,6 +116,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [Kate](https://github.com/jiyutake), for critiquing my design.
 - [Eve](https://github.com/CelestialCrafter), for being my general helpline and for also critiquing my design.
 - [MarioRRom](https://github.com/MarioRRom), for the dunst notification script.
+- [Gh0stzk](https://github.com/gh0stzk), for some quick toggle scripts (have been modified).
 
 ## ~~Who I stole designs from~~ Inspirations
 - [Namishh](https://github.com/namishh), for widget design and colours.
