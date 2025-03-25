@@ -7,10 +7,7 @@ is_dnd() {
 toggle() {
   if [[ "$(is_dnd)" == "true" ]]; then
     dunstctl set-paused false
-    notify-send "DND disabled" "You will receive notifications now."
   else
-    notify-send "DND enabled" "Notifications paused."
-    sleep 3
     dunstctl set-paused true
   fi
 }
@@ -24,7 +21,6 @@ else
 fi
 
 case "$1" in
---status) echo "$STATUS" ;;
---icon) echo "$ICON" ;;
+--info) echo "[\"$ICON\",\"$STATUS\"]" ;;
 --toggle) toggle ;;
 esac
