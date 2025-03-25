@@ -3,7 +3,7 @@
 
 <br><br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Product+Sans&weight=600&size=35&duration=3500&pause=2000&color=FFFFFF&width=435&lines=fibreglass+(v0.31))](https://github.com/dealerofallthecats/fibreglass)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Product+Sans&weight=600&size=35&duration=3500&pause=2000&color=FFFFFF&width=435&lines=fibreglass+(v0.32))](https://github.com/dealerofallthecats/fibreglass)
 
 ---
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
@@ -95,10 +95,10 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [x] Fix padding and margin on bar. (Thanks Kate) *v0.31*
 - [x] Reposition notifications. *v0.31*
 - [x] Optimize dashboard's quick toggles. *v0.31*
+- [x] Creating notification + quick reload center. *v0.32*
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
-- [ ] Creating notification + quick reload center.
 
 ### Still todo
 - [ ] Create userboard and productivity-board.
