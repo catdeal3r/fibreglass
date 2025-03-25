@@ -109,6 +109,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
+- [ ] Update screenshots.
 
 ### Still todo
 - [ ] Create userboard and productivity-board.
