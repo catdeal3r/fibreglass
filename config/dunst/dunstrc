@@ -15,7 +15,7 @@
     follow = mouse 
     width = (300,400)
     origin = top-right
-    offset = 0x80 
+    offset = (20, 20)
     notification_limit = 0
     progress_bar = true
     progress_bar_height = 12
