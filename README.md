@@ -93,12 +93,12 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [x] Extend the bar's functionality. *v0.27*
 - [x] Fix styling of the statuses on bar. *v0.3*
 - [x] Fix padding and margin on bar. (Thanks Kate) *v0.31*
+- [x] Reposition notifications. *v0.31*
+- [x] Optimize dashboard's quick toggles. *v0.31*
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
-- [ ] Optimize dashboard's quick toggles
-- [ ] Creating notification center.
-- [ ] Reposition notifications.
+- [ ] Creating notification + quick reload center.
 
 ### Still todo
 - [ ] Create userboard and productivity-board.
