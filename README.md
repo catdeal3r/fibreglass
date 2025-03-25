@@ -46,6 +46,15 @@
 ## Video Showcase
 https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
+## Screenshots
+| Modern Dashboard & Bar |
+| --- |
+| <img src=".github/showcase_photo.png" alt="showcase"> |
+
+| Modern Notification center & Reload menu |
+| --- |
+| <img src=".github/showcase_photo_2.png" alt="showcase"> |
+
 ---
 
 ## In-depth infomation
