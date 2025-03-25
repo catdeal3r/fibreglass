@@ -1,0 +1,199 @@
+
+(defpoll time-hour :interval "1s" "date +%I")
+(defpoll time-min :interval "1s" "date +%M")
+(defpoll time-pmam :interval "1s" "date +%p")
+(defpoll day :interval "1s" "date '+%d %B'")
+
+(defpoll battery_per :interval "1min" "cat /sys/class/power_supply/BAT0/capacity")
+(defpoll battery_class :interval "2s" "./fibreglass/bar/scripts/battery --class")
+(defpoll battery_icon :interval "1s" "./fibreglass/bar/scripts/battery --icon")
+(defpoll battery_icon_class :interval "1s" "./fibreglass/bar/scripts/battery --class_icon")
+
+(defpoll network_icon :interval "500ms" "./fibreglass/bar/scripts/Network --icon")
+(defpoll bluetooth_icon :interval "500ms" "./fibreglass/bar/scripts/Bluetooth --icon")
+
+(defpoll powermode_state :interval "1s" "./fibreglass/bar/scripts/powermode --state")
+
+(deflisten workspaces_classes :initial '["ws", "ws", "ws", "ws", "ws"]' "./fibreglass/bar/scripts/workspaces.sh")
+(defwidget workspaces []
+  (box :class "wsbox"
+    :orientation "h"
+    :halign "center"
+    :valign "center"
+    :space-evenly false
+    :spacing "-5"
+    (for i in {[0, 1, 2, 3, 4]}
+      (button :onclick "bspc desktop -f ${i+1}"
+        :class "wsbox-ani ${workspaces_classes[i]}"
+        "spi"
+      )
+    )
+  )
+)
+
+
+(defwidget powermode []
+  (box :orientation "h"
+    :space-evenly "false"
+    :class "powermode-box"
+    :height "40"
+    (button :onclick "./fibreglass/bar/scripts/powermode --toggle" "${powermode_state}")
+  )
+)
+
+
+(defwidget statuses []
+(button :onclick "./fibreglass/bar/scripts/open_dashboard.sh &"
+  (box :orientation "h"
+    :valign "center"
+    :class "statuses-box"
+    :space-evenly false
+    :spacing 2
+    (box :orientation "h"
+      :space-evenly false
+      :spacing 15
+      (label :style { network_icon != "󰤨" ? "color: #848585;" : "color: #C5C8C9" } :text "${network_icon}")
+      (label :style { bluetooth_icon != "󰂯" ? "color: #848585;" : "color: #C5C8C9" } :text "${bluetooth_icon}")
+    )
+    (box :orientation "h"
+      :valign "end"
+      :class "battery-box"
+      :space-evenly "false"
+      :spacing 0 
+      :tooltip "${battery_per}% of battery left."
+      (label :valign "center" :class "battery_nobe" :text "󱓻")
+      (overlay
+	  (scale :class "${battery_class}" 
+	     :min 0
+	     :max 100
+	     :flipped true
+	     :orientation "h"
+	     :value battery_per 
+	  )
+    	  (label :class "${battery_icon_class}" :text "${battery_icon}")
+      )
+    )
+  )
+)
+
+)
+
+
+(defwidget timeandnotifications []
+  (button :onclick "./fibreglass/bar/scripts/open_notificationcenter.sh &"
+    (box :orientation "h"
+      :class "time-box"
+      :valign "end"
+      :space-evenly false
+      :spacing 2
+      :valign "center"
+      (label :text "${time-hour} : ${time-min} ${time-pmam}   ")
+      (label :style "font-size: .9em; " :text "${day}")
+      (box :orientation "h"
+        :space-evenly false
+        :spacing 2
+        :class "notificationstatuses"
+        (label :style "margin-left: .1em; color: #848585; font-size: 1.3em;" :text "| ")
+        (label :style "margin-left: .1em; margin-top: 0em;" :text "󰂚")
+      )
+    )
+  )
+)
+
+
+
+(defwidget systemtray []
+  (box :orientation "h"
+    :class "systemtray"
+    :valign "center"
+    (systray :orientation "h"
+      :class "systemtray-two"
+      :icon-size "20"
+      :spacing "7"
+    )
+  )
+)
+
+(defvar reveal_systray false)
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "-0%"
+    :y "0px"
+    :width "100%"
+    :height "30px"
+    :anchor "bottom center"
+    )
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore false
+  :space-evenly false
+  (box :orientation "v"
+    :class "bar-main-box"
+  (box :orientation "h"
+    :class "bar-main-box-two"
+    (box :orientation "h"
+      :class "top-box"
+      :halign "start"
+      :space-evenly "false"
+      :spacing 3
+      (box :style "background-image: url('${PFP}')"
+        :class "image-pfp-bar"
+        :halign "start"
+        :valign "center"
+      )
+      (button :onclick "bash ~/.config/rofi/custom/launcher.sh --drun &"
+        :valign "center"
+        :class "launcher-button"
+        "󱓞"
+      )
+      (button :onclick "notify-send helloooo"
+        :style "padding-right: .5em;"
+        :valign "center"
+        :class "launcher-button"
+        ""
+      )
+      (workspaces)
+    )
+    (box :orientation "h"
+      :class "middle-box"
+      :halign "center"
+      :space-evenly "false"
+      :vexpand "true"
+    )
+    (box :orientation "h"
+      :class "end-box"
+      :halign "end"
+      :space-evenly "false"
+      :spacing "0"
+      (revealer :transition "slideleft"
+        :reveal reveal_systray
+        :duration "250ms"
+        (systemtray)
+      )
+      (button :class "systray_button"
+        :valign "center"
+        :onclick { reveal_systray != false ? "eww update reveal_systray=false" : "eww update reveal_systray=true" }
+        { reveal_systray != false ? "" : "" }
+      )
+      (statuses)
+      (timeandnotifications)
+    )
+  )
+  )
+)
+
+(defwindow fakecornerl
+  :monitor 0
+  :geometry (geometry :x "0%"
+    :y "0px"
+    :width "100%"
+    :height "100%"
+  )
+  :windowtype "desktop"
+  :stacking "bg"
+  :wm-ignore "false"
+  (box
+    :class "fakecornersl"
+  )
+)
