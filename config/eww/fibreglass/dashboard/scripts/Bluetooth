@@ -21,7 +21,6 @@ else
 fi
 
 case "$1" in
---status) echo "$STATUS" ;;
---icon) echo "$ICON" ;;
+--info) echo "[\"$ICON\",\"$STATUS\"]" ;;
 --toggle) toggle ;;
 esac
