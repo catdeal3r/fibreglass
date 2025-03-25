@@ -37,7 +37,6 @@ get_icon() {
 }
 
 case $1 in
---status) get_state ;;
---icon) get_icon ;;
+--info) echo "[\"$(get_icon)\",\"$(get_state)\"]" ;;
 --toggle) toggle ;;
 esac
