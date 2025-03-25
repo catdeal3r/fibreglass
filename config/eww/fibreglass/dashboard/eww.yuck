@@ -233,6 +233,6 @@
               :width "30px"
               :height "60%"
               :anchor "bottom right")
-  (hoverlostdb)
+  (contentdb)
 )
 
