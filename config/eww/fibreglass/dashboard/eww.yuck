@@ -2,26 +2,11 @@
 ;; Top
 (defpoll uptime :interval "1m" "./fibreglass/dashboard/scripts/uptime")
 
-;; Tools network
-(defpoll net_status :interval "300ms" "./fibreglass/dashboard/scripts/Network --status")
-(defpoll net_icon :interval "300ms" "./fibreglass/dashboard/scripts/Network --icon")
-
-;; Tools bluetooth
-(defpoll blue_status :interval "300ms" "./fibreglass/dashboard/scripts/Bluetooth --status")
-(defpoll blue_icon :interval "300ms" "./fibreglass/dashboard/scripts/Bluetooth --icon")
-
-;; Tools nightmode 
-(defpoll night_status :interval "300ms" "./fibreglass/dashboard/scripts/Nightmode --status")
-(defpoll night_icon :interval "300ms" "./fibreglass/dashboard/scripts/Nightmode --icon")
-
-;; Tools dnd 
-(defpoll dnd_status :interval "300ms" "./fibreglass/dashboard/scripts/DND --status")
-(defpoll dnd_icon :interval "300ms" "./fibreglass/dashboard/scripts/DND --icon")
-
-;; Calendar
-;;(defpoll calendar_day :interval "3s" "date '+%d'")
-;;(defpoll calendar_month :interval "3s" "date '+%m'")
-;;(defpoll calendar_year :interval "3s" "date '+%Y'")
+;; Tools
+(defpoll net_info :interval "300ms" "./fibreglass/dashboard/scripts/Network --info")
+(defpoll blue_info :interval "300ms" "./fibreglass/dashboard/scripts/Bluetooth --info")
+(defpoll night_info :interval "300ms" "./fibreglass/dashboard/scripts/Nightmode --info")
+(defpoll dnd_info :interval "300ms" "./fibreglass/dashboard/scripts/DND --info")
 
 ;; Sliders
 (defpoll sliders-volume :interval "100ms" "amixer get Master | grep -oP '\\d+%' | head -1 | tr -d '%'")
@@ -118,13 +103,13 @@
     :spacing 15
     (box :orientation "h"
       :spacing 15
-      (tool_single :status "${net_status}" :tooltip "Wifi toggle" :icon "${net_icon}" :exec "./fibreglass/dashboard/scripts/Network --toggle &" :name "Network")
-      (tool_single :status "${blue_status}" :tooltip "Bluetooth toggle" :icon "${blue_icon}" :exec "./fibreglass/dashboard/scripts/Bluetooth --toggle &" :name "Bluetooth")
+      (tool_single :status "${net_info[1]}" :tooltip "Wifi toggle" :icon "${net_info[0]}" :exec "./fibreglass/dashboard/scripts/Network --toggle &" :name "Network")
+      (tool_single :status "${blue_info[1]}" :tooltip "Bluetooth toggle" :icon "${blue_info[0]}" :exec "./fibreglass/dashboard/scripts/Bluetooth --toggle &" :name "Bluetooth")
       )
     (box :orientation "h"
       :spacing 15
-      (tool_single :status "${night_status}" :tooltip "Nightmode toggle" :icon "${night_icon}" :exec "./fibreglass/dashboard/scripts/Nightmode --toggle &" :name "Nightmode")
-      (tool_single :status "${dnd_status}" :tooltip "DND toggle" :icon "${dnd_icon}" :exec "./fibreglass/dashboard/scripts/DND --toggle &" :name "Do Not Disturb")
+      (tool_single :status "${night_info[1]}" :tooltip "Nightmode toggle" :icon "${night_info[0]}" :exec "./fibreglass/dashboard/scripts/Nightmode --toggle &" :name "Nightmode")
+      (tool_single :status "${dnd_info[1]}" :tooltip "DND toggle" :icon "${dnd_info[0]}" :exec "./fibreglass/dashboard/scripts/DND --toggle &" :name "Do Not Disturb")
     )
   )
 )
@@ -244,7 +229,7 @@
   :stacking "fg"
   :windowtype "dock"
   :wm-ignore false
-  :geometry (geometry :x "-1.5%"
+  :geometry (geometry :x "-1.6%"
               :y "-7.4%"
               :width "30px"
               :height "60%"
