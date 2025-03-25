@@ -1,0 +1,9 @@
+
+
+(defvar PFP "./fibreglass/assets/pfp.jpg")
+(defpoll user_name :interval "12h" "user=$(whoami);if [[ \"$user\" == \"catdealer\" ]]; then echo \"あらゆる猫のディーラー\"; else echo $user; fi")
+
+(include "./fibreglass/bar/eww.yuck")
+(include "./fibreglass/dashboard/eww.yuck")
+(include "./fibreglass/notificationcenter/eww.yuck")
+

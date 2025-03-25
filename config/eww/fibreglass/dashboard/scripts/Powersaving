@@ -1,0 +1,33 @@
+#!/bin/bash
+
+current_mode=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+
+toggle() {
+  if [[ "$current_mode" == "performance" ]]; then
+    sudo cpupower frequency-set --governor powersave
+  else
+    sudo cpupower frequency-set --governor performance
+  fi
+}
+
+icon() {
+  if [[ "$current_mode" == "performance" ]]; then
+    echo "󱐋"
+  else
+    echo "󰌪"
+  fi
+}
+
+get_state() {
+  if [[ "$current_mode" == "performance" ]]; then
+    echo "off"
+  else
+    echo "on"
+  fi
+}
+
+case $1 in
+--toggle) toggle ;;
+--status) get_state ;;
+--icon) icon ;;
+esac

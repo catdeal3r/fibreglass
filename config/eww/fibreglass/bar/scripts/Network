@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+is_online() {
+  nmcli networking connectivity
+}
+
+toggle() {
+  if [[ "$(is_online)" == "limited" ]] || [[ "$(is_online)" == "full" ]]; then
+    nmcli networking off
+  else
+    nmcli networking on
+  fi
+}
+
+if [[ "$(is_online)" == "limited" ]] || [[ "$(is_online)" == "full" ]]; then
+  STATUS="Online"
+  ICON="󰤨"
+else
+  STATUS="Offline"
+  ICON="󰤭"
+fi
+
+case "$1" in
+--status) echo "$STATUS" ;;
+--icon) echo "$ICON" ;;
+--toggle) toggle ;;
+esac

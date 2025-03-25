@@ -1,0 +1,26 @@
+#!/bin/bash
+
+is_dnd() {
+  dunstctl is-paused
+}
+
+toggle() {
+  if [[ "$(is_dnd)" == "true" ]]; then
+    dunstctl set-paused false
+  else
+    dunstctl set-paused true
+  fi
+}
+
+if [[ "$(is_dnd)" == "true" ]]; then
+  STATUS="On"
+  ICON="󰂛"
+else
+  STATUS="Off"
+  ICON="󰂚"
+fi
+
+case "$1" in
+--info) echo "[\"$ICON\",\"$STATUS\"]" ;;
+--toggle) toggle ;;
+esac

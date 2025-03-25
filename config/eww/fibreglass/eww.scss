@@ -1,0 +1,54 @@
+
+// Colours
+
+// Accents (bright)
+$red: #dd7373;
+$blue: #7CB5DB;
+$green: #97DB7C;
+$yellow: #DBD37C;
+$orange: #DBBA7C;
+$purple: #9E7CDB;
+$pink: #D87CDB;
+$turquoise: #7CDBD6;
+
+// Accents (dull)
+$red-dull: #DBBBB4;
+$blue-dull: #B4B6DB;
+$green-dull: #B4DBC0;
+$yellow-dull: #D9DBB4;
+$orange-dull: #DBD0B4;
+$purple-dull: #D3B4DB;
+$pink-dull: #DBB4D2;
+$turquoise-dull: #B4DBDB;
+
+// Accent import
+//@import "/home/catdealer/.config/eww/accent.scss"
+$accent: #7ba5dd;
+
+// Main colours
+
+$bg: #101012;
+$bg-alt: #161719;
+$bg-alt-two: #1c1d20;
+$bg-alt-three: #26272b;
+$bg-alt-four: #313237;
+$bg-alt-five: #424348;
+$bg-alt-six: #5a5b61;
+$fg: #C5C8C9;
+$disab: #848585;
+
+// Corner rounding
+$crounding: 7px;
+
+// Global Settings 
+* {
+  all: unset;
+  font-family: "Product Sans"
+}
+
+
+// Styles
+@import "./bar/eww.scss"
+@import "./dashboard/eww.scss"
+@import "./notificationcenter/eww.scss"
+
