@@ -72,7 +72,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 | | | gimp |
 
 ### Fonts used
-- 0xProto Nerd Font (purely to display nerd fonts)
+- 0xProto Nerd Font (purely to display nerd font icons)
 - Product Sans (for all the ui)
 - Hack (for the terminal)
 
@@ -89,7 +89,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 
 > **Q**: *How do I replicate (such-and-such) part of this config?*
 
-**A**: The code is all there; read through it. 
+**A**: The code is all there; have a read through it. 
 
 ---
 
@@ -105,6 +105,7 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [x] Reposition notifications. *v0.31*
 - [x] Optimize dashboard's quick toggles. *v0.31*
 - [x] Creating notification + quick reload center. *v0.32*
+- [x] Fix some css styling bugs on the dashboard buttons. *v0.32*
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
@@ -119,7 +120,6 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [ ] Refactor/clean up the code in general.
 - [ ] Change all icons to material icons.
 - [ ] Restyle rofi or switch it out for eww.
-- [ ] Fix some css styling bugs on the dashboard buttons.
 - [ ] Create custom lockscreen widgets to be overlayed on top of i3lock-color, or create a custom lockscreen with just eww.
 - [ ] Add jgmenu support -> probably using a eww window that covers the desktop.
 - [ ] Implement desktop icons in eww.
