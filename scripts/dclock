@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+tty-clock -t -c -C 7

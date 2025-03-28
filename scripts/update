@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+echo "There are $(dnf list --updates | grep -c 'updates') packages able to be updated."
+
+read "?Display updateable packages? [y/n]: " uppkg
+
+if [[ "$uppkg" == "y" ]]; then
+	dnf list --updates
+fi
+
+read "?Update? [y/n]: " yn
+
+update () {
+	dnf list --updates
+	echo  
+	echo  
+	echo "Updating $(dnf list --updates | grep -c 'updates') packages."
+
+	sleep 1
+
+	# Messages
+	notify-send --app-name="System" "Update" "Update started ..."
+	
+	sudo dnf update 
+	sudo dnf upgrade
+
+	#sudo dnf system-upgrade
+	
+	sudo flatpak update
+
+	# Messages
+	notify-send --app-name="System" "Update" "Update finished."
+}
+
+if [[ "$yn" == "y" ]]; then
+	update
+else
+	echo "Update Aborted."
+fi

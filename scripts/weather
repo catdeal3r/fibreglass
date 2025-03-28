@@ -1,0 +1,47 @@
+#!/bin/bash
+
+location="$1"
+
+# Color variables
+cr="\033[1;31m"
+ce="\033[0;37m"
+cx="\033[1;37m"
+cb="\033[1;34m"
+
+# Colors
+c() { printf "\033[%s;%sm" "$1" "$2"; }
+
+# Get current condition
+get_cond() {
+  raw_cond=$(curl -s wttr.in/$location\?format=%C)
+  printf "%s\n" "$raw_cond"
+}
+
+# Get current condition's icon
+get_icon() {
+  raw_icon=$(curl -s wttr.in/$location\?format=%c)
+  printf "%s\n" "$raw_icon"
+}
+
+# Get current temperature
+get_temp() {
+  raw_temp=$(curl -s wttr.in/$location\?format=%t | tr -d '+')
+  printf "%s\n" "$raw_temp"
+}
+
+show_help() {
+  printf "Usage: ${cx}weather${ce} [ ${cb}CITY${ce} ] [ ${cb}--temp${ce} | ${cb}--cond${ce} | ${cb}--icon${ce} ]
+    ${cb}--temp:${ce} Show current temperature
+    ${cb}--cond:${ce} Show current weather condition
+    ${cb}--icon:${ce} Show current weather condition's icon
+
+API documentation at ${cr}https://github.com/chubin/wttr.in${ce}\n\n"
+
+}
+
+case $2 in
+--temp) get_temp ;;
+--cond) get_cond ;;
+--icon) get_icon ;;
+*) show_help ;;
+esac

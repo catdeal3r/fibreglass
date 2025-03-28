@@ -1,0 +1,70 @@
+#!/bin/bash
+
+is_on_blue() {
+  bluetoothctl show | grep 'PowerState' | tr -d 'PwerState: \t' | tail -c+2
+}
+
+is_on_wifi() {
+  nmcli networking connectivity
+}
+
+toggle_wifi() {
+  if [[ "$(is_on_wifi)" == "limited" ]] || [[ "$(is_on_wifi)" == "full" ]]; then
+    nmcli networking off >/dev/null
+    echo "[i] Powered off wifi"
+  else
+    nmcli networking on >/dev/null
+    echo "[i] Powered on wifi"
+  fi
+}
+
+toggle_bluetooth() {
+  if [[ "$(is_on_blue)" == "on" ]]; then
+    bluetoothctl power off >/dev/null
+    echo "[i] Powered off bluetooth"
+  else
+    bluetoothctl power on >/dev/null
+    echo "[i] Powered on bluetooth"
+  fi
+}
+
+toggle_both() {
+  toggle_wifi
+  toggle_bluetooth
+}
+
+print_status() {
+	if [[ "$(nmcli networking connectivity)" == "limited" ]] || [[ "$(nmcli networking connectivity)" == "full" ]]; then
+		echo "Wifi Status: Online"
+	else
+		echo "Wifi Status: Offline"
+	fi
+
+	if [[ "$(bluetoothctl show | grep 'PowerState' | tr -d 'PwerState: \t' | tail -c+2)" == "on" ]]; then
+		echo "Bluetooth Status: Online"
+	else
+		echo "Bluetooth Status: Offline"
+	fi
+}
+
+cr="\033[1;31m"
+ce="\033[0;38m"
+cx="\033[1;38m"
+cb="\033[1;34m"
+
+c() { printf "\033[%s;%sm" "$1" "$2"; }
+
+show_help() {
+  printf "${cr}Usage:${ce} ${cx}tcs${ce} [ ${cb}w${ce} | ${cb}b${ce} | ${cb}s${ce} ] ${cr}OR${ce} [ ${cb}wb${ce} ]
+    ${cb}[w]:${ce} Toggle wifi connectivity
+    ${cb}[b]:${ce} Toggle bluetooth connectivity
+    ${cb}[s]:${ce} Show bluetooth and wifi connectivity status\n"
+}
+
+case "$1" in
+w) toggle_wifi ;;
+b) toggle_bluetooth ;;
+wb) toggle_both ;;
+s) print_status ;;
+*) show_help ;;
+esac
