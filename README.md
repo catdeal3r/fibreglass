@@ -63,13 +63,16 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 | bspwm | playerctl | Geany |
 | sxhkd | mocp | NVim |
 | picom | CUrl | Portmaster |
-| dunst | thunar | mocp |
-| eww | oh-my-posh | amberol | 
-| rofi | zinit | cava |
-| feh | zen | cavalier |
-| kitty | firefox | fcitx5 |
-| zsh | | krita |
+| eww | thunar | mocp |
+| rofi | oh-my-posh | amberol | 
+| feh | zinit | cava |
+| kitty | zen | cavalier |
+| zsh | firefox | fcitx5 |
+|  | | krita |
 | | | gimp |
+
+> [!NOTE]
+> This config is no longer using dunst to display and manage notifications. However, I have kept my original dunst config for reference if anyone would want it.
 
 ### Fonts used
 - 0xProto Nerd Font (purely to display nerd font icons)
