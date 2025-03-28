@@ -106,6 +106,8 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [x] Optimize dashboard's quick toggles. *v0.31*
 - [x] Creating notification + quick reload center. *v0.32*
 - [x] Fix some css styling bugs on the dashboard buttons. *v0.32*
+- [x] Eww folder layout cleanup *v0.34* 
+- [x] Use eww for notifications instead of dunst *v0.35* 
 
 ### In progress
 - [ ] Add hover styling for the bar's statuses and date.
@@ -116,7 +118,6 @@ https://github.com/user-attachments/assets/8c6f7ea9-ba65-470e-8e3e-7c1554ad7dc5
 - [ ] Restyle quicktoggles.
 - [ ] Add indicator on the side on date to show the amount of notifications in the notification center.
 - [ ] Add button on bar to open the productivity-board.
-- [ ] Use wired or something instead of dunst for flatpak support.
 - [ ] Add wallpapers to repository.
 - [ ] Refactor/clean up the code in general.
 - [ ] Change all icons to material icons.
