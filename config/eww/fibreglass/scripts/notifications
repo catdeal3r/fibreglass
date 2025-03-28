@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ ! -d "~/.cache/notif_cache/" ]; then
+  mkdir ~/.cache/notif_cache/
+fi
+
+while true; do
+  json_dunst=$(dunstctl history)
+
+  notifications=$(echo "$json_dunst" | jq -r '.data[0][] |
+  "\(.body.data)\n\(.summary.data)\n\(.icon_path.data)\n\(.id.data)"')
+
+  if [ -z "$notifications" ]; then
+    echo ""
+  else
+    formatted_notifications=""
+
+    while IFS= read -r content && IFS= read -r title && IFS= read -r icon && IFS= read -r id; do
+      if [[ "$icon" == "" ]]; then
+        icon="/home/catdealer/.config/dunst/notification_icon.png"
+      fi
+      cp "$icon" "/home/catdealer/.cache/notif_cache/"
+      icon="/home/catdealer/.cache/notif_cache/$(echo $icon | xargs -n 1 basename)"
+      formatted_notifications="$formatted_notifications (notification_single :title \"$title\" :content \"$content\" :image \"$icon\" :id \"$id\")"
+    done <<<"$notifications"
+
+    echo "(box :orientation 'v' :space-evenly 'false' $formatted_notifications)"
+  fi
+
+  sleep 0.8
+done

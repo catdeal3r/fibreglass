@@ -1,0 +1,143 @@
+
+
+
+(defwidget notification_single_menu [?title ?content ?image ?id]
+(revealer :reveal true
+  :transition "crossfade"
+  (eventbox :onclick './fibreglass/scripts/notifManage --close ${id}'
+  (box :orientation 'h' 
+    :space-evenly 'false' 
+    :class "notif_box"
+    (box :style "background-image: url('${image}');"
+      :class 'notif_image'
+      :space-evenly 'false'
+      :vexpand 'false'
+      :halign 'start'
+      :valign 'center'
+    )
+    (box :orientation 'v'
+      :space-evenly 'false' 
+      (box :orientation 'h' 
+        :space-evenly 'false' 
+        (scroll :hexpand 'true' 
+          :hscroll 'true' 
+          :vscroll 'false' 
+          :width 320 
+          (label :halign 'start' 
+            :xalign 0 
+            :hexpand 'true' 
+            :class 'notif_sum' 
+            :text "${title}"
+          )
+        )
+        (button :halign 'end' 
+          :class 'notif_box_clear' 
+          :onclick './fibreglass/scripts/notifManage --close ${id}' 
+          '󰅖'
+        )
+      )
+      (label :wrap true 
+        :halign 'start' 
+        :class 'notif_body' 
+        :text "${content}"
+      )
+    )
+  )
+  )
+ )
+)
+
+
+(defwidget notificationsboxnc []
+  (box :orientation "v"
+    :width 260
+    :class "notif_main_box"
+    :space-evenly "false"
+    :spacing 1
+    (box :orientation "h"
+      :space-evenly "false"
+      (label :halign "start" :class "notif_box_title" :text "Notifications")
+      (button :halign "end" :class "notif_clear_button" :onclick "./fibreglass/scripts/notifManage --clear" "󰎟  Clear")
+    )
+    (scroll :height 520
+      (box :orientation "v" 
+		:space-evenly false
+		(for notif in {notifications.notifications}
+          (notification_single_menu
+			:title {notif.summary}
+			:content {notif.body}
+			:image {notif.image}
+            :id {notif.id}
+          )
+		)
+	  )
+    )
+  )
+)
+
+(defvar reloadstack 0)
+
+(defwidget quicknc []
+  (box :orientation "v"
+    :space-evenly "false"
+    :spacing 10
+    :class "quick-box-nc"
+    (stack :selected reloadstack
+	  :transition "slideup"
+	  :same-size true
+	  :class "reloadnc-reload"
+	  :duration "600ms"
+	  (eventbox :onhover "eww update reloadstack=1"
+	    (label :text "󰑓  Reload Programs")
+	  )
+	  (eventbox :onhoverlost "eww update reloadstack=0"
+	    (box :orientation "v"
+		  (box :orientation "h"
+	        (button :class "reload-buttons" :onclick "bspc wm -r" "  bspwm")
+	        (button :class "reload-buttons" :onclick "pkill -USR1 -x sxhkd" "  sxkhd")
+		  )
+		  (box :orientation "h"
+	        (button :class "reload-buttons" :onclick "eww reload" "󱁉   eww")
+		    (button :class "reload-buttons" :onclick "bash ~/scripts/tools/restart-otd &" "󰇞   otd-daemon")
+		  )
+		)
+	  )
+    )
+  )
+)
+
+(defwidget contentnc []
+  (box :orientation "v"
+    :space-evenly "false"
+    :class "nc-main-box"
+    :spacing 7
+    (notificationsboxnc)
+    (quicknc)
+  )
+)
+
+(defwidget hoverlostnc []
+  (eventbox :onhoverlost "./fibreglass/bar/scripts/open_notificationcenter.sh &"
+    (contentnc)
+  )
+)
+
+(defvar reveal_nc false)
+
+(defwindow notificationcenter
+  :monitor 1 
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore false
+  :geometry (geometry :x "-1.3%"
+              :y "-6.8%"
+              :width "30px"
+              :height "10%"
+              :anchor "bottom right")
+  (revealer :transition "slideup"
+	:reveal reveal_nc
+	:duration "250ms"
+	(contentnc)
+  )
+)
+
