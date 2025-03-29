@@ -1,0 +1,63 @@
+
+;; User info
+(defpoll uptime :interval "1m" "./fibreglass/scripts/uptime")
+(defpoll time-hour :interval "1s" "date +%I")
+(defpoll time-min :interval "1s" "date +%M")
+(defpoll time-pmam :interval "1s" "date +%p")
+(defpoll day :interval "1s" "date '+%d %B'")
+(defvar PFP "./fibreglass/assets/pfp.jpg")
+(defpoll user_name :interval "12h" "user=$(whoami); if [[ \"$user\" == \"catdealer\" ]]; then echo \"あらゆる猫のディーラー\"; else echo $user; fi")
+
+;; Battery info
+(defpoll battery_per :interval "1min" "cat /sys/class/power_supply/BAT0/capacity")
+(defpoll battery_class :interval "2s" "./fibreglass/scripts/battery --class")
+(defpoll battery_icon :interval "1s" "./fibreglass/scripts/battery --icon")
+(defpoll battery_icon_class :interval "1s" "./fibreglass/scripts/battery --class_icon")
+
+;; Bar workspaces
+(deflisten workspaces_classes :initial '["ws", "ws", "ws", "ws", "ws"]' "./fibreglass/scripts/workspaces.sh")
+
+;; Quick toggles
+(defpoll net_info :interval "300ms" "./fibreglass/scripts/Network --info")
+(defpoll blue_info :interval "300ms" "./fibreglass/scripts/Bluetooth --info")
+(defpoll night_info :interval "300ms" "./fibreglass/scripts/Nightmode --info")
+(defpoll dnd_info :interval "300ms" "./fibreglass/scripts/DND --info")
+
+;; Sliders
+(defpoll sliders-volume :interval "100ms" "amixer get Master | grep -oP '\\d+%' | head -1 | tr -d '%'")
+(defpoll sliders-brightness :interval "100ms" "brightnessctl i | grep -oP '(\\d+%)' | tr -d '% '")
+
+;; Music controls 
+(defpoll music-cover :interval "1s" "./fibreglass/scripts/music --cover")
+(defpoll music-title :interval "1s" "./fibreglass/scripts/music --title")
+(defpoll music-artist :interval "1s" "./fibreglass/scripts/music --artist")
+(defpoll playing-icon :interval "500ms" "./fibreglass/scripts/music --playing-icon")
+
+(defvar music-next-icon "./fibreglass/assets/next.png")
+(defvar music-back-icon "./fibreglass/assets/previous.png")
+
+;; Notifications
+(deflisten notifications :initial '{
+    "count": 0,
+    "dnd": false,
+    "notifications": [],
+    "popups": []
+    }'
+    "./fibreglass/scripts/notifCatch.py"
+)
+
+(defpoll notification_history :initial '{
+  "count": 0,
+  "dnd": false,
+  "notifications": [],
+  "popups": []
+  }'
+  :interval "500ms"
+  "cat ~/.cache/eww/notifications.json"
+)
+
+(include "./fibreglass/bar/eww.yuck")
+(include "./fibreglass/dashboard/eww.yuck")
+(include "./fibreglass/notificationcenter/eww.yuck")
+(include "./fibreglass/notifications/eww.yuck")
+(include "./fibreglass/keepopen/eww.yuck")

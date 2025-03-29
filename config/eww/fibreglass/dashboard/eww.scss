@@ -1,0 +1,309 @@
+
+.dashboard {
+  border-radius: 5px;
+  font-size: 1.4em;
+  color: $fg;
+}
+
+// Box styles
+.db-main-box {
+  background-color: $bg;
+  border-radius: $crounding;
+  margin: .5rem .5rem .5rem .5rem;
+  padding: .5em 1em .5em 1em;
+}
+
+.seperator-box {
+  background-color: $bg-alt-three; 
+  min-height: .2em; 
+  font-size: .1em; 
+  border-radius: 5px; 
+  margin-left: 1em; 
+  margin-right: 1em;
+}
+
+
+// User box styles
+.top-box-db {
+  background-color: $bg;
+  border-radius: $crounding; 
+  padding: 0 .25em 0 .25em;
+  margin: 0 .5em 0 .5em;
+}
+
+.top-box-db-two {
+  margin: 9px 10px 10px 10px;
+}
+
+.image-pfp-das {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 65px;
+  min-width: 65px;
+  border-radius: 25%; 
+  margin: 10px 10px 10px 0px;
+}
+
+.user-greeting-box {
+  margin: 0;
+}
+
+.user-greeting {
+  font-weight: 600;
+  font-size: .7em;
+}
+
+.uptime-text {
+  font-size: .6em;
+  font-weight: 600;
+  color: $accent;
+}
+
+.power-box-db {
+  padding: 0 .5em 0 .5em;
+  margin-left: 3em;
+  background-color: $bg;
+  border-radius: $crounding;
+}
+
+.power-box-button-db {
+  background-color: $bg;
+  color: $disab;
+  font-size: .9em;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.power-box-button-db:hover {
+  color: $accent;
+}
+
+.power-box-button-dan-db {
+  background-color: $bg;
+  color: $disab;
+  font-size: .8em;
+  margin-left: .5em;
+  padding: 0;
+  font-weight: 400;
+}
+
+.power-box-button-dan-db:hover {
+  color: $red;
+}
+
+// Tools Styles
+
+.tools-sec {
+  background-color: $bg;
+  border-radius: $crounding;
+  padding: 0em .5em 1em .5em;
+  margin: 0 0 0 0;
+}
+
+
+.tools-box {
+  background-color: $bg;
+  border-radius: $crounding;
+}
+
+
+$tools-box-buttons-rounding: $crounding;
+
+.tool-button {
+  padding: .5em;
+}
+
+.tool-button-text {
+  margin: .5em .5em .5em .5em;
+  min-width: 8em;
+  font-size: .5em;
+}
+
+.tool-btn-ani {
+
+&.tool-btn {
+  background-color: $accent;
+  color: $bg-alt;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: 1.1em;
+
+  button {
+    color: $bg-alt;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $accent;
+    margin-right: .3em;
+
+    label {
+      color: $bg-alt;
+      font-size: 1.1em;
+    }
+  }
+
+  .tool-btn-text {
+    color: $bg-alt;
+  }
+}
+
+&.no-tool-btn {
+  background-color: $bg-alt;
+  color: $disab;
+  border-radius: $tools-box-buttons-rounding;
+  font-size: 1.1em;
+
+  button {
+    color: $disab;
+    border-radius: $tools-box-buttons-rounding;
+    background-color: $bg-alt;
+    margin-right: .3em;
+
+    label {
+      color: $disab;
+      font-size: 1.1em;
+    }
+  }
+
+  button:hover {
+    color: $fg;
+
+    label {
+      color: $fg;
+    }
+  }
+
+  .tool-btn-text {
+    color: $disab
+  }
+}
+
+}
+
+
+// Music box styles
+.music-box-db {
+  border-radius: $crounding;
+  background-color: $bg;
+  margin: 0 .5em .15em .5em;
+
+  .music-box-two-db {
+    border-radius: $crounding;
+    background-color: $bg;
+    padding: 1em 1em 1em .5em;
+    margin: 0 0 0 .5em;
+
+    .music-cover-db {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 200px;
+      min-width: 400px;
+      border-radius: $crounding;
+      margin: 10px 10px 10px 0;
+    }
+
+    .music-title {
+      font-size: .9em;
+      font-weight: 600;
+    }
+
+    .music-artist {
+      font-size: .7em;
+      color: $accent
+    }
+
+    .music-buttons-box {
+      margin-bottom: 1.4em;
+    }
+
+    .music-play-button {
+      background-color: $bg;
+      color: $fg;
+      font-size: .7em;
+      margin-left: .6em;
+      min-width: 23px;
+      min-height: 23px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: $crounding;
+    }
+
+    .music-play-button:hover {
+      background-color: $bg-alt-two;
+    }
+
+    .music-nextback-button {
+      background-color: $bg;
+      color: $fg;
+      margin-left: .4em;
+      min-width: 20px;
+      min-height: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: $crounding;
+    }
+
+    .music-nextback-button:hover {
+      background-color: $bg-alt-two;
+    }
+  }
+}
+
+// Slider box styles
+
+.sliders-box {
+  border-radius: $crounding;
+  background-color: $bg;
+  padding: 0 0 1em 0;
+  margin: 0 .5em .25em .5em;
+}
+
+.sliders-text {
+  font-size: .65em;
+  margin-left: .8em;
+  margin-bottom: .2em;
+}
+
+
+// Volume
+
+.sliders-volume-db {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  trough {
+    padding: 0 .2em 0 .2em;
+    background-color: $bg-alt-two;
+    border-radius: $crounding;
+  }
+
+  highlight {
+    padding: .2em;
+    background-color: $accent;
+    border-radius: $crounding;
+  }
+}
+
+
+// Brightness
+
+.sliders-brightness-db {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  trough {
+    padding: 0 .2em 0 .2em;
+    background-color: $bg-alt-two;
+    border-radius: $crounding;
+  }
+
+  highlight {
+    padding: .2em;
+    background-color: $accent;
+    border-radius: $crounding;
+  }
+}
+
+
