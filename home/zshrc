@@ -6,8 +6,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add programs and scripts to the path
-path+=("/home/catdealer/.local/bin/")
-path+=("/home/catdealer/scripts/tools/")
+path+=("$HOME/.local/bin/")
+path+=("$HOME/scripts/")
 
 export path
 
@@ -26,7 +26,6 @@ autoload -U compinit && compinit
 # Add aliases
 alias c=clear
 alias ls="ls --color"
-alias banging\?="echo NARRHHHHHH;notify-send 'dOnT baNGG!!!' 'BANGING = NARRHHHHHH'"
 
 # Key bindings
 bindkey '^f' autosuggest-accept
@@ -59,8 +58,4 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 echo '\e[1 q'
-
-#if [ "$TMUX" = "" ]; then
- # tmux
-#fi
 
