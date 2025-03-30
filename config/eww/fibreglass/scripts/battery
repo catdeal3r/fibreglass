@@ -1,0 +1,40 @@
+#!/bin/bash
+
+battery_per=$(cat /sys/class/power_supply/BAT0/capacity)
+battery_state=$(cat /sys/class/power_supply/BAT0/status)
+
+get_class() {
+  if [[ "$battery_per" -gt "80" ]] || [[ "$battery_state" == "Charging" ]]; then
+    echo "battery-scale_green"
+  elif [[ "$battery_per" -gt "31" ]]; then
+    echo "battery-scale_orange"
+  else
+    echo "battery-scale_red"
+  fi
+}
+
+get_class_icon() {
+  if [[ "$battery_per" -lt "30" ]] && [[ "$battery_state" != "Charging" ]]; then
+    echo "battery-icon-red"
+  elif [[ "$battery_per" -lt "40" ]] && [[ "$battery_state" == "Charging" ]]; then
+    echo "battery-icon-green"
+  else
+    echo "battery-icon"
+  fi
+}
+
+get_icon() {
+  if [[ "$battery_state" == "Charging" ]] || [[ "$battery_state" == "Full" ]]; then
+    echo "󱐋"
+  elif [[ "$battery_per" -lt "30" ]]; then
+    echo "󱈸"
+  else
+    echo ""
+  fi
+}
+
+case $1 in
+	--class) get_class ;;
+	--class_icon) get_class_icon ;;
+	--icon) get_icon ;;
+esac

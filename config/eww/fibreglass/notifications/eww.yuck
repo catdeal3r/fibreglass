@@ -1,0 +1,81 @@
+
+(defwidget notification_single_popup [?title ?content ?image ?id ?time]
+(revealer :reveal { id != -121 }
+  :transition "slidedown"
+  (eventbox :onclick './fibreglass/scripts/notifManage --dismiss ${id}'
+  (box :orientation 'h' 
+    :space-evenly 'false' 
+    :class "notif_box"
+    (box :style "background-image: url('${image}');"
+      :class 'notif_image'
+      :space-evenly 'false'
+      :vexpand 'false'
+      :halign 'start'
+      :valign 'center'
+    )
+    (box :orientation 'v'
+      :space-evenly 'false' 
+      (box :orientation 'h' 
+        :space-evenly 'false' 
+        (scroll :hexpand 'true' 
+          :hscroll 'true' 
+          :vscroll 'false' 
+          :width 310 
+          (label :halign 'start' 
+            :xalign 0 
+            :hexpand 'true' 
+            :class 'notif_sum' 
+            :text "${title}"
+          )
+        )
+        (label :style "margin-right: .8em; font-size: 1em; margin-top: .9em; color: #848585;" :halign 'end' :text "${time}")
+        (button :halign 'end' 
+          :class 'notif_box_clear' 
+          :onclick './fibreglass/scripts/notifManage --dismiss ${id}' 
+          '󰅖'
+        )
+      )
+      (label :wrap true 
+        :halign 'start' 
+        :class 'notif_body' 
+        :text "${content}"
+      )
+    )
+  )
+  )
+ )
+)
+
+(defwindow currentnotificationsbox []
+  :monitor 1
+  :geometry (geometry :x "-1%"
+    :y "0px"
+    :width "0%"
+    :height "0%"
+    :anchor "top right"
+  )
+  :windowtype "dock"
+  :stacking "fg"
+  :wm-ignore "false"
+  (eventbox 
+    :onhoverlost { arraylength(notifications.popups) > 0 ? "" : "$(which eww) close currentnotificationsbox && $(which eww) open currentnotificationsbox --screen 0" }
+	(revealer :transition "slidedown"
+		:hexpand true
+		:reveal {arraylength(notifications.popups) > 0}
+		(box :orientation "h" :class "current_notif_box"
+			(box :orientation "v" 
+				:space-evenly false
+				(for notif in {[0, 1, 2, 3, 4]}
+					(notification_single_popup
+						:title { notif < arraylength(notifications.popups) ? notifications.popups[notif].summary : "" }
+						:content { notif < arraylength(notifications.popups) ? ( notifications.popups[notif].body == "null" ? "" : notifications.popups[notif].body ) : "" }
+						:image { notif < arraylength(notifications.popups) ? ( notifications.popups[notif].image == "null" ? "./fibreglass/assets/notification_icon.png" : notifications.popups[notif].image ) : "" }
+						:id { notif < arraylength(notifications.popups) ? notifications.popups[notif].id : -121 }
+						:time { notif < arraylength(notifications.popups) ? notifications.popups[notif].time : "" }
+					)
+				)
+			)
+		)
+	)
+  )
+)

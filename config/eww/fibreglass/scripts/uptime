@@ -1,0 +1,2 @@
+IFS=. read -r up _ < /proc/uptime;
+printf "%dD %dH %dM" "$((up / 60 / 60 / 24))" "$((up / 60 / 60 % 24))" "$((up / 60 % 60))";

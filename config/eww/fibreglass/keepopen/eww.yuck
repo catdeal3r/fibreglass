@@ -1,0 +1,15 @@
+
+
+(defwindow keepopen
+  :geometry (geometry :x "0%"
+    :y "0px"
+    :width "0%"
+    :height "0%"
+    :anchor "top right"
+  )
+  :windowtype "desktop"
+  :stacking "bg"
+  :wm-ignore "false"
+  (label :visible false
+  :text "${notifications} ${notification_history}")
+)

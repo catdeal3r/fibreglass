@@ -1,0 +1,42 @@
+#!/bin/bash
+
+cache_file=$HOME/.cache/$(whoami)/redshift_state
+
+mkdir -p "$(dirname "$cache_file")"
+[[ -f "$cache_file" ]] || echo Off >"$cache_file"
+
+get_state() {
+  cat "$cache_file"
+}
+
+disable_redshift() {
+  redshift -x >/dev/null 2>&1
+  echo Off >"$cache_file"
+}
+
+enable_redshift() {
+  redshift -x
+  redshift -O 4500
+  echo On >"$cache_file"
+}
+
+toggle() {
+  if [[ $(get_state) == "On" ]]; then
+    disable_redshift
+  else
+    enable_redshift
+  fi
+}
+
+get_icon() {
+  if [[ $(get_state) == "On" ]]; then
+    echo "󰤄"
+  else
+    echo "󰖙"
+  fi
+}
+
+case $1 in
+--info) echo "[\"$(get_icon)\",\"$(get_state)\"]" ;;
+--toggle) toggle ;;
+esac
