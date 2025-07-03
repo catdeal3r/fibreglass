@@ -2,7 +2,8 @@
 <div align="center">
 <img src=".github/icon.png" alt="fibreglass_icon" width="410" height="410">
 
-# Fibreglass
+# Fibreglass (v0.2)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Github&weight=600&size=35&duration=3500&pause=2000&color=FFFFFF&width=435&lines=Fibreglass+(v0.2))](https://github.com/dealerofallthecats/fibreglass)
 
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 ![stars](https://img.shields.io/github/stars/dealerofallthecats/fibreglass?color=74be88&style=for-the-badge&labelColor=1B1919)
@@ -56,19 +57,21 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 - [x] Make notifications. `v0.1`
 - [x] Create a splash screen `v0.1`
 - [x] Change all icons to material icons. `v0.1`
+- [x] Create basic dashboard. `v0.2`
+- [x] Work on notifications. `v0.2`
+- [x] Add button on bar to open the userboard. `v0.2`
+- [x] Change the fallback icon for notifications without an icon. `v0.2`
+- [x] Add support for getting colours from the wallpaper using matugen. `v0.2`
 
-### Still todo
-- [ ] Create userboard, notification center, and dashboard.
-- [ ] Add button on bar to open the userboard.
+### Todo
+- [ ] Create userboard, and tools menu.
 - [ ] Add wallpapers to repository.
 - [ ] Refactor/clean up the code in general.
 - [ ] Make lockscreen.
 - [ ] Add jgmenu/right click menu support.
 - [ ] Implement desktop icons.
 - [ ] Create settings menu.
-- [ ] Change the fallback icon for notifications without an icon.
 - [ ] Create search menu instead of using rofi.
-- [ ] Add support for getting colours from the wallpaper.
 - [ ] Add support for different ui theme (material, ascii, etc)
 
 ---
