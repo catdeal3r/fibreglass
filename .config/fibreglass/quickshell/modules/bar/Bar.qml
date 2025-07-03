@@ -1,5 +1,6 @@
 import Quickshell
 import Quickshell.Io
+import Quickshell.Widgets
 
 import QtQuick
 import QtQuick.Layouts
@@ -78,6 +79,22 @@ Scope {
 					anchors.topMargin: 5
 					anchors.leftMargin: 10
 					
+					ClippingWrapperRectangle {
+						radius: Appearance.borderRadius - 5
+						
+						Layout.rightMargin: 10
+									
+						Layout.preferredWidth: 30
+						Layout.preferredHeight: 30
+										
+						color: Colours.palette.surface_container
+						
+						IconImage {
+							anchors.centerIn: parent
+							source: "root:/assets/icon.png"
+						}
+					}
+					
 					Rectangle {
 						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
 						
@@ -85,7 +102,7 @@ Scope {
 						Layout.preferredHeight: 30
 						
 						radius: Appearance.borderRadius - 5
-						color: Colours.palette.surface_container_high
+						color: Colours.palette.surface_container
 						
 						Text {
 							anchors.centerIn: parent
@@ -101,8 +118,8 @@ Scope {
 							hoverEnabled: true
 							cursorShape: Qt.PointingHandCursor
 							
-							onEntered: parent.color = Colours.palette.surface_container_highest
-							onExited: parent.color = Colours.palette.surface_container_high
+							onEntered: parent.color = Colours.palette.surface_container_high
+							onExited: parent.color = Colours.palette.surface_container
 							//onClicked: banging
 						}
 					}

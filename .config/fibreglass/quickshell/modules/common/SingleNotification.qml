@@ -81,11 +81,9 @@ AniRectangle {
 					else return Qt.resolvedUrl(modelData.appIcon)
 				}
 			}
-			
-			
 		}
 		
-		Text {
+		Text { //backup image
 			Layout.leftMargin: 3
 			Layout.rightMargin: 5
 			
