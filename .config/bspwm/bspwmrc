@@ -1,0 +1,98 @@
+#!/usr/bin/sh
+
+alias fibreglass=$HOME/.config/fibreglass/scripts/fibreglass
+
+pgrep -x sxhkd >/dev/null || sxhkd & disown
+
+fibreglass --startQS
+sleep 0.4
+fibreglass --toggleBar
+fibreglass --toggleLS
+
+# Workspaces and monitors
+INTERNAL_MONITOR="eDP-1"
+EXTERNAL_MONITOR="HDMI-1"
+if [[ $(xrandr -q | grep "${EXTERNAL_MONITOR} connected") ]]; then
+  bspc monitor "$EXTERNAL_MONITOR" -d '1' '2' '3' '4'
+  bspc monitor "$INTERNAL_MONITOR" -d '5' 
+  bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
+else
+  bspc monitor "$INTERNAL_MONITOR" -d '1' '2' '3' '4' '5'
+fi
+
+# mount data drive
+if [[ $(findmnt -S /dev/sda1) ]]; then
+  echo "Already mounted"
+else
+  udisksctl mount -b /dev/sda1
+fi
+
+fibreglass --setConfig
+
+# config
+bspc config border_width 2 
+
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
+bspc config split_ratio 0.5
+bspc config borderless_monocle false
+bspc config gapless_monocle false
+
+# window rules
+bspc rule -a Windscribe state=floating
+bspc rule -a Windscribe2 state=floating
+bspc rule -a pavucontrol state=floating
+bspc rule -a org.gnome.Nautilus state=floating
+bspc rule -a feh state=floating
+bspc rule -a lxappearance state=floating
+bspc rule -a qt5ct state=floating
+bspc rule -a GParted state=floating
+bspc rule -a Gufw.py state=floating
+bspc rule -a spmp state=floating
+bspc rule -a io.github.josephmawa.Bella state=floating
+bspc rule -a pcmanfm state=floating
+bspc rule -a Thunar state=floating
+bspc rule -a Nemo state=floating
+
+# turn redshift on
+echo On >"$HOME/.cache/redshift_state"
+redshift -x
+redshift -O 4500
+
+# fix default cursor theme being weird
+
+xsetroot -cursor_name left_ptr
+
+# turn off wifi and bluetooth on startup
+bluetoothctl power off
+nmcli networking off
+
+# Open programs
+
+# open tablet driver
+~/scripts/tools/restart-otd &
+disown
+
+# keyboard handler
+if [[ $(pidof fcitx5) != "" ]]; then
+  killall fcitx5
+fi
+fcitx5 -d & disown
+
+# battery percentage warner
+pkill -f batterywarner.sh
+
+fibreglass --startHealthNotifier 
+
+# authentication agent
+if [[ $(pidof lxpolkit) != "" ]]; then
+  killall lxpolkit
+fi
+lxpolkit &
+disown
+
+sleep 2
+fibreglass --startPicom
+
+fibreglass --toggleLS
+fibreglass --toggleBar
