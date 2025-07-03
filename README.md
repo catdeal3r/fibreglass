@@ -33,7 +33,7 @@
 
 | **GTK Theming and Dashboard** |
 | ---- |
-| <img src=".github/setup2.png" alt="fibreglass_setup3"> |
+| <img src=".github/setup3.png" alt="fibreglass_setup3"> |
 
 
 | **Splash screen** |
