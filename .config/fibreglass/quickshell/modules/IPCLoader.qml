@@ -3,7 +3,7 @@ import Quickshell.Io
 
 import QtQuick
 import "root:/modules/bar"
-import "root:/modules/loadingscreen"
+import "root:/modules/loadingscreen"//
 import "root:/services"
 
 Scope {
