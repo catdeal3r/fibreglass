@@ -1,6 +1,6 @@
 <a name="top_marker"/>
 <div align="center">
-<img src=".github/icon.png" alt="fibreglass_icon" width="350" height="410">
+<img src=".github/icon.png" alt="fibreglass_icon" width="410" height="410">
 
 # Fibreglass
 
