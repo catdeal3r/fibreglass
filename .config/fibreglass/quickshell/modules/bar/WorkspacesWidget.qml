@@ -7,9 +7,11 @@ import "root:/config"
 import "root:/modules/bar"
 
 Rectangle {
+	id: root
 	width: layoutThingy.width + 25
 	height: 40
 	color: Colours.palette.surface_container
+	
 	
 	RowLayout {
 		id: layoutThingy

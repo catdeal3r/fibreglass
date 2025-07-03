@@ -70,18 +70,48 @@ Scope {
 				
 				RowLayout {
 					height: 10
-					spacing: 15
+					spacing: 10
 					anchors.left: parent.left
 					anchors.top: parent.top
 					
 					
 					anchors.topMargin: 5
 					anchors.leftMargin: 10
+					
+					Rectangle {
+						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+						
+						Layout.preferredWidth: 30
+						Layout.preferredHeight: 30
+						
+						radius: Appearance.borderRadius - 5
+						color: Colours.palette.surface_container_high
+						
+						Text {
+							anchors.centerIn: parent
+							text: "construction"
+							font.family: Appearance.iconFont
+							
+							color: Colours.palette.on_surface
+							font.pixelSize: 20
+						}
+						
+						MouseArea {
+							anchors.fill: parent
+							hoverEnabled: true
+							cursorShape: Qt.PointingHandCursor
+							
+							onEntered: parent.color = Colours.palette.surface_container_highest
+							onExited: parent.color = Colours.palette.surface_container_high
+							//onClicked: banging
+						}
+					}
 				
 					WorkspacesWidget {
+						id: workspaces
 						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
 					
-						Layout.preferredWidth: 260
+						Layout.preferredWidth: 300
 						Layout.preferredHeight: 30
 						radius: Appearance.borderRadius - 3
 					}
