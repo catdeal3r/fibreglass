@@ -1,0 +1,65 @@
+version = 3
+final_space = true
+
+[secondary_prompt]
+  template = '  '
+  foreground = 'magenta'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '  '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}#ffffff{{end}}']
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = '   {{ .Path }}'
+    foreground = 'white'
+    background = 'transparent'
+    type = 'path'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = '{{ div .Ms 1000 }}s 󱎫 '
+    foreground = 'white' 
+    background = 'transparent'
+    type = 'executiontime'
+
+    [blocks.segments.properties]
+      threshold = 1000
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' {{ if not .Error }}{{ .Percentage }} {{ .Icon }}{{ end }} '
+    foreground = 'white'
+    background = 'transparent'
+    type = 'battery'
+
+    [blocks.segments.properties]
+      charged_icon = '󰁹'
+      charging_icon = '󰂄'
+      discharging_icon = '󰂌'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' '
+    background = 'transparent'
+    type = 'text'
+    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}#ffffff{{end}}']

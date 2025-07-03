@@ -1,0 +1,25 @@
+[config.wallpaper]
+command = "feh"
+arguments = ["--bg-fill"]
+set = false
+
+
+[templates.quickshell]
+input_path = './templates/quickshell-colours.qml'
+output_path = '~/.config/fibreglass/quickshell/config/Colours.qml'
+
+[templates.gtk3]
+input_path = './templates/gtk-colours.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = './templates/gtk-colours.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.rofi]
+input_path = './templates/rofi-colours.rasi'
+output_path = '~/.config/fibreglass/rofi/custom/accent_rofi.rasi'
+
+[templates.bspwm]
+input_path = './templates/border-colors.sh'
+output_path = '~/.config/fibreglass/scripts/setBorders.sh'
