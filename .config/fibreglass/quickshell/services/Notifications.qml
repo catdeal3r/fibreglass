@@ -173,6 +173,14 @@ Singleton {
             notifFileView.setText(stringifyList(root.list));
         }
     }
+    
+    Connections {
+        target: notifServer
+
+        function onNotification(notification) {
+            notification.tracked = true;
+        }
+    }
 
     function discardNotification(id) {
         const index = root.list.findIndex((notif) => notif.id === id);
