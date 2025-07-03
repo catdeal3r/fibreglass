@@ -76,10 +76,7 @@ AniRectangle {
 			
 			IconImage {				
 				visible: (modelData.appIcon == "") ? false : true
-				source: {
-					if (modelData.appIcon == "") return "root:/assets/notification_icon.png"
-					else return Qt.resolvedUrl(modelData.appIcon)
-				}
+				source: Qt.resolvedUrl(modelData.appIcon)
 			}
 		}
 		

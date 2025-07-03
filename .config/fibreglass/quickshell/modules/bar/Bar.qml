@@ -91,6 +91,9 @@ Scope {
 						
 						IconImage {
 							anchors.centerIn: parent
+							
+							width: 20
+							height: 20
 							source: "root:/assets/icon.png"
 						}
 					}
