@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": 8,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "It's good for you.",
+    "image": "",
+    "summary": "Take a break",
+    "time": 1751518342830,
+    "urgency": "1"
+  },
+  {
+    "id": 9,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-07-03-17-19-10_1920x1080.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1751519954638,
+    "urgency": "1"
+  },
+  {
+    "id": 10,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "It's good for you.",
+    "image": "",
+    "summary": "Take a break",
+    "time": 1751520142838,
+    "urgency": "1"
+  }
+]
