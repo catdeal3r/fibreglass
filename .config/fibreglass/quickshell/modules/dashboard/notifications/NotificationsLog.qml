@@ -22,20 +22,60 @@ Rectangle {
 	anchors.topMargin: 10
 			
 	radius: Appearance.borderRadius
-	color: "transparent"
+	color: Colours.palette.surface
 	
 	property int notificationCount: Notifications.list.length
 	
 	ColumnLayout {
 		anchors.left: parent.left
 		anchors.leftMargin: (parent.width - 400) / 2
-	
-		/*Rectangle {
-			width: 400
-			height: 20
+		
+		RowLayout {
+			Layout.topMargin: 15
 			
-			Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-		}*/
+			Text {
+				color: Colours.palette.on_surface
+				text: "Notifications"
+				font.family: Appearance.font
+				font.pixelSize: 15
+				
+				font.weight: 600
+				
+				Layout.preferredWidth: 300
+			}
+		
+			Rectangle {
+				width: 100
+				height: 30
+				
+				radius: Appearance.borderRadius
+				color: Colours.palette.surface_container
+				
+				Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+				
+				Text {
+					anchors.centerIn: parent
+					color: Colours.palette.on_surface
+					text: "Clear all"
+					font.family: Appearance.font
+					font.pixelSize: 14
+					
+					Layout.preferredWidth: 300
+				}
+				
+				MouseArea {
+					anchors.fill: parent
+					
+					cursorShape: Qt.PointingHandCursor
+											
+					hoverEnabled: true
+										
+					onClicked: Notifications.discardAllNotifications()
+					onEntered: parent.color = Colours.palette.surface_container_high
+					onExited: parent.color = Colours.palette.surface_container
+				}
+			}
+		}
 
 		ListView {
 			id: notifList
@@ -55,6 +95,8 @@ Rectangle {
 			}
 					
 			Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+			Layout.topMargin: 10
+			
 			visible: (implicitWidth == 0) ? false : true
 						
 			spacing: 20
@@ -109,7 +151,7 @@ Rectangle {
 		
 			Text {
 				anchors.top: parent.top
-				anchors.topMargin: parent.Layout.preferredHeight / 2
+				anchors.topMargin: (parent.Layout.preferredHeight / 2) - 50
 			
 				anchors.right: parent.right
 				anchors.rightMargin: (parent.Layout.preferredWidth / 2) - 60

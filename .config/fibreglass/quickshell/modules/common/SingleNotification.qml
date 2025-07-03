@@ -57,6 +57,7 @@ AniRectangle {
 		spacing: 2
 						
 		ClippingWrapperRectangle { //image
+			visible: (modelData.appIcon == "") ? false : true
 			radius: Appearance.borderRadius
 						
 			Layout.alignment: root.expanded ? Qt.AlignLeft | Qt.AlignTop : Qt.AlignLeft
@@ -73,12 +74,35 @@ AniRectangle {
 							
 			color: "transparent"
 			
-			IconImage {						
-				source:{
+			IconImage {				
+				visible: (modelData.appIcon == "") ? false : true
+				source: {
 					if (modelData.appIcon == "") return "root:/assets/notification_icon.png"
 					else return Qt.resolvedUrl(modelData.appIcon)
 				}
 			}
+			
+			
+		}
+		
+		Text {
+			Layout.leftMargin: 3
+			Layout.rightMargin: 5
+			
+			Behavior on Layout.alignment {
+				PropertyAnimation {
+					duration: 200
+					easing.type: Easing.InSine
+				}
+			}
+			
+			visible: (modelData.appIcon == "") ? true : false
+			text: "chat"
+				
+			color: Colours.palette.on_surface
+									
+			font.family: Appearance.iconFont
+			font.pixelSize: 30
 		}
 					
 		ColumnLayout { //content
