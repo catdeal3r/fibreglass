@@ -58,11 +58,64 @@
     "id": 55,
     "actions": [],
     "appIcon": "",
+    "appName": "",
+    "body": "",
+    "image": "",
+    "summary": "",
+    "time": 1751586094825,
+    "urgency": "normal"
+  },
+  {
+    "id": 56,
+    "actions": [],
+    "appIcon": "/run/media/catdealer/Data/Pictures/drawn_cat_pfp.png",
+    "appName": "notify-send",
+    "body": "I hope your morning is going well! Hehe this is testing truncation and wrapping! Have fun! l;ksadhfsdjf;sdklfjklasd;jfklsdjf;klasdjflsdjf;ljasdfklajsldkfjsldfj;klasjf;klsjf;klsdjfklsjdafklsjfklsafd",
+    "image": "",
+    "summary": "Hello catdealer",
+    "time": 1751586340176,
+    "urgency": "1"
+  },
+  {
+    "id": 57,
+    "actions": [],
+    "appIcon": "",
+    "appName": "",
+    "body": "",
+    "image": "",
+    "summary": "",
+    "time": 1751586358045,
+    "urgency": "normal"
+  },
+  {
+    "id": 58,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-07-04-11-45-58_1920x1080.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1751586362605,
+    "urgency": "1"
+  },
+  {
+    "id": 59,
+    "actions": [],
+    "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1751586094825,
+    "time": 1751586394795,
     "urgency": "1"
   }
 ]
