@@ -29,9 +29,9 @@
 
 ### Photos
 
-| **Notifications and bar** |
+| **GTK Theming and Dashboard** |
 | ---- |
-| <img src=".github/setup1.png" alt="fibreglass_setup1"> |
+| <img src=".github/setup3.png" alt="fibreglass_setup3"> |
 
 
 | **Splash screen** |
