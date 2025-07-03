@@ -31,21 +31,11 @@ Scope {
 		}
 	}
 	
-	Loader {
-		id: desktopLoader
-		active: root.isDesktopOpen
-		
-		sourceComponent: Desktop {
-			onFinished: root.isDesktopOpen = false
-		}
-	}
-	
 	IpcHandler {
 		target: "root"
 				
 		function toggleLoadingScreen(): void { root.isLoadingScreenOpen = !root.isLoadingScreenOpen }
 		function toggleBar(): void { root.isBarOpen = !root.isBarOpen }
-		function toggleDesktop(): void { root.isDesktopOpen = !root.isDesktopOpen }
 		function clearNotif(): void { Notifications.discardAllNotifications() }
 	}
 }
