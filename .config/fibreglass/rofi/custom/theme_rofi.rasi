@@ -1,0 +1,18 @@
+
+* {
+  bg: #101012;
+  bg-alt: #161719;
+
+  fg: #c5c8c9;
+  fg-alt: #000000;
+  //accent: #7ba5dd;
+
+  text-color: #000000;
+
+  background-color: @bg;
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 15;
+}

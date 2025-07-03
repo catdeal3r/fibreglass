@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# vars
+wallpaper=$1
+QUICKSHELL_ACCENT="$HOME/.config/fibreglass/quickshell/config/Accent.qml"
+ROFI_ACCENT="$HOME/.config/fibreglass/rofi/custom/accent_rofi.rasi"
+wallpaperm="$HOME/.config/fibreglass/wall.png"
+
+# check whether wallpaper exists
+if [[ -f "$wallpaper" ]]; then
+  echo "[i] Wallpaper exists, continuing .... "
+else
+  echo "Failed to stat wallpaper."
+  exit
+fi
+
+cp "$wallpaper" "$wallpaperm"
+
+# set wallpaper & update colour schemes
+matugen image $wallpaperm
+
+$HOME/.config/fibreglass/scripts/setBorders.sh
+
+# update lockscreen
+lockbspwm --bg "$wallpaperm"
+
+# update startup wallpaper script
+echo "feh --bg-fill '$wallpaperm' & disown" >$HOME/.config/fibreglass/scripts/wallset_script
+echo "[i] Updated wallpaper startup script"
+
+notify-send "Wallpaper theme set!" "Log out and in for the gtk4 theme to take effect."
