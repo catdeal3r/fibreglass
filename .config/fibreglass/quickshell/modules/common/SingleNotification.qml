@@ -301,8 +301,7 @@ AniRectangle {
 			Layout.preferredWidth: 20
 			Layout.leftMargin: 20
 								
-			Rectangle {
-								
+			Rectangle {	
 				Layout.alignment: Qt.AlignBottom
 				id: expandBtn
 				width: 25
@@ -310,6 +309,13 @@ AniRectangle {
 				color: Colours.palette.surface
 				radius: 50
 				visible: true 
+				
+				Behavior on color {
+					PropertyAnimation {
+						duration: 150
+						easing.type: Easing.InSine
+					}
+				}
 									
 				Text {
 					anchors.centerIn: parent

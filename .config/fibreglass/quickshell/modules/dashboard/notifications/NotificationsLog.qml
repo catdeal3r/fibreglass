@@ -41,11 +41,11 @@ Rectangle {
 				
 				font.weight: 600
 				
-				Layout.preferredWidth: 300
+				Layout.preferredWidth: 290
 			}
 		
 			Rectangle {
-				width: 100
+				width: 110
 				height: 30
 				
 				radius: Appearance.borderRadius
@@ -53,14 +53,29 @@ Rectangle {
 				
 				Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
 				
-				Text {
+				Behavior on color {
+					PropertyAnimation {
+						duration: 150
+						easing.type: Easing.InSine
+					}
+				}
+				
+				RowLayout {
 					anchors.centerIn: parent
-					color: Colours.palette.on_surface
-					text: "Clear all"
-					font.family: Appearance.font
-					font.pixelSize: 14
 					
-					Layout.preferredWidth: 300
+					Text {
+						color: Colours.palette.on_surface
+						text: "clear_all"
+						font.family: Appearance.iconFont
+						font.pixelSize: 20
+					}
+				
+					Text {
+						color: Colours.palette.on_surface
+						text: "Clear all"
+						font.family: Appearance.font
+						font.pixelSize: 14
+					}
 				}
 				
 				MouseArea {
