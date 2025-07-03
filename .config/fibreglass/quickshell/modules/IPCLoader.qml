@@ -4,7 +4,6 @@ import Quickshell.Io
 import QtQuick
 import "root:/modules/bar"
 import "root:/modules/loadingscreen"
-import "root:/modules/desktop"
 import "root:/services"
 
 Scope {
