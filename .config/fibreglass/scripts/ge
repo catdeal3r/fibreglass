@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function commit_and_stow() {
+	cd $HOME/fibreglass
+	git add .
+	git commit -m $1
+	stow --adopt .
+}
+
+function push() {
+	cd $HOME/fibreglass
+	git push origin main
+}
+
+case $1 in
+cs) commit_and_stow $2 ;;
+p) push ;;
+esac
