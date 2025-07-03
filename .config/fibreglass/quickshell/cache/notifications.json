@@ -117,5 +117,16 @@
     "summary": "Protect your eyes.",
     "time": 1751586394795,
     "urgency": "1"
+  },
+  {
+    "id": 60,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751586694788,
+    "urgency": "1"
   }
 ]

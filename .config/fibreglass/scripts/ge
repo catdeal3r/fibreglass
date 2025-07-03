@@ -24,7 +24,13 @@ function push() {
 	printf "[i] Complete.\n"
 }
 
+function both() {
+	commit_and_stow $1
+	push
+}
+
 case $1 in
 cs) commit_and_stow $2 ;;
 p) push ;;
+csp) both $2 ;;
 esac
