@@ -84,6 +84,8 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 - [Failed](https://github.com/Failedex) (again), for widget design.
 - [Rayhan](https://github.com/raexera), for widget design and colours.
 - [Tokyob0t](https://github.com/tokyob0t), for widget design.
+- [Soramane](https://github.com/soramanew), for widget design and colour schemes.
+- [End-4](https://github.com/end-4), for widget design.
 
 ---
 *[Back to top](#top_marker)*
