@@ -35,7 +35,7 @@ Scope {
 				right: 10
 			}
 			
-			aboveWindows: true 
+			aboveWindows: false 
 			color: "transparent"
 			
 			implicitHeight: 750
