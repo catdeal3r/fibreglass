@@ -1,7 +1,8 @@
 pragma Singleton
 pragma ComponentBehavior: Bound
 
-import "root:/config"
+import "root:/modules/common"
+import "root:/"
 import QtQuick
 import Quickshell
 import Quickshell.Io
@@ -64,7 +65,7 @@ Singleton {
     property var filePath: Directories.notificationsPath
     property list<Notif> list: []
     property var popupList: list.filter((notif) => notif.popup);
-    property bool popupInhibited: false
+    property bool popupInhibited: (GlobalStates?.sidebarRightOpen ?? false) || silent
     property var latestTimeForApp: ({})
     Component {
         id: notifComponent
@@ -78,10 +79,6 @@ Singleton {
     function stringifyList(list) {
         return JSON.stringify(list.map((notif) => notifToJSON(notif)), null, 2);
     }
-    
-    function toggleDND() {
-		root.popupInhibited = !root.popupInhibited
-	}
     
     onListChanged: {
         // Update latest time for each app
@@ -122,7 +119,6 @@ Singleton {
         });
         return groups;
     }
-    
 
     property var groupsByAppName: groupsForList(root.list)
     property var popupGroupsByAppName: groupsForList(root.popupList)
@@ -171,14 +167,6 @@ Singleton {
             root.notify(newNotifObject);
             // console.log(notifToString(newNotifObject));
             notifFileView.setText(stringifyList(root.list));
-        }
-    }
-    
-    Connections {
-        target: notifServer
-
-        function onNotification(notification) {
-            notification.tracked = true;
         }
     }
 
@@ -230,9 +218,9 @@ Singleton {
             action.invoke()
         } 
         else {
-			console.log("Notification not found in server: " + id)
-		}
-        root.discard(id);
+            console.log("Notification not found in server: " + id)
+        }
+        root.discardNotification(id);
     }
 
     function triggerListChange() {
@@ -246,10 +234,6 @@ Singleton {
     Component.onCompleted: {
         refresh()
     }
-    
-    function dummyInit() {
-		console.log("Init Notification Server")
-	}
 
     FileView {
         id: notifFileView
@@ -259,7 +243,7 @@ Singleton {
             root.list = JSON.parse(fileContents).map((notif) => {
                 return notifComponent.createObject(root, {
                     "id": notif.id,
-                    "actions": notif.actions,
+                    "actions": [], // Notification actions are meaningless if they're not tracked by the server or the sender is dead
                     "appIcon": notif.appIcon,
                     "appName": notif.appName,
                     "body": notif.body,

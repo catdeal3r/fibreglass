@@ -50,7 +50,7 @@ AniRectangle {
 						
 		anchors.topMargin: 13
 		anchors.bottomMargin: 13
-		anchors.leftMargin: 10
+		anchors.leftMargin: 5
 		anchors.rightMargin: 10
 						
 		implicitWidth: 400
@@ -61,7 +61,7 @@ AniRectangle {
 			radius: Appearance.borderRadius
 						
 			Layout.alignment: root.expanded ? Qt.AlignLeft | Qt.AlignTop : Qt.AlignLeft
-			Layout.leftMargin: 5
+			Layout.leftMargin: 0
 			Layout.preferredWidth: 50
 			Layout.preferredHeight: 50
 			
@@ -80,9 +80,10 @@ AniRectangle {
 			}
 		}
 		
-		Text { //backup image
-			Layout.leftMargin: 3
-			Layout.rightMargin: 5
+		Text { //backup image			
+			Layout.alignment: root.expanded ? Qt.AlignLeft | Qt.AlignTop : Qt.AlignLeft
+			Layout.leftMargin: 5
+			Layout.rightMargin: 10
 			
 			Behavior on Layout.alignment {
 				PropertyAnimation {
@@ -97,14 +98,14 @@ AniRectangle {
 			color: Colours.palette.on_surface
 									
 			font.family: Appearance.iconFont
-			font.pixelSize: 30
+			font.pixelSize: 35
 		}
 					
 		ColumnLayout { //content
 			id: textWrapper
 						
 			Layout.alignment: Qt.AlignLeft
-			Layout.preferredWidth: 260
+			Layout.preferredWidth: 240
 			Layout.leftMargin: 10
 			
 			RowLayout { //expanded bit
@@ -245,7 +246,7 @@ AniRectangle {
 				font.family: Appearance.font
 									
 				elide: Qt.ElideRight
-				elideWidth: 265
+				elideWidth: 240
 			}
 			
 			ScrollView {
@@ -256,7 +257,7 @@ AniRectangle {
 				}
 				Layout.alignment: Qt.AlignLeft
 				
-				implicitWidth: 265
+				implicitWidth: 240
 				implicitHeight: 35
 				
 				ScrollBar.horizontal: ScrollBar {
