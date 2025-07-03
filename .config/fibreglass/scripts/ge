@@ -2,18 +2,26 @@
 
 function commit_and_stow() {
 	cd $HOME/fibreglass
+
+	printf "[*] Attemping to add ...\n"
 	git add .
-	printf "[i] Attemped to add\n"
+	printf "[i] Complete.\n"
+
+	printf "[*] Attemping to commit ...\n"
 	git commit -m $1
-	printf "[i] Attemped to commit\n"
+	printf "[i] Complete.\n"
+
+	printf "[*] Attemping to stow ...\n"
 	stow --adopt .
-	printf "[i] Attemped to stow\n"
+	printf "[i] Complete.\n"
 }
 
 function push() {
 	cd $HOME/fibreglass
+
+	printf "[*] Attemping to push ...\n"
 	git push origin main
-	printf "[i] Attemped to push\n"
+	printf "[i] Complete.\n"
 }
 
 case $1 in
