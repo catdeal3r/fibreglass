@@ -11,7 +11,6 @@ import "root:/modules"
 import "root:/modules/bar"
 import "root:/config"
 
-
 Scope {
 	id: root
 	function runNotify() {
@@ -21,7 +20,7 @@ Scope {
 	
 	SoundEffect {
 		id: effectSound
-		source: "root:/assets/break_notif.wav" // Path to your sound file
+		source: "root:/assets/break_notif.wav"
 	}
 	
 	 Timer {
