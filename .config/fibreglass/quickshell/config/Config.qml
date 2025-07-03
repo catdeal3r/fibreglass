@@ -8,5 +8,5 @@ import "root:/config"
 Singleton {
 	id: root
 	
-	readonly property int minutesBetweenHealthNotif: 15
+	readonly property int minutesBetweenHealthNotif: 5
 }
