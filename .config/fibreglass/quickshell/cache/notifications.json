@@ -1,13 +1,1 @@
-[
-  {
-    "id": 1,
-    "actions": [],
-    "appIcon": "/run/media/catdealer/Data/Pictures/drawn_cat_pfp.png",
-    "appName": "notify-send",
-    "body": "I hope your morning is going well! Hehe this is testing truncation and wrapping! Have fun! l;ksadhfsdjf;sdklfjklasd;jfklsdjf;klasdjflsdjf;ljasdfklajsldkfjsldfj;klasjf;klsjf;klsdjfklsjdafklsjfklsafd",
-    "image": "",
-    "summary": "Hello catdealer",
-    "time": 1751525905371,
-    "urgency": "1"
-  }
-]
+[]
