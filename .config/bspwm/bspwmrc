@@ -82,8 +82,6 @@ fcitx5 -d & disown
 # battery percentage warner
 pkill -f batterywarner.sh
 
-fibreglass --startHealthNotifier 
-
 # authentication agent
 if [[ $(pidof lxpolkit) != "" ]]; then
   killall lxpolkit

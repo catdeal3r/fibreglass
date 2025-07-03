@@ -5,6 +5,7 @@ import QtQuick
 import "modules"
 import "modules/dashboard"
 import "modules/notificationslist"
+import "modules/eyeprotection"
 import "services"
 
 Scope {
@@ -16,4 +17,5 @@ Scope {
 	
 	NotificationList {}
 	Dashboard {}
+	EyeProtection {}
 }
