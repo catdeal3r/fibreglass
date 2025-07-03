@@ -3,13 +3,17 @@
 function commit_and_stow() {
 	cd $HOME/fibreglass
 	git add .
+	printf "[i] Attemped to add\n"
 	git commit -m $1
+	printf "[i] Attemped to commit\n"
 	stow --adopt .
+	printf "[i] Attemped to stow\n"
 }
 
 function push() {
 	cd $HOME/fibreglass
 	git push origin main
+	printf "[i] Attemped to push\n"
 }
 
 case $1 in
