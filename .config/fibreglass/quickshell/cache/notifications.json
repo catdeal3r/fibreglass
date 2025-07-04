@@ -68,13 +68,13 @@
   {
     "id": 56,
     "actions": [],
-    "appIcon": "/run/media/catdealer/Data/Pictures/drawn_cat_pfp.png",
-    "appName": "notify-send",
-    "body": "I hope your morning is going well! Hehe this is testing truncation and wrapping! Have fun! l;ksadhfsdjf;sdklfjklasd;jfklsdjf;klasdjflsdjf;ljasdfklajsldkfjsldfj;klasjf;klsjf;klsdjfklsjdafklsjfklsafd",
+    "appIcon": "",
+    "appName": "",
+    "body": "",
     "image": "",
-    "summary": "Hello catdealer",
+    "summary": "",
     "time": 1751586340176,
-    "urgency": "1"
+    "urgency": "normal"
   },
   {
     "id": 57,
@@ -111,12 +111,12 @@
     "id": 59,
     "actions": [],
     "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "appName": "",
+    "body": "",
     "image": "",
-    "summary": "Protect your eyes.",
+    "summary": "",
     "time": 1751586394795,
-    "urgency": "1"
+    "urgency": "normal"
   },
   {
     "id": 60,
@@ -133,12 +133,12 @@
     "id": 61,
     "actions": [],
     "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "appName": "",
+    "body": "",
     "image": "",
-    "summary": "Protect your eyes.",
+    "summary": "",
     "time": 1751586994806,
-    "urgency": "1"
+    "urgency": "normal"
   },
   {
     "id": 62,
@@ -149,6 +149,127 @@
     "image": "",
     "summary": "Protect your eyes.",
     "time": 1751587294799,
+    "urgency": "1"
+  },
+  {
+    "id": 63,
+    "actions": [],
+    "appIcon": "",
+    "appName": "",
+    "body": "",
+    "image": "",
+    "summary": "",
+    "time": 1751587594797,
+    "urgency": "normal"
+  },
+  {
+    "id": 64,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751587894802,
+    "urgency": "1"
+  },
+  {
+    "id": 65,
+    "actions": [],
+    "appIcon": "",
+    "appName": "",
+    "body": "",
+    "image": "",
+    "summary": "",
+    "time": 1751588194810,
+    "urgency": "normal"
+  },
+  {
+    "id": 66,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751603926009,
+    "urgency": "1"
+  },
+  {
+    "id": 67,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751604226005,
+    "urgency": "1"
+  },
+  {
+    "id": 93,
+    "actions": [],
+    "appIcon": "",
+    "appName": "System",
+    "body": "Update started ...",
+    "image": "",
+    "summary": "Update",
+    "time": 1751604667842,
+    "urgency": "1"
+  },
+  {
+    "id": 94,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751605141728,
+    "urgency": "1"
+  },
+  {
+    "id": 95,
+    "actions": [],
+    "appIcon": "",
+    "appName": "",
+    "body": "",
+    "image": "",
+    "summary": "",
+    "time": 1751605703789,
+    "urgency": "normal"
+  },
+  {
+    "id": 96,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751606041697,
+    "urgency": "1"
+  },
+  {
+    "id": 97,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751606941693,
+    "urgency": "1"
+  },
+  {
+    "id": 98,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751607841687,
     "urgency": "1"
   }
 ]
