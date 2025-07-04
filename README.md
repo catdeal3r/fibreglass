@@ -3,7 +3,7 @@
 <img src=".github/icon.png" alt="fibreglass_icon" width="410" height="410">
 
 # Fibreglass (v0.2)
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Roboto&weight=400&size=35&duration=3500&pause=2000&color=FFFFFF&width=435&lines=Fibreglass+(v0.2))](https://github.com/dealerofallthecats/fibreglass)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Roboto&weight=400&size=35&duration=3500&pause=2000&color=FFFFFF&center=true&vCenter=true&width=435&lines=Fibreglass+(v0.2))](https://github.com/dealerofallthecats/fibreglass)
 
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 ![stars](https://img.shields.io/github/stars/dealerofallthecats/fibreglass?color=74be88&style=for-the-badge&labelColor=1B1919)
