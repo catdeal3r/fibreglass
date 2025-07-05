@@ -74,20 +74,52 @@ Rectangle {
 				}
 			
 				RowLayout {
-					anchors.fill: parent
+					anchors.centerIn: parent
 					
-					Text {
-						color: Colours.palette.on_surface
-						text: "hello"
+					width: parent.width - 50
+					height: parent.height
+					
+					QuickActionButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "replay"
+						
+						toRun: () => Quickshell.execDetached(["reboot"])
+					}
+					
+					QuickActionButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "settings"
+					}
+					
+					QuickActionButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "settings"
+					}
+					
+					QuickActionButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "settings"
+					}
+						
+					QuickActionButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "mode_off_on"
+						
+						toRun: () => Quickshell.execDetached(["shutdown"])
 					}
 				}
 			
 			}
 			
 			RowLayout {
-				implicitHeight: !base.isPowermenuOpen ? 150 : 0
+				implicitHeight: 150
 				
-				visible: (implicitHeight == 0) ? false : true
+				visible: !base.isPowermenuOpen
 				
 				Behavior on implicitHeight {
 					PropertyAnimation {
