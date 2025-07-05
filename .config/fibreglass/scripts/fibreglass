@@ -53,6 +53,13 @@ function toggleLoadingScreen()
 	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleLoadingScreen
 }
 
+function toggleSettings()
+{
+	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleSettings
+}
+
+
+
 case $1 in
 --startQS) startQS ;;
 --debug) startQSDebug ;;
@@ -61,4 +68,5 @@ case $1 in
 --startPicom) startPicom ;;
 --toggleBar) toggleBar ;;
 --toggleLS) toggleLoadingScreen ;;
+--toggleSettings) toggleSettings ;;
 esac

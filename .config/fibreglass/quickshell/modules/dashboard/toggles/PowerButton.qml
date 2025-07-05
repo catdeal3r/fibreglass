@@ -64,7 +64,6 @@ Rectangle {
 			onEntered: {
 				root.isHovered = true
 				base.isPowermenuOpen = true
-				console.log(base.isPowermenuOpen)
 			}
 			
 			onExited: root.isHovered = false

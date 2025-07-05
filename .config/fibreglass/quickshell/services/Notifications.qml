@@ -232,7 +232,7 @@ Singleton {
         else {
 			console.log("Notification not found in server: " + id)
 		}
-        root.discard(id);
+        root.discardNotification(id);
     }
 
     function triggerListChange() {

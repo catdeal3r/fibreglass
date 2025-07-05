@@ -13,6 +13,8 @@ Scope {
   
 		FloatingWindow {
 			id: settingsWindow
+			
+			minimumSize: "100x100"
 		}
 	}
 }

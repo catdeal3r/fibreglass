@@ -4,13 +4,14 @@ import Quickshell.Io
 import QtQuick
 import "root:/modules/bar"
 import "root:/modules/loadingscreen"
+import "root:/modules/settings"
 import "root:/services"
 
 Scope {
 	id: root
 	property bool isLoadingScreenOpen: false
 	property bool isBarOpen: true
-	property bool isDesktopOpen: false
+	property bool isSettingsOpen: true
 	
 	Loader {
 		id: barLoader
@@ -30,11 +31,21 @@ Scope {
 		}
 	}
 	
+	Loader {
+		id: settingsLoader
+		active: root.isLoadingScreenOpen
+		
+		sourceComponent: SettingsWindow {
+			onFinished: root.isSettingsOpen = false
+		}
+	}
+	
 	IpcHandler {
 		target: "root"
 				
 		function toggleLoadingScreen(): void { root.isLoadingScreenOpen = !root.isLoadingScreenOpen }
 		function toggleBar(): void { root.isBarOpen = !root.isBarOpen }
+		function toggleSettings(): void { root.isSettingsOpen = !root.isSettingsOpen }
 		function clearNotif(): void { Notifications.discardAllNotifications() }
 	}
 }
