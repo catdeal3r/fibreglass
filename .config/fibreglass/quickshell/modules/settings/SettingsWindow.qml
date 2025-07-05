@@ -8,13 +8,12 @@ Scope {
 	signal finished();
 	id: root
 	
-	Variants {
-		model: Quickshell.screens;
-  
-		FloatingWindow {
-			id: settingsWindow
+	FloatingWindow {
+		id: settingsWindow
 			
-			minimumSize: "100x100"
-		}
+		minimumSize: "100x100"
+		maximumSize: "101x101"
+		
+		color: Colours.palette.surface
 	}
 }
