@@ -53,6 +53,7 @@ bspc rule -a io.github.josephmawa.Bella state=floating
 bspc rule -a pcmanfm state=floating
 bspc rule -a Thunar state=floating
 bspc rule -a Nemo state=floating
+bspc rule -a Quickshell state=floating
 
 # turn redshift on
 echo On >"$HOME/.cache/redshift_state"

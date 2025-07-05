@@ -40,7 +40,7 @@ Scope {
 				x: maskId.x
 				y: maskId.y
 				width: maskId.implicitWidth
-				height: maskId.implicitHeight
+				height: (notificationCount > 0) ? 400 : 1
 			}
 
 			ListView {

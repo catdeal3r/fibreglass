@@ -11,7 +11,7 @@ Scope {
 	id: root
 	property bool isLoadingScreenOpen: false
 	property bool isBarOpen: true
-	property bool isSettingsOpen: true
+	property bool isSettingsOpen: false
 	
 	Loader {
 		id: barLoader
@@ -33,7 +33,7 @@ Scope {
 	
 	Loader {
 		id: settingsLoader
-		active: root.isLoadingScreenOpen
+		active: root.isSettingsOpen
 		
 		sourceComponent: SettingsWindow {
 			onFinished: root.isSettingsOpen = false

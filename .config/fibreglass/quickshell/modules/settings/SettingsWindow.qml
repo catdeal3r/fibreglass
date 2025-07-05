@@ -11,7 +11,7 @@ Scope {
 	FloatingWindow {
 		id: settingsWindow
 			
-		minimumSize: "100x100"
+		minimumSize: "400x100"
 		maximumSize: "101x101"
 		
 		color: Colours.palette.surface
