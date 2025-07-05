@@ -53,12 +53,6 @@ Rectangle {
 			radius: Appearance.borderRadius
 			color: Colours.palette.surface
 			
-			MouseArea {
-				anchors.fill: parent
-				hoverEnabled: false
-						
-				onExited: base.isPowermenuOpen = false
-			}
 			
 			Rectangle {
 				visible: base.isPowermenuOpen
@@ -72,6 +66,16 @@ Rectangle {
 					
 				anchors.fill: parent
 				color: "transparent"
+				
+				
+				MouseArea {
+					height: parent.height
+					width: parent.width
+					
+					hoverEnabled: true
+						
+					onExited: base.isPowermenuOpen = false
+				}
 			
 			
 				RowLayout {
@@ -79,12 +83,6 @@ Rectangle {
 					
 					width: parent.width - 50
 					height: parent.height
-					
-					PowerButton {
-						Layout.alignment: Qt.AlignCenter
-						
-						iconName: "mode_off_on"
-					}
 					
 					PowerButton {
 						Layout.alignment: Qt.AlignCenter
@@ -110,6 +108,14 @@ Rectangle {
 						colourHovered: Appearance.colours.red
 						
 						toRun: () => Quickshell.execDetached(["reboot"])
+					}
+					
+					PowerButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "warning"
+						
+						colourHovered: Appearance.colours.red
 					}
 						
 					PowerButton {
@@ -222,8 +228,6 @@ Rectangle {
 					}
 				}
 			}
-				
-			Item {}
 		}
 	}
 }

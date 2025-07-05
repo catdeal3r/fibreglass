@@ -9,7 +9,7 @@ import Quickshell.Widgets
 
 import "root:/config"
 import "root:/modules/common"
-
+import "root:/modules/dashboard"
 
 Rectangle {
 	id: root
@@ -64,6 +64,7 @@ Rectangle {
 			onEntered: {
 				root.isHovered = true
 				base.isPowermenuOpen = true
+				console.log(base.isPowermenuOpen)
 			}
 			
 			onExited: root.isHovered = false
