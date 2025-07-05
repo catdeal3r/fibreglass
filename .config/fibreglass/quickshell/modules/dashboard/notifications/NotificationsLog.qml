@@ -45,7 +45,7 @@ Rectangle {
 			}
 		
 			Rectangle {
-				width: 110
+				width: 90
 				height: 30
 				
 				radius: Appearance.borderRadius
@@ -72,7 +72,7 @@ Rectangle {
 				
 					Text {
 						color: Colours.palette.on_surface
-						text: "Clear all"
+						text: "Clear"
 						font.family: Appearance.font
 						font.pixelSize: 14
 					}

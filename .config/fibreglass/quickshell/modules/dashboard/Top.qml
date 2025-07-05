@@ -113,7 +113,7 @@ Rectangle {
 					PowerButton {
 						Layout.alignment: Qt.AlignCenter
 						
-						iconName: "warning"
+						iconName: "schedule"
 						
 						colourHovered: Appearance.colours.red
 					}

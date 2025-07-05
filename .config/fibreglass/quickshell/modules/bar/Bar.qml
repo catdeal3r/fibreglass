@@ -79,25 +79,6 @@ Scope {
 					anchors.topMargin: 5
 					anchors.leftMargin: 10
 					
-					ClippingWrapperRectangle {
-						radius: Appearance.borderRadius - 5
-						
-						Layout.rightMargin: 10
-									
-						Layout.preferredWidth: 30
-						Layout.preferredHeight: 30
-										
-						color: Colours.palette.surface_container
-						
-						IconImage {
-							anchors.centerIn: parent
-							
-							width: 20
-							height: 20
-							source: "root:/assets/icon.png"
-						}
-					}
-					
 					Rectangle {
 						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
 						
@@ -109,11 +90,12 @@ Scope {
 						
 						Text {
 							anchors.centerIn: parent
-							text: "construction"
+							text: "layers"
 							font.family: Appearance.iconFont
 							
 							color: Colours.palette.on_surface
 							font.pixelSize: 20
+							font.weight: 600
 						}
 						
 						MouseArea {
