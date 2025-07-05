@@ -99,7 +99,7 @@ Rectangle {
 						
 						iconName: "sleep"
 						
-						toRun: () => Quickshell.execDetached([""])
+						toRun: () => Quickshell.execDetached([ `${Quickshell.configDir}/scripts/lockbspwm`, "--suspend" ])
 					}
 					
 					PowerButton {
