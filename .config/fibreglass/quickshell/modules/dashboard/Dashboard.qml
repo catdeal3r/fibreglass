@@ -41,7 +41,6 @@ Scope {
 			implicitHeight: 750
 			implicitWidth: 500
 			
-			
 			mask: Region {
 				x: maskId.x
 				y: maskId.y

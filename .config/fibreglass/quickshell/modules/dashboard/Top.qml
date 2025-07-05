@@ -41,6 +41,8 @@ Rectangle {
 			}
 		}
 		
+		
+		
 		Rectangle {
 			id: base
 			property bool isPowermenuOpen: false
@@ -49,12 +51,43 @@ Rectangle {
 			width: parent.width - 35
 			height: parent.height - 40
 			radius: Appearance.borderRadius
-			color: Colours.palette.surface						
+			color: Colours.palette.surface
+			
+			Rectangle {
+				visible: base.isPowermenuOpen
 				
+				/*Behavior on visible {
+					PropertyAnimation {
+						duration: 400
+						easing.type: Easing.InSine
+					}
+				}*/
+					
+				anchors.fill: parent
+				color: "transparent"
+			
+				MouseArea {
+					anchors.fill: parent
+					hoverEnabled: true
+						
+					onExited: base.isPowermenuOpen = false
+				}
+			
+				RowLayout {
+					anchors.fill: parent
+					
+					Text {
+						color: Colours.palette.on_surface
+						text: "hello"
+					}
+				}
+			
+			}
+			
 			RowLayout {
-				implicitHeight: 0 //(!base.isPowermenuOpen) ? 150 : 0
+				implicitHeight: !base.isPowermenuOpen ? 150 : 0
 				
-				//visible: (height == 0) ? false : true
+				visible: (implicitHeight == 0) ? false : true
 				
 				Behavior on implicitHeight {
 					PropertyAnimation {
@@ -144,10 +177,12 @@ Rectangle {
 						bgColourHovered: Colours.palette.tertiary_container
 						colourHovered: Colours.palette.on_tertiary_container
 						
-						toRun: () => base.isPowermenuOpen = !base.isPowermenuOpen
+						toRun: () => base.isPowermenuOpen = true
 					}
 				}
 			}
+				
+			Item {}
 		}
 	}
 }

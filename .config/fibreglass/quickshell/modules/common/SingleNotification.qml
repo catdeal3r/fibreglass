@@ -129,7 +129,7 @@ AniRectangle {
 					font.weight: 600
 					font.pixelSize: 11
 					
-					visible: expanded
+					visible: parent.visible
 					
 					Behavior on visible {
 						PropertyAnimation {
@@ -147,7 +147,7 @@ AniRectangle {
 					font.weight: 600
 					font.pixelSize: 11
 					
-					visible: expanded
+					visible: parent.visible
 					
 					Behavior on visible {
 						PropertyAnimation {
@@ -165,7 +165,7 @@ AniRectangle {
 					font.weight: 600
 					font.pixelSize: 11
 					
-					visible: expanded
+					visible: parent.visible
 					
 					Behavior on visible {
 						PropertyAnimation {
