@@ -53,6 +53,13 @@ Rectangle {
 			radius: Appearance.borderRadius
 			color: Colours.palette.surface
 			
+			MouseArea {
+				anchors.fill: parent
+				hoverEnabled: false
+						
+				onExited: base.isPowermenuOpen = false
+			}
+			
 			Rectangle {
 				visible: base.isPowermenuOpen
 				
@@ -66,12 +73,6 @@ Rectangle {
 				anchors.fill: parent
 				color: "transparent"
 			
-				MouseArea {
-					anchors.fill: parent
-					hoverEnabled: true
-						
-					onExited: base.isPowermenuOpen = false
-				}
 			
 				RowLayout {
 					anchors.centerIn: parent
@@ -79,36 +80,44 @@ Rectangle {
 					width: parent.width - 50
 					height: parent.height
 					
-					QuickActionButton {
+					PowerButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "mode_off_on"
+					}
+					
+					PowerButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "lock"
+						
+						toRun: () => Quickshell.execDetached([ `${Quickshell.configDir}/scripts/lockbspwm` ])
+					}
+					
+					PowerButton {
+						Layout.alignment: Qt.AlignCenter
+						
+						iconName: "sleep"
+						
+						toRun: () => Quickshell.execDetached([""])
+					}
+					
+					PowerButton {
 						Layout.alignment: Qt.AlignCenter
 						
 						iconName: "replay"
 						
+						colourHovered: Appearance.colours.red
+						
 						toRun: () => Quickshell.execDetached(["reboot"])
 					}
-					
-					QuickActionButton {
-						Layout.alignment: Qt.AlignCenter
 						
-						iconName: "settings"
-					}
-					
-					QuickActionButton {
-						Layout.alignment: Qt.AlignCenter
-						
-						iconName: "settings"
-					}
-					
-					QuickActionButton {
-						Layout.alignment: Qt.AlignCenter
-						
-						iconName: "settings"
-					}
-						
-					QuickActionButton {
+					PowerButton {
 						Layout.alignment: Qt.AlignCenter
 						
 						iconName: "mode_off_on"
+						
+						colourHovered: Appearance.colours.red
 						
 						toRun: () => Quickshell.execDetached(["shutdown"])
 					}

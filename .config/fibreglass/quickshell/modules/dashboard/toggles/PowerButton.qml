@@ -61,7 +61,11 @@ Rectangle {
 			hoverEnabled: true
 			cursorShape: Qt.PointingHandCursor
 			
-			onEntered: root.isHovered = true
+			onEntered: {
+				root.isHovered = true
+				base.isPowermenuOpen = true
+			}
+			
 			onExited: root.isHovered = false
 			onClicked: root.toRun()
 		}
