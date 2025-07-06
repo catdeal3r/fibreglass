@@ -79,7 +79,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 ---
 
-## Todo
+## Roadmap 
 ### Done
 - [x] Create basic bar. `v0.1`
 - [x] Make notifications. `v0.1`
@@ -94,7 +94,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 - [x] Make matugen not trigger a reload on colour change `v0.2`
 - [x] Added support for a top bar `v0.2`
 
-### Todo
+### Still to come
 - [ ] Create userboard, and tools menu.
 - [ ] Add wallpapers to repository.
 - [ ] Refactor/clean up the code in general.
