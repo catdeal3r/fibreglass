@@ -30,9 +30,6 @@ Singleton {
 	    interval: 100
 	    running: true
 	    repeat: true
-	    onTriggered: {
-			getJsonSettingsProc.running = true
-			console.log(root.jsonSettings)
-		}
+	    onTriggered: getJsonSettingsProc.running = true
 	}
 }
