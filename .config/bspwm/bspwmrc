@@ -27,8 +27,6 @@ else
   udisksctl mount -b /dev/sda1
 fi
 
-fibreglass --setConfig
-
 # config
 bspc config border_width 2 
 

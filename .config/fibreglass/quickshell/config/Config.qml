@@ -12,6 +12,12 @@ Singleton {
 	// Load settings from json
 	property var settings: jsonAdapterConfig
 	
+	property SettingsDerived derivedSettings: SettingsDerived {}
+	component SettingsDerived: QtObject {
+		property var dashboardAnchorsTop: undefined
+		property var dashboardAnchorsBottom: undefined
+	}
+	
 	FileView {
 		id: jsonFileSink
 		path: `${Quickshell.configDir}/settings/settings.json`
@@ -29,9 +35,8 @@ Singleton {
         JsonAdapter {
 			id: jsonAdapterConfig
 			
-			property string barLocation: "bottom"
 			property int minutesBetweenHealthNotif: 15
-			
+			property string barLocation: "bottom"
 			
 			// Change things depending on the config's setup
 			
@@ -39,11 +44,19 @@ Singleton {
 				if (barLocation == "top") {
 					Quickshell.execDetached(["bspc", "config", "top_padding", "55"])
 					Quickshell.execDetached(["bspc", "config", "bottom_padding", "20"])
+					
+					root.derivedSettings.dashboardAnchorsTop = parent.top
+					root.derivedSettings.dashboardAnchorsBottom = undefined
+					
 				} else if (barLocation == "bottom") {
 					Quickshell.execDetached(["bspc", "config", "top_padding", "20"])
 					Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
+					
+					root.derivedSettings.dashboardAnchorsTop = undefined
+					root.derivedSettings.dashboardAnchorsBottom = parent.bottom
+					
 				} else {
-					console.log(`Don't have support for bar position: ${barLocation}`)
+					console.log(`Can't handle bar position: ${barLocation}`)
 				}
 			}
 		}

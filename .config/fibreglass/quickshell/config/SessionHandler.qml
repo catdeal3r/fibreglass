@@ -11,6 +11,11 @@ Singleton {
 	
 	
 	function loadBasicSession() {
-		console.log(`Bar location: ${Config.settings.barLocation}`)
+		Quickshell.execDetached(["bspc", "config", "left_padding", "20"])
+		Quickshell.execDetached(["bspc", "config", "right_padding", "20"])
+		Quickshell.execDetached(["bspc", "config", "window_gap", "10"])
+		
+		Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/wallset_script"])
+        Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/setBorders.sh"])
 	}
 }

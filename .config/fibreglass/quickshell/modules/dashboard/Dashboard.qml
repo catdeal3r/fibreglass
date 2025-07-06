@@ -26,12 +26,14 @@ Scope {
 			screen: modelData
 			
 			anchors {
-				bottom: true 
+				top: (Config.settings.barLocation == "top")
+				bottom: (Config.settings.barLocation == "bottom")
 				right: true
 			}
 			
 			margins {
-				bottom: 50
+				top: (Config.settings.barLocation == "top") ? 50 : 0
+				bottom: (Config.settings.barLocation == "bottom") ? 50 : 0
 				right: 10
 			}
 			
@@ -54,7 +56,11 @@ Scope {
 				id: maskId
 				implicitHeight: InternalLoader.isDashboardOpen ? 750 : 0
 				implicitWidth: 500
-				anchors.bottom: parent.bottom
+				
+				anchors {
+					top: Config.derivedSettings.dashboardAnchorsTop
+					bottom: Config.derivedSettings.dashboardAnchorsBottom
+				}
 				
 				clip: false
 				

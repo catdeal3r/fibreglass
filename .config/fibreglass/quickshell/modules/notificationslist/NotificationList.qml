@@ -34,7 +34,7 @@ Scope {
 	
 			property int notificationCount: Notifications.popupList.length
 		
-			visible: (maskId.implicitHeight == 1) ? false : true 
+			visible: true
 			
 			mask: Region {
 				x: maskId.x

@@ -12,27 +12,6 @@ function startQSDebug()
         env DISPLAY=:0 $(which qs) -p $HOME/.config/fibreglass/quickshell
 }
 
-function setConfig()
-{
-	bspc config top_padding 20
-	bspc config bottom_padding 55
-	bspc config right_padding 20
-	bspc config left_padding 20
-	bspc config window_gap 10
-
-	$HOME/.config/fibreglass/scripts/wallset_script
-	$HOME/.config/fibreglass/scripts/setBorders.sh
-}
-
-function startHealthNotifier()
-{
-	if [[ $(pgrep -fl healthwarner.sh) ]]; then
- 		 echo ""
-	else
-  		$HOME/.config/fibreglass/scripts/healthwarner.sh & disown
-	fi
-}
-
 function startPicom() 
 {
 	if [[ $(pidof picom) != "" ]]; then
