@@ -31,21 +31,23 @@ Singleton {
 			id: jsonAdapterConfig
 			
 			property int minutesBetweenHealthNotif: 15
-			property string barLocation: "bottom"
 			
-			// Change things depending on the config's setup
+			property JsonObject bar: JsonObject {
+				property string barLocation: "bottom"
+				property bool smoothEdgesShown: false
 			
-			onBarLocationChanged: {
-				if (barLocation == "top") {
-					Quickshell.execDetached(["bspc", "config", "top_padding", "55"])
-					Quickshell.execDetached(["bspc", "config", "bottom_padding", "20"])
-					
-				} else if (barLocation == "bottom") {
-					Quickshell.execDetached(["bspc", "config", "top_padding", "20"])
-					Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
-					
-				} else {
-					console.log(`Can't handle bar position: ${barLocation}`)
+				onBarLocationChanged: {
+					if (barLocation == "top") {
+						Quickshell.execDetached(["bspc", "config", "top_padding", "55"])
+						Quickshell.execDetached(["bspc", "config", "bottom_padding", "20"])
+						
+					} else if (barLocation == "bottom") {
+						Quickshell.execDetached(["bspc", "config", "top_padding", "20"])
+						Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
+						
+					} else {
+						console.log(`Can't handle bar position: ${barLocation}`)
+					}
 				}
 			}
 		}

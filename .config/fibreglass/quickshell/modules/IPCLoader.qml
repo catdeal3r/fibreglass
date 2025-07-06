@@ -5,6 +5,7 @@ import QtQuick
 import "root:/modules/bar"
 import "root:/modules/loadingscreen"
 import "root:/modules/settings"
+import "root:/modules"
 import "root:/services"
 
 Scope {

@@ -24,8 +24,8 @@ Scope {
 			screen: modelData
 			
 			anchors {
-				top: (Config.settings.barLocation == "top")
-				bottom: (Config.settings.barLocation == "bottom")
+				top: (Config.settings.bar.barLocation == "top")
+				bottom: (Config.settings.bar.barLocation == "bottom")
 				left: true
 				right: true
 			}
@@ -34,13 +34,14 @@ Scope {
 			
 			implicitHeight: 70
 			
-			margins.top: (Config.settings.barLocation == "top") ? -15 : 0
-			margins.bottom: (Config.settings.barLocation == "bottom") ? -15 : 0
+			margins.top: (Config.settings.bar.barLocation == "top") ? -15 : 0
+			margins.bottom: (Config.settings.bar.barLocation == "bottom") ? -15 : 0
 			
 			visible: true
 			
 			Rectangle {
 				id: cornerThingy
+				visible: Config.settings.bar.smoothEdgesShown
 				anchors.top: parent.top
 				width: parent.width
 				height: parent.height
@@ -68,6 +69,7 @@ Scope {
 			
 			Rectangle {
 				id: cornerThingyBottom
+				visible: Config.settings.bar.smoothEdgesShown
 				anchors.bottom: parent.bottom
 				width: parent.width
 				height: parent.height

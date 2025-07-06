@@ -1,4 +1,8 @@
 {  
-	"barLocation": "bottom",
-	"minutesBetweenHealthNotif": 15
+	"minutesBetweenHealthNotif": 15,
+
+	"bar": {
+		"barLocation": "bottom",
+		"smoothEdgesShown": true 
+	{
 }
