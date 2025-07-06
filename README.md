@@ -32,9 +32,9 @@
 
 ### Photos
 
-| **GTK Theming and Dashboard** |
-| ---- |
-| <img src=".github/setup3.png" alt="fibreglass_setup3"> |
+| **GTK Theming and Dashboard** | **Alternative Bar Location** |
+| ---- | ---- |
+| <img src=".github/setup3.png" alt="fibreglass_setup3"> | <img src=".github/setup4.png" alt="fibreglass_setup4"> |
 
 
 | **Splash screen** |

@@ -21,6 +21,6 @@ Singleton {
 		
 		Config.settings.currentWallpaper = `${path}`;
 		
-		Quickshell.execDetached(["notify-send", "Wallpaper and theme set!", "Log out and in for the gtk theme to take effect."]);
+		Quickshell.execDetached(["notify-send", "Wallpaper and theme set!", "Log out and in for the gtk4 theme to take effect."]);
 	}
 }

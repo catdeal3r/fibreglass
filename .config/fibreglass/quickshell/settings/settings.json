@@ -1,6 +1,6 @@
 {
     "bar": {
-        "barLocation": "bottom",
+        "barLocation": "top",
         "smoothEdgesShown": false
     },
     "borderRadius": 15,
