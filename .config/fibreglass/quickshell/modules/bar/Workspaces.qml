@@ -44,7 +44,6 @@ Singleton {
 	}
 	
 	Process {
-		
 		command: [ Qt.resolvedUrl("root:/scripts/workspaces.out") ]
 		running: true
 		

@@ -24,7 +24,7 @@ Scope {
 			screen: modelData
 			
 			anchors {
-				top: true 
+				bottom: true 
 				left: true
 				right: true
 			}
@@ -33,7 +33,7 @@ Scope {
 			
 			implicitHeight: 70
 			
-			margins.top: -15
+			margins.bottom: -15
 			
 			visible: true
 			
