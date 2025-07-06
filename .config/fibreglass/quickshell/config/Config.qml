@@ -5,6 +5,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 import "root:/config"
+import "root:/services"
 
 Singleton {
 	id: root
@@ -59,6 +60,10 @@ Singleton {
 			}
 			
 			property string currentWallpaper: ""
+			
+			onCurrentWallpaperChanged: {
+				Wallpaper.loadWallpaper()
+			}
 		}
 	}
 }
