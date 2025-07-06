@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bspc config normal_border_color "#c5cc7a"
-bspc config active_border_color "#e5e3d6"
-bspc config focused_border_color "#e5e3d6"
+bspc config normal_border_color "#87d6bc"
+bspc config active_border_color "#dee4e0"
+bspc config focused_border_color "#dee4e0"

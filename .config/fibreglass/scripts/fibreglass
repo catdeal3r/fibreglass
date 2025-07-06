@@ -37,7 +37,9 @@ function toggleSettings()
 	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleSettings
 }
 
-
+function setWall() {
+	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root setWallpaper $1
+}
 
 case $1 in
 --startQS) startQS ;;
@@ -48,4 +50,5 @@ case $1 in
 --toggleBar) toggleBar ;;
 --toggleLS) toggleLoadingScreen ;;
 --toggleSettings) toggleSettings ;;
+--setWall) setWall $2 ;;
 esac

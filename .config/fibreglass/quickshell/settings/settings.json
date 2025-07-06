@@ -1,10 +1,8 @@
-{  
-	"minutesBetweenHealthNotif": 15,
-
-	"bar": {
-		"barLocation": "top",
-		"smoothEdgesShown": false 
-	},
-
-	"currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/human/joel-timothy-ccQLzupEK10-unsplash.jpg"	
+{
+    "bar": {
+        "barLocation": "top",
+        "smoothEdgesShown": false
+    },
+    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/art/painting_textures.jpafsdg",
+    "minutesBetweenHealthNotif": 15
 }

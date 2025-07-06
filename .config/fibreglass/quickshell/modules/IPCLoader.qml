@@ -47,6 +47,8 @@ Scope {
 		function toggleLoadingScreen(): void { root.isLoadingScreenOpen = !root.isLoadingScreenOpen }
 		function toggleBar(): void { root.isBarOpen = !root.isBarOpen }
 		function toggleSettings(): void { root.isSettingsOpen = !root.isSettingsOpen }
+		
+		function setWallpaper(path: string): void { Wallpaper.setNewWallpaper(path) } 
 		function clearNotif(): void { Notifications.discardAllNotifications() }
 	}
 }
