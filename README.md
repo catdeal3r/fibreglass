@@ -54,19 +54,27 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 ## Known Issues
 ### Dashboard appears too high above or below the bar
 
-| | |
+| Key | Content |
 | --- | --- |
-| Description | This issue seems to be related to x11's positioning of PanelWindows, and changing content. | 
-| When | I encounter this the most while editing code, or after switch the bar location. | 
-| Workaround | Reload quickshell. |
+| **Description** | This issue seems to be related to x11's positioning of PanelWindows, and changing content. | 
+| **Timing** | I encounter this the most while editing code, or after switch the bar location. | 
+| **Workaround** | Reload quickshell. |
 
 ### Can't click around the top right corner of the screen
 
-| | |
+| Key | Content |
 | --- | --- |
-| Description | This is an issue with the notifications mask. The window is not correctly masking focus to each notification, and is instead masking to the entire window. |
-| When | Currently, this bug consistently happens when you reload/start quickshell. |
-| Workaround | Send a notification, then wait for it to clear or dismiss it. This will reset the mask to the correct position. |
+| **Description** | This is an issue with the notifications mask. The window is not correctly masking focus to each notification, and is instead masking to the entire window. |
+| **Timing** | Currently, this bug consistently happens when you reload/start quickshell. |
+| **Workaround** | Send a notification, then wait for it to clear or dismiss it. This will reset the mask to the correct position. |
+
+### Notifications with no text, appname, or time appear with the default notification icon
+
+| Key | Content |
+| --- | --- |
+| **Description** | This issue is a well known issue with quickshell's notification server. It involves these "ghost" notifications, which are notifications that haven't been properly removed by the notification server. |
+| **Timing** | This happens mostly while I'm editing code, so it shouldn't effect the user |
+| **Workaround** | Force quickshell to discard all the notifications by clicking on the dashboard's "Clear" button. |
 
 
 ---
