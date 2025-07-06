@@ -61,6 +61,8 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 - [x] Add button on bar to open the userboard. `v0.2`
 - [x] Change the fallback icon for notifications without an icon. `v0.2`
 - [x] Add support for getting colours from the wallpaper using matugen. `v0.2`
+- [x] Start converting config into json `v0.2`
+- [x] Make matugen not trigger a reload `v0.2`
 
 ### Todo
 - [ ] Create userboard, and tools menu.

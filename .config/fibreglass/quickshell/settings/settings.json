@@ -1,8 +1,8 @@
 {
     "bar": {
-        "barLocation": "top",
+        "barLocation": "bottom",
         "smoothEdgesShown": false
     },
-    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/art/painting_textures.jpafsdg",
+    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/human/mary-skrynnikova-7VPhk7y3yIw-unsplash.jpg",
     "minutesBetweenHealthNotif": 15
 }
