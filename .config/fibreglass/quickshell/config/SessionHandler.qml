@@ -13,7 +13,7 @@ Singleton {
 	property string barLocation: jsonSettings.barLocation
 	
 	function loadBasicSession() {
-		console.log(root.barLocation)
+		console.log(`Json settings: ${root.jsonSettings}`)
 	}
 	
 	Process {
@@ -22,14 +22,17 @@ Singleton {
 		running: true
 		
 		stdout: SplitParser {
-			onRead: data => jsonSettings = JSON.parse(data)
+			onRead: data => console.log(data) //jsonSettings = JSON.parse(data)
 		}
 	}
 
     Timer {
-	    interval: 2000
+	    interval: 100
 	    running: true
 	    repeat: true
-	    onTriggered: getJsonSettingsProc.running = true
+	    onTriggered: {
+			getJsonSettingsProc.running = true
+			console.log(root.jsonSettings)
+		}
 	}
 }
