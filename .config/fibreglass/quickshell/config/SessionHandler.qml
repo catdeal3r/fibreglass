@@ -18,7 +18,7 @@ Singleton {
 	
 	FileView {
 		id: jsonFileSink
-		path: "root:/settings/settings.json"
+		path: `${Quickshell.configDir}/settings/settings.json`
 		
 		watchChanges: true
 	}
