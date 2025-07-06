@@ -10,11 +10,11 @@ Singleton {
 	id: root
 	property var jsonSettings
 	
-	property string barLocation: jsonSettings.barLocation
+	property string barLoc
 	
 	function loadBasicSession() {
-		onJsonSettingsChanged: {
-			console.log(`Json settings: ${root.barLocation}`)
+		while (true) {
+			console.log(`Json settings: ${root.barLoc}`)
 		}
 	}
 	
@@ -24,6 +24,9 @@ Singleton {
 		
 		watchChanges: true
 		
-		onTextChanged: root.jsonSettings = JSON.parse(text())
+		onTextChanged: {
+			root.jsonSettings = JSON.parse(text())
+			root.barLoc = root.jsonSettings.barLocation
+		}
 	}
 }
