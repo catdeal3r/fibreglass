@@ -53,5 +53,27 @@
     "summary": "Wallpaper theme set!",
     "time": 1751830540786,
     "urgency": "1"
+  },
+  {
+    "id": 6,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Log out and in for the gtk4 theme to take effect.",
+    "image": "",
+    "summary": "Wallpaper theme set!",
+    "time": 1751830749859,
+    "urgency": "1"
+  },
+  {
+    "id": 7,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1751830777709,
+    "urgency": "1"
   }
 ]
