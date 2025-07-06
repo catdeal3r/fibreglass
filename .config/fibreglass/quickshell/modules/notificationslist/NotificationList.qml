@@ -23,6 +23,10 @@ Scope {
 				top: true
 				right: true
 			}
+			
+			margins {
+				top: (Config.settings.bar.barLocation == "top") ? 50 : 0
+			}
 		
 			aboveWindows: true
 			exclusionMode: ExclusionMode.Ignore
