@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": 1,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "testing notifs",
+    "image": "",
+    "summary": "Hello",
+    "time": 1751769130407,
+    "urgency": "1"
+  },
+  {
+    "id": 2,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "testing notifs",
+    "image": "",
+    "summary": "Hello",
+    "time": 1751769193653,
+    "urgency": "1"
+  }
+]

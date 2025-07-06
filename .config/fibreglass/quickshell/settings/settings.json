@@ -1,1 +1,4 @@
-{  "barLocation": "asdfklhtop" }
+{  
+	"barLocation": "bottom",
+	"minutesBetweenHealthNotif": 15
+}

@@ -24,7 +24,8 @@ Scope {
 			screen: modelData
 			
 			anchors {
-				bottom: true 
+				top: (Config.settings.barLocation == "top")
+				bottom: (Config.settings.barLocation == "bottom")
 				left: true
 				right: true
 			}
@@ -33,7 +34,8 @@ Scope {
 			
 			implicitHeight: 70
 			
-			margins.bottom: -15
+			margins.top: (Config.settings.barLocation == "top") ? -15 : 0
+			margins.bottom: (Config.settings.barLocation == "bottom") ? -15 : 0
 			
 			visible: true
 			

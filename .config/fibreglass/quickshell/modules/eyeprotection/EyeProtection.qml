@@ -24,7 +24,7 @@ Scope {
 	}
 	
 	 Timer {
-	    interval: Config.minutesBetweenHealthNotif * 60000
+	    interval: Config.settings.minutesBetweenHealthNotif * 60000
 	    running: true
 	    repeat: true
 	    onTriggered: root.runNotify()
