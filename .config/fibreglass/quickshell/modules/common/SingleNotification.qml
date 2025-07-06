@@ -337,5 +337,4 @@ AniRectangle {
 			}
 		}
 	}
-	
 }

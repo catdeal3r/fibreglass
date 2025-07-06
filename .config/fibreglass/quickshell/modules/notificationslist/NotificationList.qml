@@ -37,10 +37,7 @@ Scope {
 			visible: true
 			
 			mask: Region {
-				x: maskId.x
-				y: maskId.y
-				width: maskId.implicitWidth
-				height: (notificationCount > 0) ? 400 : 1
+				item: maskId.contentItem
 			}
 
 			ListView {
