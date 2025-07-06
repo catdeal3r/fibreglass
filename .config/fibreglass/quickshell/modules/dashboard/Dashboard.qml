@@ -44,10 +44,7 @@ Scope {
 			implicitWidth: 500
 			
 			mask: Region {
-				x: maskId.x
-				y: maskId.y
-				width: maskId.implicitWidth
-				height: InternalLoader.isDashboardOpen ? 750 : 0
+				item: maskId
 			}
 			
 			visible: (maskId.implicitHeight == 0) ? false : true 

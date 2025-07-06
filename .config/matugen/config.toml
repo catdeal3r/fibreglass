@@ -3,10 +3,9 @@ command = "feh"
 arguments = ["--bg-fill"]
 set = false
 
-
 [templates.quickshell]
-input_path = './templates/quickshell-colours.qml'
-output_path = '~/.config/fibreglass/quickshell/config/Colours.qml'
+input_path = './templates/quickshell-colours.json'
+output_path = '~/.config/fibreglass/quickshell/settings/colours.json'
 
 [templates.gtk3]
 input_path = './templates/gtk-colours.css'
