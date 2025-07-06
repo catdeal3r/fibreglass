@@ -12,11 +12,6 @@ Singleton {
 	// Load settings from json
 	property var settings: jsonAdapterConfig
 	
-	property SettingsDerived derivedSettings: SettingsDerived {}
-	component SettingsDerived: QtObject {
-		property var dashboardAnchorsTop: undefined
-		property var dashboardAnchorsBottom: undefined
-	}
 	
 	FileView {
 		id: jsonFileSink
@@ -45,15 +40,9 @@ Singleton {
 					Quickshell.execDetached(["bspc", "config", "top_padding", "55"])
 					Quickshell.execDetached(["bspc", "config", "bottom_padding", "20"])
 					
-					root.derivedSettings.dashboardAnchorsTop = parent.top
-					root.derivedSettings.dashboardAnchorsBottom = undefined
-					
 				} else if (barLocation == "bottom") {
 					Quickshell.execDetached(["bspc", "config", "top_padding", "20"])
 					Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
-					
-					root.derivedSettings.dashboardAnchorsTop = undefined
-					root.derivedSettings.dashboardAnchorsBottom = parent.bottom
 					
 				} else {
 					console.log(`Can't handle bar position: ${barLocation}`)

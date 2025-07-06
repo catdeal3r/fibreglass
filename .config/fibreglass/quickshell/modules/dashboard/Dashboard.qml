@@ -58,8 +58,8 @@ Scope {
 				implicitWidth: 500
 				
 				anchors {
-					top: Config.derivedSettings.dashboardAnchorsTop
-					bottom: Config.derivedSettings.dashboardAnchorsBottom
+					top: (Config.settings.barLocation == "top") ? parent.top : undefined
+					bottom: (Config.settings.barLocation == "bottom") ? parent.bottom : undefined
 				}
 				
 				clip: false
