@@ -77,7 +77,7 @@ Rectangle {
 		}
 	}
 	
-	radius: Appearance.borderRadius
+	radius: Config.settings.borderRadius
 	
 	RowLayout {
 		anchors.fill: parent
@@ -98,7 +98,7 @@ Rectangle {
 				anchors.centerIn: parent
 				
 				text: iconCode
-				font.family: Appearance.iconFont
+				font.family: Config.settings.iconFont
 				
 				font.pixelSize: root.iconSize
 				color: root.getColour()
@@ -126,7 +126,7 @@ Rectangle {
 				
 				anchors.topMargin: parent.height / 5 
 				text: bigText
-				font.family: Appearance.font
+				font.family: Config.settings.font
 			
 				font.pixelSize: 15
 				font.weight: 600

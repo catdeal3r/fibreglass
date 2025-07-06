@@ -19,25 +19,25 @@ Rectangle {
 	Layout.preferredHeight: 150
 								
 	color: Colours.palette.surface
-	radius: Appearance.borderRadius
+	radius: Config.settings.borderRadius
 	
 	Rectangle {
 		anchors.centerIn: parent
 		width: parent.Layout.preferredWidth - 20
 		height: parent.Layout.preferredHeight - 35
-		radius: Appearance.borderRadius
+		radius: Config.settings.borderRadius
 		color: Colours.palette.surface_container
 		
 		
 		ClippingWrapperRectangle {
-			radius: Appearance.borderRadius
+			radius: Config.settings.borderRadius
 																
 			anchors.fill: parent
 										
 			color: "transparent"
 																				
 			Image {
-				source: "../../../wall.png"
+				source: Config.settings.currentWallpaper
 			}
 		}
 		
@@ -50,7 +50,7 @@ Rectangle {
 			anchors.centerIn: parent
 			width: parent.width - 35
 			height: parent.height - 40
-			radius: Appearance.borderRadius
+			radius: Config.settings.borderRadius
 			color: Colours.palette.surface
 			
 			
@@ -105,7 +105,7 @@ Rectangle {
 						
 						iconName: "replay"
 						
-						colourHovered: Appearance.colours.red
+						colourHovered: Accents.red
 						
 						toRun: () => Quickshell.execDetached(["reboot"])
 					}
@@ -113,9 +113,9 @@ Rectangle {
 					PowerButton {
 						Layout.alignment: Qt.AlignCenter
 						
-						iconName: "schedule"//
+						iconName: "schedule"
 						
-						colourHovered: Appearance.colours.red
+						colourHovered: Accents.red
 					}
 						
 					PowerButton {
@@ -123,7 +123,7 @@ Rectangle {
 						
 						iconName: "mode_off_on"
 						
-						colourHovered: Appearance.colours.red
+						colourHovered: Accents.red
 						
 						toRun: () => Quickshell.execDetached(["shutdown"])
 					}
@@ -156,7 +156,7 @@ Rectangle {
 					spacing: 0
 												
 					ClippingWrapperRectangle {
-						radius: Appearance.borderRadius
+						radius: Config.settings.borderRadius
 																
 						Layout.alignment: Qt.AlignLeft
 						Layout.preferredWidth: 50
@@ -179,7 +179,7 @@ Rectangle {
 							Layout.alignment: Qt.AlignLeft
 														
 							text: "catdeal3r"
-							font.family: Appearance.font
+							font.family: Config.settings.font
 							font.pixelSize: 17
 															
 							font.weight: 600
@@ -191,7 +191,7 @@ Rectangle {
 							Layout.alignment: Qt.AlignLeft
 														
 							text: `Up: ${Uptime.uptime}`
-							font.family: Appearance.font
+							font.family: Config.settings.font
 							font.pixelSize: 9
 														
 															

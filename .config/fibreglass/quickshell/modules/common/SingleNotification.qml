@@ -24,7 +24,7 @@ AniRectangle {
 		else return 80
 	}
 					
-	radius: Appearance.borderRadius
+	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
 	implicitHeight:	notifSize
 	implicitWidth: 400
@@ -58,7 +58,7 @@ AniRectangle {
 						
 		ClippingWrapperRectangle { //image
 			visible: (modelData.appIcon == "") ? false : true
-			radius: Appearance.borderRadius
+			radius: Config.settings.borderRadius
 						
 			Layout.alignment: root.expanded ? Qt.AlignLeft | Qt.AlignTop : Qt.AlignLeft
 			Layout.leftMargin: 0
@@ -97,7 +97,7 @@ AniRectangle {
 				
 			color: Colours.palette.on_surface
 									
-			font.family: Appearance.iconFont
+			font.family: Config.settings.iconFont
 			font.pixelSize: 35
 		}
 					
@@ -125,7 +125,7 @@ AniRectangle {
 					text: modelData.appName
 					color: Colours.palette.primary
 										
-					font.family: Appearance.font
+					font.family: Config.settings.font
 					font.weight: 600
 					font.pixelSize: 11
 					
@@ -143,7 +143,7 @@ AniRectangle {
 					text: "·"
 					color: Colours.palette.on_surface
 									
-					font.family: Appearance.font
+					font.family: Config.settings.font
 					font.weight: 600
 					font.pixelSize: 11
 					
@@ -157,11 +157,11 @@ AniRectangle {
 					}
 				}
 				Text {
-					color: Appearance.colours.disab
+					color: Accents.disab
 									
 					text: NotificationUtils.getFriendlyNotifTimeString(modelData.time)
 									
-					font.family: Appearance.font
+					font.family: Config.settings.font
 					font.weight: 600
 					font.pixelSize: 11
 					
@@ -198,7 +198,7 @@ AniRectangle {
 									
 				color: Colours.palette.on_surface
 									
-				font.family: Appearance.font
+				font.family: Config.settings.font
 				font.weight: 600
 				font.pixelSize: 15
 			}
@@ -207,7 +207,7 @@ AniRectangle {
 				id: summaryPreviewMetrics
 									
 				text: modelData.summary
-				font.family: Appearance.font
+				font.family: Config.settings.font
 									
 				elide: Qt.ElideRight
 				elideWidth: 210
@@ -221,7 +221,7 @@ AniRectangle {
 									
 				color: Colours.palette.primary
 								
-				font.family: Appearance.font
+				font.family: Config.settings.font
 				font.pixelSize: 13
 									
 				visible: {
@@ -243,7 +243,7 @@ AniRectangle {
 				id: bodyPreviewMetrics
 									
 				text: modelData.body
-				font.family: Appearance.font
+				font.family: Config.settings.font
 									
 				elide: Qt.ElideRight
 				elideWidth: 240
@@ -273,7 +273,7 @@ AniRectangle {
 					height: 50
 					text: modelData.body
 					
-					font.family: Appearance.font
+					font.family: Config.settings.font
 					font.pixelSize: 13
 					color: Colours.palette.primary
 					
@@ -319,7 +319,7 @@ AniRectangle {
 					color: Colours.palette.on_surface
 					text: singleNotif.expanded ? "expand_less" : "expand_more"
 										
-					font.family: Appearance.iconFont
+					font.family: Config.settings.iconFont
 					font.pixelSize: 24
 									
 				}

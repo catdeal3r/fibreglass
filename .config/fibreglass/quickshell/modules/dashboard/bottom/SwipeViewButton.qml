@@ -20,7 +20,7 @@ Rectangle {
 	Layout.preferredWidth: isSelected ? 100 : 50
 	Layout.preferredHeight: 15
 	color: isSelected ? Colours.palette.primary : Colours.palette.surface_container
-	radius: Appearance.borderRadius
+	radius: Config.settings.borderRadius
 	
 	Behavior on Layout.preferredWidth {
 		PropertyAnimation {
@@ -35,7 +35,7 @@ Rectangle {
 		
 		Text {
 			text: iconCode
-			font: Appearance.iconFont
+			font: Config.settings.iconFont
 			
 			color: isSelected ? Colours.palette.on_primary : Colours.palette.on_surface
 			
@@ -52,7 +52,7 @@ Rectangle {
 	
 		Text {
 			text: selectedText
-			font: Appearance.font
+			font: Config.settings.font
 			
 			
 			visible: false //isSelected

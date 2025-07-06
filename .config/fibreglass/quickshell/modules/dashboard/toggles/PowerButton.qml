@@ -26,7 +26,7 @@ Rectangle {
 	Layout.preferredHeight: 35
 	Layout.preferredWidth: 35
 	
-	radius: Appearance.borderRadius
+	radius: Config.settings.borderRadius
 	
 	color: isHovered ? bgColourHovered : bgColour
 	
@@ -50,7 +50,7 @@ Rectangle {
 			}
 		}
 											
-		font.family: Appearance.iconFont
+		font.family: Config.settings.iconFont
 		font.pixelSize: 18
 		font.weight: 600
 		

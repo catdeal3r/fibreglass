@@ -21,7 +21,7 @@ Rectangle {
 	anchors.top: parent.top
 	anchors.topMargin: 10
 			
-	radius: Appearance.borderRadius
+	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
 	
 	property int notificationCount: Notifications.list.length
@@ -36,7 +36,7 @@ Rectangle {
 			Text {
 				color: Colours.palette.on_surface
 				text: "Notifications"
-				font.family: Appearance.font
+				font.family: Config.settings.font
 				font.pixelSize: 15
 				
 				font.weight: 600
@@ -48,7 +48,7 @@ Rectangle {
 				width: 90
 				height: 30
 				
-				radius: Appearance.borderRadius
+				radius: Config.settings.borderRadius
 				color: Colours.palette.surface_container
 				
 				Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -66,14 +66,14 @@ Rectangle {
 					Text {
 						color: Colours.palette.on_surface
 						text: "clear_all"
-						font.family: Appearance.iconFont
+						font.family: Config.settings.iconFont
 						font.pixelSize: 20
 					}
 				
 					Text {
 						color: Colours.palette.on_surface
 						text: "Clear"
-						font.family: Appearance.font
+						font.family: Config.settings.font
 						font.pixelSize: 14
 					}
 				}
@@ -173,7 +173,7 @@ Rectangle {
 				
 				text: "No notifications."
 				font.pixelSize: 20
-				font.family: Appearance.font
+				font.family: Config.settings.font
 				
 				visible: (notifList.visible) ? false : true
 				

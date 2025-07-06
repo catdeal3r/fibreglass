@@ -61,7 +61,7 @@ Scope {
 					color: Colours.palette.surface
 					corner: cornerEnum.bottomLeft
 					
-					size: Appearance.borderRadius
+					size: Config.settings.borderRadius
 				}
 				
 				RRCorner {
@@ -70,7 +70,7 @@ Scope {
 					color: Colours.palette.surface
 					corner: cornerEnum.bottomRight
 					
-					size: Appearance.borderRadius
+					size: Config.settings.borderRadius
 				}
 			}
 			
@@ -96,7 +96,7 @@ Scope {
 					color: Colours.palette.surface
 					corner: cornerEnum.topLeft
 					
-					size: Appearance.borderRadius
+					size: Config.settings.borderRadius
 				}
 				
 				RRCorner {
@@ -105,7 +105,7 @@ Scope {
 					color: Colours.palette.surface
 					corner: cornerEnum.topRight
 					
-					size: Appearance.borderRadius
+					size: Config.settings.borderRadius
 				}
 			}
 			
@@ -132,7 +132,7 @@ Scope {
 						Layout.preferredWidth: 30
 						Layout.preferredHeight: 30
 						
-						radius: Appearance.borderRadius - 5
+						radius: Config.settings.borderRadius - 5
 						color: Colours.palette.surface_container
 						
 						Behavior on color {
@@ -145,7 +145,7 @@ Scope {
 						Text {
 							anchors.centerIn: parent
 							text: "layers"
-							font.family: Appearance.iconFont
+							font.family: Config.settings.iconFont
 							
 							color: Colours.palette.on_surface
 							font.pixelSize: 22
@@ -169,7 +169,7 @@ Scope {
 					
 						Layout.preferredWidth: 300
 						Layout.preferredHeight: 30
-						radius: Appearance.borderRadius - 3
+						radius: Config.settings.borderRadius - 3
 					}
 					
 				}
@@ -186,7 +186,7 @@ Scope {
 						color: Colours.palette.surface_container
 						Layout.preferredHeight: 30
 						
-						radius: Appearance.borderRadius - 3
+						radius: Config.settings.borderRadius - 3
 						
 						Behavior on color {
 							PropertyAnimation {
@@ -203,7 +203,7 @@ Scope {
 							BluetoothWidget {
 								color: { Bluetooth.getBool() ? Colours.palette.on_surface : Colours.palette.outline }
 							
-								font.family: Appearance.iconFont
+								font.family: Config.settings.iconFont
 								font.weight: 600
 
 								Layout.preferredWidth: 15
@@ -215,7 +215,7 @@ Scope {
 							NetworkWidget {
 								color: { Network.getBool() ? Colours.palette.on_surface : Colours.palette.outline }
 							
-								font.family: Appearance.iconFont
+								font.family: Config.settings.iconFont
 								font.weight: 600
 
 								Layout.preferredWidth: 15
@@ -245,7 +245,7 @@ Scope {
 
 						color: Colours.palette.on_surface
 	
-						font.family: Appearance.font
+						font.family: Config.settings.font
 						font.weight: 600
 
 						Layout.preferredWidth: 110

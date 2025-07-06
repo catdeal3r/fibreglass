@@ -13,8 +13,8 @@ import "root:/config"
 	property bool charging
 	
 	function getBatteryColour(percent) {
-		if (percent >= 40) return Appearance.colours.green
-		return Appearance.colours.red
+		if (percent >= 40) return Accents.green
+		return Accents.red
 	}
 	
     Process {

@@ -94,7 +94,7 @@ Scope {
 					
 					color: Colours.palette.surface
 					
-					radius: Appearance.borderRadius
+					radius: Config.settings.borderRadius
 					
 					ColumnLayout {
 						

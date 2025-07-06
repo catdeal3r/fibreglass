@@ -18,7 +18,7 @@ Rectangle {
 	Layout.preferredWidth: 480
 	Layout.preferredHeight: 450
 								
-	radius: Appearance.borderRadius
+	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
 	
 	Rectangle {

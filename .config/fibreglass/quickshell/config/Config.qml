@@ -64,6 +64,10 @@ Singleton {
 			onCurrentWallpaperChanged: {
 				Wallpaper.loadWallpaper()
 			}
+			
+			property string font: "SF Pro Display"
+			property string iconFont: "Material Symbols Rounded"
+			property int borderRadius: 15
 		}
 	}
 }
