@@ -46,6 +46,13 @@ Scope {
 				width: parent.width
 				height: parent.height
 				
+				Behavior on visible {
+					PropertyAnimation {
+						duration: 200
+						easing.type: Easing.InSine
+					}
+				}
+				
 				color: "transparent"
 				
 				RRCorner {
@@ -75,6 +82,13 @@ Scope {
 				height: parent.height
 				
 				color: "transparent"
+				
+				Behavior on visible {
+					PropertyAnimation {
+						duration: 200
+						easing.type: Easing.InSine
+					}
+				}
 				
 				RRCorner {
 					anchors.bottom: parent.bottom
@@ -121,6 +135,13 @@ Scope {
 						radius: Appearance.borderRadius - 5
 						color: Colours.palette.surface_container
 						
+						Behavior on color {
+							PropertyAnimation {
+								duration: 200
+								easing.type: Easing.InSine
+							}
+						}
+						
 						Text {
 							anchors.centerIn: parent
 							text: "layers"
@@ -166,6 +187,13 @@ Scope {
 						Layout.preferredHeight: 30
 						
 						radius: Appearance.borderRadius - 3
+						
+						Behavior on color {
+							PropertyAnimation {
+								duration: 200
+								easing.type: Easing.InSine
+							}
+						}
 					
 						RowLayout {
 							spacing: 6

@@ -12,7 +12,6 @@ Singleton {
 	// Load settings from json
 	property var settings: jsonAdapterConfig
 	
-	
 	FileView {
 		id: jsonFileSink
 		path: `${Quickshell.configDir}/settings/settings.json`

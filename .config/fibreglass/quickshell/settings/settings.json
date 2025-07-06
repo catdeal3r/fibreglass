@@ -3,6 +3,6 @@
 
 	"bar": {
 		"barLocation": "bottom",
-		"smoothEdgesShown": true 
-	{
+		"smoothEdgesShown": false 
+	}	
 }
