@@ -2,7 +2,7 @@
 	"minutesBetweenHealthNotif": 15,
 
 	"bar": {
-		"barLocation": "bottom",
+		"barLocation": "top",
 		"smoothEdgesShown": false 
 	}	
 }

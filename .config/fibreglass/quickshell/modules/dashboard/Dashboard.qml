@@ -26,18 +26,18 @@ Scope {
 			screen: modelData
 			
 			anchors {
-				top: (Config.settings.barLocation == "top")
-				bottom: (Config.settings.barLocation == "bottom")
+				top: (Config.settings.bar.barLocation == "top")
+				bottom: (Config.settings.bar.barLocation == "bottom")
 				right: true
 			}
 			
 			margins {
-				top: (Config.settings.barLocation == "top") ? 50 : 0
-				bottom: (Config.settings.barLocation == "bottom") ? 50 : 0
+				top: (Config.settings.bar.barLocation == "top") ? 50 : 0
+				bottom: (Config.settings.bar.barLocation == "bottom") ? 50 : 0
 				right: 10
 			}
 			
-			aboveWindows: false
+			aboveWindows: true
 			color: "transparent"
 			
 			implicitHeight: 750
@@ -57,9 +57,27 @@ Scope {
 				implicitHeight: InternalLoader.isDashboardOpen ? 750 : 0
 				implicitWidth: 500
 				
+				
 				anchors {
-					top: (Config.settings.barLocation == "top") ? parent.top : undefined
-					bottom: (Config.settings.barLocation == "bottom") ? parent.bottom : undefined
+					bottom: parent.bottom
+					top: undefined
+					left: undefined
+					right: undefined
+				}
+				
+				states: State {
+					name: "anchorTop"
+					when: (Config.settings.bar.barLocation == "top")
+						
+					AnchorChanges {
+						target: maskId
+						anchors {
+							bottom: undefined
+							top: parent.top
+							left: undefined
+							right: undefined
+						}
+					}
 				}
 				
 				clip: false
