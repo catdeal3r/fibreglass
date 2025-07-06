@@ -8,12 +8,14 @@ import "root:/config"
 
 Singleton {
 	id: root
-	property var jsonSettings: JSON.parse(jsonFileSink.text())
+	property var jsonSettings
 	
 	property string barLocation: jsonSettings.barLocation
 	
 	function loadBasicSession() {
-		console.log(`Json settings: ${root.jsonSettings}`)
+		onJsonSettingsChanged: {
+			console.log(`Json settings: ${root.barLocation}`)
+		}
 	}
 	
 	FileView {
@@ -21,5 +23,7 @@ Singleton {
 		path: `${Quickshell.configDir}/settings/settings.json`
 		
 		watchChanges: true
+		
+		onTextChanged: root.jsonSettings = JSON.parse(text())
 	}
 }
