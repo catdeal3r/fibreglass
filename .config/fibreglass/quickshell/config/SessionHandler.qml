@@ -25,6 +25,7 @@ Singleton {
 		path: `${Quickshell.configDir}/settings/settings.json`
 		
 		watchChanges: true
+		onFileChanged: reload()
 		
 		onTextChanged: {
 			root.jsonSettings = JSON.parse(text())
