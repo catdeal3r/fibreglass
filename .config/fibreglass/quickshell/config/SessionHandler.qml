@@ -12,10 +12,12 @@ Singleton {
 	
 	property string barLoc: jsonSettings.barLocation
 	
+	onJsonSettingsChanged: {
+		console.log(`Bar loc: ${root.barLoc}`)
+	}
+	
 	function loadBasicSession() {
-		onJsonSettingsChanged: {
-			console.log(`Bar loc: ${root.barLoc}`)
-		}
+		
 	}
 	
 	FileView {
