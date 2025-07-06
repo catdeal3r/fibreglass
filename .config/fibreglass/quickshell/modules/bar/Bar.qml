@@ -24,14 +24,16 @@ Scope {
 			screen: modelData
 			
 			anchors {
-				bottom: true 
+				top: true 
 				left: true
 				right: true
 			}
 
 			color: "transparent"
 			
-			implicitHeight: 55
+			implicitHeight: 70
+			
+			margins.top: -15
 			
 			visible: true
 			
@@ -57,6 +59,33 @@ Scope {
 					anchors.right: parent.right
 					color: Colours.palette.surface
 					corner: cornerEnum.bottomRight
+					
+					size: Appearance.borderRadius
+				}
+			}
+			
+			Rectangle {
+				id: cornerThingyBottom
+				anchors.bottom: parent.bottom
+				width: parent.width
+				height: parent.height
+				
+				color: "transparent"
+				
+				RRCorner {
+					anchors.bottom: parent.bottom
+					anchors.left: parent.left
+					color: Colours.palette.surface
+					corner: cornerEnum.topLeft
+					
+					size: Appearance.borderRadius
+				}
+				
+				RRCorner {
+					anchors.bottom: parent.bottom
+					anchors.right: parent.right
+					color: Colours.palette.surface
+					corner: cornerEnum.topRight
 					
 					size: Appearance.borderRadius
 				}
@@ -94,7 +123,7 @@ Scope {
 							font.family: Appearance.iconFont
 							
 							color: Colours.palette.on_surface
-							font.pixelSize: 20
+							font.pixelSize: 22
 							font.weight: 600
 						}
 						
@@ -195,7 +224,5 @@ Scope {
 				}
 			}
 		}
-		
 	}
-
 }
