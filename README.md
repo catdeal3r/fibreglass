@@ -55,8 +55,8 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 ### Dashboard appears too high above or below the bar
 This issue seems to be related to x11's positioning of PanelWindows, and changing content. I encounter this the most while editing code, or after switch the bar location.
 
-| Can't click around the top right corner of the screen | |
-| ---- | ---- |
+| ### Can't click around the top right corner of the screen |
+| ---- | ---- | 
 | Description | This is an issue with the notifications mask. The window is not correctly masking focus to each notification, and is instead masking to the entire window. |
 | Workaround | Send a notification, then wait for it to clear or dismiss it. This will reset the mask to the correct position. |
 
