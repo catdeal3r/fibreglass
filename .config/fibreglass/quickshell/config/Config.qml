@@ -11,13 +11,17 @@ Singleton {
 	
 	// Load settings from json
 	property var settings: jsonAdapterConfig
+	property bool isLoaded: false
 	
 	FileView {
 		id: jsonFileSink
 		path: `${Quickshell.configDir}/settings/settings.json`
 		
 		watchChanges: true
-		onFileChanged: reload()
+		onFileChanged: {
+			root.isLoaded = false
+			reload()
+		}
 		
 		onAdapterUpdated: writeAdapter()
         onLoadFailed: error => {
@@ -26,6 +30,10 @@ Singleton {
             }
         }
         
+        onLoaded: {
+			root.isLoaded = true
+		}
+		
         JsonAdapter {
 			id: jsonAdapterConfig
 			
@@ -49,6 +57,8 @@ Singleton {
 					}
 				}
 			}
+			
+			property string currentWallpaper: ""
 		}
 	}
 }

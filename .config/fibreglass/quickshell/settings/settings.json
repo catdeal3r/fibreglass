@@ -4,5 +4,7 @@
 	"bar": {
 		"barLocation": "top",
 		"smoothEdgesShown": false 
-	}	
+	},
+
+	"currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/human/joel-timothy-ccQLzupEK10-unsplash.jpg"	
 }

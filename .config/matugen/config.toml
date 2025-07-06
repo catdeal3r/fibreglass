@@ -1,7 +1,7 @@
 [config.wallpaper]
 command = "feh"
 arguments = ["--bg-fill"]
-set = false
+set = true 
 
 [templates.quickshell]
 input_path = './templates/quickshell-colours.json'
