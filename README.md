@@ -52,7 +52,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 ---
 
 ## Known Issues
-### Dashboard appears too high above or below the bar
+### Dashboard appears too high above or below the bar.
 
 | Key | Content |
 | --- | --- |
@@ -60,7 +60,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 | **Timing** | I encounter this the most while editing code, or after switch the bar location. | 
 | **Workaround** | Reload quickshell. |
 
-### Can't click around the top right corner of the screen
+### Can't click around the top right corner of the screen.
 
 | Key | Content |
 | --- | --- |
@@ -68,7 +68,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 | **Timing** | Currently, this bug consistently happens when you reload/start quickshell. |
 | **Workaround** | Send a notification, then wait for it to clear or dismiss it. This will reset the mask to the correct position. |
 
-### Notifications with no text, appname, or time appear with the default notification icon
+### Notifications with no text, appname, or time appear with the default notification icon.
 
 | Key | Content |
 | --- | --- |
