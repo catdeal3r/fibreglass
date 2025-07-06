@@ -51,7 +51,7 @@ Scope {
 				}
 				
 				implicitHeight: 400
-				implicitWidth: (notificationCount > 0) ? 400 : 1
+				implicitWidth: 400//(notificationCount > 0) ? 400 : 1
 				
 				anchors.top: parent.top
 				anchors.topMargin: 20
