@@ -54,7 +54,6 @@ Scope {
 				implicitHeight: InternalLoader.isDashboardOpen ? 750 : 0
 				implicitWidth: 500
 				
-				
 				anchors {
 					bottom: parent.bottom
 					top: undefined

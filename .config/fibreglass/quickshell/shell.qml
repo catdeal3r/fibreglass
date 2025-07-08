@@ -4,6 +4,7 @@ import Quickshell.Io
 import QtQuick
 import "modules"
 import "modules/dashboard"
+import "modules/launcher"
 import "modules/notificationslist"
 import "modules/eyeprotection"
 import "services"
@@ -19,5 +20,7 @@ Scope {
 	
 	NotificationList {}
 	Dashboard {}
+	Launcher {}
+	
 	EyeProtection {}
 }

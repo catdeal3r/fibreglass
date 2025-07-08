@@ -5,6 +5,7 @@ import QtQuick
 import "root:/modules/bar"
 import "root:/modules/loadingscreen"
 import "root:/modules/settings"
+import "root:/modules/launcher"
 import "root:/modules"
 import "root:/services"
 
@@ -41,13 +42,15 @@ Scope {
 		}
 	}
 	
+	
 	IpcHandler {
 		target: "root"
 				
 		function toggleLoadingScreen(): void { root.isLoadingScreenOpen = !root.isLoadingScreenOpen }
 		function toggleBar(): void { root.isBarOpen = !root.isBarOpen }
 		function toggleSettings(): void { root.isSettingsOpen = !root.isSettingsOpen }
-		
+		function toggleLauncher(): void { InternalLoader.isLauncherOpen = !InternalLoader.isLauncherOpen }
+
 		function setWallpaper(path: string): void { Wallpaper.setNewWallpaper(path) } 
 		function clearNotif(): void { Notifications.discardAllNotifications() }
 	}
