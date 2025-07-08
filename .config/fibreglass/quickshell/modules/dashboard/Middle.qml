@@ -11,6 +11,7 @@ import "root:/config"
 import "root:/modules/common"
 import "root:/services"
 import "root:/modules/dashboard/toggles"
+import "root:/modules/dashboard/middle"
 
 ColumnLayout {
 	Layout.alignment: Qt.AlignTop
@@ -83,11 +84,6 @@ ColumnLayout {
 		Layout.preferredHeight: 200
 		color: "transparent"
 		
-		Text {
-			anchors.centerIn: parent
-			font.pixelSize: 20
-			color: Colours.palette.on_surface
-			text: "Hello"
-		}
+		PlayerControls {}
 	}
 }
