@@ -61,7 +61,7 @@ Rectangle {
 			QuickToggleButton {
 				isToggled: Notifications.popupInhibited
 				
-				bigText: Notifications.popupInhibited ? "Do Not Disturb" : "Do Disturb"
+				bigText: Notifications.popupInhibited ? "Do Not Disturb" : "Disturb"
 				iconCode: Notifications.popupInhibited ? "speaker_notes_off" : "speaker_notes"
 				
 				iconSize: 24

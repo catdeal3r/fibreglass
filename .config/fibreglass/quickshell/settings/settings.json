@@ -1,7 +1,7 @@
 {
     "bar": {
-        "barLocation": "top",
-        "smoothEdgesShown": false
+        "barLocation": "bottom",
+        "smoothEdgesShown": false 
     },
     "borderRadius": 15,
     "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/human/mary-skrynnikova-7VPhk7y3yIw-unsplash.jpg",

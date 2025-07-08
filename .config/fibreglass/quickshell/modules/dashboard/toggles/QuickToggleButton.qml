@@ -101,6 +101,7 @@ Rectangle {
 				font.family: Config.settings.iconFont
 				
 				font.pixelSize: root.iconSize
+				font.weight: 500
 				color: root.getColour()
 				
 				Behavior on color {
