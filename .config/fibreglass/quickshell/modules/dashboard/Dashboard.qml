@@ -40,7 +40,7 @@ Scope {
 			aboveWindows: true
 			color: "transparent"
 			
-			implicitHeight: 750
+			implicitHeight: 950
 			implicitWidth: 500
 			
 			mask: Region {
@@ -51,7 +51,7 @@ Scope {
 			
 			ScrollView {
 				id: maskId
-				implicitHeight: InternalLoader.isDashboardOpen ? 750 : 0
+				implicitHeight: InternalLoader.isDashboardOpen ? 950 : 0
 				implicitWidth: 500
 				
 				anchors {
@@ -89,7 +89,7 @@ Scope {
 					anchors.centerIn: parent
 					
 					width: 500
-					height: 750
+					height: 950
 					
 					color: Colours.palette.surface
 					

@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Io
 import Quickshell.Widgets
+import Quickshell.Services.SystemTray
 
 import QtQuick
 import QtQuick.Layouts
@@ -181,9 +182,15 @@ Scope {
 					anchors.top: parent.top
 					anchors.topMargin: 5
 					
+					SysTray {
+						Layout.preferredWidth: (SystemTray.items.values.length * 25)
+						
+						bar: barWindow
+					}
+					
 					Rectangle {
 						Layout.preferredWidth: 105
-						color: Colours.palette.surface_container
+						color: Colours.palette.surface
 						Layout.preferredHeight: 30
 						
 						radius: Config.settings.borderRadius - 3
@@ -235,8 +242,8 @@ Scope {
 							hoverEnabled: true
 							cursorShape: Qt.PointingHandCursor
 							
-							onEntered: parent.color = Colours.palette.surface_container_high
-							onExited: parent.color = Colours.palette.surface_container
+							onEntered: parent.color = Colours.palette.surface_container
+							onExited: parent.color = Colours.palette.surface
 							onClicked: InternalLoader.toggleDashboard()
 						}
 					}
