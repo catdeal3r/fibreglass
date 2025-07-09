@@ -33,10 +33,10 @@ Scope {
 
 			color: "transparent"
 			
-			implicitHeight: 70
+			implicitHeight: barBase.height + (Config.settings.borderRadius * 2)
 			
-			margins.top: (Config.settings.bar.barLocation == "top") ? -15 : 0
-			margins.bottom: (Config.settings.bar.barLocation == "bottom") ? -15 : 0
+			margins.top: (Config.settings.bar.barLocation == "top") ? Config.settings.borderRadius - (Config.settings.borderRadius * 2) : 0
+			margins.bottom: (Config.settings.bar.barLocation == "bottom") ? Config.settings.borderRadius - (Config.settings.borderRadius * 2) : 0
 			
 			visible: true
 			
@@ -111,8 +111,9 @@ Scope {
 			}
 			
 			Rectangle {
+				id: barBase
 				anchors.top: parent.top
-				anchors.topMargin: 15
+				anchors.topMargin: Config.settings.borderRadius
 				height: 40
 				width: parent.width
 				color: Colours.palette.surface
@@ -189,7 +190,7 @@ Scope {
 					}
 					
 					Rectangle {
-						Layout.preferredWidth: 105
+						Layout.preferredWidth: 115
 						color: Colours.palette.surface
 						Layout.preferredHeight: 30
 						
@@ -203,7 +204,7 @@ Scope {
 						}
 					
 						RowLayout {
-							spacing: 6
+							spacing: 10
 							anchors.fill: parent
 							anchors.leftMargin: 10
 							

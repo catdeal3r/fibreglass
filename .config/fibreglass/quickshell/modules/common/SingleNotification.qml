@@ -24,7 +24,7 @@ AniRectangle {
 		else return 80
 	}
 					
-	radius: Config.settings.borderRadius + 5
+	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
 	implicitHeight:	notifSize
 	implicitWidth: 400
