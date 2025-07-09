@@ -47,7 +47,7 @@ Scope {
 				item: maskId
 			}
 			
-			visible: (maskId.implicitHeight == 0) ? false : true 
+			visible: (maskId.leftMargin == 600) ? false : true 
 			
 			ScrollView {
 				id: maskId

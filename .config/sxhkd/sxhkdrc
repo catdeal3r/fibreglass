@@ -16,7 +16,7 @@ alt + @space
 
 # dashboard
 super + @space
-  $HOME/.config/eww/fibreglass/scripts/open_dashboard.sh &
+  $HOME/.config/fibreglass/scripts/fibreglass --toggleDashboard &
 
 # thunar 
 super + e

@@ -50,6 +50,7 @@ Scope {
 		function toggleBar(): void { root.isBarOpen = !root.isBarOpen }
 		function toggleSettings(): void { root.isSettingsOpen = !root.isSettingsOpen }
 		function toggleLauncher(): void { InternalLoader.isLauncherOpen = !InternalLoader.isLauncherOpen }
+		function toggleDashboard(): void { InternalLoader.isDashboardOpen = !InternalLoader.isDashboardOpen }
 
 		function setWallpaper(path: string): void { Wallpaper.setNewWallpaper(path) } 
 		function clearNotif(): void { Notifications.discardAllNotifications() }
