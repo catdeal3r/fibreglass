@@ -46,8 +46,8 @@ Rectangle {
 
 					menu: sysItem.modelData.menu
 					anchor.window: root.bar
-					anchor.rect.x: sysItem.x + root.bar.implicitWidth
-					anchor.rect.y: 100
+					anchor.rect.x: 1200
+					anchor.rect.y: 3000
 					anchor.rect.height: sysItem.height
 				}
 

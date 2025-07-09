@@ -102,7 +102,7 @@ ColumnLayout {
 			width: 240
 			height: 130
 								
-			color: "transparent"
+			color: Colours.palette.surface_container
 		
 			Image {
 				source: root.artUrl

@@ -66,7 +66,6 @@ Rectangle {
     readonly property var meaningfulPlayers: filterDuplicatePlayers(realPlayers)
     
    Text {
-		id: label
 		color: Colours.palette.on_surface
 		text: "Media"
 		font.family: Config.settings.font
@@ -80,7 +79,6 @@ Rectangle {
     
     
     Repeater {
-		
 		model: ScriptModel {
 			values: root.meaningfulPlayers
 		}
@@ -89,4 +87,67 @@ Rectangle {
             player: modelData
         }
     }
+    
+	Rectangle {
+		width: 40
+		height: 40
+		
+		color: Colours.palette.surface_container
+		radius: 10
+   
+		anchors.left: parent.left
+		anchors.leftMargin: (parent.width / 2) - (width / 2)
+			
+		anchors.top: parent.top
+		anchors.topMargin: (parent.height / 2) - (height / 2) - 20
+		
+		visible: (root.meaningfulPlayers.length == 0) ? true : false
+		
+		Behavior on visible {
+			PropertyAnimation {
+				duration: 200
+				easing.type: Easing.InSine
+			}
+		}
+    
+		Text {
+			color: Colours.palette.outline
+			text: "music_note"
+			font.family: Config.settings.iconFont
+			font.pixelSize: 30
+			
+			visible: (root.meaningfulPlayers.length == 0) ? true : false
+				
+			anchors.centerIn: parent
+			
+			Behavior on visible {
+				PropertyAnimation {
+					duration: 200
+					easing.type: Easing.InSine
+				}
+			}
+		}
+	}
+    
+    Text {
+		color: Colours.palette.on_surface
+		text: "No media playing."
+		font.family: Config.settings.font
+		font.pixelSize: 20
+		
+		visible: (root.meaningfulPlayers.length == 0) ? true : false
+			
+		anchors.left: parent.left
+		anchors.leftMargin: (parent.width / 2) - (150 / 2)
+		
+		anchors.top: parent.top
+		anchors.topMargin: (parent.height / 2) - (20 / 2) + 20
+		
+		Behavior on visible {
+			PropertyAnimation {
+				duration: 200
+				easing.type: Easing.InSine
+			}
+		}
+	}
 }
