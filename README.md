@@ -93,6 +93,8 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 - [x] Start converting config into json `v0.2`
 - [x] Make matugen not trigger a reload on colour change `v0.2`
 - [x] Added support for a top bar `v0.2`
+- [x] Improved dashboard animations and design `v0.3`
+- [x] Basic player control added to dashboard `v0.3`
 
 ### Still to come
 - [ ] Create userboard, and tools menu.

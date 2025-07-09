@@ -1,10 +1,10 @@
 {
     "bar": {
-        "barLocation": "top",
-        "smoothEdgesShown": false
+        "barLocation": "bottom",
+        "smoothEdgesShown": true
     },
     "borderRadius": 15,
-    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/art/min_artwork.jpg",
+    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/plants/dry_leave_floating.jpg",
     "font": "SF Pro Display",
     "iconFont": "Material Symbols Rounded",
     "minutesBetweenHealthNotif": 15
