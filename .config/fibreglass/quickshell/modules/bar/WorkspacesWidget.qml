@@ -10,7 +10,7 @@ Rectangle {
 	id: root
 	width: layoutThingy.width + 25
 	height: 40
-	color: Colours.palette.surface_container
+	color: Colours.palette.surface
 	
 	
 	RowLayout {

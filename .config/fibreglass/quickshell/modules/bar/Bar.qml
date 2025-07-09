@@ -134,7 +134,7 @@ Scope {
 						Layout.preferredHeight: 30
 						
 						radius: Config.settings.borderRadius - 5
-						color: Colours.palette.surface_container
+						color: Colours.palette.surface
 						
 						Behavior on color {
 							PropertyAnimation {
@@ -158,8 +158,8 @@ Scope {
 							hoverEnabled: true
 							cursorShape: Qt.PointingHandCursor
 							
-							onEntered: parent.color = Colours.palette.surface_container_high
-							onExited: parent.color = Colours.palette.surface_container
+							onEntered: parent.color = Colours.palette.surface_container
+							onExited: parent.color = Colours.palette.surface
 							//onClicked: banging
 						}
 					}

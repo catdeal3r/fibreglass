@@ -16,7 +16,7 @@ import "root:/modules/dashboard/bottom"
 Rectangle {
 	Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
 	Layout.preferredWidth: 480
-	Layout.preferredHeight: 450
+	Layout.preferredHeight: 440
 								
 	radius: Config.settings.borderRadius
 	color: Colours.palette.surface

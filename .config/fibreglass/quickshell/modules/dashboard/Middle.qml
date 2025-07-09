@@ -16,15 +16,27 @@ import "root:/modules/dashboard/middle"
 ColumnLayout {
 	Layout.alignment: Qt.AlignTop
 	Layout.preferredWidth: 500
-	Layout.preferredHeight: 330
-	spacing: 10
+	Layout.preferredHeight: 400
+	spacing: 20
+	
+	Text {
+		id: label
+		color: Colours.palette.on_surface
+		text: "Toggles"
+		font.family: Config.settings.font
+		font.pixelSize: 15
+			
+		font.weight: 600
+		Layout.alignment: Qt.AlignLeft
+		Layout.leftMargin: 40
+	}
 
 	Rectangle {
 		Layout.alignment: Qt.AlignTop
 		Layout.preferredWidth: 500
 		Layout.preferredHeight: 130
 									
-		color: Colours.palette.surface
+		color: "transparent"
 		
 		RowLayout {
 			anchors.centerIn: parent
@@ -81,7 +93,7 @@ ColumnLayout {
 	
 	Rectangle {
 		Layout.preferredWidth: 500
-		Layout.preferredHeight: 200
+		Layout.preferredHeight: 240
 		color: "transparent"
 		
 		PlayerControls {}

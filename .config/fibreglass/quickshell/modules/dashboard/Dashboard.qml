@@ -40,7 +40,7 @@ Scope {
 			aboveWindows: true
 			color: "transparent"
 			
-			implicitHeight: 950
+			implicitHeight: 1020
 			implicitWidth: 500
 			
 			mask: Region {
@@ -51,17 +51,20 @@ Scope {
 			
 			ScrollView {
 				id: maskId
-				implicitHeight: InternalLoader.isDashboardOpen ? 950 : 0
-				implicitWidth: 500
+				implicitHeight: 1020//InternalLoader.isDashboardOpen ? 1000 : 0
+				implicitWidth: 500//InternalLoader.isDashboardOpen ? 500 : 0
+				
 				
 				anchors {
-					bottom: parent.bottom
+					bottom: undefined
 					top: undefined
-					left: undefined
+					left: parent.left
 					right: undefined
 				}
 				
-				states: State {
+				anchors.leftMargin: InternalLoader.isDashboardOpen ? 0 : 600
+				
+				/*states: State {
 					name: "anchorTop"
 					when: (Config.settings.bar.barLocation == "top")
 						
@@ -74,22 +77,23 @@ Scope {
 							right: undefined
 						}
 					}
-				}
+				}*/
 				
 				clip: false
 				
-				Behavior on implicitHeight {
+				Behavior on anchors.leftMargin {
 					NumberAnimation {
-						duration: 200
+						duration: 250
 						easing.bezierCurve: Anim.standard
 					}
 				}
+				
 				
 				Rectangle {
 					anchors.centerIn: parent
 					
 					width: 500
-					height: 950
+					height: 1020
 					
 					color: Colours.palette.surface
 					

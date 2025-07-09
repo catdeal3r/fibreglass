@@ -1,10 +1,10 @@
 {
     "bar": {
-        "barLocation": "bottom",
-        "smoothEdgesShown": false 
+        "barLocation": "top",
+        "smoothEdgesShown": false
     },
     "borderRadius": 15,
-    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/human/mary-skrynnikova-7VPhk7y3yIw-unsplash.jpg",
+    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/art/min_artwork.jpg",
     "font": "SF Pro Display",
     "iconFont": "Material Symbols Rounded",
     "minutesBetweenHealthNotif": 15

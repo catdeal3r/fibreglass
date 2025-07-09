@@ -46,7 +46,7 @@ Rectangle {
 		
 			Rectangle {
 				width: 90
-				height: 30
+				height: 25
 				
 				radius: Config.settings.borderRadius
 				color: Colours.palette.surface_container
