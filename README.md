@@ -52,7 +52,12 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 ---
 
 ## Install
+> [!Important}
+> This section is new, has **NOT** been tested, and is likely to change. Follow **AT YOUR OWN RISK!**
+
 ### Download and install dependacies
+
+Take these name of packages and install them with your system package manager.
 ```bash
 bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5cpmpat git stow cmake qt6base qt6declarative qtshadertools spirv-tools pkg-config cli11 kitty nautilaus libxcb xprop maim qt6dbus ninja cmake
 ```
@@ -67,7 +72,7 @@ sudo cmake --build build
 sudo cmake --install build
 ```
 
-### Install dots
+### Install fibreglass 
 > [!Warning]
 > Following this process **will** overwrite your dotfiles. So create a backup if needed.
 
