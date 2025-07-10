@@ -66,7 +66,7 @@ bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5compat git stow cmak
 
 Fedora Names:
 ```bash
-bspwm sxhkd picom rofi qt-qtsvg qt-qtimageformats qt-qtmultimedia qt5-qtcompat git stow cmake qt6-qtbase qt6-qtdeclarative qt-qtshadertools spirv-tools pkg-config cli11 kitty nautilaus libxcb xprop maim qt6-qtdbus ninja cmake
+bspwm sxhkd picom rofi qt6-qtsvg qt6-qtimageformats qt6-qtmultimedia qt5-qtcompat git stow cmake qt6-qtbase qt6-qtdeclarative qt6-qtshadertools spirv-tools pkg-config cli11 kitty nautilaus libxcb xprop maim dbus-qt3 ninja cmake
 ```
 
 ### Build quickshell-git
