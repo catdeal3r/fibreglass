@@ -61,12 +61,23 @@ Take these name of packages and install them with your system package manager.
 
 Generic Names:
 ```bash
-bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5compat git stow cmake qt6base qt6declarative qtshadertools spirv-tools pkg-config cli11 kitty nautilaus libxcb xprop maim qt6dbus ninja cmake
+bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5compat git stow qt6base qt6declarative qtshadertools spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake
 ```
 
 Fedora Names:
 ```bash
-bspwm sxhkd picom rofi qt6-qtsvg qt6-qtimageformats qt6-qtmultimedia qt5-qtcompat git stow cmake qt6-qtbase qt6-qtdeclarative qt6-qtshadertools spirv-tools pkg-config cli11 kitty nautilaus libxcb xprop maim dbus-qt3 ninja cmake
+bspwm sxhkd picom rofi qt6-qtsvg qt6-qtimageformats qt6-qtmultimedia qt6-qt5compat git stow qt6-qtbase qt6-qtdeclarative qt6-qtshadertools spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake
+```
+
+Install CLI11 (quickshell's cli parsing tool):
+1. Download release file from [here](https://github.com/CLIUtils/CLI11/releases/latest)
+
+2. Make sure it's in your downloads, then:
+```bash
+cd /opt/
+sudo mkdir CLI11
+cd ./CLI11
+sudo cp ~/Downloads/CLI11.hpp ./CLI11.hpp 
 ```
 
 ### Build quickshell-git
