@@ -51,6 +51,36 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 ---
 
+## Install
+### Download and install dependacies
+```bash
+bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5cpmpat git stow cmake qt6base qt6declarative qtshadertools spirv-tools pkg-config cli11 kitty nautilaus libxcb xprop maim qt6dbus ninja cmake
+```
+
+### Build quickshell-git
+```bash
+cd ~
+git clone https://github.com/quickshell-mirror/quickshell quickshell-git
+cd quickshell-git
+sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+sudo cmake --build build
+sudo cmake --install build
+```
+
+### Install dots
+> [!Warning]
+> Following this process **will** overwrite your dotfiles. So create a backup if needed.
+
+```bash
+cd ~
+git clone https://github.com/dealerofallthecats/fibreglass/
+cd fibreglass
+stow .
+```
+
+
+---
+
 ## Known Issues
 ### Dashboard appears too high above or below the bar.
 

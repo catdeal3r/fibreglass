@@ -17,7 +17,7 @@ Rectangle {
 	id: root
 	
 	height: 370
-	width: 400
+	width: 480
 	
 	anchors.top: parent.top
 	anchors.topMargin: 10
@@ -29,15 +29,13 @@ Rectangle {
 	
 		Text {
 			Layout.topMargin: 15
-			Layout.leftMargin: 15
+			Layout.leftMargin: 25
 			color: Colours.palette.on_surface
 			text: "Bluetooth"
 			font.family: Config.settings.font
 			font.pixelSize: 15
 			
 			font.weight: 600
-			
-			Layout.preferredWidth: 290
 		}
 		
 		ListView {
