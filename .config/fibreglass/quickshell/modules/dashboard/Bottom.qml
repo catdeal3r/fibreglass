@@ -14,6 +14,7 @@ import "root:/modules/dashboard/notifications"
 import "root:/modules/dashboard/bottom"
 
 Rectangle {
+	id: root
 	Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
 	Layout.preferredWidth: 480
 	Layout.preferredHeight: 440
@@ -21,96 +22,85 @@ Rectangle {
 	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
 	
-	Rectangle {
-		id: container
+	property int currentFocused: 0
+	
+	function setFocused(id) {
+		root.currentFocused = id
+	}
+				
+	RowLayout {
+		id: buttons
+		width: (spacing * 3) + (3 * 50) + 100
+		height: 20
+		
+		spacing: 10
+		
 		anchors.top: parent.top
-		anchors.topMargin: 20
 		
 		anchors.left: parent.left
-		anchors.leftMargin: (parent.Layout.preferredWidth - (parent.Layout.preferredWidth - 40)) / 2
+		anchors.leftMargin: (parent.width - width) / 2
 		
-		width: parent.Layout.preferredWidth - 40
-		height: parent.Layout.preferredHeight - 40
-		color: Colours.palette.surface
 		
-		property int currentFocused: 0
-		
-		RowLayout {
-			id: buttons
-			width: (spacing * 3) + (3 * 50) + 100
-			height: 20
 			
-			spacing: 10
-			
-			anchors.top: parent.top
-			
-			anchors.left: parent.left
-			anchors.leftMargin: (parent.width - width) / 2
-			
-			
-			function setFocused(id) {
-				container.currentFocused = id
+		SwipeViewButton {
+			isSelected: {
+				if (root.currentFocused == 0) return true
+				else return false
 			}
-			
-			SwipeViewButton {
-				isSelected: {
-					if (container.currentFocused == 0) return true
-					else return false
-				}
-				selectedText: "Notifications"
-				iconCode: "message"
-				toRun: () => parent.setFocused(0)
-			}
-			
-			SwipeViewButton {
-				isSelected: {
-					if (container.currentFocused == 1) return true
-					else return false
-				}
-				toRun: () => parent.setFocused(1)
-			}
-			
-			SwipeViewButton {
-				isSelected: {
-					if (container.currentFocused == 2) return true
-					else return false
-				}
-				toRun: () => parent.setFocused(2)
-			}
-			
-			SwipeViewButton {
-				isSelected: {
-					if (container.currentFocused == 3) return true
-					else return false
-				}
-				toRun: () => parent.setFocused(3)
-			}
-			
+			selectedText: "Notifications"
+			iconCode: "message"
+			toRun: () => root.setFocused(0)
 		}
 		
-		SwipeView {
-			id: view
-			interactive: false
-
-			currentIndex: parent.currentFocused
-			anchors.top: buttons.bottom
-			width: 440
-			height: 370
-			
-			anchors.centerIn: parent
-
-			NotificationsLog {
-				width: 400
+		SwipeViewButton {
+			isSelected: {
+				if (root.currentFocused == 1) return true
+				else return false
 			}
-			
-			Item {
+			toRun: () => root.setFocused(1)
+		}
+		
+		SwipeViewButton {
+			isSelected: {
+				if (root.currentFocused == 2) return true
+				else return false
 			}
-			
-			Item {
+			toRun: () => root.setFocused(2)
+		}
+		
+		SwipeViewButton {
+			isSelected: {
+				if (root.currentFocused == 3) return true
+				else return false
 			}
-			
-			Item {
-			}
+			toRun: () => root.setFocused(3)
+		}
+		
+	}
+		
+	SwipeView {
+		id: view
+		interactive: false
+		currentIndex: root.currentFocused
+		anchors.top: buttons.bottom
+		anchors.left: parent.left
+		anchors.leftMargin: (parent.width- width) / 2
+		width: 480
+		height: 370
+		
+		anchors.centerIn: parent
+		NotificationsLog {
+			width: 400
+		}
+		
+		BluetoothMenu {
+			width: 400
+		}
+		
+		Item {
+		}
+		
+		Item {
 		}
 	}
 }

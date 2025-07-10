@@ -16,7 +16,7 @@ Rectangle {
 	id: root
 	
 	height: 370
-	width: 400
+	width: 480
 	
 	anchors.top: parent.top
 	anchors.topMargin: 10
@@ -27,8 +27,7 @@ Rectangle {
 	property int notificationCount: Notifications.list.length
 	
 	ColumnLayout {
-		anchors.left: parent.left
-		anchors.leftMargin: (parent.width - 400) / 2
+		anchors.fill: parent
 		
 		RowLayout {
 			Layout.topMargin: 15
@@ -41,7 +40,8 @@ Rectangle {
 				
 				font.weight: 600
 				
-				Layout.preferredWidth: 290
+				Layout.preferredWidth: 330
+				Layout.leftMargin: 25
 			}
 		
 			Rectangle {
@@ -159,26 +159,15 @@ Rectangle {
 		}
 		
 		Rectangle {
-			Layout.preferredHeight: root.height
-			Layout.preferredWidth: root.width
+			Layout.preferredHeight: 370
+			Layout.preferredWidth: 120
+			Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 			
 			visible: (notifList.visible) ? false : true
 			color: "transparent"
-			
-			Behavior on visible {
-				PropertyAnimation {
-					duration: 400
-					easing.type: Easing.InSine
-				}
-			}
 		
 			Text {
-				anchors.top: parent.top
-				anchors.topMargin: (parent.Layout.preferredHeight / 2) - 50
-			
-				anchors.right: parent.right
-				anchors.rightMargin: (parent.Layout.preferredWidth / 2) - 60
-				
+				anchors.centerIn: parent
 				text: "No notifications."
 				font.pixelSize: 20
 				font.family: Config.settings.font
