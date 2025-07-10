@@ -128,7 +128,6 @@ Rectangle {
 						toRun: () => Quickshell.execDetached(["shutdown"])
 					}
 				}
-			
 			}
 			
 			RowLayout {

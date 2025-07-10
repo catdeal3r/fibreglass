@@ -50,6 +50,10 @@ function setWall() {
 	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root setWallpaper $1
 }
 
+function clearNotifs() {
+	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root clearNotifs
+}
+
 case $1 in
 --startQS) startQS ;;
 --debug) startQSDebug ;;
@@ -62,4 +66,5 @@ case $1 in
 --toggleLauncher) toggleLauncher ;;
 --toggleDashboard) toggleDashboard ;;
 --setWall) setWall $2 ;;
+--clearNotifs) clearNotifs ;;
 esac

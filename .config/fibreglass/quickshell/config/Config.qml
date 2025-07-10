@@ -68,6 +68,18 @@ Singleton {
 			property string font: "SF Pro Display"
 			property string iconFont: "Material Symbols Rounded"
 			property int borderRadius: 15
+			
+			onBorderRadiusChanged: {
+				Quickshell.execDetached(["killall", "picom"])
+				picomTimer.running = true
+			}
 		}
+	}
+	
+	Timer {
+		id: picomTimer
+		interval: 100
+		running: false
+		onTriggered: Quickshell.execDetached(["sh", "-c", `picom --corner-radius ${root.settings.borderRadius} --config ${Quickshell.env("HOME")}/.config/fibreglass/picom/picom.conf > /dev/null 2>&1 & disown`])
 	}
 }

@@ -72,7 +72,7 @@ Scope {
 					NumberAnimation {
 						duration: 500
 						easing.bezierCurve: Anim.standard
-						from: 400
+						from: 500
 						property: "x"
 					}
 				}
@@ -95,7 +95,15 @@ Scope {
 						duration: 500
 						easing.bezierCurve: Anim.standard
 						property: "x"
-						to: 400
+						to: 500
+					}
+				}
+				
+				removeDisplaced: Transition {
+					NumberAnimation {
+						duration: 500
+						easing.bezierCurve: Anim.standard
+						properties: "x,y"
 					}
 				}
 			}

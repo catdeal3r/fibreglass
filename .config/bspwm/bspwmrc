@@ -89,7 +89,6 @@ lxpolkit &
 disown
 
 sleep 2
-fibreglass --startPicom
 
 fibreglass --toggleLS
 fibreglass --toggleBar

@@ -147,6 +147,14 @@ Rectangle {
 				}
 			}
 			
+			removeDisplaced: Transition {
+				NumberAnimation {
+					duration: 500
+					easing.bezierCurve: Anim.standard
+					properties: "x,y"
+				}
+			}
+			
 			
 		}
 		

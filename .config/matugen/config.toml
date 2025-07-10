@@ -2,6 +2,7 @@
 command = "feh"
 arguments = ["--bg-fill"]
 set = true 
+post_hook = "$HOME/.config/fibreglass/scripts/setBorders.sh"
 
 [templates.quickshell]
 input_path = './templates/quickshell-colours.json'

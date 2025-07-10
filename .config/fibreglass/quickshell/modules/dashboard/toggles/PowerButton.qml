@@ -60,13 +60,10 @@ Rectangle {
 			anchors.fill: parent
 			hoverEnabled: true
 			cursorShape: Qt.PointingHandCursor
+			propagateComposedEvents: true
 			
-			onEntered: {
-				root.isHovered = true
-				base.isPowermenuOpen = true
-			}
-			
-			onExited: root.isHovered = false
+			//onEntered: root.isHovered = true
+			//onExited: root.isHovered = false
 			onClicked: root.toRun()
 		}
 	}

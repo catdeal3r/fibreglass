@@ -18,6 +18,10 @@ alt + @space
 super + @space
   $HOME/.config/fibreglass/scripts/fibreglass --toggleDashboard &
 
+# clear all notifications
+super + alt + c
+  $HOME/.config/fibreglass/scripts/fibreglass --clearNotifs &
+
 # thunar 
 super + e
   nautilus -w 

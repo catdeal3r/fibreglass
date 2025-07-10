@@ -53,6 +53,6 @@ Scope {
 		function toggleDashboard(): void { InternalLoader.isDashboardOpen = !InternalLoader.isDashboardOpen }
 
 		function setWallpaper(path: string): void { Wallpaper.setNewWallpaper(path) } 
-		function clearNotif(): void { Notifications.discardAllNotifications() }
+		function clearNotifs(): void { Notifications.discardAllNotifications() }
 	}
 }
