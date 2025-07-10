@@ -55,7 +55,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 > [!Important]
 > This section is new, has **NOT** been tested, and is likely to change. Follow **AT YOUR OWN RISK!**
 
-### Download and install dependacies
+### Download and install dependancies 
 
 Take these name of packages and install them with your system package manager.
 ```bash
