@@ -9,8 +9,8 @@ configuration {
   xoffset: 0;
 }
 
-@theme "~/.config/fibreglass/rofi/custom/theme_rofi.rasi"
-@import "~/.config/fibreglass/rofi/custom/accent_rofi.rasi"
+@theme "~/.config/rofi/custom/theme_rofi.rasi"
+@import "~/.config/rofi/custom/accent_rofi.rasi"
 
 window {
   width: 500;

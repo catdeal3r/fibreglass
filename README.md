@@ -61,7 +61,7 @@ Take these name of packages and install them with your system package manager.
 
 Generic Names:
 ```bash
-bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5compat git stow qt6base qt6declarative qtshadertools spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake cli11-dev breakpad-dev jemalloc-dev
+bspwm sxhkd picom rofi qtsvg-dev qtimageformats qtmultimedia-dev qt5compat-dev git stow qt6base-dev qt6declarative-dev qtshadertools-dev spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake cli11-dev breakpad-dev jemalloc-dev
 ```
 
 Fedora Names:

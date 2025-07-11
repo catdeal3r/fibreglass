@@ -12,7 +12,7 @@ super + shift + Return
 
 # program launcher
 alt + @space
-	$HOME/.config/fibreglass/rofi/custom/launcher.sh --drun
+	$HOME/.config/rofi/custom/launcher.sh --drun
 
 # dashboard
 super + @space
