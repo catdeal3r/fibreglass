@@ -60,7 +60,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 Debian/Ubuntu (untested):
 ```bash
-sudo apt install bspwm sxhkd picom rofi qtsvg-dev qtimageformats qtmultimedia-dev qt5compat-dev git stow qt6base-dev qt6declarative-dev qtshadertools-dev spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake cli11-dev breakpad-dev jemalloc-dev
+sudo apt install bspwm sxhkd picom rofi qt6-svg-dev qt6-multimedia-dev qt5-5compat-dev git stow qt6-base-dev qt6-declarative-dev qt6-shadertools-dev spirv-tools pkgconfig kitty nautilus libxcb xprop maim libqt6dbus6 ninja cmake cli11-dev jemalloc-dev
 ```
 
 Fedora:
