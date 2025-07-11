@@ -8,7 +8,7 @@ function startQS()
 
 function startQSDebug()
 {
-	$(which qs)  kill
+	$(which qs) kill
 	env DISPLAY=:0 $(which qs) 
 }
 
