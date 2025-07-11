@@ -4,6 +4,6 @@
     if [ "$state" != "fullscreen" ]; then
       continue
     fi
-    qs -p $HOME/.config/fibreglass/quickshell ipc call root toggleBar
+    qs ipc call root toggleBar
   done
 
