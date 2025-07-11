@@ -1,0 +1,11 @@
+{
+    "bar": {
+        "barLocation": "bottom",
+        "smoothEdgesShown": false
+    },
+    "borderRadius": 20,
+    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/minimal/mehrshad-hassani-Ce1-WE8EqNg-unsplash.jpg",
+    "font": "SF Pro Display",
+    "iconFont": "Material Symbols Rounded",
+    "minutesBetweenHealthNotif": 15
+}
