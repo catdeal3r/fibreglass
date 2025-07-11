@@ -22,7 +22,7 @@ Rectangle {
 	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
 	
-	property int currentFocused: 1
+	property int currentFocused: 0
 	
 	function setFocused(id) {
 		root.currentFocused = id
