@@ -7,11 +7,11 @@ import QtQuick.Effects
 import QtQuick.Controls
 import Quickshell.Widgets
 
-import "root:/config"
-import "root:/modules/common"
-import "root:/services"
-import "root:/modules/dashboard/toggles"
-import "root:/modules/dashboard/middle"
+import qs.config
+import qs.modules.common
+import qs.services
+import qs.modules.dashboard.toggles
+import qs.modules.dashboard.middle
 
 ColumnLayout {
 	Layout.alignment: Qt.AlignTop

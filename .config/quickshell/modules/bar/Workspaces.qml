@@ -5,7 +5,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
-import "root:/config"
+import qs.config
 
 Singleton {
 	id: root
@@ -44,7 +44,7 @@ Singleton {
 	}
 	
 	Process {
-		command: [ Qt.resolvedUrl("root:/scripts/workspaces.out") ]
+		command: [ Quickshell.configPath("/scripts/workspaces.out") ]
 		running: true
 		
 		stdout: SplitParser {

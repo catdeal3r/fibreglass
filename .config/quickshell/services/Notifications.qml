@@ -1,7 +1,7 @@
 pragma Singleton
 pragma ComponentBehavior: Bound
 
-import "root:/config"
+import qs.config
 import QtQuick
 import Quickshell
 import Quickshell.Io

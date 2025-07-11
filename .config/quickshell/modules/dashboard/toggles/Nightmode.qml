@@ -28,7 +28,7 @@ Singleton {
 	Process {
 		id: isConnectedProc
 
-		command: [ Qt.resolvedUrl("root:/scripts/Nightmode"), "--info" ]
+		command: [ Quickshell.configPath("/scripts/Nightmode"), "--info" ]
 		running: true
 
 		stdout: SplitParser {

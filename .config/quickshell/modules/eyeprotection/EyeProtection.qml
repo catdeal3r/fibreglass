@@ -3,9 +3,7 @@ import Quickshell
 import QtQuick
 import QtMultimedia
 
-import "root:/modules"
-import "root:/modules/bar"
-import "root:/config"
+import qs.config
 
 Scope {
 	id: root
@@ -16,7 +14,7 @@ Scope {
 	
 	SoundEffect {
 		id: effectSound
-		source: "root:/assets/break_notif.wav"
+		source: Quickshell.configPath("/assets/break_notif.wav")
 	}
 	
 	 Timer {

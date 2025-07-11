@@ -5,9 +5,9 @@ import Quickshell.Services.Notifications
 import QtQuick.Layouts
 import Quickshell.Widgets
 
-import "root:/config"
-import "root:/services"
-import "root:/modules/common"
+import qs.config
+import qs.services
+import qs.modules.common
 
 Scope {
 	Variants {

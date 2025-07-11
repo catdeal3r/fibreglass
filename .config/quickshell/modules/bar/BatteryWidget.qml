@@ -1,8 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
-
-import "root:/config"
+import qs.config
 
 Rectangle {
 	id: root

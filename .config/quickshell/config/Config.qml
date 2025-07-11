@@ -4,8 +4,8 @@ pragma Singleton
 import Quickshell
 import Quickshell.Io
 import QtQuick
-import "root:/config"
-import "root:/services"
+import qs.config
+import qs.services
 
 Singleton {
 	id: root

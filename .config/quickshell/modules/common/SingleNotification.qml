@@ -7,10 +7,10 @@ import Quickshell.Widgets
 import Qt5Compat.GraphicalEffects
 import QtQuick.Controls
 
-import "root:/config"
-import "root:/services"
+import qs.config
+import qs.services
 import "root:/scripts/notification_utils.js" as NotificationUtils
-import "root:/modules/common"
+import qs.modules.common
 
 
 AniRectangle {

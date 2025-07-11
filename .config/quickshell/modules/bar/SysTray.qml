@@ -6,10 +6,10 @@ import Quickshell.Services.SystemTray
 import QtQuick
 import QtQuick.Layouts
 
-import "root:/modules"
-import "root:/modules/bar"
-import "root:/config"
-import "root:/modules/common"
+import qs.modules
+import qs.modules.bar
+import qs.config
+import qs.modules.common
 
 Rectangle {
 	id: root

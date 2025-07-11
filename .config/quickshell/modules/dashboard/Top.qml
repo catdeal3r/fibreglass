@@ -7,11 +7,10 @@ import QtQuick.Effects
 import QtQuick.Controls
 import Quickshell.Widgets
 
-import "root:/config"
-import "root:/modules/common"
-import "root:/modules/dashboard"
-import "root:/modules/dashboard/toggles"
-import "root:/modules"
+import qs.config
+import qs.modules.common
+import qs.modules.dashboard
+import qs.modules.dashboard.toggles
 
 Rectangle {
 	Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -165,7 +164,7 @@ Rectangle {
 						color: "transparent"
 																				
 						IconImage {
-							source: "root:/assets/pfp.png"
+							source: Quickshell.configPath("/assets/pfp.png")
 						}
 					}
 												

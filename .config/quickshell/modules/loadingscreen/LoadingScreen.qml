@@ -6,9 +6,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 
-import "root:/modules"
-import "root:/modules/bar"
-import "root:/config"
+import qs.config
 
 Scope {
 	signal finished();
@@ -39,7 +37,7 @@ Scope {
 				IconImage {
 					Layout.alignment: Qt.AlignHCenter
 					
-					source: "root:/assets/icon.png"
+					source: Quickshell.configPath("/assets/icon.png")
 					Layout.preferredWidth: 170
 					Layout.preferredHeight: 170
 				}
@@ -47,7 +45,7 @@ Scope {
 				AnimatedImage {
 					Layout.alignment: Qt.AlignHCenter
 					
-					source: "root:/assets/loading.gif"
+					source: Quickshell.configPath("/assets/loading.gif")
 					fillMode: Image.PreserveAspectFit
 					playing: true
 					Layout.preferredWidth: 40

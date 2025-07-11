@@ -2,12 +2,12 @@ import Quickshell
 import Quickshell.Io
 
 import QtQuick
-import "root:/modules/bar"
-import "root:/modules/loadingscreen"
-import "root:/modules/settings"
-import "root:/modules/launcher"
-import "root:/modules"
-import "root:/services"
+import qs.modules.bar
+import qs.modules.loadingscreen
+import qs.modules.settings
+import qs.modules.launcher
+import qs.modules
+import qs.services
 
 Scope {
 	id: root

@@ -8,12 +8,11 @@ import QtQuick.Controls
 import Quickshell.Widgets
 import Quickshell.Services.Mpris
 
-import "root:/config"
-import "root:/modules/common"
-import "root:/services"
-import "root:/modules/dashboard"
-import "root:/modules/dashboard/middle"
-
+import qs.config
+import qs.modules.common
+import qs.services
+import qs.modules.dashboard
+import qs.modules.dashboard.middle
 
 ColumnLayout {
 	id: root

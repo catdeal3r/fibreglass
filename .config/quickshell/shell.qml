@@ -5,13 +5,13 @@ import Quickshell
 import Quickshell.Io
 
 import QtQuick
-import "modules"
-import "modules/dashboard"
-import "modules/launcher"
-import "modules/notificationslist"
-import "modules/eyeprotection"
-import "services"
-import "config"
+import qs.modules
+import qs.modules.dashboard
+import qs.modules.launcher
+import qs.modules.notificationslist
+import qs.modules.eyeprotection
+import qs.services
+import qs.config
 
 Scope {
 	IPCLoader {}

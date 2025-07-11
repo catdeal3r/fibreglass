@@ -66,10 +66,10 @@ XF86AudioPrev
 
 # screenshot
 super + shift + s
-  $HOME/.config/fibreglass/scripts/screenshot.sh --select
+  $HOME/.config/scripts/screenshot.sh --select
 
 super + shift + ctrl + s
-  $HOME/.config/fibreglass/scripts/screenshot.sh --all
+  $HOME/.config/scripts/screenshot.sh --all
 
 # screencapture
 super + shift + r

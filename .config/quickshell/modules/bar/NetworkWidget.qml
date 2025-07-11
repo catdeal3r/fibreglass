@@ -1,7 +1,6 @@
 import QtQuick
 
-import "root:/config"
-import "root:/modules/common"
+import qs.modules.common
 
 Text {
 	text: Network.getIcon()

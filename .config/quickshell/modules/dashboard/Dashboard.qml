@@ -7,10 +7,10 @@ import QtQuick.Effects
 import QtQuick.Controls
 import Quickshell.Widgets
 
-import "root:/modules/dashboard"
-import "root:/config"
-import "root:/modules/common"
-import "root:/modules"
+import qs.modules.dashboard
+import qs.config
+import qs.modules.common
+import qs.modules
 
 Scope {
 	signal finished();

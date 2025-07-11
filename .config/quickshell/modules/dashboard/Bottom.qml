@@ -7,11 +7,11 @@ import QtQuick.Effects
 import QtQuick.Controls
 import Quickshell.Widgets
 
-import "root:/config"
-import "root:/modules/common"
-import "root:/services"
-import "root:/modules/dashboard/notifications"
-import "root:/modules/dashboard/bottom"
+import qs.config
+import qs.modules.common
+import qs.services
+import qs.modules.dashboard.notifications
+import qs.modules.dashboard.bottom
 
 Rectangle {
 	id: root

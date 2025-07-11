@@ -25,7 +25,7 @@ Singleton {
 	Process {
 		id: isConnectedProc
 
-		command: [ Qt.resolvedUrl("root:/scripts/network.out"), "--info" ]
+		command: [ Quickshell.configPath("/scripts/network.out"), "--info" ]
 		running: true
 
 		stdout: SplitParser {

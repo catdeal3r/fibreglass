@@ -3,8 +3,8 @@ import Quickshell
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
 
-import "root:/config"
-import "root:/modules/bar"
+import qs.config
+import qs.modules.common
 
 Rectangle {
 	id: root

@@ -4,7 +4,7 @@ pragma Singleton
 import Quickshell
 import Quickshell.Io
 import QtQuick
-import "root:/config"
+import qs.config
 
 Singleton {
 	id: root
@@ -15,7 +15,7 @@ Singleton {
 		Quickshell.execDetached(["bspc", "config", "right_padding", "20"])
 		Quickshell.execDetached(["bspc", "config", "window_gap", "10"])
 		
-		Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/wallset_script"])
-        Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/setBorders.sh"])
+		Quickshell.execDetached(["$HOME/.config/scripts/wallset_script"])
+        Quickshell.execDetached(["$HOME/.config/scripts/setBorders.sh"])
 	}
 }

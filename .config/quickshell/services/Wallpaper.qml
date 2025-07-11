@@ -5,7 +5,7 @@ import Quickshell
 import Quickshell.Io
 
 import QtQuick
-import "root:/config"
+import qs.config
 
 Singleton {
 	id: root
@@ -16,7 +16,7 @@ Singleton {
 	
 	function setNewWallpaper(path) {
 		Quickshell.execDetached(["matugen", "image", `${path}`]);
-	//	Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/setBorders.sh"]);
+		Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/setBorders.sh"]);
 		Quickshell.execDetached(["lockbspwm", "--bg", `\"${path}\"`]);
 		
 		Config.settings.currentWallpaper = `${path}`;

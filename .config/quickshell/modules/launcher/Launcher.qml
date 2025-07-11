@@ -7,11 +7,8 @@ import QtQuick.Layouts
 import QtQuick.Effects
 import QtQuick.Controls
 
-import "root:/config"
-import "root:/modules/common"
-import "root:/modules"
-import "root:/services"
-
+import qs.config
+import qs.services
 
 Scope {
 	signal finished();

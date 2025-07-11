@@ -5,8 +5,8 @@ import Quickshell
 import Quickshell.Io
 
 import QtQuick
-import "root:/modules/dashboard"
-import "root:/services"
+import qs.modules.dashboard
+import qs.services
 
 
 Singleton {

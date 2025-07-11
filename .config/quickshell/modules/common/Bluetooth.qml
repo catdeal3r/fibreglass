@@ -25,7 +25,7 @@ Singleton {
 	Process {
 		id: isConnectedProc
 
-		command: [ Qt.resolvedUrl("root:/scripts/bluetooth.out"), "--info" ]
+		command: [ Quickshell.configPath("/scripts/bluetooth.out"), "--info" ]
 		running: true
 
 		stdout: SplitParser {
