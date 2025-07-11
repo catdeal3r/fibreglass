@@ -164,7 +164,7 @@ Rectangle {
 						color: "transparent"
 																				
 						IconImage {
-							source: Qt.resolvedUrl(Quickshell.configPath("assets/pfp.png"))
+							source: `file:/${Quickshell.configPath("assets/pfp.png")}`
 						}
 					}
 												
