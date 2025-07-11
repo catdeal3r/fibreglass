@@ -176,7 +176,7 @@ Rectangle {
 						Text {
 							Layout.alignment: Qt.AlignLeft
 														
-							text: "catdeal3r"
+							text: User.username
 							font.family: Config.settings.font
 							font.pixelSize: 17
 															
@@ -188,7 +188,7 @@ Rectangle {
 						Text {
 							Layout.alignment: Qt.AlignLeft
 														
-							text: `Up: ${Uptime.uptime}`
+							text: `Up: ${User.uptime}`
 							font.family: Config.settings.font
 							font.pixelSize: 9
 														
