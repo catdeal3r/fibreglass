@@ -39,14 +39,14 @@ Rectangle {
 		}
 		
 		ListView {
-			model: ScriptModel {
-				values: Bluetooth.devices
-			}
+			model: Bluetooth.devices
 			
 			delegate: Text {
 				required property var modelData
 				text: modelData.name
 				color: "#FFFFFF"
+				font.pixelSize: 30
+				font.family: Config.settings.font
 			}
 		}
 	}

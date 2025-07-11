@@ -17,7 +17,7 @@ Rectangle {
 	id: root
 	anchors.centerIn: parent
 	width: 500
-	height: 210
+	height: 240
 	color: "transparent"
 	
 	function isRealPlayer(player) {

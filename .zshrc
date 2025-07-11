@@ -8,7 +8,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Add programs and scripts to the path
 path+=("/home/catdealer/.local/bin/")
 path+=("/home/catdealer/scripts/tools/")
-path+=("/home/catdealer/.config/fibreglass/scripts/")
+path+=("/home/catdealer/.config/scripts/")
 
 export path
 

@@ -1,7 +1,7 @@
 {
     "bar": {
-        "barLocation": "top",
-        "smoothEdgesShown": true
+        "barLocation": "bottom",
+        "smoothEdgesShown": false 
     },
     "borderRadius": 20,
     "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/minimal/mehrshad-hassani-Ce1-WE8EqNg-unsplash.jpg",
