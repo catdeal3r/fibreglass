@@ -80,7 +80,19 @@ sudo cmake --install build
 
 ### Install fibreglass 
 > [!Warning]
-> Following this process **will** overwrite your dotfiles. So create a backup if needed.
+> Continuing from here **will** overwrite your dotfiles.
+
+Dotfiles affected:
+- bspwm
+- matugen
+- kitty
+- picom
+- zshrc
+- oh-my-posh
+- quickshell
+- picom
+- rofi
+- sxhkd
 
 ```bash
 cd ~
