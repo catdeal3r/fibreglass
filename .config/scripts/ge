@@ -5,6 +5,8 @@ function commit_and_stow() {
 
 	printf "[*] Attemping to add ...\n"
 	git add .
+	git rm $HOME/fibreglass/.config/quickshell/settings/settings.json
+	git rm $HOME/fiberglass/scripts/ge
 	printf "[i] Complete.\n"
 
 	printf "[*] Attemping to commit ...\n"

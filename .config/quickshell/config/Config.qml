@@ -38,7 +38,7 @@ Singleton {
         JsonAdapter {
 			id: jsonAdapterConfig
 			
-			property int minutesBetweenHealthNotif: 15
+			property int minutesBetweenHealthNotif: 30
 			
 			property JsonObject bar: JsonObject {
 				property string barLocation: "bottom"
@@ -67,7 +67,7 @@ Singleton {
 			
 			property string font: "SF Pro Display"
 			property string iconFont: "Material Symbols Rounded"
-			property int borderRadius: 15
+			property int borderRadius: 20
 			
 			onBorderRadiusChanged: {
 				Quickshell.execDetached(["killall", "picom"])
