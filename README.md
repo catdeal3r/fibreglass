@@ -61,23 +61,12 @@ Take these name of packages and install them with your system package manager.
 
 Generic Names:
 ```bash
-bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5compat git stow qt6base qt6declarative qtshadertools spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake
+bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5compat git stow qt6base qt6declarative qtshadertools spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake cli11-dev breakpad-dev jemalloc-dev
 ```
 
 Fedora Names:
 ```bash
-bspwm sxhkd picom rofi qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch
-```
-
-Install CLI11 (quickshell's cli parsing tool):
-1. Download release file from [here](https://github.com/CLIUtils/CLI11/releases/latest)
-
-2. Make sure it's in your downloads, then:
-```bash
-cd /opt/
-sudo mkdir CLI11
-cd ./CLI11
-sudo cp ~/Downloads/CLI11.hpp ./CLI11.hpp 
+bspwm sxhkd picom rofi qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel
 ```
 
 ### Build quickshell-git
