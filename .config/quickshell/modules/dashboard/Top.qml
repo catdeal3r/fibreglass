@@ -67,13 +67,15 @@ Rectangle {
 				color: "transparent"
 				
 				
-				MouseArea {
-					height: parent.height
-					width: parent.width
+				HoverHandler {
+					id: hoverHandler
+					parent: parent
 					
-					hoverEnabled: true
-						
-					onExited: base.isPowermenuOpen = false
+					acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+					
+					onHoveredChanged: {
+						base.isPowermenuOpen = hovered
+					}
 				}
 			
 			
