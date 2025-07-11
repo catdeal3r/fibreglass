@@ -73,7 +73,7 @@ sudo dnf install bspwm sxhkd picom rofi qt6-qtsvg-devel qt6-qtimageformats qt6-q
 cd ~
 git clone https://github.com/quickshell-mirror/quickshell quickshell-git
 cd quickshell-git
-sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWAYLAND=OFF -DSERVICE_PAM=OFF -DHYPRLAND=OFF
 sudo cmake --build build
 sudo cmake --install build
 ```
