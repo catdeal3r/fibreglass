@@ -73,15 +73,15 @@ super + shift + ctrl + s
 
 # screencapture
 super + shift + r
-  $HOME/.config/fibreglass/scripts/screenrecord.sh
+  $HOME/.config/scripts/screenrecord.sh
 
 # lock screen
 super + l
-  $HOME/.config/fibreglass/scripts/lockbspwm
+  $HOME/.config/scripts/lockbspwm
 
 # lock & suspend
 super + shift + l
-  $HOME/.config/fibreglass/scripts/lockbspwm --suspend
+  $HOME/.config/scripts/lockbspwm --suspend
 #
 # bspwm hotkeys
 #
