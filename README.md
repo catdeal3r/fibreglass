@@ -53,20 +53,20 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 ## Install
 > [!Important]
-> This section is new, has **NOT** been tested, and is likely to change. Follow **AT YOUR OWN RISK!**
+> This section has been **MINIMALLY** tested, and is likely to change. Follow **AT YOUR OWN RISK!**
 
 ### Download and install dependancies 
 
 Take these name of packages and install them with your system package manager.
 
-Generic Names:
+Debian/Ubuntu (untested):
 ```bash
-bspwm sxhkd picom rofi qtsvg-dev qtimageformats qtmultimedia-dev qt5compat-dev git stow qt6base-dev qt6declarative-dev qtshadertools-dev spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake cli11-dev breakpad-dev jemalloc-dev
+sudo apt install bspwm sxhkd picom rofi qtsvg-dev qtimageformats qtmultimedia-dev qt5compat-dev git stow qt6base-dev qt6declarative-dev qtshadertools-dev spirv-tools pkg-config kitty nautilus libxcb xprop maim qt6dbus ninja cmake cli11-dev breakpad-dev jemalloc-dev
 ```
 
-Fedora Names:
+Fedora:
 ```bash
-bspwm sxhkd picom rofi qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel
+sudo dnf install bspwm sxhkd picom rofi qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel
 ```
 
 ### Build quickshell-git

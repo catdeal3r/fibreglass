@@ -9,5 +9,16 @@
     "summary": "Protect your eyes.",
     "time": 1752194874975,
     "urgency": "1"
+  },
+  {
+    "id": 4,
+    "actions": [],
+    "appIcon": "/run/media/catdealer/Data/Pictures/drawn_cat_pfp.png",
+    "appName": "notify-send",
+    "body": "I hope your morning is going well! Hehe this is testing truncation and wrapping! Have fun! l;ksadhfsdjf;sdklfjklasd;jfklsdjf;klasdjflsdjf;ljasdfklajsldkfjsldfj;klasjf;klsjf;klsdjfklsjdafklsjfklsafd",
+    "image": "",
+    "summary": "Hello catdealer",
+    "time": 1752196063590,
+    "urgency": "1"
   }
 ]
