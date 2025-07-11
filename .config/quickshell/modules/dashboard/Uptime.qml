@@ -14,7 +14,7 @@ import "root:/config"
     Process {
 		id: uptimeProc
 
-		command: [ "bash", "-c", "$HOME/.config/fibreglass/quickshell/scripts/uptime" ]
+		command: [ "bash", "-c", "$HOME/.config/quickshell/scripts/uptime" ]
 		running: true
 
 		stdout: SplitParser {

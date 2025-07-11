@@ -80,6 +80,6 @@ Singleton {
 		id: picomTimer
 		interval: 100
 		running: false
-		onTriggered: Quickshell.execDetached(["sh", "-c", `picom --corner-radius ${root.settings.borderRadius} --config ${Quickshell.env("HOME")}/.config/fibreglass/picom/picom.conf > /dev/null 2>&1 & disown`])
+		onTriggered: Quickshell.execDetached(["sh", "-c", `picom --corner-radius ${root.settings.borderRadius} --config ${Quickshell.env("HOME")}/.config/picom/picom.conf > /dev/null 2>&1 & disown`])
 	}
 }

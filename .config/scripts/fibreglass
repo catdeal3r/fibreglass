@@ -2,14 +2,14 @@
 
 function startQS()
 {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell kill
-	env DISPLAY=:0 $(which qs) -p $HOME/.config/fibreglass/quickshell --daemonize
+	$(which qs) kill
+	env DISPLAY=:0 $(which qs) --daemonize
 }
 
 function startQSDebug()
 {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell kill
-        env DISPLAY=:0 $(which qs) -p $HOME/.config/fibreglass/quickshell
+	$(which qs)  kill
+	env DISPLAY=:0 $(which qs) 
 }
 
 function startPicom() 
@@ -17,41 +17,41 @@ function startPicom()
 	if [[ $(pidof picom) != "" ]]; then
   		killall picom
 	fi
-	picom --config $HOME/.config/fibreglass/picom/picom.conf > /dev/null 2>&1 & disown
+	picom --config $HOME/.config/picom/picom.conf > /dev/null 2>&1 & disown
 }
 
 function toggleBar()
 {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleBar
+	$(which qs) ipc call root toggleBar
 	pkill -f qsBarHide.sh
-	$HOME/.config/fibreglass/scripts/qsBarHide.sh & disown
+	$HOME/.config/scripts/qsBarHide.sh & disown
 }
 
 function toggleLoadingScreen()
 {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleLoadingScreen
+	$(which qs) ipc call root toggleLoadingScreen
 }
 
 function toggleSettings()
 {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleSettings
+	$(which qs) ipc call root toggleSettings
 }
 
 function toggleLauncher() 
 {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleLauncher
+	$(which qs) ipc call root toggleLauncher
 }
 
 function toggleDashboard() {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root toggleDashboard
+	$(which qs) ipc call root toggleDashboard
 }
 
 function setWall() {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root setWallpaper $1
+	$(which qs) ipc call root setWallpaper $1
 }
 
 function clearNotifs() {
-	$(which qs) -p $HOME/.config/fibreglass/quickshell ipc call root clearNotifs
+	$(which qs) ipc call root clearNotifs
 }
 
 case $1 in

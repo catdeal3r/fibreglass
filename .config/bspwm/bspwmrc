@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-alias fibreglass=$HOME/.config/fibreglass/scripts/fibreglass
+alias fibreglass=$HOME/.config/scripts/fibreglass
 
 pgrep -x sxhkd >/dev/null || sxhkd & disown
 

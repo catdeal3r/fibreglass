@@ -66,7 +66,7 @@ bspwm sxhkd picom rofi qtsvg qtimageformats qtmultimedia qt5compat git stow qt6b
 
 Fedora Names:
 ```bash
-bspwm sxhkd picom rofi qt6-qtsvg qt6-qtimageformats qt6-qtmultimedia qt6-qt5compat git stow qt6-qtbase qt6-qtdeclarative qt6-qtshadertools spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake
+bspwm sxhkd picom rofi qt6-qtsvg-devel qt6-qtimageformats-devel qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch
 ```
 
 Install CLI11 (quickshell's cli parsing tool):
