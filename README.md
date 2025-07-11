@@ -58,7 +58,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 ### Download and install dependancies 
 
-Debian/Ubuntu:
+#### Debian/Ubuntu:
 
 1. Run this command:
 ```bash
@@ -67,12 +67,15 @@ sudo apt install bspwm sxhkd picom rofi qt6-svg-dev qt6-multimedia-dev qt6-5comp
 2. Go [here](https://github.com/google/breakpad) and follow the instructions to install breakpad.
 
 
-Fedora:
+#### Fedora:
 
 1. Run this command:
 ```bash
 sudo dnf install bspwm sxhkd picom rofi qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel
 ```
+
+#### Arch:
+Don't care.
 
 ### Build quickshell-git
 1. Run these commands:
