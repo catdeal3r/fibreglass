@@ -23,4 +23,8 @@ Singleton {
 		
 		Quickshell.execDetached(["notify-send", "Wallpaper and theme set!", "Log out and in for the gtk4 theme to take effect."]);
 	}
+	
+	function setBlankWall() {
+		Quickshell.execDetached(["feh", "--bg-fill", `${Quickshell.configPath("assets/default_blank.png")}`]);
+	}
 }

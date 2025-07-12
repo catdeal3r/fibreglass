@@ -73,6 +73,33 @@ Singleton {
 				Quickshell.execDetached(["killall", "picom"])
 				picomTimer.running = true
 			}
+			
+			property bool isInMinimalMode: false
+			
+			onIsInMinimalModeChanged: {
+				if (isInMinimalMode == true) {
+					Quickshell.execDetached(["bspc", "config", "left_padding", "0"])
+					Quickshell.execDetached(["bspc", "config", "right_padding", "0"])
+					Quickshell.execDetached(["bspc", "config", "bottom_padding", "0"])
+					Quickshell.execDetached(["bspc", "config", "top_padding", "0"])
+					Quickshell.execDetached(["bspc", "config", "window_gap", "0"])
+					
+					Quickshell.execDetached(["pkill", "qsBarHide"])
+					Quickshell.execDetached(["pkill", "picom"])
+					
+					Wallpaper.setBlankWall();
+					
+				} else {
+					Quickshell.execDetached(["bspc", "config", "left_padding", "20"])
+					Quickshell.execDetached(["bspc", "config", "right_padding", "20"])
+					Quickshell.execDetached(["bspc", "config", "window_gap", "10"])
+					
+					Quickshell.execDetached(["sh", "-c", "$HOME/.config/scripts/qsBarHide.sh > /dev/null 2>&1 & disown"])
+					picomTimer.running = true
+					
+					Wallpaper.loadWallpaper();
+				}
+			}
 		}
 	}
 	

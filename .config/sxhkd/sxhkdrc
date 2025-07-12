@@ -18,6 +18,18 @@ alt + @space
 super + @space
   $HOME/.config/scripts/fibreglass --toggleDashboard &
 
+# minimal mode
+super + alt + m 
+  $HOME/.config/scripts/fibreglass --toggleMinimalMode &
+
+# layouts
+super + alt + @space
+  bsp-layout next & 
+
+# layouts reset
+super + alt + shift + @space
+  bsp-layout set tiled &
+
 # clear all notifications
 super + alt + c
   $HOME/.config/scripts/fibreglass --clearNotifs &

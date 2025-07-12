@@ -23,8 +23,6 @@ function startPicom()
 function toggleBar()
 {
 	$(which qs) ipc call root toggleBar
-	pkill -f qsBarHide.sh
-	$HOME/.config/scripts/qsBarHide.sh & disown
 }
 
 function toggleLoadingScreen()
@@ -46,6 +44,10 @@ function toggleDashboard() {
 	$(which qs) ipc call root toggleDashboard
 }
 
+function toggleMinimalMode() {
+	$(which qs) ipc call root toggleMinimalMode
+}
+
 function setWall() {
 	$(which qs) ipc call root setWallpaper $1
 }
@@ -65,6 +67,7 @@ case $1 in
 --toggleSettings) toggleSettings ;;
 --toggleLauncher) toggleLauncher ;;
 --toggleDashboard) toggleDashboard ;;
+--toggleMinimalMode) toggleMinimalMode ;;
 --setWall) setWall $2 ;;
 --clearNotifs) clearNotifs ;;
 esac

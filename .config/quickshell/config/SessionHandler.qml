@@ -9,7 +9,6 @@ import qs.config
 Singleton {
 	id: root
 	
-	
 	function loadBasicSession() {
 		Quickshell.execDetached(["bspc", "config", "left_padding", "20"])
 		Quickshell.execDetached(["bspc", "config", "right_padding", "20"])
@@ -17,5 +16,9 @@ Singleton {
 		
 		Quickshell.execDetached(["$HOME/.config/scripts/wallset_script"])
         Quickshell.execDetached(["$HOME/.config/scripts/setBorders.sh"])
+	}
+	
+	function toggleMinimalMode() {
+		Config.settings.isInMinimalMode = !Config.settings.isInMinimalMode;
 	}
 }

@@ -47,7 +47,11 @@ Scope {
 				item: maskId
 			}
 			
-			visible: (maskId.leftMargin == 600) ? false : true 
+			visible: {
+				if (maskId.leftMargin == 600) return false;
+				if (Config.settings.isInMinimalMode == true) return false;
+				else return true;
+			}
 			
 			ScrollView {
 				id: maskId

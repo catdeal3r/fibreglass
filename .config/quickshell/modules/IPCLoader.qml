@@ -7,6 +7,7 @@ import qs.modules.loadingscreen
 import qs.modules.settings
 import qs.modules.launcher
 import qs.modules
+import qs.config
 import qs.services
 
 Scope {
@@ -47,10 +48,22 @@ Scope {
 		target: "root"
 				
 		function toggleLoadingScreen(): void { root.isLoadingScreenOpen = !root.isLoadingScreenOpen }
-		function toggleBar(): void { root.isBarOpen = !root.isBarOpen }
+		
+		function toggleBar(): void { 
+			root.isBarOpen = !root.isBarOpen;
+			Quickshell.execDetached(["pkill", "qsBarHide"]);
+			Quickshell.execDetached(["sh", "-c", "$HOME/.config/scripts/qsBarHide.sh > /dev/null 2>&1 & disown"])
+		}
+		
 		function toggleSettings(): void { root.isSettingsOpen = !root.isSettingsOpen }
 		function toggleLauncher(): void { InternalLoader.isLauncherOpen = !InternalLoader.isLauncherOpen }
 		function toggleDashboard(): void { InternalLoader.isDashboardOpen = !InternalLoader.isDashboardOpen }
+		
+		function toggleMinimalMode(): void {
+			root.isBarOpen = !root.isBarOpen;
+			SessionHandler.toggleMinimalMode();
+			Notifications.toggleDND();
+		}
 
 		function setWallpaper(path: string): void { Wallpaper.setNewWallpaper(path) } 
 		function clearNotifs(): void { Notifications.discardAllNotifications() }

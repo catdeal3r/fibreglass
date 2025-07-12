@@ -38,7 +38,10 @@ Scope {
 	
 			property int notificationCount: Notifications.popupList.length
 		
-			visible: true
+			visible: {
+				if (Config.settings.isInMinimalMode == true) return false;
+				else return true;
+			}
 			
 			mask: Region {
 				item: maskId.contentItem
