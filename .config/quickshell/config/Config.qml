@@ -88,6 +88,7 @@ Singleton {
 					Quickshell.execDetached(["pkill", "picom"])
 					
 					Wallpaper.setBlankWall();
+					Quickshell.execDetached(["$HOME/.config/scripts/setBordersDefault.sh"])
 					
 				} else {
 					Quickshell.execDetached(["bspc", "config", "left_padding", "20"])
@@ -98,6 +99,7 @@ Singleton {
 					picomTimer.running = true
 					
 					Wallpaper.loadWallpaper();
+					Quickshell.execDetached(["$HOME/.config/scripts/setBorders.sh"])
 				}
 			}
 		}
