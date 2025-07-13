@@ -128,7 +128,7 @@ sudo cp ~/fibreglass/.config/kanata/config.kbd /etc/kanata/config.kbd
 sudo cp ~/fibreglass/.config/kanata/kanata.service /lib/systemd/system/kanata.service
 sudo systemctl daemon-reload
 sudo systemctl enable kanata
-sudo systemctl start kananta
+sudo systemctl start kanata
 ```
 
 - Install and configure helix, a nvim-like editor
