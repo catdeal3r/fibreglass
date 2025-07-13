@@ -157,13 +157,6 @@ cp -r ./runtime ~/fibreglass/.config/helix/
 | **Timing** | I encounter this the most while editing code, or after switch the bar location. | 
 | **Workaround** | Reload quickshell. |
 
-### Can't click around the top right corner of the screen.
-
-| Key | Content |
-| --- | --- |
-| **Description** | This is an issue with the notifications mask. The window is not correctly masking focus to each notification, and is instead masking to the entire window. |
-| **Timing** | Currently, this bug consistently happens when you reload/start quickshell. |
-| **Workaround** | Send a notification, then wait for it to clear or dismiss it. This will reset the mask to the correct position. |
 
 ### Notifications with no text, appname, or time appear with the default notification icon.
 
