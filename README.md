@@ -115,7 +115,33 @@ stow .
 ```
 
 2. Install other QOL features included in fibreglass
-> 
+> [!Note]
+> This step is completely unnessary for all/most users. This is just here to help **me** when I want to resetup this config.
+
+
+- Install and configure kanata, a keyboard remapping program
+```bash
+cargo install kanata
+sudo cp ~/.cargo/bin/kanata /usr/bin/kanata
+sudo mkdir /etc/kanata/
+sudo cp ~/fibreglass/.config/kanata/config.kbd /etc/kanata/config.kbd
+sudo cp ~/fibreglass/.config/kanata/kanata.service /lib/systemd/system/kanata.service
+sudo systemctl daemon-reload
+sudo systemctl enable kanata
+sudo systemctl start kananta
+```
+
+- Install and configure helix, a nvim-like editor
+Go [here](https://github.com/helix-editor/helix/releases/latest) and download the `tar.xz` for your computer
+Then:
+```bash
+cd ~/Downloads
+unxz ./helix-*-linux.tar.xz
+tar -xf ./helix-*-linux.tar
+cd ./helix-*-linux
+sudo cp ./hx /usr/bin/hx
+cp -r ./runtime ~/fibreglass/.config/helix/
+```
 
 ---
 
