@@ -107,11 +107,11 @@ Dotfiles affected:
 1. Run these commands:
 ```bash
 cd ~
-# Install bsp-layout
-curl https://raw.githubusercontent.com/phenax/bsp-layout/master/install.sh | bash -;
 git clone https://github.com/dealerofallthecats/fibreglass/
 cd fibreglass
 stow .
+# Install bsp-layout
+curl https://raw.githubusercontent.com/phenax/bsp-layout/master/install.sh | bash -;
 ```
 
 <details>
