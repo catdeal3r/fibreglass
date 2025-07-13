@@ -114,7 +114,9 @@ cd fibreglass
 stow .
 ```
 
-2. Install other QOL features included in fibreglass
+<details>
+
+<summary>Install other QOL features included in fibreglass</summary>
 > [!Note]
 > This step is completely unnessary for all/most users. This is just here to help **me** when I want to resetup this config.
 
@@ -142,6 +144,8 @@ cd ./helix-*-linux
 sudo cp ./hx /usr/bin/hx
 cp -r ./runtime ~/fibreglass/.config/helix/
 ```
+
+</details>
 
 ---
 
