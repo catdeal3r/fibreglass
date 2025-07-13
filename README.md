@@ -132,7 +132,7 @@ sudo systemctl enable kanata
 sudo systemctl start kanata
 ```
 
--# Install and configure helix, a nvim-like editor.
+- Install and configure helix, a nvim-like editor.
 First, go [here](https://github.com/helix-editor/helix/releases/latest) and download the `tar.xz` for your computer
 Then:
 ```bash
