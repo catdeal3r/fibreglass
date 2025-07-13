@@ -118,7 +118,7 @@ curl https://raw.githubusercontent.com/phenax/bsp-layout/master/install.sh | bas
 
 <summary>Install other QOL features included in fibreglass</summary>
 
-## This step is completely unnessary for all/most users. This is just here to help **me** when I want to resetup this config.
+#### This step is completely unnessary for all/most users. This is just here to help **me** when I want to resetup this config.
 
 - Install and configure kanata, a keyboard remapping program
 ```bash
