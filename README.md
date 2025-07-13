@@ -114,6 +114,8 @@ cd fibreglass
 stow .
 ```
 
+2. Install other QOL features included in fibreglass
+> 
 
 ---
 
