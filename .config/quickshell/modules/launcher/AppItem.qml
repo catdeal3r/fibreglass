@@ -6,8 +6,6 @@ import QtQuick.Layouts
 import QtQuick.Effects
 import QtQuick.Controls
 
-import qs.config
+import "../../config"
 
-Rectangle {
-	
-}
+Rectangle {}

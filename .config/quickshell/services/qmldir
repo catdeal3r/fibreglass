@@ -1,0 +1,4 @@
+singleton Apps 1.0 Apps.qml
+singleton MprisController 1.0 MprisController.qml
+singleton Notifications 1.0 Notifications.qml
+singleton Wallpaper 1.0 Wallpaper.qml
