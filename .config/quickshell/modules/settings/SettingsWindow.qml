@@ -1,19 +1,18 @@
 import Quickshell
-import Quickshell.Io
 import QtQuick
 
-import qs.config
+import "../../config"
 
 Scope {
-	signal finished();
-	id: root
-	
-	FloatingWindow {
-		id: settingsWindow
-			
-		minimumSize: "400x100"
-		maximumSize: "101x101"
-		
-		color: Colours.palette.surface
-	}
+    id: root
+    signal finished
+
+    FloatingWindow {
+        id: settingsWindow
+
+        minimumSize: Qt.size(400, 100)
+        maximumSize: Qt.size(101, 101)
+
+        color: Colours.palette.surface
+    }
 }
