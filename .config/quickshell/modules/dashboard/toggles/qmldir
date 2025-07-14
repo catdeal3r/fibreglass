@@ -1,0 +1,4 @@
+singleton Nightmode 1.0 Nightmode.qml
+PowerButton 1.0 PowerButton.qml
+QuickActionButton 1.0 QuickActionButton.qml
+QuickToggleButton 1.0 QuickToggleButton.qml
