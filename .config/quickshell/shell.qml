@@ -2,28 +2,27 @@
 //@ pragma UseQApplication
 
 import Quickshell
-import Quickshell.Io
 
 import QtQuick
-import qs.modules
-import qs.modules.dashboard
-import qs.modules.launcher
-import qs.modules.notificationslist
-import qs.modules.eyeprotection
-import qs.services
-import qs.config
+import "modules"
+import "modules/dashboard"
+import "modules/launcher"
+import "modules/notificationslist"
+import "modules/eyeprotection"
+import "services"
+import "config"
 
 Scope {
-	IPCLoader {}
-	
-	Component.onCompleted: {
-		Notifications.dummyInit()
-		SessionHandler.loadBasicSession()
-	}
-	
-	NotificationList {}
-	Dashboard {}
-	Launcher {}
-	
-	EyeProtection {}
+    IPCLoader {}
+
+    Component.onCompleted: {
+        Notifications.dummyInit();
+        SessionHandler.loadBasicSession();
+    }
+
+    NotificationList {}
+    Dashboard {}
+    Launcher {}
+
+    EyeProtection {}
 }
