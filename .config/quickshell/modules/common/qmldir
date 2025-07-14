@@ -1,0 +1,6 @@
+AniRectangle 1.0 AniRectangle.qml
+singleton Bluetooth 1.0 Bluetooth.qml
+singleton Network 1.0 Network.qml
+RRCorner 1.0 RRCorner.qml
+SingleNotification 1.0 SingleNotification.qml
+singleton User 1.0 User.qml

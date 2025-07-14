@@ -1,4 +1,4 @@
-import qs.config
+import "../../config"
 import QtQuick
 
 Rectangle {
