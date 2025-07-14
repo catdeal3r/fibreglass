@@ -1,0 +1,7 @@
+singleton Accents 1.0 Accents.qml
+singleton Anim 1.0 Anim.qml
+singleton Colours 1.0 Colours.qml
+singleton Config 1.0 Config.qml
+singleton Directories 1.0 Directories.qml
+singleton Palette 1.0 Palette.qml
+singleton SessionHandler 1.0 SessionHandler.qml
