@@ -1,0 +1,3 @@
+singleton InternalLoader 1.0 InternalLoader.qml
+IPCLoader 1.0 IPCLoader.qml
+
