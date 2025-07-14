@@ -1,8 +1,7 @@
 import QtQuick
 
-import qs.modules.common
+import "../common"
 
 Text {
-	text: Network.getIcon()
+    text: Network.getIcon()
 }
-

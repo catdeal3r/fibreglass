@@ -1,8 +1,7 @@
 import QtQuick
 
-import qs.config
-import qs.modules.common
+import "../common"
 
 Text {
-	text: Bluetooth.getIcon()
+    text: Bluetooth.getIcon()
 }

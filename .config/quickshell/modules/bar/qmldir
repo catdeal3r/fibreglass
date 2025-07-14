@@ -1,0 +1,10 @@
+Bar 1.0 Bar.qml
+singleton Battery 1.0 Battery.qml
+BatteryWidget 1.0 BatteryWidget.qml
+BluetoothWidget 1.0 BluetoothWidget.qml
+NetworkWidget 1.0 NetworkWidget.qml
+SysTray 1.0 SysTray.qml
+singleton Time 1.0 Time.qml
+TimeWidget 1.0 TimeWidget.qml
+singleton Workspaces 1.0 Workspaces.qml
+WorkspacesWidget 1.0 WorkspacesWidget.qml
