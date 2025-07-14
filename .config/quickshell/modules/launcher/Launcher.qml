@@ -9,6 +9,7 @@ import QtQuick.Controls
 
 import qs.config
 import qs.services
+import qs.modules
 
 Scope {
 	signal finished();
