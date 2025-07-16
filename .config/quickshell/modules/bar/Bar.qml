@@ -35,8 +35,8 @@ Scope {
 			
 			implicitHeight: barBase.height + (Config.settings.borderRadius * 2)
 			
-			margins.top: (Config.settings.bar.barLocation == "top") ? Config.settings.borderRadius - (Config.settings.borderRadius * 2) : 0
-			margins.bottom: (Config.settings.bar.barLocation == "bottom") ? Config.settings.borderRadius - (Config.settings.borderRadius * 2) : 0
+			margins.top: (Config.settings.bar.barLocation == "top") ? -1 * Config.settings.borderRadius : 0
+			margins.bottom: (Config.settings.bar.barLocation == "bottom") ? -1 * Config.settings.borderRadius: 0
 			
 			visible: true
 			
