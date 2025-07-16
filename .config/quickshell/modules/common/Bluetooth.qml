@@ -3,6 +3,7 @@ pragma Singleton
 
 import Quickshell
 import Quickshell.Io
+import Quickshell.Bluetooth
 import QtQuick
 
 Singleton {
@@ -11,32 +12,33 @@ Singleton {
 	property string textLabel
 	
 	function getBool() {
-		if (root.textLabel == "Not connected") return true
-		if (root.textLabel == "Bluetooth Off") return false
-		else return true
+       if (Bluetooth.defaultAdapter.state <= BluetoothAdapterState.Disabled) {
+           return false;
+       }
+       
+       const connectedDevices = Bluetooth.defaultAdapter.devices.values.filter(d => d.connected).length;
+       
+       if (Bluetooth.defaultAdapter.state == BluetoothAdapterState.Enabled && connectedDevices == 0) {
+           return true;
+       }
+       
+       return true;
 	}
 	
 	function getIcon() {
-		if (root.textLabel == "Not connected") return "bluetooth_searching"
-		if (root.textLabel == "Bluetooth Off") return "bluetooth_disabled"
-		else return "bluetooth"
-	}
-	
-	Process {
-		id: isConnectedProc
-
-		command: [ Quickshell.configPath("/scripts/bluetooth.out"), "--info" ]
-		running: true
-
-		stdout: SplitParser {
-			onRead: data => root.textLabel = data
-		}
-	}
-
-    Timer {
-	    interval: 1000
-	    running: true
-	    repeat: true
-	    onTriggered: isConnectedProc.running = true
+       if (Bluetooth.defaultAdapter.state <= BluetoothAdapterState.Disabled) {
+           textLabel = "Bluetooth Off";
+           return "bluetooth_disabled";
+       }
+       
+       const connectedDevices = Bluetooth.defaultAdapter.devices.values.filter(d => d.connected).length;
+       
+       if (Bluetooth.defaultAdapter.state == BluetoothAdapterState.Enabled && connectedDevices == 0) {
+           textLabel = "Not Connected";
+           return "bluetooth_searching";
+       }
+       
+       textLabel = `${connectedDevices} Connection${connectedDevices > 1 ? 's' : ''}`;
+       return "bluetooth";
 	}
 }
