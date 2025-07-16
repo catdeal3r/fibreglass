@@ -1,7 +1,7 @@
 [config.wallpaper]
 command = "feh"
 arguments = ["--bg-fill"]
-set = true 
+set = false
 post_hook = "$HOME/.config/scripts/setBorders.sh"
 
 [templates.quickshell]

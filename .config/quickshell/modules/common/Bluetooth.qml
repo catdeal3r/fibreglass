@@ -16,9 +16,9 @@ Singleton {
            return false;
        }
        
-       const connectedDevices = Bluetooth.defaultAdapter.devices.values.filter(d => d.connected).length;
-       
-       if (Bluetooth.defaultAdapter.state == BluetoothAdapterState.Enabled && connectedDevices == 0) {
+       const connectedDevices = Bluetooth.defaultAdapter.devices.values.filter(d => d.connected);
+        
+       if (Bluetooth.defaultAdapter.state == BluetoothAdapterState.Enabled && connectedDevices.length == 0) {
            return true;
        }
        
@@ -31,14 +31,18 @@ Singleton {
            return "bluetooth_disabled";
        }
        
-       const connectedDevices = Bluetooth.defaultAdapter.devices.values.filter(d => d.connected).length;
-       
-       if (Bluetooth.defaultAdapter.state == BluetoothAdapterState.Enabled && connectedDevices == 0) {
+       const connectedDevices = Bluetooth.defaultAdapter.devices.values.filter(d => d.connected);
+        
+       if (Bluetooth.defaultAdapter.state == BluetoothAdapterState.Enabled && connectedDevices.length == 0) {
            textLabel = "Not Connected";
            return "bluetooth_searching";
        }
        
-       textLabel = `${connectedDevices} Connection${connectedDevices > 1 ? 's' : ''}`;
+       if (connectedDevices.length == 1)
+           textLabel = connectedDevices[0].name;
+       else
+           textLabel = `${connectedDevices.length} Connections`;
+       
        return "bluetooth";
 	}
 }

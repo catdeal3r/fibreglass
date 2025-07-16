@@ -34,6 +34,8 @@ Rectangle {
 			anchors.fill: parent
 										
 			color: "transparent"
+			border.width: 2
+			border.color: Colours.palette.outline_variant
 																				
 			Image {
 				source: Config.settings.currentWallpaper

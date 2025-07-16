@@ -59,7 +59,7 @@ Singleton {
 				}
 			}
 			
-			property string currentWallpaper: Quickshell.configPath("assets/default_wall.jpg")
+			property string currentWallpaper: Quickshell.configPath("assets/default_blank.jpg")
 			
 			onCurrentWallpaperChanged: {
 				Wallpaper.loadWallpaper()
@@ -68,6 +68,19 @@ Singleton {
 			property string font: "SF Pro Display"
 			property string iconFont: "Material Symbols Rounded"
 			property int borderRadius: 20
+			
+			property JsonObject colours: JsonObject {
+				property string genType: "scheme-tonal-spot"
+				property string mode: "dark"
+				
+				onGenTypeChanged: {
+					Wallpaper.changeColourProp()
+				}
+				
+				onModeChanged: {
+					Wallpaper.changeColourProp()
+				}
+			}
 			
 			onBorderRadiusChanged: {
 				Quickshell.execDetached(["killall", "picom"])
