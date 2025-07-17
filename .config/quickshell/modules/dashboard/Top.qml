@@ -34,8 +34,7 @@ Rectangle {
 			anchors.fill: parent
 										
 			color: "transparent"
-			border.width: 2
-			border.color: Colours.palette.outline_variant
+			
 																				
 			Image {
 				source: Config.settings.currentWallpaper
@@ -166,6 +165,8 @@ Rectangle {
 						Layout.leftMargin: 15
 												
 						color: "transparent"
+						border.width: 2
+						border.color: Colours.palette.outline_variant
 																				
 						IconImage {
 							source: `file:/${Quickshell.configPath("assets/pfp.png")}`
