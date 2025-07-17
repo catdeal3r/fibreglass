@@ -70,7 +70,7 @@ Singleton {
 			property int borderRadius: 20
 			
 			property JsonObject colours: JsonObject {
-				property string genType: "scheme-tonal-spot"
+				property string genType: "scheme-expressive"
 				property string mode: "dark"
 				
 				onGenTypeChanged: {
