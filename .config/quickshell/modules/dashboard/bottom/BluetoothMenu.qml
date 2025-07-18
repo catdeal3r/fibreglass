@@ -38,7 +38,7 @@ Rectangle {
 		}
 		
 		ListView {
-			model: Bluetooth.devices
+			model: Bluetooth.defaultAdapter.devices
 			
 			delegate: Text {
 				required property var modelData
@@ -46,6 +46,11 @@ Rectangle {
 				color: "#FFFFFF"
 				font.pixelSize: 30
 				font.family: Config.settings.font
+				
+				Component.onCompleted: {
+					console.log("got here")
+					console.log(`name: ${modelData.name}`)
+				}
 			}
 		}
 	}

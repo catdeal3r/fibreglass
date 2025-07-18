@@ -45,4 +45,8 @@ Singleton {
        
        return "bluetooth";
 	}
+	
+	function toggle() {
+		Bluetooth.defaultAdapter.enabled = !Bluetooth.defaultAdapter.enabled
+	}
 }

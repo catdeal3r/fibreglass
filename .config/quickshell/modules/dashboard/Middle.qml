@@ -74,7 +74,7 @@ ColumnLayout {
 					iconCode: Bluetooth.getIcon()
 					
 					
-					toRun: () => Quickshell.execDetached([ `${Quickshell.configDir}/scripts/bluetooth.out` ])
+					toRun: () => Bluetooth.toggle()
 				}
 				
 				QuickToggleButton {
