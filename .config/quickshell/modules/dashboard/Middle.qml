@@ -74,7 +74,7 @@ ColumnLayout {
 					iconCode: Bluetooth.getIcon()
 					
 					
-					toRun: () => Bluetooth.toggle()
+					toRun: () => Bluetooth.toggle() 
 				}
 				
 				QuickToggleButton {
