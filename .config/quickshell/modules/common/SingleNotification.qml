@@ -61,7 +61,7 @@ AniRectangle {
 						
 		ClippingWrapperRectangle { //image
 			visible: (modelData.appIcon == "") ? false : true
-			radius: Config.settings.borderRadius
+			radius: 50
 						
 			Layout.alignment: root.expanded ? Qt.AlignLeft | Qt.AlignTop : Qt.AlignLeft
 			Layout.leftMargin: 0
@@ -112,12 +112,15 @@ AniRectangle {
 			Layout.leftMargin: 10
 			
 			RowLayout { //expanded bit
-				Layout.alignment: Qt.AlignLeft
+				Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+				Layout.topMargin: expanded ? 0 : 15
 				spacing: 4
 				
-				visible: expanded
+				visible: (Layout.topMargin == 0) ? true : false
 				
-				Behavior on visible {
+				clip: true
+				
+				Behavior on Layout.topMargin {
 					PropertyAnimation {
 						duration: 200
 						easing.type: Easing.InSine
@@ -272,7 +275,7 @@ AniRectangle {
 				}
 				
 				Text {
-					width: 265
+					width: 240
 					height: 50
 					text: modelData.body
 					
@@ -296,16 +299,17 @@ AniRectangle {
 		
 		// Expand button				
 		ColumnLayout {
-			Layout.alignment: Qt.AlignRight
-			Layout.preferredWidth: 20
+			Layout.alignment: Qt.AlignTop
+			Layout.preferredWidth: 45
+			Layout.preferredHeight: 25
 			Layout.leftMargin: 20
 								
 			Rectangle {	
-				Layout.alignment: Qt.AlignBottom
+				Layout.alignment: Qt.AlignTop
 				id: expandBtn
-				width: 25
+				width: 45
 				height: 25
-				color: Colours.palette.surface
+				color: Colours.palette.surface_container
 				radius: 50
 				visible: true 
 				
@@ -334,8 +338,8 @@ AniRectangle {
 					hoverEnabled: true
 										
 					onClicked: singleNotif.expanded = !singleNotif.expanded
-					onEntered: parent.color = Colours.palette.surface_container
-					onExited: parent.color = Colours.palette.surface
+					onEntered: parent.color = Colours.palette.surface_container_high
+					onExited: parent.color = Colours.palette.surface_container
 				}
 			}
 		}
