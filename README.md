@@ -114,6 +114,10 @@ stow .
 curl https://raw.githubusercontent.com/phenax/bsp-layout/master/install.sh | bash -;
 ```
 
+2. Install these icon packs:
+- Bibata Modern Classic (Cursor Pack)
+- Crule Dark (Icon Pack)
+
 <details>
 
 <summary>Install other QOL features included in fibreglass</summary>

@@ -4,17 +4,12 @@ alias fibreglass=$HOME/.config/scripts/fibreglass
 
 pgrep -x sxhkd >/dev/null || sxhkd & disown
 
-fibreglass --startQS
-sleep 0.4
-fibreglass --toggleBar
-fibreglass --toggleLS
-
 # Workspaces and monitors
 INTERNAL_MONITOR="eDP-1"
 EXTERNAL_MONITOR="HDMI-1"
 if [[ $(xrandr -q | grep "${EXTERNAL_MONITOR} connected") ]]; then
   bspc monitor "$EXTERNAL_MONITOR" -d '1' '2' '3' '4'
-  bspc monitor "$INTERNAL_MONITOR" -d '5' 
+  bspc monitor "$INTERNAL_MONITOR" -d '5' '6' '7' '8' 
   bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
 else
   bspc monitor "$INTERNAL_MONITOR" -d '1' '2' '3' '4' '5'
@@ -26,6 +21,11 @@ if [[ $(findmnt -S /dev/sda1) ]]; then
 else
   udisksctl mount -b /dev/sda1
 fi
+
+fibreglass --startQS
+sleep 0.3
+fibreglass --toggleBar
+fibreglass --toggleLS
 
 # config
 bspc config border_width 2 
