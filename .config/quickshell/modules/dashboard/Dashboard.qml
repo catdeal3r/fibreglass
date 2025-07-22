@@ -55,8 +55,8 @@ Scope {
 			
 			ScrollView {
 				id: maskId
-				implicitHeight: 1020//InternalLoader.isDashboardOpen ? 1000 : 0
-				implicitWidth: 500//InternalLoader.isDashboardOpen ? 500 : 0
+				implicitHeight: 1020
+				implicitWidth: 500
 				
 				
 				anchors {
