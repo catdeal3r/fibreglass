@@ -1,121 +1,13 @@
 [
   {
-    "id": 54,
+    "id": 1,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "Log out and in for the gtk4 theme to take effect.",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753157275017,
-    "urgency": "1"
-  },
-  {
-    "id": 55,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753158175027,
-    "urgency": "1"
-  },
-  {
-    "id": 56,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753159075018,
-    "urgency": "1"
-  },
-  {
-    "id": 57,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753159975018,
-    "urgency": "1"
-  },
-  {
-    "id": 58,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753160875029,
-    "urgency": "1"
-  },
-  {
-    "id": 59,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753161775025,
-    "urgency": "1"
-  },
-  {
-    "id": 60,
-    "actions": [
-      {
-        "identifier": "0",
-        "text": "View"
-      },
-      {
-        "identifier": "1",
-        "text": "Open Folder"
-      }
-    ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-07-22-17-33-39_1920x1080.png",
-    "appName": "notify-send",
-    "body": "Copied to clipboard",
-    "image": "",
-    "summary": "Screenshot Saved",
-    "time": 1753162423169,
-    "urgency": "1"
-  },
-  {
-    "id": 61,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753162675051,
-    "urgency": "1"
-  },
-  {
-    "id": 62,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753163575031,
-    "urgency": "1"
-  },
-  {
-    "id": 63,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753164475008,
+    "summary": "Wallpaper and theme set!",
+    "time": 1753170984085,
     "urgency": "1"
   }
 ]

@@ -59,7 +59,7 @@ Singleton {
 				}
 			}
 			
-			property string currentWallpaper: Quickshell.configPath("assets/default_blank.jpg")
+			property string currentWallpaper: Quickshell.configPath("assets/default_blank.png")
 			
 			onCurrentWallpaperChanged: {
 				Wallpaper.loadWallpaper()
