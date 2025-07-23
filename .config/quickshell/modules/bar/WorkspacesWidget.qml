@@ -16,7 +16,7 @@ Rectangle {
 	RowLayout {
 		id: layoutThingy
 		anchors.centerIn: parent
-		spacing: 10
+		spacing: 8
 	
 		Repeater {
 			model: Workspaces.workspaceCount
@@ -24,7 +24,7 @@ Rectangle {
 			Rectangle {
 				color: Workspaces.getWorkspaceColour(Workspaces.workspacesState[index])
 				width: 50
-				height: 9
+				height: 10
 			
 				Layout.preferredWidth: Workspaces.getWorkspaceSize(Workspaces.workspacesState[index])
 			
