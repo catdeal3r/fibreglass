@@ -65,6 +65,8 @@ Singleton {
 				Wallpaper.loadWallpaper()
 			}
 			
+			property string currentRice: "fibreglass"
+			
 			property string font: "SF Pro Display"
 			property string iconFont: "Material Symbols Rounded"
 			property int borderRadius: 20

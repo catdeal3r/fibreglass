@@ -21,12 +21,11 @@ Singleton {
 	
 	function getWorkspaceSize(state) {
 		if (state == "ws") return 15
-		if (state == "wso") return 40
-		return 20
+		if (state == "wso") return 20
+		return 40
 	}
 	
 	function getWorkspaceHeight(state) {
-		if (state == "wsf") return 10
 		return 10
 	}
 
