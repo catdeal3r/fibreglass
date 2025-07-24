@@ -27,6 +27,7 @@ Rectangle {
 				height: 10
 			
 				Layout.preferredWidth: Workspaces.getWorkspaceSize(Workspaces.workspacesState[index])
+				Layout.preferredHeight: Workspaces.getWorkspaceHeight(Workspaces.workspacesState[index])
 			
 				radius: 10
 			

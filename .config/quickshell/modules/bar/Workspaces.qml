@@ -15,20 +15,25 @@ Singleton {
 	
 	function getWorkspaceColour(state) {
 		if (state == "ws") return Colours.palette.outline
-		if (state == "wso") return Colours.palette.tertiary
-		return Colours.palette.primary
+		if (state == "wso") return Colours.palette.primary
+		return Colours.palette.on_surface
 	}
 	
 	function getWorkspaceSize(state) {
 		if (state == "ws") return 15
 		if (state == "wso") return 40
-		return 60
+		return 20
+	}
+	
+	function getWorkspaceHeight(state) {
+		if (state == "wsf") return 10
+		return 10
 	}
 
 	Process {
 		id: countWorkspaceProc
 
-		command: [ "bspc", "query", "-D", "--names"]
+		command: [ "bspc", "query", "-D", "--names" ]
 		running: true
 
 		stdout: SplitParser {

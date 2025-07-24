@@ -14,7 +14,7 @@
 
 > [!IMPORTANT]
 > You might notice that all the code/configs are gone. This is because I'm doing a complete refactor, as well as switching to using [`Quickshell`](https://quickshell.outfoxxed.me/) for the widgets.
-> If you would like to read the old code, browse the branches.
+> If you would like to read the old code, check [here](https://github.com/dealerofallthecats/fibreglass/tree/old), or look through the branches.
 
 > [!WARNING]
 > This project is very young, and the code may be refactored without notice.
