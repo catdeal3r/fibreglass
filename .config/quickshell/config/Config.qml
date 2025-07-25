@@ -67,6 +67,14 @@ Singleton {
 			
 			property string currentRice: "fibreglass"
 			
+			onCurrentRiceChanged: {
+				if (currentRice == "fibreglass" || currentRice == "windows") {
+					console.log(`New rice selected: ${currentRice}`)
+				} else {
+					console.log(`Can't handle rice selection: ${currentRice}`)
+				}
+			}
+			
 			property string font: "SF Pro Display"
 			property string iconFont: "Material Symbols Rounded"
 			property int borderRadius: 20
