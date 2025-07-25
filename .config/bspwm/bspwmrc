@@ -22,7 +22,7 @@ else
   udisksctl mount -b /dev/sda1
 fi
 
-fibreglass --startQS
+fibreglass --start
 sleep 0.3
 fibreglass --toggleBar
 fibreglass --toggleLS

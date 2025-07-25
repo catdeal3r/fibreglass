@@ -1,12 +1,12 @@
 #!/bin/bash
 
-function startQS()
+function start()
 {
 	$(which qs) kill
 	env DISPLAY=:0 $(which qs) --daemonize
 }
 
-function startQSDebug()
+function startDebug()
 {
 	$(which qs) kill
 	env DISPLAY=:0 $(which qs) 
@@ -73,8 +73,8 @@ function rebuildQuickshell() {
 }
 
 case $1 in
---startQS) startQS ;;
---debug) startQSDebug ;;
+--start) start ;;
+--debug) startDebug ;;
 --setConfig) setConfig ;;
 --startHealthNotifier) startHealthNotifier ;;
 --startPicom) startPicom ;;
