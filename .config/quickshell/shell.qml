@@ -6,10 +6,10 @@ import Quickshell.Io
 
 import QtQuick
 import qs.modules
-import qs.modules.dashboard
-import qs.modules.launcher
-import qs.modules.notificationslist
-import qs.modules.eyeprotection
+import qs.modules.fibreglass.dashboard
+import qs.modules.fibreglass.launcher
+import qs.modules.fibreglass.notificationslist
+import qs.modules.fibreglass.eyeprotection
 import qs.services
 import qs.config
 

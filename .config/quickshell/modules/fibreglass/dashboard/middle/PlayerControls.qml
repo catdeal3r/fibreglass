@@ -11,7 +11,7 @@ import Quickshell.Services.Mpris
 import qs.config
 import qs.modules.common
 import qs.services
-import qs.modules.dashboard.middle
+import qs.modules.fibreglass.dashboard.middle
 
 Rectangle {
 	id: root

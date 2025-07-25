@@ -2,10 +2,10 @@ import Quickshell
 import Quickshell.Io
 
 import QtQuick
-import qs.modules.bar
-import qs.modules.loadingscreen
+import qs.modules.fibreglass.bar
+import qs.modules.fibreglass.loadingscreen
 import qs.modules.settings
-import qs.modules.launcher
+import qs.modules.fibreglass.launcher
 import qs.modules
 import qs.config
 import qs.services
@@ -21,7 +21,7 @@ Scope {
 		id: barLoader
 		active: root.isBarOpen
 
-		sourceComponent: ( Config.settings.themeName == "fibreglass" ? Bar : BarTwo ) {
+		sourceComponent: Bar {
 			onFinished: root.isBarOpen = false
 		}
 	}

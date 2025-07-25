@@ -10,7 +10,11 @@ import qs.config
 Singleton {
 	id: root
 	
-	function getCurrentBar() {
-		Config.settings.currentRice 
+	function getCurrentPartPath(part) {
+		if (part == "bar") {
+			if (Config.settings.currentRice == "fibreglass") {
+				return 0
+			}
+		}
 	}
 }

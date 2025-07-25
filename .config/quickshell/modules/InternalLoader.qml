@@ -5,7 +5,7 @@ import Quickshell
 import Quickshell.Io
 
 import QtQuick
-import qs.modules.dashboard
+import qs.modules.fibreglass.dashboard
 import qs.services
 
 

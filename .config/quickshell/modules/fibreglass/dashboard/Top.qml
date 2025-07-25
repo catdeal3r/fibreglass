@@ -9,8 +9,8 @@ import Quickshell.Widgets
 
 import qs.config
 import qs.modules.common
-import qs.modules.dashboard
-import qs.modules.dashboard.toggles
+import qs.modules.fibreglass.dashboard
+import qs.modules.fibreglass.dashboard.toggles
 
 Rectangle {
 	Layout.alignment: Qt.AlignTop | Qt.AlignHCenter

@@ -11,8 +11,7 @@ import Quickshell.Services.Mpris
 import qs.config
 import qs.modules.common
 import qs.services
-import qs.modules.dashboard
-import qs.modules.dashboard.middle
+import qs.modules.fibreglass.dashboard.middle
 
 ColumnLayout {
 	id: root

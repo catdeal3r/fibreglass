@@ -10,8 +10,8 @@ import Quickshell.Widgets
 import qs.config
 import qs.modules.common
 import qs.services
-import qs.modules.dashboard.toggles
-import qs.modules.dashboard.middle
+import qs.modules.fibreglass.dashboard.toggles
+import qs.modules.fibreglass.dashboard.middle
 
 ColumnLayout {
 	Layout.alignment: Qt.AlignTop
