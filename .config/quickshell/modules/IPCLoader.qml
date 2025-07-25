@@ -16,11 +16,12 @@ Scope {
 	property bool isBarOpen: true
 	property bool isSettingsOpen: false
 	
+	
 	Loader {
 		id: barLoader
 		active: root.isBarOpen
-		
-		sourceComponent: Bar {
+
+		sourceComponent: ( Config.settings.themeName == "fibreglass" ? Bar : BarTwo ) {
 			onFinished: root.isBarOpen = false
 		}
 	}
