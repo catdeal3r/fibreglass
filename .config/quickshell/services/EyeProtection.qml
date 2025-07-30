@@ -17,10 +17,10 @@ Scope {
 		source: Quickshell.shellPath("/assets/break_notif.wav")
 	}
 	
-	 Timer {
+	Timer {
 	    interval: Config.settings.minutesBetweenHealthNotif * 60000
-	    running: true
-	    repeat: true
+	    running: Config.settings.minutesBetweenHealthNotif == -1 ? false : true
+	    repeat: Config.settings.minutesBetweenHealthNotif == -1 ? false : true
 	    onTriggered: root.runNotify()
 	}
 }

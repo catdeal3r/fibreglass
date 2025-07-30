@@ -120,11 +120,7 @@ Scope {
 				
 		function toggleLoadingScreen(): void { root.isLoadingScreenOpen = !root.isLoadingScreenOpen }
 		
-		function toggleBar(): void { 
-			root.isBarOpen = !root.isBarOpen;
-			Quickshell.execDetached(["pkill", "qsBarHide"]);
-			Quickshell.execDetached(["sh", "-c", "$HOME/.config/scripts/qsBarHide.sh > /dev/null 2>&1 & disown"])
-		}
+		function toggleBar(): void { root.isBarOpen = !root.isBarOpen; }
 		
 		function toggleSettings(): void { root.isSettingsOpen = !root.isSettingsOpen }
 		function toggleLauncher(): void { InternalLoader.isLauncherOpen = !InternalLoader.isLauncherOpen }

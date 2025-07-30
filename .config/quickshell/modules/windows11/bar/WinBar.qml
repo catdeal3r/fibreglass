@@ -193,6 +193,16 @@ Scope {
 					}
 					
 				}
+				
+				RowLayout {
+					spacing: 10
+					anchors.left: parent.left
+					anchors.leftMargin: parent.width / 2
+					
+					IconImage {
+						source: `file:/${Quickshell.shellPath("assets/windows/REPLACE_start_menu_icon.svg")}`
+					}
+				}
 						
 				RowLayout {
 					spacing: 10
