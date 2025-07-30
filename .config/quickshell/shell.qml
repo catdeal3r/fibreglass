@@ -6,10 +6,8 @@ import Quickshell.Io
 
 import QtQuick
 import qs.modules
-import qs.modules.fibreglass.dashboard
 import qs.modules.fibreglass.launcher
 import qs.modules.fibreglass.notificationslist
-import qs.modules.fibreglass.eyeprotection
 import qs.services
 import qs.config
 
@@ -22,7 +20,6 @@ Scope {
 	}
 	
 	NotificationList {}
-	Dashboard {}
 	Launcher {}
 	
 	EyeProtection {}

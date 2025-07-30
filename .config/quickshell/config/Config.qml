@@ -59,7 +59,7 @@ Singleton {
 				}
 			}
 			
-			property string currentWallpaper: Quickshell.configPath("assets/default_blank.png")
+			property string currentWallpaper: Quickshell.shellPath("assets/default_blank.png")
 			
 			onCurrentWallpaperChanged: {
 				Wallpaper.loadWallpaper()
@@ -70,6 +70,11 @@ Singleton {
 			onCurrentRiceChanged: {
 				if (currentRice == "fibreglass" || currentRice == "windows") {
 					console.log(`New rice selected: ${currentRice}`)
+					if (currentRice == "windows") {
+						Quickshell.execDetached(["bspc", "config", "bottom_padding", "70"])
+					} else {
+						Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
+					}
 				} else {
 					console.log(`Can't handle rice selection: ${currentRice}`)
 				}

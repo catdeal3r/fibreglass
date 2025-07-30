@@ -7,7 +7,6 @@ import QtQuick
 import QtQuick.Layouts
 
 import qs.modules
-import qs.modules.bar
 import qs.config
 import qs.modules.common
 

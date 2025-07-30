@@ -5,9 +5,10 @@ import Quickshell.Services.SystemTray
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 
 import qs.modules
-import qs.modules.bar
+import qs.modules.windows11.bar
 import qs.config
 import qs.modules.common
 
@@ -33,90 +34,46 @@ Scope {
 
 			color: "transparent"
 			
-			implicitHeight: barBase.height + (Config.settings.borderRadius * 2)
-			
-			margins.top: (Config.settings.bar.barLocation == "top") ? -1 * Config.settings.borderRadius : 0
-			margins.bottom: (Config.settings.bar.barLocation == "bottom") ? -1 * Config.settings.borderRadius: 0
+			implicitHeight: 50
 			
 			visible: true
 			
-			Rectangle {
-				id: cornerThingy
-				visible: Config.settings.bar.smoothEdgesShown
-				anchors.top: parent.top
-				width: parent.width
-				height: parent.height
-				
-				Behavior on visible {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
-				}
-				
-				color: "transparent"
-				
-				RRCorner {
-					anchors.top: parent.top
-					anchors.left: parent.left
-					color: Colours.palette.surface
-					corner: cornerEnum.bottomLeft
-					
-					size: Config.settings.borderRadius
-				}
-				
-				RRCorner {
-					anchors.top: parent.top
-					anchors.right: parent.right
-					color: Colours.palette.surface
-					corner: cornerEnum.bottomRight
-					
-					size: Config.settings.borderRadius
-				}
-			}
-			
-			Rectangle {
-				id: cornerThingyBottom
-				visible: Config.settings.bar.smoothEdgesShown
-				anchors.bottom: parent.bottom
-				width: parent.width
-				height: parent.height
-				
-				color: "transparent"
-				
-				Behavior on visible {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
-				}
-				
-				RRCorner {
-					anchors.bottom: parent.bottom
-					anchors.left: parent.left
-					color: Colours.palette.surface
-					corner: cornerEnum.topLeft
-					
-					size: Config.settings.borderRadius
-				}
-				
-				RRCorner {
-					anchors.bottom: parent.bottom
-					anchors.right: parent.right
-					color: Colours.palette.surface
-					corner: cornerEnum.topRight
-					
-					size: Config.settings.borderRadius
-				}
-			}
 			
 			Rectangle {
 				id: barBase
 				anchors.top: parent.top
-				anchors.topMargin: Config.settings.borderRadius
-				height: 40
+				height: 50
 				width: parent.width
 				color: Colours.palette.surface
+				
+				Image {
+					id: blurBarBackground
+					source: Config.settings.currentWallpaper
+					fillMode: Image.PreserveAspectCrop
+					
+					anchors.fill: parent
+				}
+				
+				MultiEffect {
+					source: blurBarBackground
+					anchors.fill: blurBarBackground
+					
+					contrast: 1.0
+					
+					blurEnabled: true
+					autoPaddingEnabled: false
+					blur: 1.0
+					blurMultiplier: 2
+					
+					saturation: 1.0
+					
+				}
+				
+				Rectangle {
+					anchors.fill: parent
+					color: Colours.palette.surface
+					opacity: 0.9
+				}
 				
 				RowLayout {
 					height: 10
@@ -127,30 +84,39 @@ Scope {
 					
 					anchors.topMargin: 5
 					anchors.leftMargin: 10
+					anchors.rightMargin: 10
 					
 					Rectangle {
 						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
 						
-						Layout.preferredWidth: 30
-						Layout.preferredHeight: 30
+						Layout.preferredWidth: 80
+						Layout.preferredHeight: 40
 						
-						radius: Config.settings.borderRadius - 5
-						color: Colours.palette.surface
+						radius: 10
+						color: "transparent"
 						
-						Behavior on color {
-							PropertyAnimation {
-								duration: 200
-								easing.type: Easing.InSine
+						Rectangle {
+							id: hoverRec
+							anchors.fill: parent
+							radius: 10
+							color: Colours.palette.surface
+							opacity: 0
+							
+							Behavior on opacity {
+								PropertyAnimation {
+									duration: 200
+									easing.type: Easing.InSine
+								}
 							}
 						}
 						
 						Text {
 							anchors.centerIn: parent
-							text: "monke"
-							font.family: Config.settings.iconFont
+							text: "Weather"
+							font.family: Config.settings.font
 							
 							color: Colours.palette.on_surface
-							font.pixelSize: 22
+							font.pixelSize: 15
 							font.weight: 600
 						}
 						
@@ -159,19 +125,10 @@ Scope {
 							hoverEnabled: true
 							cursorShape: Qt.PointingHandCursor
 							
-							onEntered: parent.color = Colours.palette.surface_container
-							onExited: parent.color = Colours.palette.surface
+							onEntered: hoverRec.opacity = 0.5
+							onExited: hoverRec.opacity = 0
 							//onClicked: banging
 						}
-					}
-				
-					WorkspacesWidget {
-						id: workspaces
-						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-					
-						Layout.preferredWidth: 300
-						Layout.preferredHeight: 30
-						radius: Config.settings.borderRadius - 3
 					}
 					
 				}

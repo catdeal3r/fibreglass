@@ -37,7 +37,7 @@ Scope {
 				IconImage {
 					Layout.alignment: Qt.AlignHCenter
 					
-					source: Quickshell.configPath("/assets/icon.png")
+					source: Quickshell.shellPath("/assets/icon.png")
 					Layout.preferredWidth: 170
 					Layout.preferredHeight: 170
 				}
@@ -45,7 +45,7 @@ Scope {
 				AnimatedImage {
 					Layout.alignment: Qt.AlignHCenter
 					
-					source: Quickshell.configPath("/assets/loading.gif")
+					source: Quickshell.shellPath("/assets/loading.gif")
 					fillMode: Image.PreserveAspectFit
 					playing: true
 					Layout.preferredWidth: 40

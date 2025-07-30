@@ -4,8 +4,16 @@ import Quickshell.Io
 import QtQuick
 import qs.modules.fibreglass.bar
 import qs.modules.fibreglass.loadingscreen
-import qs.modules.settings
 import qs.modules.fibreglass.launcher
+import qs.modules.fibreglass.dashboard
+import qs.modules.fibreglass.notificationslist
+
+import qs.modules.windows11.bar
+import qs.modules.windows11.launcher
+import qs.modules.windows11.dashboard
+import qs.modules.fibreglass.notificationslist
+
+import qs.modules.settings
 import qs.modules
 import qs.config
 import qs.services
@@ -16,13 +24,75 @@ Scope {
 	property bool isBarOpen: true
 	property bool isSettingsOpen: false
 	
+	property bool isDashboardLoaded: true
+	property bool isNotifLogLoaded: true
+	
+	Loader {
+		id: dashboardLoader
+		active: root.isDashboardLoaded 
+		
+		sourceComponent: Config.settings.currentRice == "fibreglass" ? dashboardFibreglass : dashboardWindows
+		
+		Component {
+			id: dashboardFibreglass
+
+			Dashboard {
+				onFinished: root.isDashboardLoaded = false
+			}
+		}
+		
+		Component {
+			id: dashboardWindows
+
+			WinDashboard {
+				onFinished: root.isDashboardLoaded = false
+			}
+		}
+	}
+	
+	Loader {
+		id: notifLogLoader
+		active: root.isNotifLogLoaded 
+		
+		sourceComponent: Config.settings.currentRice == "fibreglass" ? notifLogFibreglass : notifLogWindows
+		
+		Component {
+			id: notifLogFibreglass
+
+			Dashboard {
+				onFinished: root.isNotifLogLoaded = false
+			}
+		}
+		
+		Component {
+			id: notifLogWindows
+
+			WinDashboard {
+				onFinished: root.isNotifLogLoaded = false
+			}
+		}
+	}
 	
 	Loader {
 		id: barLoader
 		active: root.isBarOpen
 
-		sourceComponent: Bar {
-			onFinished: root.isBarOpen = false
+		sourceComponent: Config.settings.currentRice == "fibreglass" ? barFibreglass : barWindows
+		
+		Component {
+			id: barFibreglass
+
+			Bar {
+				onFinished: root.isBarOpen = false
+			}
+		}
+		
+		Component {
+			id: barWindows
+
+			WinBar {
+				onFinished: root.isBarOpen = false
+			}
 		}
 	}
 	

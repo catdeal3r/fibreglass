@@ -5,9 +5,6 @@ import Quickshell
 import Quickshell.Io
 
 import QtQuick
-import qs.modules.fibreglass.dashboard
-import qs.services
-
 
 Singleton {
 	id: root

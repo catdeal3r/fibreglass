@@ -30,6 +30,6 @@ Singleton {
 	}
 	
 	function setBlankWall() {
-		Quickshell.execDetached(["feh", "--bg-fill", `${Quickshell.configPath("assets/default_blank.png")}`]);
+		Quickshell.execDetached(["feh", "--bg-fill", `${Quickshell.shellPath("assets/default_blank.png")}`]);
 	}
 }

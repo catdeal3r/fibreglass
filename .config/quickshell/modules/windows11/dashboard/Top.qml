@@ -9,8 +9,8 @@ import Quickshell.Widgets
 
 import qs.config
 import qs.modules.common
-import qs.modules.fibreglass.dashboard
-import qs.modules.fibreglass.dashboard.toggles
+import qs.modules.windows11.dashboard
+import qs.modules.windows11.dashboard.toggles
 
 Rectangle {
 	Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -193,7 +193,7 @@ Rectangle {
 						Text {
 							Layout.alignment: Qt.AlignLeft
 														
-							text: `Up: ${User.uptime}`
+							text: `Up: monke.com`
 							font.family: Config.settings.font
 							font.pixelSize: 9
 														
