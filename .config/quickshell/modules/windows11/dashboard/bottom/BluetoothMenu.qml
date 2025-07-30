@@ -46,11 +46,6 @@ Rectangle {
 				color: "#FFFFFF"
 				font.pixelSize: 30
 				font.family: Config.settings.font
-				
-				Component.onCompleted: {
-					console.log("got here")
-					console.log(`name: ${modelData.name}`)
-				}
 			}
 		}
 	}

@@ -1,39 +1,44 @@
 [
   {
-    "id": 1,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "id": 19,
+    "actions": [
+      {
+        "identifier": "ack",
+        "text": "OK"
+      }
+    ],
+    "appIcon": "/opt/safing/portmaster/exec/portmaster.png",
+    "appName": "Portmaster",
+    "body": "Windscribe is using its own Secure DNS resolver, which would bypass Portmaster's firewall protections. If Windscribe experiences problems, disable Secure DNS within Windscribe to restore functionality. Rest assured that Portmaster handles Secure DNS for your whole device, including Windscribe.",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753761455221,
+    "summary": "Portmaster",
+    "time": 1753846979180,
     "urgency": "1"
   },
   {
-    "id": 2,
+    "id": 39,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "Log out and in for the gtk4 theme to take effect.",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753762355236,
+    "summary": "Wallpaper and theme set!",
+    "time": 1753847979529,
     "urgency": "1"
   },
   {
-    "id": 3,
+    "id": 40,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "Log out and in for the gtk4 theme to take effect.",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753764157016,
+    "summary": "Wallpaper and theme set!",
+    "time": 1753847990178,
     "urgency": "1"
   },
   {
-    "id": 4,
+    "id": 62,
     "actions": [
       {
         "identifier": "0",
@@ -44,206 +49,34 @@
         "text": "Open Folder"
       }
     ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-07-29-16-46-00_1920x1080.png",
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-07-30-16-03-39_1920x1080.png",
     "appName": "notify-send",
     "body": "Copied to clipboard",
     "image": "",
     "summary": "Screenshot Saved",
-    "time": 1753764362472,
+    "time": 1753848224900,
     "urgency": "1"
   },
   {
-    "id": 5,
-    "actions": [],
-    "appIcon": "org.gnome.Nautilus",
-    "appName": "org.gnome.Nautilus",
-    "body": "All file operations have been completed",
-    "image": "",
-    "summary": "File Operations",
-    "time": 1753764818670,
-    "urgency": "1"
-  },
-  {
-    "id": 6,
+    "id": 63,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1753765056948,
+    "time": 1753848847562,
     "urgency": "1"
   },
   {
-    "id": 7,
+    "id": 64,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1753765956940,
-    "urgency": "1"
-  },
-  {
-    "id": 8,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753766118833,
-    "urgency": "1"
-  },
-  {
-    "id": 15,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1753767128369,
-    "urgency": "1"
-  },
-  {
-    "id": 23,
-    "actions": [
-      {
-        "identifier": "0",
-        "text": "View"
-      },
-      {
-        "identifier": "1",
-        "text": "Open Folder"
-      }
-    ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-07-29-17-39-05_1920x1080.png",
-    "appName": "notify-send",
-    "body": "Copied to clipboard",
-    "image": "",
-    "summary": "Screenshot Saved",
-    "time": 1753767548928,
-    "urgency": "1"
-  },
-  {
-    "id": 32,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "",
-    "image": "",
-    "summary": "Screenshot cancelled",
-    "time": 1753767641693,
-    "urgency": "1"
-  },
-  {
-    "id": 33,
-    "actions": [
-      {
-        "identifier": "0",
-        "text": "View"
-      },
-      {
-        "identifier": "1",
-        "text": "Open Folder"
-      }
-    ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-07-29-17-40-58_1920x1080.png",
-    "appName": "notify-send",
-    "body": "Copied to clipboard",
-    "image": "",
-    "summary": "Screenshot Saved",
-    "time": 1753767662891,
-    "urgency": "1"
-  },
-  {
-    "id": 44,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753835244154,
-    "urgency": "1"
-  },
-  {
-    "id": 45,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1753835244261,
-    "urgency": "1"
-  },
-  {
-    "id": 58,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1753836896611,
-    "urgency": "1"
-  },
-  {
-    "id": 59,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1753837119910,
-    "urgency": "1"
-  },
-  {
-    "id": 60,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1753837140922,
-    "urgency": "1"
-  },
-  {
-    "id": 76,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1753837363387,
-    "urgency": "1"
-  },
-  {
-    "id": 77,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1753837374536,
-    "urgency": "1"
-  },
-  {
-    "id": 78,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1753837389269,
+    "time": 1753849113571,
     "urgency": "1"
   }
 ]

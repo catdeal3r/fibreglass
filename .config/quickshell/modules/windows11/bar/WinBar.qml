@@ -34,7 +34,7 @@ Scope {
 
 			color: "transparent"
 			
-			implicitHeight: 50
+			implicitHeight: 60
 			
 			visible: true
 			
@@ -42,7 +42,7 @@ Scope {
 			Rectangle {
 				id: barBase
 				anchors.top: parent.top
-				height: 50
+				height: 60
 				width: parent.width
 				color: Colours.palette.surface
 				
@@ -75,6 +75,14 @@ Scope {
 					opacity: 0.85
 				}
 				
+				Rectangle {
+					anchors.top: parent
+					width: parent.width
+					height: 1
+					color: Colours.palette.surface_container
+					
+				}
+				
 				RowLayout {
 					height: 10
 					spacing: 10
@@ -89,8 +97,8 @@ Scope {
 					Rectangle {
 						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
 						
-						Layout.preferredWidth: 80
-						Layout.preferredHeight: 40
+						Layout.preferredWidth: 200
+						Layout.preferredHeight: 50
 						
 						radius: 10
 						color: "transparent"
@@ -99,7 +107,7 @@ Scope {
 							id: hoverRec
 							anchors.fill: parent
 							radius: 10
-							color: Colours.palette.surface
+							color: Colours.palette.surface_container
 							opacity: 0
 							
 							Behavior on opacity {
@@ -108,16 +116,40 @@ Scope {
 									easing.type: Easing.InSine
 								}
 							}
+							
+							border.color: Colours.palette.outline
+							border.width: 0.2
 						}
 						
-						Text {
+						RowLayout {
 							anchors.centerIn: parent
-							text: "Weather"
-							font.family: Config.settings.font
+							spacing: 10
+						
+							Text {
+								text: "🌦"
+								font.family: Config.settings.font
+								
+								color: Colours.palette.on_surface
+								font.pixelSize: 28
+							}
 							
-							color: Colours.palette.on_surface
-							font.pixelSize: 15
-							font.weight: 600
+							ColumnLayout {
+								spacing: 0
+								Text {
+									text: "13°C"
+									font.family: Config.settings.font
+									
+									color: Colours.palette.on_surface
+									font.pixelSize: 14
+								}
+								Text {
+									text: "Patchy rain nearby"
+									font.family: Config.settings.font
+									
+									color: Colours.palette.on_surface
+									font.pixelSize: 14
+								}
+							}
 						}
 						
 						MouseArea {

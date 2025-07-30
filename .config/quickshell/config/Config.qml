@@ -71,7 +71,7 @@ Singleton {
 				if (currentRice == "fibreglass" || currentRice == "windows") {
 					console.log(`New rice selected: ${currentRice}`)
 					if (currentRice == "windows") {
-						Quickshell.execDetached(["bspc", "config", "bottom_padding", "70"])
+						Quickshell.execDetached(["bspc", "config", "bottom_padding", "80"])
 					} else {
 						Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
 					}
