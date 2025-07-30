@@ -72,7 +72,7 @@ Scope {
 				Rectangle {
 					anchors.fill: parent
 					color: Colours.palette.surface
-					opacity: 0.9
+					opacity: 0.85
 				}
 				
 				RowLayout {
