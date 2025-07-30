@@ -104,6 +104,12 @@ Singleton {
 			
 			property bool isInMinimalMode: false
 			
+			property string weatherLocation: "REPLACE"
+			
+			onWeatherLocationChanged: {
+				Weather.reload()
+			}
+			
 			onIsInMinimalModeChanged: {
 				if (isInMinimalMode == true) {
 					Quickshell.execDetached(["bspc", "config", "left_padding", "0"])

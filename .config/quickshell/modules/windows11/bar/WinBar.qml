@@ -76,7 +76,7 @@ Scope {
 				}
 				
 				Rectangle {
-					anchors.top: parent
+					anchors.top: parent.top
 					width: parent.width
 					height: 1
 					color: Colours.palette.surface_container
