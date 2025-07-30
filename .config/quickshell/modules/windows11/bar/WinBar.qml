@@ -196,11 +196,17 @@ Scope {
 				
 				RowLayout {
 					spacing: 10
-					anchors.left: parent.left
-					anchors.leftMargin: parent.width / 2
+					anchors.centerIn: parent
 					
 					IconImage {
-						source: `file:/${Quickshell.shellPath("assets/windows/REPLACE_start_menu_icon.svg")}`
+						source: `file:/${Quickshell.shellPath("assets/windows/REPLACE_startmenu_icon.svg")}`
+						Layout.preferredWidth: 35
+						Layout.preferredHeight: 35
+					}
+					
+					Text {
+						text: "HELLOOO"
+						color: "#FFFFFF"
 					}
 				}
 						
