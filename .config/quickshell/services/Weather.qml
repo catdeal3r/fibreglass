@@ -6,6 +6,7 @@ import Quickshell.Io
 
 import QtQuick
 import qs.config
+import qs.services
 
 Singleton {
 	id: root
@@ -62,7 +63,9 @@ Singleton {
         })
         
     property string location
-    property string icon: ""
+    property string icon
+    property string description
+    property string temp
     
         
     function getWeatherIcon(code: string): string {
@@ -74,15 +77,30 @@ Singleton {
     
     function reload(): void {
         if (Config.settings.weatherLocation)
-            location = Config.services.weatherLocation;
+            location = Config.settings.weatherLocation;
         else if (!location)
-            Requests.get("https://ipinfo.io/json", text => {
-                location = JSON.parse(text).loc ?? "";
-                timer.restart();
-        });
+            location = "REPLACE"
     }
     
-    onLocationChanged: {
-		
+    onLocationChanged: Requests.get(`https://wttr.in/${location}?format=j1`, text => {
+		if (location == "REPLACE") {
+			root.icon = "❌"
+			root.description = "No location set."
+			root.temp = "Error."
+		}
+        const json = JSON.parse(text).current_condition[0];
+        root.icon = root.getWeatherIcon(json.weatherCode);
+        root.description = json.weatherDesc[0].value;
+        root.temp = `${parseFloat(json.temp_C)}°C`;
+    })
+    
+    Component.onCompleted: reload()
+    
+    Timer {
+	    interval: 1000
+	    running: true
+	    repeat: true
+	    onTriggered: root.reload()
 	}
+
 }

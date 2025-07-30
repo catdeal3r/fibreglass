@@ -11,6 +11,7 @@ import qs.modules
 import qs.modules.windows11.bar
 import qs.config
 import qs.modules.common
+import qs.services
 
 Scope {
 	signal finished();
@@ -136,7 +137,7 @@ Scope {
 							ColumnLayout {
 								spacing: 0
 								Text {
-									text: "13°C"
+									text: Weather.temp
 									font.family: Config.settings.font
 									
 									color: Colours.palette.on_surface

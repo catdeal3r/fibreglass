@@ -108,6 +108,7 @@ Singleton {
 			
 			onWeatherLocationChanged: {
 				Weather.reload()
+				console.log(`Location is ${weatherLocation}`)
 			}
 			
 			onIsInMinimalModeChanged: {
