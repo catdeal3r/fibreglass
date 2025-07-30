@@ -123,32 +123,60 @@ Scope {
 						}
 						
 						RowLayout {
-							anchors.centerIn: parent
+							anchors.left: parent.left
+							anchors.leftMargin: 10
+							
+							anchors.top: parent.top
+							anchors.bottom: parent.bottom
+							
 							spacing: 10
 						
 							Text {
-								text: "🌦"
+								text: Weather.icon
 								font.family: Config.settings.font
 								
 								color: Colours.palette.on_surface
-								font.pixelSize: 28
+								font.pixelSize: 26
+								
+								Behavior on text {
+									PropertyAnimation {
+										duration: 200
+										easing.type: Easing.InSine
+									}
+								}
 							}
 							
 							ColumnLayout {
 								spacing: 0
+								
 								Text {
 									text: Weather.temp
 									font.family: Config.settings.font
 									
 									color: Colours.palette.on_surface
 									font.pixelSize: 14
+									
+									Behavior on text {
+										PropertyAnimation {
+											duration: 200
+											easing.type: Easing.InSine
+										}
+									}
 								}
+								
 								Text {
-									text: "Patchy rain nearby"
+									text: Weather.desc
 									font.family: Config.settings.font
 									
 									color: Colours.palette.on_surface
 									font.pixelSize: 14
+									
+									Behavior on text {
+										PropertyAnimation {
+											duration: 200
+											easing.type: Easing.InSine
+										}
+									}
 								}
 							}
 						}
@@ -158,7 +186,7 @@ Scope {
 							hoverEnabled: true
 							cursorShape: Qt.PointingHandCursor
 							
-							onEntered: hoverRec.opacity = 0.5
+							onEntered: hoverRec.opacity = 0.4
 							onExited: hoverRec.opacity = 0
 							//onClicked: banging
 						}

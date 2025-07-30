@@ -64,7 +64,7 @@ Singleton {
         
     property string location
     property string icon
-    property string description
+    property string desc
     property string temp
     
         
@@ -85,12 +85,13 @@ Singleton {
     onLocationChanged: Requests.get(`https://wttr.in/${location}?format=j1`, text => {
 		if (location == "REPLACE") {
 			root.icon = "❌"
-			root.description = "No location set."
+			root.desc = "No location set."
 			root.temp = "Error."
+			return;
 		}
         const json = JSON.parse(text).current_condition[0];
         root.icon = root.getWeatherIcon(json.weatherCode);
-        root.description = json.weatherDesc[0].value;
+        root.desc = json.weatherDesc[0].value;
         root.temp = `${parseFloat(json.temp_C)}°C`;
     })
     
