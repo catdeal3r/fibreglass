@@ -29,6 +29,7 @@ alias ls="ls --color"
 alias banging\?="echo NARRHHHHHH;notify-send 'dOnT baNGG!!!' 'BANGING = NARRHHHHHH'"
 alias f=fetch
 alias ff=fastfetch
+alias please=sudo
 
 # Key bindings
 bindkey '^f' autosuggest-accept

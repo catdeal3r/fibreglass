@@ -103,5 +103,4 @@ Singleton {
 	    repeat: true
 	    onTriggered: root.reload()
 	}
-
 }
