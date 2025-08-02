@@ -41,7 +41,7 @@ Rectangle {
 				MouseArea {
 					anchors.fill: parent
 					
-					onClicked: Quickshell.execDetached(["bspc", "desktop", "-f", `${index + 1}`])
+					onClicked: Quickshell.execDetached(["swaymsg", "workspace", `${index + 1}`])
 				}
 			}
 		}

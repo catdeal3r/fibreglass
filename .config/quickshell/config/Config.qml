@@ -43,20 +43,6 @@ Singleton {
 			property JsonObject bar: JsonObject {
 				property string barLocation: "bottom"
 				property bool smoothEdgesShown: false
-			
-				onBarLocationChanged: {
-					if (barLocation == "top") {
-						Quickshell.execDetached(["bspc", "config", "top_padding", "55"])
-						Quickshell.execDetached(["bspc", "config", "bottom_padding", "20"])
-						
-					} else if (barLocation == "bottom") {
-						Quickshell.execDetached(["bspc", "config", "top_padding", "20"])
-						Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
-						
-					} else {
-						console.log(`Can't handle bar position: ${barLocation}`)
-					}
-				}
 			}
 			
 			property string currentWallpaper: Quickshell.shellPath("assets/default_blank.png")
@@ -69,11 +55,7 @@ Singleton {
 			
 			onCurrentRiceChanged: {
 				if (currentRice == "fibreglass" || currentRice == "windows") {
-					if (currentRice == "windows") {
-						Quickshell.execDetached(["bspc", "config", "bottom_padding", "80"])
-					} else {
-						Quickshell.execDetached(["bspc", "config", "bottom_padding", "55"])
-					}
+					console.log(`Switched to rice: ${currentRice}`)
 				} else {
 					console.log(`Can't handle rice selection: ${currentRice}`)
 				}
@@ -111,37 +93,23 @@ Singleton {
 			
 			onIsInMinimalModeChanged: {
 				if (isInMinimalMode == true) {
-					Quickshell.execDetached(["bspc", "config", "left_padding", "0"])
-					Quickshell.execDetached(["bspc", "config", "right_padding", "0"])
-					Quickshell.execDetached(["bspc", "config", "bottom_padding", "0"])
-					Quickshell.execDetached(["bspc", "config", "top_padding", "0"])
-					Quickshell.execDetached(["bspc", "config", "window_gap", "0"])
-					
-					Quickshell.execDetached(["pkill", "qsBarHide"])
-					Quickshell.execDetached(["pkill", "picom"])
+					Quickshell.execDetached(["swaymsg", "gaps", "outer", "0"])
+					Quickshell.execDetached(["swaymsg", "gaps", "inner", "0"])
+					Quickshell.execDetached(["swaymsg", "corner_radius", "0"])
 					
 					Wallpaper.setBlankWall();
 					Quickshell.execDetached(["$HOME/.config/scripts/setBordersDefault.sh"])
 					
 				} else {
-					Quickshell.execDetached(["bspc", "config", "left_padding", "20"])
-					Quickshell.execDetached(["bspc", "config", "right_padding", "20"])
-					Quickshell.execDetached(["bspc", "config", "window_gap", "10"])
+					Quickshell.execDetached(["swaymsg", "gaps", "outer", "0"])
+					Quickshell.execDetached(["swaymsg", "gaps", "inner", "0"])
+					Quickshell.execDetached(["swaymsg", "corner_radius", `${root.settings.borderRadius}`])
 					
-					Quickshell.execDetached(["sh", "-c", "$HOME/.config/scripts/qsBarHide.sh > /dev/null 2>&1 & disown"])
-					picomTimer.running = true
 					
 					Wallpaper.loadWallpaper();
 					Quickshell.execDetached(["$HOME/.config/scripts/setBorders.sh"])
 				}
 			}
 		}
-	}
-	
-	Timer {
-		id: picomTimer
-		interval: 100
-		running: false
-		onTriggered: Quickshell.execDetached(["sh", "-c", `picom --corner-radius ${root.settings.borderRadius} --config ${Quickshell.env("HOME")}/.config/picom/picom.conf > /dev/null 2>&1 & disown`])
 	}
 }

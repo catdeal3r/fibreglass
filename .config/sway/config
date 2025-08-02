@@ -101,17 +101,11 @@ workspace 8 output eDP-1
 #
 # Moving around:
 #
-    
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    # focus next window in container (sad) 
+    bindsym mod1+tab focus next
+
+    # focus next monitor
+    bindsym $mod+tab focus output right
 #
 # Workspaces:
 #
@@ -207,22 +201,8 @@ bindsym $mod+r mode "resize"
     bindsym Print exec grim
 
 #
-# Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+#
 
 include /etc/sway/config.d/*
 corner_radius 15
@@ -232,3 +212,10 @@ xwayland enable
 
 # env variables
 exec '~/.config/sway/scripts/start.sh'
+
+# border
+exec '~/.config/scripts/setBordersSway.sh'
+
+# systemd
+exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+exec swaymsg -t subscribe '["shutdown"]' && systemctl --user stop sway-session.target

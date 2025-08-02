@@ -10,7 +10,7 @@ import qs.config
 Singleton {
 	id: root
 	
-	property int workspaceCount
+	property int workspaceCount: 8
 	property var workspacesState
 	
 	function getWorkspaceColour(state) {
@@ -27,24 +27,6 @@ Singleton {
 	
 	function getWorkspaceHeight(state) {
 		return 10
-	}
-
-	Process {
-		id: countWorkspaceProc
-
-		command: [ "bspc", "query", "-D", "--names" ]
-		running: true
-
-		stdout: SplitParser {
-			onRead: data => root.workspaceCount = `${data}`
-		}
-	}
-
-    Timer {
-	    interval: 250
-	    running: true
-	    repeat: true
-	    onTriggered: countWorkspaceProc.running = true
 	}
 	
 	Process {

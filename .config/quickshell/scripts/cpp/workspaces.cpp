@@ -62,14 +62,14 @@ int getWorkspaces()
 	std::string buf = "[";
 	
 	// Get the current amount of workpaces -> Transfer into a std::vector for easy use
-	std::vector<std::string> desks = splitStr(getStdoutCmd("bspc query -D --names"), "\n");
+	std::vector<std::string> desks = {"1", "2", "3", "4", "5", "6", "7", "8"};
 	
 	// There's a extra value of "\n" added into the vector, so we remove that.
 	desks.pop_back();
 	
 	// Get the desks/workspaces that are focused/occupied 
-	std::string focusedDesk = getStdoutCmd("bspc query -D -d focused --names");
-	std::string occupiedDesks = getStdoutCmd("bspc query -D -d .occupied --names");
+	std::string focusedDesk = getStdoutCmd("swaymsg -t get_workspaces | jq -r '.[] | select(.focused==true).name'");
+	std::string occupiedDesks = getStdoutCmd("swaymsg -t get_workspaces | jq -r '.[] | select(.nodes).name'");
 	
 	// Cycle through each workpace
 	for (auto oneDesk: desks)
@@ -125,7 +125,7 @@ int getWorkspacesLoop()
 		
 		// Also, content is captured by the getStdoutCmd() function to
 		// not clog up the STD:OUT
-		std::string tempWait = getStdoutCmd("bspc subscribe -c 1 desktop node_transfer");
+		std::string tempWait = getStdoutCmd("swaymsg -t subscribe '[\"workspace\"]'");
 		
 		// After the workspace focus has changed/a window has moved
 		// workspace, run the json workspace generator once.
