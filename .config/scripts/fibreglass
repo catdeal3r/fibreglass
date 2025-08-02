@@ -62,7 +62,7 @@ function rebuildQuickshell() {
 		cd quickshell-git
 		git reset --hard origin/master
 		git pull
-		sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWAYLAND=OFF -DSERVICE_PAM=OFF -DHYPRLAND=OFF
+		sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWAYLAND=ON -DSERVICE_PAM=ON -DHYPRLAND=OFF
 		sudo cmake --build build
 		qs kill
 		sudo cmake --install build

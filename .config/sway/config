@@ -14,9 +14,12 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty --detach
+set $term 'env DISPLAY=:0 kitty --detach'
 # Your preferred application launcher
 set $menu wmenu-run
+
+# clipboard manager
+exec wl-paste -t text --watch clipman store --no-persist
 
 ### Output configuration
 #
@@ -225,3 +228,7 @@ include /etc/sway/config.d/*
 corner_radius 15
 gaps inner 15
 gaps outer 10
+xwayland enable
+
+# env variables
+exec '~/.config/sway/scripts/start.sh'
