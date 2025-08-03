@@ -14,17 +14,18 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term 'env DISPLAY=:0 kitty --detach'
+set $term '~/.local/bin/kitty --detach'
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu wofi
 
 # clipboard manager
 exec wl-paste -t text --watch clipman store --no-persist
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# Default bg colour
+output * bg #000000 solid_color
+
 #
 # Example configuration:
 #
@@ -47,28 +48,47 @@ workspace 8 output eDP-1
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+# input configuration
+input * {
+    xkb_layout "us"
+    repeat_rate 50
+    repeat_delay 500
+    pointer_accel 0.1
+}
+
+input "type:touchpad" {
+    natural_scroll enabled
+    dwt enabled
+    tap enabled
+    accel_profile "flat"
+}
+
+# hides mouse after 10 seconds
+seat * hide_cursor 10000
+
+
+### Blur and transparency
+
+blur enable
+blur_xray disable
+
+set $opacity 0.88
+for_window [class=".*"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity
+
+for_window [app_id="firefox"] opacity 1
+
+default_dim_inactive 0.1
+
 
 ### Key bindings
 #
@@ -88,6 +108,9 @@ workspace 8 output eDP-1
 
     # nautilaus
     bindsym $mod+e exec nautilus
+
+    # screenshot
+    bindsym $mod+shift+s exec 'grim -l 0 -g "$(slurp)" - | wl-copy --type image/png'
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -236,8 +259,8 @@ for_window {
     [app_id="(?i)discord" title="^Open Files$"] floating enable;
     [app_id="Nautilus"] floating enable;
 }
-#
-
+    
+# stuff
 
 include /etc/sway/config.d/*
 corner_radius 15
@@ -245,15 +268,12 @@ gaps inner 15
 gaps outer 10
 default_border normal 2
 default_floating_border normal 2
-titlebar_separator enable
+titlebar_separator disable
 xwayland enable
-
-# env variables
-exec '~/.config/sway/scripts/start.sh'
-
-# border
-exec '~/.config/scripts/setBordersSway.sh'
 
 # systemd
 exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
 exec swaymsg -t subscribe '["shutdown"]' && systemctl --user stop sway-session.target
+
+# script
+exec 'sh -c ~/.config/sway/scripts/start.sh'

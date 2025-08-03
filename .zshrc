@@ -12,6 +12,9 @@ path+=("/home/catdealer/.config/scripts/")
 
 export path
 
+# sway stuff
+export XDG_CURRENT_DESKTOP=sway
+
 # Run oh-my-posh and zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
