@@ -1,0 +1,18 @@
+{
+    "bar": {
+        "barLocation": "top",
+        "smoothEdgesShown": false
+    },
+    "borderRadius": 20,
+    "colours": {
+        "genType": "scheme-expressive",
+        "mode": "dark"
+    },
+    "currentRice": "fibreglass",
+    "currentWallpaper": "/run/media/catdealer/Data/Pictures/wallpapers/plants/dry_leave_floating.jpg",
+    "font": "SF Pro Display",
+    "iconFont": "Material Symbols Rounded",
+    "isInMinimalMode": false,
+    "minutesBetweenHealthNotif": -1,
+    "weatherLocation": "Auckland"
+}
