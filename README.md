@@ -18,9 +18,9 @@
 
 > [!WARNING]
 > I am currently in the process of switching this project to swayfx.
-> This means that this codebase will be very unstable. Until this move has been completed, do NOT update. 
+> This means that this codebase will be very unstable. Until this move has been completed, do NOT update.
 >
-> Also: This project is very young, and the code may be refactored without notice.
+> This process is almost complete, please just wait until I've updated the dependancies list.
 
 ## Table of Contents
 - [Showcase](#showcase)

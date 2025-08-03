@@ -259,6 +259,15 @@ for_window {
     [app_id="(?i)discord" title="^Open Files$"] floating enable;
     [app_id="Nautilus"] floating enable;
 }
+
+# custom app titles
+for_window {
+    [app_id="(?i)foot|kitty"] title_format " %title"
+    [app_id="(?i)firefox"] title_format "󰈹 %title"
+    [app_id="(?i)thunar"] title_format "󰉋 %title"
+    [app_id="(?i)discord"] title_format " %title"
+    [app_id="(?i)feh"] title_format "󰋩 %title"
+}
     
 # stuff
 
