@@ -9,6 +9,7 @@ import QtQuick.Controls
 
 import qs.config
 import qs.services
+import qs.modules
 
 Scope {
 	signal finished();
@@ -51,7 +52,6 @@ Scope {
 				id: maskId
 				implicitHeight: InternalLoader.isLauncherOpen ? 400 : 0
 				implicitWidth: 500
-				
 				
 				anchors {
 					bottom: parent.bottom

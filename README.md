@@ -17,7 +17,10 @@
 > If you would like to read the old code, check [here](https://github.com/dealerofallthecats/fibreglass/tree/old), or look through the branches.
 
 > [!WARNING]
-> This project is very young, and the code may be refactored without notice.
+> I am currently in the process of switching this project to swayfx.
+> This means that this codebase will be very unstable. Until this move has been completed, do NOT update. 
+>
+> Also: This project is very young, and the code may be refactored without notice.
 
 ## Table of Contents
 - [Showcase](#showcase)
@@ -62,7 +65,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 1. Run this command:
 ```bash
-sudo apt install bspwm sxhkd picom rofi lxpolkit qt6-svg-dev qt6-multimedia-dev qt6-5compat-dev git stow qt6-base-dev qt6-declarative-dev qt6-shadertools-dev spirv-tools pkg-config kitty nautilus maim libqt6dbus6 ninja-build cmake libcli11-dev libjemalloc-dev libpipewire-dev pipewire qt6-base-private-dev qt6-declarative-private-dev
+sudo apt install bspwm swayfx slurp grim sxhkd picom rofi lxpolkit qt6-svg-dev qt6-multimedia-dev qt6-5compat-dev git stow qt6-base-dev qt6-declarative-dev qt6-shadertools-dev spirv-tools pkg-config kitty nautilus maim libqt6dbus6 ninja-build cmake libcli11-dev libjemalloc-dev libpipewire-dev pipewire qt6-base-private-dev qt6-declarative-private-dev
 ```
 2. Go [here](https://github.com/google/breakpad) and follow the instructions to install breakpad.
 
@@ -71,7 +74,7 @@ sudo apt install bspwm sxhkd picom rofi lxpolkit qt6-svg-dev qt6-multimedia-dev 
 
 1. Run this command:
 ```bash
-sudo dnf install bspwm sxhkd picom rofi lxpolkit qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel qt6-qtwayland-devel pipewire-libs pipewire pam pam-devel
+sudo dnf install bspwm slurp grim sxhkd picom rofi lxpolkit qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel qt6-qtwayland-devel pipewire-libs pipewire pam pam-devel
 ```
 
 #### Arch:

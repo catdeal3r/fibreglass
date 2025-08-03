@@ -17,7 +17,6 @@ Singleton {
 	function setNewWallpaper(path) {
 		Config.settings.currentWallpaper = `${path}`;
 		Quickshell.execDetached(["matugen", "--type", `${Config.settings.colours.genType}`, "--mode", `${Config.settings.colours.mode}`, "image", `${path}`]);
-		Quickshell.execDetached(["lockbspwm", "--bg", `\"${path}\"`]);
 
 		Quickshell.execDetached(["notify-send", "Wallpaper and theme set!", "Log out and in for the gtk4 theme to take effect."]);
 		Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/setBorders.sh"]);
@@ -28,9 +27,5 @@ Singleton {
 		Quickshell.execDetached(["matugen", "--type", `${Config.settings.colours.genType}`, "--mode", `${Config.settings.colours.mode}`, "image", `${Config.settings.currentWallpaper}`]);
 		Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/setBorders.sh"]);
 		Quickshell.execDetached(["$HOME/.config/fibreglass/scripts/setBordersSway.sh"]);
-	}
-	
-	function setBlankWall() {
-		Quickshell.execDetached(["feh", "--bg-fill", `${Quickshell.shellPath("assets/default_blank.png")}`]);
 	}
 }

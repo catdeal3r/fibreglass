@@ -34,3 +34,15 @@ Scope {
 			color: "transparent"
 			
 			visible: true
+			aboveWindows: false
+			
+			exclusionMode: ExclusionMode.Ignore
+			exclusiveZone: 0
+			
+			Image {
+				anchors.fill: parent
+				source: Config.settings.currentWallpaper
+			}
+		}
+	}
+}

@@ -53,6 +53,9 @@ Scope {
 					fillMode: Image.PreserveAspectCrop
 					
 					anchors.fill: parent
+					
+					horizontalAlignment: Image.AlignHCenter
+					verticalAlignment: Image.AlignBottom
 				}
 				
 				MultiEffect {

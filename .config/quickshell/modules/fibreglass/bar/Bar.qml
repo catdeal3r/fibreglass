@@ -40,6 +40,8 @@ Scope {
 			
 			visible: true
 			
+			exclusiveZone: barBase.height + Config.settings.borderRadius
+			
 			Rectangle {
 				id: cornerThingy
 				visible: Config.settings.bar.smoothEdgesShown

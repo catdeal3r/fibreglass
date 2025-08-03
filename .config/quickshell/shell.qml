@@ -7,7 +7,7 @@ import Quickshell.Io
 import QtQuick
 import qs.modules
 import qs.modules.fibreglass.launcher
-import qs.modules.fibreglass.notificationslist
+import qs.modules.common.desktop
 import qs.services
 import qs.config
 
@@ -19,8 +19,9 @@ Scope {
 		SessionHandler.loadBasicSession()
 	}
 	
-	NotificationList {}
 	Launcher {}
+	Desktop {}
+	
 	
 	EyeProtection {}
 }
