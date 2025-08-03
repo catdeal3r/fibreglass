@@ -32,8 +32,8 @@ Scope {
 			}
 			
 			margins {
-				top: (Config.settings.bar.barLocation == "top") ? 50 : 0
-				bottom: (Config.settings.bar.barLocation == "bottom") ? 50 : 0
+				top: (Config.settings.bar.barLocation == "top") ? -10 : 0
+				bottom: (Config.settings.bar.barLocation == "bottom") ? -10 : 0
 				right: 10
 			}
 			

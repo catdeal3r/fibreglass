@@ -86,6 +86,9 @@ workspace 8 output eDP-1
     #lock screen
     bindsym $mod+l exec swaylock
 
+    # nautilaus
+    bindsym $mod+e exec nautilus
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -137,7 +140,7 @@ workspace 8 output eDP-1
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+shift+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+up fullscreen
@@ -202,12 +205,47 @@ bindsym $mod+r mode "resize"
 
 #
 #
+
+# dumb window ruleset
+# some parts copied from elenapan, some from failed
+for_window { 
+    [app_id="foot_float"] floating enabled
+    [app_id="mpv"] floating enabled
+    [app_id="feh"] floating enabled
+    [app_id="qalculate"] floating enabled
+    [app_id="firefox" title="Picture-in-Picture"] floating enable
+    [window_role="pop-up,task_dialog,About"] floating enable;
+    [window_type="dialog"] floating enable;
+    [window_type="utility"] floating enable;
+    [window_type="toolbar"] floating enable;
+    [window_type="splash"] floating enable;
+    [window_type="menu"] floating enable;
+    [window_type="dropdown_menu"] floating enable;
+    [window_type="popup_menu"] floating enable;
+    [window_type="tooltip"] floating enable;
+    [window_type="notification"] floating enable;
+    [app_id="(?i)firefox" title="^Enter name of file to save to…$"] floating enable;
+    [app_id="(?i)firefox" title="^Open File$"] floating enable;
+    [app_id="(?i)firefox" title="^Save As$"] floating enable;
+    [app_id="(?i)firefox" title="^Save Image$"] floating enable;
+    [app_id="(?i)firefox" title="File Upload"] floating enable;
+    [app_id="(?i)firefox" title="^Firefox - Choose User Profile$"] floating enable;
+    [app_id="(?i)firefox" title="^Developer Tools — "] floating enable;
+    [app_id="(?i)firefox" title="^Opening "] floating enable;
+    [app_id="(?i)firefox" title="^Picture-in-Picture$"] floating enable;
+    [app_id="(?i)discord" title="^Open Files$"] floating enable;
+    [app_id="Nautilus"] floating enable;
+}
 #
+
 
 include /etc/sway/config.d/*
 corner_radius 15
 gaps inner 15
 gaps outer 10
+default_border normal 2
+default_floating_border normal 2
+titlebar_separator enable
 xwayland enable
 
 # env variables
