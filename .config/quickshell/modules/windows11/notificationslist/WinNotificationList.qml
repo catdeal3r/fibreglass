@@ -10,6 +10,8 @@ import qs.services
 import qs.modules.common
 
 Scope {
+	signal finished();
+	
 	Variants {
 		model: Quickshell.screens;
  

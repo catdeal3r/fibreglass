@@ -110,8 +110,8 @@ default_dim_inactive 0.1
     bindsym $mod+e exec nautilus
 
     # screenshot
-    bindsym $mod+shift+s exec 'grim -l 0 -g "$(slurp)" - | wl-copy --type image/png'
-
+    bindsym $mod+shift+s exec 'sh -c "~/.config/scripts/screenshot.sh --select"'
+    
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -223,8 +223,6 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
 
 #
 #

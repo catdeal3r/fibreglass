@@ -11,7 +11,7 @@ import qs.modules.fibreglass.notificationslist
 import qs.modules.windows11.bar
 import qs.modules.windows11.launcher
 import qs.modules.windows11.dashboard
-import qs.modules.fibreglass.notificationslist
+import qs.modules.windows11.notificationslist
 
 import qs.modules.settings
 import qs.modules
@@ -59,7 +59,7 @@ Scope {
 		Component {
 			id: notifLogFibreglass
 
-			Dashboard {
+			NotificationList {
 				onFinished: root.isNotifLogLoaded = false
 			}
 		}
@@ -67,7 +67,7 @@ Scope {
 		Component {
 			id: notifLogWindows
 
-			WinDashboard {
+			WinNotificationList {
 				onFinished: root.isNotifLogLoaded = false
 			}
 		}
