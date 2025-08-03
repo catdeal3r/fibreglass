@@ -51,7 +51,8 @@ workspace 8 output eDP-1
 exec swayidle -w \
           timeout 300 'swaylock -f -c 000000' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -c 000000'
+          before-sleep 'swaylock -f -c 000000' \
+          after-resume 'bluetoothctl power off'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -111,6 +112,9 @@ default_dim_inactive 0.1
 
     # screenshot
     bindsym $mod+shift+s exec 'sh -c "~/.config/scripts/screenshot.sh --select"'
+
+    # toggle dashboard window
+    bindsym $mod+space exec 'qs ipc call root toggleDashboard'
     
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -170,9 +174,6 @@ default_dim_inactive 0.1
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+f floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
