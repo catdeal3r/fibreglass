@@ -1,0 +1,116 @@
+@define-color	text  #ffffff;
+@define-color	base  #1E1E1E;
+@define-color	mantle  #ffffff;
+@define-color	crust  #ffffff;
+
+* {
+  font-family: 'Product Sans';
+  font-size: 14px;
+}
+
+/* Window */
+window {
+  margin: 0px;
+  padding: 10px;
+  border: 0px solid @crust;
+  border-radius: 12px;
+  background-color: @base;
+  animation: slideIn 0.5s ease-in-out both;
+}
+
+/* Slide In */
+@keyframes slideIn {
+  0% {
+     opacity: 0;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+/* Inner Box */
+#inner-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: @base;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  0% {
+     opacity: 0;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+/* Outer Box */
+#outer-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: @base;
+}
+
+/* Scroll */
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+  background-color: @base;
+}
+
+/* Input */
+#input {
+  margin: 5px 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  color: @text;
+  background-color: @base;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+#input image {
+    border: none;
+    color: @text;
+}
+
+#input * {
+  outline: 4px solid @red!important;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  border: none;
+  color: @text;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+#entry {
+  background-color: @base;
+}
+
+#entry arrow {
+  border: none;
+  color: @text;
+}
+
+/* Selected Entry */
+#entry:selected {
+  border: 0.11em solid @text;
+}
+
+#entry:selected #text {
+  color: @text;
+}
+
+#entry:drop(active) {
+  background-color: @lavender!important;
+}

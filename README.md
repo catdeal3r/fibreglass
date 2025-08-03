@@ -74,7 +74,8 @@ sudo apt install bspwm swayfx slurp grim sxhkd picom rofi lxpolkit qt6-svg-dev q
 
 1. Run this command:
 ```bash
-sudo dnf install bspwm slurp grim sxhkd picom rofi lxpolkit qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel qt6-qtwayland-devel pipewire-libs pipewire pam pam-devel
+sudo dnf copr enable swayfx/swayfx fedora-40-x86_64
+sudo dnf install swayfx swaybg swayidle slurp grim sxhkd picom rofi lxpolkit qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus libxcb xprop maim dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel qt6-qtwayland-devel pipewire-libs pipewire pam pam-devel
 ```
 
 #### Arch:
