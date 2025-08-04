@@ -64,9 +64,6 @@ int getWorkspaces()
 	// Get the current amount of workpaces -> Transfer into a std::vector for easy use
 	std::vector<std::string> desks = {"1", "2", "3", "4", "5", "6", "7", "8"};
 	
-	// There's a extra value of "\n" added into the vector, so we remove that.
-	desks.pop_back();
-	
 	// Get the desks/workspaces that are focused/occupied 
 	std::string focusedDesk = getStdoutCmd("swaymsg -t get_workspaces | jq -r '.[] | select(.focused==true).name'");
 	std::string occupiedDesks = getStdoutCmd("swaymsg -t get_workspaces | jq -r '.[] | select(.nodes).name'");

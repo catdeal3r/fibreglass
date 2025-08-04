@@ -287,4 +287,4 @@ exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl
 exec swaymsg -t subscribe '["shutdown"]' && systemctl --user stop sway-session.target
 
 # script
-exec 'sh -c ~/.config/sway/scripts/start.sh'
+exec_always 'sh -c ~/.config/sway/scripts/start.sh'

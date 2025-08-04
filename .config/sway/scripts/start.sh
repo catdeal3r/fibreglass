@@ -18,3 +18,6 @@ fcitx5 -d & disown
 
 # quickshell
 ~/.config/scripts/fibreglass --start
+
+# gtk theme
+gsettings set org.gnome.desktop.interface gtk-theme 'Awesthetic-dark'
