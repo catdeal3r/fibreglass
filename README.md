@@ -65,9 +65,10 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 1. Run this command:
 ```bash
-sudo apt install swayfx slurp grim wofi lxpolkit qt6-svg-dev qt6-multimedia-dev qt6-5compat-dev git stow qt6-base-dev qt6-declarative-dev qt6-shadertools-dev spirv-tools pkg-config kitty nautilus libqt6dbus6 ninja-build cmake libcli11-dev libjemalloc-dev libpipewire-dev pipewire qt6-base-private-dev qt6-declarative-private-dev
+sudo apt install slurp grim wofi lxpolkit qt6-svg-dev qt6-multimedia-dev qt6-5compat-dev git stow qt6-base-dev qt6-declarative-dev qt6-shadertools-dev spirv-tools pkg-config kitty nautilus libqt6dbus6 ninja-build cmake libcli11-dev libjemalloc-dev libpipewire-dev pipewire qt6-base-private-dev qt6-declarative-private-dev
 ```
 2. Go [here](https://github.com/google/breakpad) and follow the instructions to install breakpad.
+3. Follow the instructions [here](https://github.com/WillPower3309/swayfx/blob/master/INSTALL-deb.md)
 
 
 #### Fedora:

@@ -40,7 +40,7 @@ Scope {
 			
 			visible: true
 			
-			exclusiveZone: barBase.height + Config.settings.borderRadius
+			exclusiveZone: barBase.height + Config.settings.borderRadius + 3
 			
 			Rectangle {
 				id: cornerThingy
