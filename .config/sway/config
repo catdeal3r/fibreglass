@@ -58,6 +58,9 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+# sleep computer on lid down
+bindswitch lid:on exec 'systemctl suspend'
+
 # input configuration
 input * {
     xkb_layout "us"
@@ -106,6 +109,9 @@ default_dim_inactive 0.1
 
     #lock screen
     bindsym $mod+l exec swaylock
+
+    # sleep
+    bindsym $mod+shift+l exec 'systemctl suspend'
 
     # nautilaus
     bindsym $mod+e exec nautilus
