@@ -10,6 +10,7 @@ Singleton {
 	id: root
 	property bool isDashboardOpen: false
 	property bool isLauncherOpen: false
+	property bool isLockscreenOpen: false
 	
 	function toggleDashboard() {
 		root.isDashboardOpen = !root.isDashboardOpen

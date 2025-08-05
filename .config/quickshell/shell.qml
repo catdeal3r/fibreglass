@@ -22,6 +22,5 @@ Scope {
 	Launcher {}
 	Desktop {}
 	
-	
 	EyeProtection {}
 }

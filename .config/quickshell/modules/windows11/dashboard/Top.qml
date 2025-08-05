@@ -91,7 +91,7 @@ Rectangle {
 						
 						iconName: "lock"
 						
-						toRun: () => Quickshell.execDetached([ `${Quickshell.configDir}/scripts/lockbspwm` ])
+						toRun: () => Quickshell.execDetached([ "qs", "ipc", "call", "lock", "lock" ])
 					}
 					
 					PowerButton {

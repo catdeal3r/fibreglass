@@ -12,6 +12,7 @@ import qs.modules.windows11.bar
 import qs.modules.windows11.launcher
 import qs.modules.windows11.dashboard
 import qs.modules.windows11.notificationslist
+import qs.modules.windows11.lockscreen
 
 import qs.modules.settings
 import qs.modules
@@ -94,6 +95,13 @@ Scope {
 				onFinished: root.isBarOpen = false
 			}
 		}
+	}
+	
+	Loader {
+		id: lockscreenLoader
+		active: true
+		
+		sourceComponent: WinLockscreen {}
 	}
 	
 	Loader {

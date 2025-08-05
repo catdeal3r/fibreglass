@@ -49,10 +49,9 @@ workspace 8 output eDP-1
 # Example configuration:
 #
 exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
+          timeout 300 'qs ipc call lock lock' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -c 000000' \
-          after-resume 'bluetoothctl power off'
+          before-sleep 'qs ipc call lock lock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -108,7 +107,7 @@ default_dim_inactive 0.1
     bindsym Mod1+space exec $menu
 
     #lock screen
-    bindsym $mod+l exec swaylock
+    bindsym $mod+l exec 'qs ipc call lock lock'
 
     # sleep
     bindsym $mod+shift+l exec 'systemctl suspend'
@@ -289,5 +288,8 @@ xwayland enable
 exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
 exec swaymsg -t subscribe '["shutdown"]' && systemctl --user stop sway-session.target
 
-# script
+# startup script
 exec_always 'sh -c ~/.config/sway/scripts/start.sh'
+
+# mount drive script
+exec 'sh -c ~/.config/sway/scripts/mount.sh'
