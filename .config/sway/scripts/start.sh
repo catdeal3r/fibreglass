@@ -21,3 +21,6 @@ fcitx5 -d & disown
 
 # gtk theme
 gsettings set org.gnome.desktop.interface gtk-theme 'Awesthetic-dark'
+
+# lxpolkit
+lxpolkit & disown

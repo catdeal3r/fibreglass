@@ -88,7 +88,7 @@ Don't care.
 cd ~
 git clone https://github.com/quickshell-mirror/quickshell quickshell-git
 cd quickshell-git
-sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWAYLAND=OFF -DSERVICE_PAM=OFF -DHYPRLAND=OFF
+sudo cmake -GNinja -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWAYLAND=ON -DSERVICE_PAM=ON -DHYPRLAND=OFF
 sudo cmake --build build
 sudo cmake --install build
 ```
