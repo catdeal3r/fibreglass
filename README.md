@@ -22,6 +22,10 @@
 >
 > This process is almost complete, please just wait until I've updated the dependancies list.
 
+> [!WARNING]
+> I have switched to using an inbuilt lockscreen. This lockscreen has a button that lets the user out without a password.
+> So don't use this as actual security, at least until I've finished.
+
 ## Table of Contents
 - [Showcase](#showcase)
 - [Install](#install)
@@ -65,7 +69,7 @@ https://github.com/user-attachments/assets/767b5f0d-4ffc-46d6-8b4d-1ea0c74d42dc
 
 1. Run this command:
 ```bash
-sudo apt install slurp grim wofi lxpolkit qt6-svg-dev qt6-multimedia-dev qt6-5compat-dev git stow qt6-base-dev qt6-declarative-dev qt6-shadertools-dev spirv-tools pkg-config kitty nautilus libqt6dbus6 ninja-build cmake libcli11-dev libjemalloc-dev libpipewire-dev pipewire qt6-base-private-dev qt6-declarative-private-dev
+sudo apt install slurp grim wofi lxpolkit qt6-svg-dev qt6-multimedia-dev qt6-5compat-dev git stow qt6-base-dev qt6-declarative-dev qt6-shadertools-dev spirv-tools pkg-config kitty nautilus libqt6dbus6 ninja-build cmake libcli11-dev libjemalloc-dev libpipewire-dev pipewire qt6-base-private-dev qt6-declarative-private-dev cargo
 ```
 2. Go [here](https://github.com/google/breakpad) and follow the instructions to install breakpad.
 3. Follow the instructions [here](https://github.com/WillPower3309/swayfx/blob/master/INSTALL-deb.md)
@@ -76,7 +80,7 @@ sudo apt install slurp grim wofi lxpolkit qt6-svg-dev qt6-multimedia-dev qt6-5co
 1. Run these commands:
 ```bash
 sudo dnf copr enable swayfx/swayfx fedora-40-x86_64
-sudo dnf install swayfx swaybg swayidle slurp grim wofi lxpolkit qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel qt6-qtwayland-devel pipewire-libs pipewire pam pam-devel
+sudo dnf install swayfx swaybg swayidle slurp grim wofi lxpolkit qt6-qtsvg-devel qt6-qtimageformats qt6-qtmultimedia-devel qt6-qt5compat-devel git stow qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtshadertools-devel spirv-tools pkg-config kitty nautilus dbus-qt3 ninja cmake glibc-minimal-langpack info patch cli11-devel breakpad-devel jemalloc-devel qt6-qtbase-private-devel qt6-qtwayland-devel pipewire-libs pipewire pam pam-devel cargo
 ```
 
 #### Arch:
@@ -98,6 +102,7 @@ sudo cmake --install build
 > Continuing from here **will** overwrite your dotfiles.
 
 Dotfiles affected:
+- swayfx
 - bspwm
 - matugen
 - kitty
@@ -115,8 +120,8 @@ cd ~
 git clone https://github.com/dealerofallthecats/fibreglass/
 cd fibreglass
 stow .
-# Install bsp-layout
-curl https://raw.githubusercontent.com/phenax/bsp-layout/master/install.sh | bash -;
+# Install matugen
+cargo install matugen --locked
 ```
 
 2. Install these icon packs:
@@ -158,14 +163,6 @@ cp -r ./runtime ~/fibreglass/.config/helix/
 ---
 
 ## Known Issues
-### Dashboard appears too high above or below the bar.
-
-| Key | Content |
-| --- | --- |
-| **Description** | This issue seems to be related to x11's positioning of PanelWindows, and changing content. | 
-| **Timing** | I encounter this the most while editing code, or after switch the bar location. | 
-| **Workaround** | Reload quickshell. |
-
 
 ### Notifications with no text, appname, or time appear with the default notification icon.
 

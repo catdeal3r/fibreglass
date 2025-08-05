@@ -30,15 +30,12 @@ Rectangle {
 	}
 
 	ColumnLayout {
-		// Uncommenting this will make the password entry invisible except on the active monitor.
-		// visible: Window.active
-		
 		spacing: 10
 
 		anchors {
 			horizontalCenter: parent.horizontalCenter
 			top: parent.top
-			topMargin: 300
+			topMargin: 350
 		}
 		
 		ClippingWrapperRectangle {
@@ -66,44 +63,112 @@ Rectangle {
 		}
 
 		RowLayout {
-			TextField {
+		
+			Layout.topMargin: 10
+			
+			Rectangle {
 				id: passwordBox
 
 				implicitWidth: 400
-				padding: 10
-				
+				implicitHeight: 40
+				radius: 8
+				color: Colours.palette.surface 
 
 				focus: true
-				enabled: !root.lockcontext.unlockInProgress
-				echoMode: TextInput.Password
-				inputMethodHints: Qt.ImhSensitiveData
-
-				// Update the text in the lockcontext when the text in the box changes.
-				onTextChanged: root.lockcontext.currentText = this.text;
-
-				// Try to unlock when enter is pressed.
-				onAccepted: root.lockcontext.tryUnlock();
-
-				// Update the text in the box to match the text in the lockcontext.
-				// This makes sure multiple monitors have the same text.
-				Connections {
-					target: root.lockcontext
-
-					function onCurrentTextChanged() {
-						passwordBox.text = root.lockcontext.currentText;
+				
+				opacity: 0.6
+				
+				Behavior on opacity {
+					PropertyAnimation {
+						duration: 200
+						easing.type: Easing.InSine
 					}
 				}
-			}
+				
+				Keys.onPressed: event => {
+					if (root.lockcontext.unlockInProgress)
+						return;
 
-			Button {
-				text: "Unlock"
-				padding: 10
+					if (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) {
+						root.lockcontext.tryUnlock();
+					} else if (event.key === Qt.Key_Backspace) {
+						root.lockcontext.currentText = root.lockcontext.currentText.slice(0, -1);
+					} else if (" abcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?".includes(event.text.toLowerCase())) {
+						root.lockcontext.currentText += event.text;
+					}
+					
+					passwordBox.opacity = 0.8
+				}
+				
+				ListView {
+					id: charList
 
-				// don't steal focus from the text box
-				focusPolicy: Qt.NoFocus
+					anchors.left: parent.left
+					anchors.leftMargin: 10
+					
+					anchors.top: parent.top
+					anchors.topMargin: (parent.implicitHeight / 2) - (implicitHeight / 2)
 
-				enabled: !root.lockcontext.unlockInProgress && root.lockcontext.currentText !== "";
-				onClicked: root.lockcontext.tryUnlock();
+					implicitWidth: 380
+					implicitHeight: 10
+
+					orientation: Qt.Horizontal
+					spacing: 5
+					interactive: false
+
+					model: ScriptModel {
+						values: root.lockcontext.currentText.split("")
+					}
+
+					delegate: Rectangle {
+						id: ch
+
+						implicitWidth: 10
+						implicitHeight: 10
+
+						color: Colours.palette.on_surface
+						radius: 1000
+
+						opacity: 0.7
+						
+						Component.onCompleted: {
+							opacity = 1
+						}
+						
+						Behavior on opacity {
+							PropertyAnimation {
+								duration: 200
+								easing.type: Easing.InSine
+							}
+						}
+					}
+				}
+				
+				Rectangle {
+					width: parent.implicitWidth - 6
+					height: 2
+					anchors.top: parent.bottom
+					anchors.topMargin: -3
+					
+					anchors.left: parent.left
+					anchors.leftMargin: (parent.implicitWidth / 2) - (width / 2)
+					
+					color: ( parent.opacity == 0.8 ) ? Colours.palette.primary : Colours.palette.outline
+					
+					Behavior on color {
+						PropertyAnimation {
+							duration: 200
+							easing.type: Easing.InSine
+						}
+					}
+				}
+				
+				MouseArea {
+					anchors.fill: parent
+					
+					onEntered: parent.opacity = 0.8
+					onExited: parent.opacity = 0.6
+				}
 			}
 		}
 

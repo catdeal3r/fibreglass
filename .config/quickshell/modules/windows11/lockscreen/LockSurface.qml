@@ -18,7 +18,7 @@ Rectangle {
 	
 	// background stuff
 	Image {
-		id: blurBarBackground
+		id: background
 		source: Config.settings.currentWallpaper
 		fillMode: Image.PreserveAspectCrop
 			
@@ -26,15 +26,26 @@ Rectangle {
 	}
 				
 	MultiEffect {
-		source: blurBarBackground
-		anchors.fill: blurBarBackground
+		id: blurEffect
+		source: background
+		anchors.fill: background
 						
 		blurEnabled: true
 		autoPaddingEnabled: false
 		blur: 1.0
 		blurMultiplier: 2
+		opacity: clockOpen ? 0 : 1
+		
+		Behavior on opacity {
+			PropertyAnimation {
+				duration: 200
+				easing.type: Easing.InSine
+			}
+		}
 	}
 	
+	
+	// content
 	ClockPage {
 		opacity: clockOpen ? 1 : 0
 	}
@@ -49,8 +60,8 @@ Rectangle {
 		opacity: clockOpen ? 0 : 1
 	}
 	
-	Button {
-		text: "Its not working, let me out"
-		onClicked: context.unlocked();
-	}
+	//Button {
+		//text: "Its not working, let me out"
+		//onClicked: context.unlocked();
+	//}
 }
