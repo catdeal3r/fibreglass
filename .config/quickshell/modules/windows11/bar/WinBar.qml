@@ -55,7 +55,7 @@ Scope {
 					anchors.fill: parent
 					
 					horizontalAlignment: Image.AlignHCenter
-					verticalAlignment: Image.AlignBottom
+					verticalAlignment: ( Config.settings.bar.barLocation == "top" ) ? Image.AlignTop : Image.AlignBottom
 				}
 				
 				MultiEffect {
@@ -80,7 +80,7 @@ Scope {
 				}
 				
 				Rectangle {
-					anchors.top: parent.top
+					anchors.top: ( Config.settings.bar.barLocation == "top" ) ? parent.bottom : parent.top
 					width: parent.width
 					height: 1
 					color: Colours.palette.surface_container
