@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls.Fusion
 import Quickshell.Wayland
 
-import qs.modules.windows11.lockscreen
+import qs.modules.fibreglass.lockscreen
 
 Rectangle {
 	id: root

@@ -7,6 +7,7 @@ import qs.modules.fibreglass.loadingscreen
 import qs.modules.fibreglass.launcher
 import qs.modules.fibreglass.dashboard
 import qs.modules.fibreglass.notificationslist
+import qs.modules.fibreglass.lockscreen
 
 import qs.modules.windows11.bar
 import qs.modules.windows11.launcher
@@ -101,7 +102,19 @@ Scope {
 		id: lockscreenLoader
 		active: true
 		
-		sourceComponent: WinLockscreen {}
+		sourceComponent: Config.settings.currentRice == "fibreglass" ? lockFibreglass : lockWindows
+		
+		Component {
+			id: lockFibreglass
+			
+			Lockscreen {}
+		}
+		
+		Component {
+			id: lockWindows
+			
+			WinLockscreen {}
+		}
 	}
 	
 	Loader {

@@ -91,7 +91,7 @@ Rectangle {
 						
 						iconName: "lock"
 						
-						toRun: () => Quickshell.execDetached([ "swaylock" ])
+						toRun: () => Quickshell.execDetached([ "qs", "ipc", "call", "lock", "lock" ])
 					}
 					
 					PowerButton {

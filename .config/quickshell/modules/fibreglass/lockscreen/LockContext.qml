@@ -2,8 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Services.Pam
 
-
-import qs.modules.windows11.lockscreen
+import qs.modules.fibreglass.lockscreen
 
 Scope {
 	id: root

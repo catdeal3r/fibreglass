@@ -3,7 +3,7 @@ import Quickshell.Io
 import Quickshell.Wayland
 
 import qs.modules
-import qs.modules.windows11.lockscreen
+import qs.modules.fibreglass.lockscreen
 
 ShellRoot {
 
