@@ -5,7 +5,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
  
- Singleton {
+Singleton {
 	id: root
 	property string time
  
@@ -25,5 +25,5 @@ import QtQuick
 	    running: true
 	    repeat: true
 	    onTriggered: dateProc.running = true
-	  }
-  }
+	}
+}

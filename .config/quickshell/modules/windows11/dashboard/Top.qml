@@ -1,11 +1,11 @@
 import Quickshell
 import Quickshell.Io
+import Quickshell.Widgets
 
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
 import QtQuick.Controls
-import Quickshell.Widgets
 
 import qs.config
 import qs.modules.common
