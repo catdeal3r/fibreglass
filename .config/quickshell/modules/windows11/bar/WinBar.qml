@@ -70,7 +70,6 @@ Scope {
 					blurMultiplier: 2
 					
 					saturation: 1.0
-					
 				}
 				
 				Rectangle {

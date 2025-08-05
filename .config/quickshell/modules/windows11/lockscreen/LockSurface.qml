@@ -1,9 +1,11 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Fusion
+import QtQuick.Effects
 import Quickshell.Wayland
 
 import qs.modules.windows11.lockscreen
+import qs.config
 
 Rectangle {
 	id: root
@@ -15,6 +17,25 @@ Rectangle {
 	Button {
 		text: "Its not working, let me out"
 		onClicked: context.unlocked();
+	}
+
+	Image {
+		id: blurBarBackground
+		source: Config.settings.currentWallpaper
+		fillMode: Image.PreserveAspectCrop
+			
+		anchors.fill: parent
+		
+	}
+				
+	MultiEffect {
+		source: blurBarBackground
+		anchors.fill: blurBarBackground
+						
+		blurEnabled: true
+		autoPaddingEnabled: false
+		blur: 1.0
+		blurMultiplier: 2
 	}
 
 	Label {
