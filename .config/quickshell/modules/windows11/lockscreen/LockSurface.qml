@@ -24,6 +24,15 @@ Rectangle {
 			
 		anchors.fill: parent
 	}
+	
+	MultiEffect {
+		id: darkenEffect
+		source: background
+		anchors.fill: background
+		
+		brightness: -0.2
+	}
+	
 				
 	MultiEffect {
 		id: blurEffect
@@ -31,9 +40,9 @@ Rectangle {
 		anchors.fill: background
 						
 		blurEnabled: true
-		autoPaddingEnabled: false
+		autoPaddingEnabled: true
 		blur: 1.0
-		blurMultiplier: 2
+		blurMultiplier: 4
 		opacity: clockOpen ? 0 : 1
 		
 		Behavior on opacity {

@@ -67,7 +67,7 @@ Rectangle {
 		font.family: Config.settings.font
 		font.weight: 700
 		
-		font.pointSize: 75
+		font.pointSize: 76
 
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.top: parent.top
@@ -82,7 +82,7 @@ Rectangle {
 		font.family: Config.settings.font
 		font.weight: 400
 		
-		font.pointSize: 20
+		font.pointSize: 21
 
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.top: timeText.bottom
