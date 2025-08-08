@@ -97,10 +97,8 @@ Rectangle {
 			width: 400
 		}
 		
-		Item {
-		}
+		Item {}
 		
-		Item {
-		}
+		Item {}
 	}
 }

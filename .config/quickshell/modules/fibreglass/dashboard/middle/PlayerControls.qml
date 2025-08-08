@@ -65,7 +65,7 @@ Rectangle {
 	readonly property var realPlayers: Mpris.players.values.filter(player => isRealPlayer(player))
     readonly property var meaningfulPlayers: filterDuplicatePlayers(realPlayers)
     
-   Text {
+	Text {
 		color: Colours.palette.on_surface
 		text: "Media"
 		font.family: Config.settings.font
@@ -76,17 +76,23 @@ Rectangle {
 		anchors.leftMargin: 40
 	}
 	
-    
-    
-    Repeater {
-		model: ScriptModel {
-			values: root.meaningfulPlayers
+	SwipeView {
+		id: view
+		interactive: true
+		currentIndex: 0
+		orientation: Qt.Vertical
+		anchors.centerIn: parent
+	
+		Repeater {
+			model: ScriptModel {
+				values: root.meaningfulPlayers
+			}
+			delegate: PlayerControl {
+				required property MprisPlayer modelData
+				player: modelData
+			}
 		}
-		delegate: PlayerControl {
-			required property MprisPlayer modelData
-            player: modelData
-        }
-    }
+	}
     
 	Rectangle {
 		width: 40

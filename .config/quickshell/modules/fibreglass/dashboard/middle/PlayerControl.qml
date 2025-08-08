@@ -43,6 +43,16 @@ ColumnLayout {
 
 		return title.trim();
 	}
+	
+	Timer {
+	  // only emit the signal when the position is actually changing.
+	  running: root.player.playbackState == MprisPlaybackState.Playing
+	  // Make sure the position updates at least once per second.
+	  interval: 1000
+	  repeat: true
+	  // emit the positionChanged signal every second.
+	  onTriggered: root.player.positionChanged()
+	}
     
 	anchors.top: parent.top
 	anchors.topMargin: 20
@@ -50,23 +60,22 @@ ColumnLayout {
 	anchors.left: parent.left
 	anchors.leftMargin: (parent.width / 2) - (400 / 2)
 	
-	height: 190
+	height: 180
 	
 	
-	Rectangle {
+	RowLayout {
 		Layout.alignment: Qt.AlignHCenter
 		Layout.preferredWidth: 400
-		Layout.preferredHeight: 130
-		color: "transparent"
+		Layout.preferredHeight: 100
 		
 		ClippingWrapperRectangle { //image
 			id: art
-			anchors.left: parent.left
-			anchors.leftMargin: 20
 			
 			radius: Config.settings.borderRadius
-			width: 240
-			height: 130
+			Layout.preferredWidth: 90
+			Layout.preferredHeight: 90
+			
+			Layout.alignment: Qt.AlignLeft
 								
 			color: Colours.palette.surface_container
 		
@@ -77,14 +86,10 @@ ColumnLayout {
         }
         
         Rectangle {
-			anchors.left: parent.left
-			anchors.leftMargin: art.width - 60
+			Layout.preferredWidth: 220
+			Layout.preferredHeight: 80
 			
-			anchors.top: parent.top
-			anchors.topMargin: (parent.height / 2) - (height / 2)
-			
-			width: 300
-			height: 80
+			Layout.alignment: Qt.AlignLeft
 			
 			radius: Config.settings.borderRadius
 			color: Colours.palette.surface
@@ -114,7 +119,7 @@ ColumnLayout {
 					font.family: Config.settings.font
 										
 					elide: Qt.ElideRight
-					elideWidth: 130
+					elideWidth: parent.parent.width - 170
 				}
 					
 				Text {
@@ -133,8 +138,84 @@ ColumnLayout {
 					font.family: Config.settings.font
 										
 					elide: Qt.ElideRight
-					elideWidth: 130
+					elideWidth: parent.parent.width - 170
 				}
+			}
+		}
+	}
+	
+	Slider {
+		id: slider
+		Layout.preferredWidth: 400
+		Layout.preferredHeight: 10
+		//color: Colours.palette.surface_container
+		//radius: Config.settings.borderRadius
+		
+		//clip: true
+		
+		/*Rectangle {
+			anchors.left: parent.left
+			height: parent.Layout.preferredHeight
+			
+			radius: Config.settings.borderRadius
+			topRightRadius: 0
+			bottomRightRadius: 0
+			
+			color: Colours.palette.tertiary
+			
+			width: Math.max(0, (parent.width - 5) * (root.player?.position / root.player?.length))
+		}*/
+		
+		background: Item {
+			Rectangle {
+				anchors.top: parent.top
+				anchors.bottom: parent.bottom
+				anchors.right: parent.right
+				anchors.topMargin: parent.implicitHeight / 3
+				anchors.bottomMargin: parent.implicitHeight / 3
+
+				implicitWidth: parent.width
+
+				color: Colours.palette.surface_container
+				radius: Config.settings.borderRadius
+				topLeftRadius: parent.implicitHeight / 15
+				bottomLeftRadius: parent.implicitHeight / 15
+			}
+			
+			Rectangle {
+				anchors.top: parent.top
+				anchors.bottom: parent.bottom
+				anchors.left: parent.left
+				anchors.topMargin: parent.implicitHeight / 3
+				anchors.bottomMargin: parent.implicitHeight / 3
+
+				implicitWidth: (slider.value / parent.parent.to) * parent.width
+
+				color: Colours.palette.tertiary
+				radius: Config.settings.borderRadius
+				topRightRadius: parent.implicitHeight / 15
+				bottomRightRadius: parent.implicitHeight / 15
+			}
+		}
+		
+		enabled: root.player?.canSeek
+		
+		from: 0
+		value: root.player?.position
+		to: root.player?.length
+		
+		handle: Item {}
+		
+		onMoved: root.player.canSeek ? root.player.position = value : 0
+
+		property var player: root.player
+		
+		Connections {
+			target: player
+			
+			function onPositionChanged() {
+				slider.value = player.position;
+				slider.to = player.length;
 			}
 		}
 	}
@@ -143,13 +224,27 @@ ColumnLayout {
 		Layout.alignment: Qt.AlignHCenter
 		spacing: 30
 		
-		Text {
-			Layout.alignment: Qt.AlignHCenter
-			font.pixelSize: 20
-			color: Colours.palette.on_surface
-			text: "shuffle"
-			
-			font.family: Config.settings.iconFont
+		Loader {
+			active: root.player.shuffleSupported
+		
+			sourceComponent: PlayerButton {
+				Layout.alignment: Qt.AlignHCenter
+				colour: {
+					switch (root.player.shuffle) {
+						case true: return Colours.palette.on_surface;
+						case false: Colours.palette.outline;
+					}
+				}
+				
+				iconName: "shuffle"
+				
+				toRun: {
+					switch (root.player.shuffle) {
+						case true: return () => root.player.shuffle = false;
+						case false: return () => root.player.shuffle = true;
+					}
+				}
+			}
 		}
 		
 		PlayerButton {
@@ -172,29 +267,33 @@ ColumnLayout {
 			toRun: () => root.player?.next()
 		}
 		
-		PlayerButton {
-			Layout.alignment: Qt.AlignHCenter	
-			colour: {
-				switch(root.player.loopState) {
-					case MprisLoopState.Track: return Colours.palette.on_surface;
-					case MprisLoopState.Playlist: return Colours.palette.on_surface;
-					case MprisLoopState.None: return Colours.palette.outline;
+		Loader {
+			active: root.player.loopSupported
+		
+			sourceComponent: PlayerButton {
+				Layout.alignment: Qt.AlignHCenter	
+				colour: {
+					switch(root.player.loopState) {
+						case MprisLoopState.Track: return Colours.palette.on_surface;
+						case MprisLoopState.Playlist: return Colours.palette.on_surface;
+						case MprisLoopState.None: return Colours.palette.outline;
+					}
 				}
-			}
-			
-			iconName: {
-				switch(root.player.loopState) {
-					case MprisLoopState.Track: return "repeat_one";
-					case MprisLoopState.Playlist: return "repeat";
-					case MprisLoopState.None: return "repeat";
+				
+				iconName: {
+					switch(root.player.loopState) {
+						case MprisLoopState.Track: return "repeat_one";
+						case MprisLoopState.Playlist: return "repeat";
+						case MprisLoopState.None: return "repeat";
+					}
 				}
-			}
-			
-			toRun: {
-				switch (root.player.loopState) {
-					case MprisLoopState.None: return () => root.player.loopState = MprisLoopState.Playlist;
-					case MprisLoopState.Playlist: return () => root.player.loopState = MprisLoopState.Track;
-					case MprisLoopState.Track: return () => root.player.loopState = MprisLoopState.None;
+				
+				toRun: {
+					switch (root.player.loopState) {
+						case MprisLoopState.None: return () => root.player.loopState = MprisLoopState.Playlist;
+						case MprisLoopState.Playlist: return () => root.player.loopState = MprisLoopState.Track;
+						case MprisLoopState.Track: return () => root.player.loopState = MprisLoopState.None;
+					}
 				}
 			}
 		}
