@@ -20,11 +20,6 @@ ColumnLayout {
     
     property var artUrl: player?.trackArtUrl
     
-    /*property string artDownloadLocation: `${Quickshell.configDir}/cache/coverArt`//Directories.coverArt
-    property string artFileName: Qt.md5(artUrl) + ".jpg"
-    property string artFilePath: `${artDownloadLocation}/${artFileName}`
-    property bool downloaded: false*/
-    
     Timer { // Force update for prevision
         running: root.player?.playbackState == MprisPlaybackState.Playing
         interval: 1000
@@ -33,8 +28,6 @@ ColumnLayout {
             root.player.positionChanged()
         }
     }
-    
-     
 	
 	function cleanMusicTitle(title) {
 		if (!title) return "";
@@ -50,31 +43,6 @@ ColumnLayout {
 
 		return title.trim();
 	}
-    
-    /*onArtUrlChanged: {
-        if (root.artUrl.length == 0) {
-			return;
-        }
-        console.log("PlayerControl: Art URL changed to", root.artUrl)
-        console.log("Download cmd:", coverArtDownloader.command.join(" "))
-        
-        console.log(root.artFileName)
-		console.log(root.artDownloadLocation)
-		console.log(root.artFilePath)
-		
-        root.downloaded = false
-        coverArtDownloader.running = true
-    }
-    
-
-    Process { // Cover art downloader
-        id: coverArtDownloader
-        property string targetFile: root.artUrl
-        command: [ "bash", "-c", `[ -f '${root.artFilePath}' ] || curl -sSL '${targetFile}' -o '${root.artFilePath}'` ]
-        onExited: (exitCode, exitStatus) => {
-            root.downloaded = true
-        }
-    }*/
     
 	anchors.top: parent.top
 	anchors.topMargin: 20
@@ -204,12 +172,31 @@ ColumnLayout {
 			toRun: () => root.player?.next()
 		}
 		
-		Text {
+		PlayerButton {
 			Layout.alignment: Qt.AlignHCenter	
-			font.pixelSize: 20
-			color: Colours.palette.on_surface
-			text: "repeat"
-			font.family: Config.settings.iconFont
+			colour: {
+				switch(root.player.loopState) {
+					case MprisLoopState.Track: return Colours.palette.on_surface;
+					case MprisLoopState.Playlist: return Colours.palette.on_surface;
+					case MprisLoopState.None: return Colours.palette.outline;
+				}
+			}
+			
+			iconName: {
+				switch(root.player.loopState) {
+					case MprisLoopState.Track: return "repeat_one";
+					case MprisLoopState.Playlist: return "repeat";
+					case MprisLoopState.None: return "repeat";
+				}
+			}
+			
+			toRun: {
+				switch (root.player.loopState) {
+					case MprisLoopState.None: return () => root.player.loopState = MprisLoopState.Playlist;
+					case MprisLoopState.Playlist: return () => root.player.loopState = MprisLoopState.Track;
+					case MprisLoopState.Track: return () => root.player.loopState = MprisLoopState.None;
+				}
+			}
 		}
 	}
 }

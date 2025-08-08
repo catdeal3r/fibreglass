@@ -1,59 +1,59 @@
-import QtQuick 2.9
+import QtQuick
+import QtQuick.Shapes
 
 Item {
     id: root
 
+    enum CornerEnum { TopLeft, TopRight, BottomLeft, BottomRight }
+    property var corner: RRCorner.CornerEnum.TopLeft // Default to TopLeft
+
     property int size: 25
     property color color: "#000000"
 
-    onColorChanged: {
-        canvas.requestPaint();
-    }
+    implicitWidth: size
+    implicitHeight: size
 
-    property QtObject cornerEnum: QtObject {
-        property int topLeft: 0
-        property int topRight: 1
-        property int bottomLeft: 2
-        property int bottomRight: 3
-    }
-
-    property int corner: cornerEnum.topLeft // Default to TopLeft
-
-    width: size
-    height: size
-
-    Canvas {
-        id: canvas
-
+    Shape {
         anchors.fill: parent
-        antialiasing: true
-        
-        onPaint: {
-            var ctx = getContext("2d");
-            var r = root.size;
+        layer.enabled: true
+        layer.smooth: true
+        preferredRendererType: Shape.CurveRenderer
 
-            ctx.beginPath();
-            switch (root.corner) {
-                case cornerEnum.topLeft:
-                    ctx.arc(r, r, r, Math.PI, 3 * Math.PI / 2);
-                    ctx.lineTo(0, 0);
-                    break;
-                case cornerEnum.topRight:
-                    ctx.arc(0, r, r, 3 * Math.PI / 2, 2 * Math.PI);
-                    ctx.lineTo(r, 0);
-                    break;
-                case cornerEnum.bottomLeft:
-                    ctx.arc(r, 0, r, Math.PI / 2, Math.PI);
-                    ctx.lineTo(0, r);
-                    break;
-                case cornerEnum.bottomRight:
-                    ctx.arc(0, 0, r, 0, Math.PI / 2);
-                    ctx.lineTo(r, r);
-                    break;
+        ShapePath {
+            id: shapePath
+            strokeWidth: 0
+
+            fillColor: root.color
+            startX: switch (root.corner) {
+                case RRCorner.CornerEnum.TopLeft: return 0;
+                case RRCorner.CornerEnum.TopRight: return root.size;
+                case RRCorner.CornerEnum.BottomLeft: return 0;
+                case RRCorner.CornerEnum.BottomRight: return root.size;
             }
-            ctx.closePath();
-            ctx.fillStyle = root.color;
-            ctx.fill();
+            startY: switch (root.corner) {
+                case RRCorner.CornerEnum.TopLeft: return 0;
+                case RRCorner.CornerEnum.TopRight: return 0;
+                case RRCorner.CornerEnum.BottomLeft: return root.size;
+                case RRCorner.CornerEnum.BottomRight: return root.size;
+            }
+            PathAngleArc {
+                moveToStart: false
+                centerX: root.size - shapePath.startX
+                centerY: root.size - shapePath.startY
+                radiusX: root.size
+                radiusY: root.size
+                startAngle: switch (root.corner) {
+                    case RRCorner.CornerEnum.TopLeft: return 180;
+                    case RRCorner.CornerEnum.TopRight: return -90;
+                    case RRCorner.CornerEnum.BottomLeft: return 90;
+                    case RRCorner.CornerEnum.BottomRight: return 0;
+                }
+                sweepAngle: 90
+            }
+            PathLine {
+                x: shapePath.startX
+                y: shapePath.startY
+            }
         }
     }
 }

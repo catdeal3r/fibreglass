@@ -62,7 +62,7 @@ Scope {
 					anchors.top: parent.top
 					anchors.left: parent.left
 					color: Colours.palette.surface
-					corner: cornerEnum.bottomLeft
+					corner: RRCorner.CornerEnum.BottomLeft
 					
 					size: Config.settings.borderRadius
 				}
@@ -71,7 +71,7 @@ Scope {
 					anchors.top: parent.top
 					anchors.right: parent.right
 					color: Colours.palette.surface
-					corner: cornerEnum.bottomRight
+					corner: RRCorner.CornerEnum.BottomRight
 					
 					size: Config.settings.borderRadius
 				}
@@ -97,7 +97,7 @@ Scope {
 					anchors.bottom: parent.bottom
 					anchors.left: parent.left
 					color: Colours.palette.surface
-					corner: cornerEnum.topLeft
+					corner: RRCorner.CornerEnum.TopLeft
 					
 					size: Config.settings.borderRadius
 				}
@@ -106,7 +106,7 @@ Scope {
 					anchors.bottom: parent.bottom
 					anchors.right: parent.right
 					color: Colours.palette.surface
-					corner: cornerEnum.topRight
+					corner: RRCorner.CornerEnum.TopRight
 					
 					size: Config.settings.borderRadius
 				}
