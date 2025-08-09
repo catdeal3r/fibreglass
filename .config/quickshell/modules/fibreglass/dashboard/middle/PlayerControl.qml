@@ -17,6 +17,7 @@ ColumnLayout {
 	id: root
 	
 	required property MprisPlayer player
+	property list<real> visualizerPoints: []
     
     property var artUrl: player?.trackArtUrl
     
@@ -44,15 +45,32 @@ ColumnLayout {
 		return title.trim();
 	}
 	
-	Timer {
-	  // only emit the signal when the position is actually changing.
-	  running: root.player.playbackState == MprisPlaybackState.Playing
-	  // Make sure the position updates at least once per second.
-	  interval: 1000
-	  repeat: true
-	  // emit the positionChanged signal every second.
-	  onTriggered: root.player.positionChanged()
-	}
+	Timer { // Force update for prevision
+		running: root.player?.playbackState == MprisPlaybackState.Playing
+		interval: 1000
+		repeat: true
+		onTriggered: {
+			root.player.positionChanged()
+		}
+    }
+    
+    Process {
+        id: cavaProc
+        running: true
+        onRunningChanged: {
+            if (!cavaProc.running) {
+                root.visualizerPoints = [];
+            }
+        }
+        command: ["cava", "-p", `${Quickshell.configDir}/scripts/raw_output_cava.txt`]
+        stdout: SplitParser {
+            onRead: data => {
+                // Parse `;`-separated values into the visualizerPoints array
+                let points = data.split(";").map(p => parseFloat(p.trim())).filter(p => !isNaN(p));
+                root.visualizerPoints = points;
+            }
+        }
+    }
     
 	anchors.top: parent.top
 	anchors.topMargin: 20
@@ -84,9 +102,11 @@ ColumnLayout {
 				color: "transparent"
 			
 				Loader {
+					anchors.fill: parent
 					active: ( root.artUrl != "" )
 				
 					sourceComponent: Image {
+						anchors.fill: parent
 						source: root.artUrl
 						fillMode: Image.PreserveAspectCrop
 					}
