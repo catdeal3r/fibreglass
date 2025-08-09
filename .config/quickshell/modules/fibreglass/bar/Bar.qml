@@ -177,6 +177,40 @@ Scope {
 					}
 					
 				}
+				
+				Text {
+					id: currentWindowText
+					property string windowName
+				
+					anchors.centerIn: parent
+					text: {
+						if (windowName == "1" || windowName == "2" || windowName == "3" || windowName == "4" || windowName == "5" || windowName == "6" || windowName == "7" || windowName == "8")
+								return "Desktop"
+						return windowName
+					}
+					font.family: Config.settings.font
+					color: Colours.palette.on_surface
+					font.pixelSize: 13
+					font.weight: 600
+					
+					Process {
+						id: getCurrentWindowProc
+						
+						running: true
+						command: [ "sh", "-c", "swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true).name' | tr -d '\"'" ]
+						
+						stdout: SplitParser {
+							onRead: data => currentWindowText.windowName = data
+						}
+					}
+					
+					Timer {
+						running: true
+						repeat: true
+						interval: 100
+						onTriggered: getCurrentWindowProc.running = true
+					}
+				}
 						
 				RowLayout {
 					spacing: 10

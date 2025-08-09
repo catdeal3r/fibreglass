@@ -18,6 +18,8 @@ Rectangle {
 	property bool expanded
 	property bool popup: false
 	
+	property real currentTime: 5000
+	
 	property real notifSize: {
 		if (modelData.body == bodyPreviewMetrics.elidedText && expanded) return 100
 		if (modelData.body != bodyPreviewMetrics.elidedText && expanded) return 120
@@ -47,7 +49,40 @@ Rectangle {
 			
 		onClicked: singleNotif.popup ? Notifications.timeoutNotification(modelData.id) : Notifications.discardNotification(modelData.id)
 	}
+	
+	Loader {
+		active: singleNotif.popup
+		
+		sourceComponent: Timer {
+			id: dismissTimer
+			interval: 100
+			running: (singleNotif.currentTime > 0)
+			repeat: false
+			onTriggered: singleNotif.currentTime -= 100
+		}
+	}
+	
+	ClippingRectangle {
+		anchors.fill: parent
+		color: "transparent"
+		radius: parent.radius
+		
+		Rectangle {
+			anchors.bottom: parent.bottom
+			width: (singleNotif.currentTime / singleNotif.modelData.timer.interval) * parent.width
+			height: 2
+			color: Colours.palette.tertiary
+			visible: singleNotif.popup
 			
+			Behavior on width {
+				PropertyAnimation {
+					duration: 200
+					easing.type: Easing.InSine
+				}
+			}
+		}
+	}
+
 	RowLayout {
 		anchors.centerIn: parent
 						

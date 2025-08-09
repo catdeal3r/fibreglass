@@ -169,7 +169,7 @@ Singleton {
             }
 
             root.notify(newNotifObject);
-            // console.log(notifToString(newNotifObject));
+            console.log(notifToString(newNotifObject));
             notifFileView.setText(stringifyList(root.list));
         }
     }
