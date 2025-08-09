@@ -294,13 +294,9 @@ ColumnLayout {
 					// do this themselves
 				}
 				
-				function onIsPlayingChanged() {
-					tPlayer.position = tPlayer.position // same thing
-				}
-				
-				// borken (dont use until fixd)
-				//function onPositionChanged() {
-				//	tPlayer.seek(0) // same thing
+				// idk bro
+				//function onIsPlayingChanged() {
+				//	tPlayer.position = tPlayer.position // same thing
 				//}
 			}
 		}
