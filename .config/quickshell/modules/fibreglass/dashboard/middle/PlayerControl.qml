@@ -252,7 +252,7 @@ ColumnLayout {
 
 						implicitWidth: (slider.value / slider.to) * parent.parent.width
 
-						color: Colours.palette.tertiary
+						color: (slider.height == 12) ? Colours.palette.tertiary : Colours.palette.outline
 					}
 				}
 				

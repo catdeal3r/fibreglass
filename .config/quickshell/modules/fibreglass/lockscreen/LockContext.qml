@@ -46,10 +46,10 @@ Scope {
 			if (result == PamResult.Success) {
 				root.unlocked();
 			} else {
-				root.currentText = "";
 				root.showFailure = true;
 			}
-
+			
+			root.currentText = "";
 			root.unlockInProgress = false;
 		}
 	}
