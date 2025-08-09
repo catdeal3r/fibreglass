@@ -111,6 +111,10 @@ ColumnLayout {
 								
 			color: Colours.palette.surface_container
 			
+			Component.onCompleted: {
+				console.log(`Art url: ${root.artUrl}`)
+			}
+			
 			Rectangle {
 				anchors.fill: parent
 				color: "transparent"
@@ -226,6 +230,7 @@ ColumnLayout {
 				
 				
 				Rectangle {
+					id: bgRec
 					anchors.fill: parent
 					radius: Config.settings.borderRadius
 
@@ -233,36 +238,19 @@ ColumnLayout {
 					
 				}
 				
-				ClippingWrapperRectangle {
-					anchors.top: parent.top
-					anchors.bottom: parent.bottom
-					anchors.left: parent.left
-					
-					implicitWidth: (slider.value / slider.to) * parent.width
-					clip: true
-					
-							
-					Component.onCompleted: {
-						console.log(`Other Width: ${implicitWidth}`)
-					}
+				ClippingRectangle {
+					anchors.fill: parent
 
 					color: "transparent"
 					
 					radius: Config.settings.borderRadius
-					topRightRadius: 0
-					bottomRightRadius: 0
 					
-					Rectangle {
+					children: Rectangle {
 						anchors.top: parent.top
 						anchors.bottom: parent.bottom
 						anchors.left: parent.left
 
 						implicitWidth: (slider.value / slider.to) * parent.parent.width
-						
-						
-						Component.onCompleted: {
-							console.log(`Width: ${implicitWidth}`)
-						}
 
 						color: Colours.palette.tertiary
 					}
@@ -293,8 +281,14 @@ ColumnLayout {
 				target: tPlayer
 				
 				function onTrackChanged() {
-					tPlayer.seek(0)
+					tPlayer.position = 0 // break binding on track change as some dumbass players don't
+					// do this themselves
 				}
+				
+				// borken (dont use until fixd)
+				//function onPositionChanged() {
+				//	tPlayer.seek(0) // same thing
+				//}
 			}
 		}
 	}
