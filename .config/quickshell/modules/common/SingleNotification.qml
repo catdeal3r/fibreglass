@@ -13,7 +13,7 @@ import "root:/scripts/notification_utils.js" as NotificationUtils
 import qs.modules.common
 
 
-AniRectangle {
+Rectangle {
 	id: singleNotif
 	property bool expanded
 	property bool popup: false

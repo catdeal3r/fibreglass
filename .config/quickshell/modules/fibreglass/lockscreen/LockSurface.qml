@@ -17,11 +17,6 @@ import qs.modules.fibreglass.lockscreen
 Rectangle {
 	id: root
 	required property LockContext context
-
-	Button {
-		text: "Its not working, let me out"
-		onClicked: context.unlocked();
-	}
 	
 	// background stuff
 	Image {

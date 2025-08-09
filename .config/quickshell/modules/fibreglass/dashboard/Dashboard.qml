@@ -32,16 +32,18 @@ Scope {
 			}
 			
 			margins {
-				top: (Config.settings.bar.barLocation == "top") ? 10 : 0
-				bottom: (Config.settings.bar.barLocation == "bottom") ? 10 : 0
-				right: 10
+				top: (Config.settings.bar.barLocation == "top") ? 0 : 0
+				bottom: (Config.settings.bar.barLocation == "bottom") ? 0 : 0
+				right: 0
 			}
 			
 			aboveWindows: true
 			color: "transparent"
 			
-			implicitHeight: 1020
-			implicitWidth: 500
+			implicitHeight: 1030
+			implicitWidth: 510
+			
+			exclusionMode: ExclusionMode.None
 			
 			mask: Region {
 				item: maskId
@@ -55,20 +57,21 @@ Scope {
 			
 			ScrollView {
 				id: maskId
-				implicitHeight: 1020
+				implicitHeight: InternalLoader.isDashboardOpen ? 1020 : 0
 				implicitWidth: 500
 				
-				
 				anchors {
-					bottom: undefined
+					bottom: parent.bottom
 					top: undefined
 					left: parent.left
 					right: undefined
 				}
 				
 				anchors.leftMargin: InternalLoader.isDashboardOpen ? 0 : 600
+				anchors.topMargin: (Config.settings.bar.barLocation == "top") ? 10 : 0
+				anchors.bottomMargin: (Config.settings.bar.barLocation == "bottom") ? 10 : 0
 				
-				/*states: State {
+				states: State {
 					name: "anchorTop"
 					when: (Config.settings.bar.barLocation == "top")
 						
@@ -77,15 +80,22 @@ Scope {
 						anchors {
 							bottom: undefined
 							top: parent.top
-							left: undefined
+							left: parent.left
 							right: undefined
 						}
 					}
-				}*/
+				}
 				
-				clip: false
+				clip: true
 				
 				Behavior on anchors.leftMargin {
+					NumberAnimation {
+						duration: 250
+						easing.bezierCurve: Anim.standard
+					}
+				}
+				
+				Behavior on implicitHeight {
 					NumberAnimation {
 						duration: 250
 						easing.bezierCurve: Anim.standard

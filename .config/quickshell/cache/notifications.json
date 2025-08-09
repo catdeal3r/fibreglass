@@ -18,5 +18,16 @@
     "summary": "Screenshot Saved",
     "time": 1754723362848,
     "urgency": "1"
+  },
+  {
+    "id": 3,
+    "actions": [],
+    "appIcon": "/run/media/catdealer/Data/Pictures/drawn_cat_pfp.png",
+    "appName": "notify-send",
+    "body": "I hope your morning is going well! Hehe this is testing truncation and wrapping! Have fun! l;ksadhfsdjf;sdklfjklasd;jfklsdjf;klasdjflsdjf;ljasdfklajsldkfjsldfj;klasjf;klsjf;klsdjfklsjdafklsjfklsafd",
+    "image": "",
+    "summary": "Hello catdealer",
+    "time": 1754774764274,
+    "urgency": "1"
   }
 ]

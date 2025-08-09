@@ -88,7 +88,7 @@ ColumnLayout {
 				anchors.fill: parent
 				live: root.player?.isPlaying
 				points: root.visualizerPoints
-				maxVisualizerValue: 500
+				maxVisualizerValue: 1000
 				smoothing: 2
 				color: Colours.palette.surface_container_low
 			}
