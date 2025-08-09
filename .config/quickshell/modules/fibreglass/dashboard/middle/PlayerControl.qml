@@ -45,7 +45,7 @@ ColumnLayout {
 		return title.trim();
 	}
 	
-	Timer { // Force update for prevision
+	Timer {
 		running: root.player?.playbackState == MprisPlaybackState.Playing
 		interval: 1000
 		repeat: true
@@ -80,6 +80,20 @@ ColumnLayout {
 	
 	height: 180
 	
+	Rectangle {
+		Layout.preferredWidth: 400
+		Layout.preferredHeight: 2
+		
+		color: "transparent"
+		
+		Rectangle {
+			anchors.top: parent.top
+			height: 180
+			width: 400
+			
+			color: "transparent"
+		}
+	}
 	
 	RowLayout {
 		Layout.alignment: Qt.AlignHCenter
@@ -272,18 +286,16 @@ ColumnLayout {
 			
 			handle: Item {}
 			
-			onMoved: root.player.canSeek ? root.player.position = value : 0
+			onMoved: root.player.positionSupported ? root.player.position = value : 0
 
-			property var player: root.player
-			
-			/*Connections {
-				target: player
+			Connections {
+				property var tPlayer: root.player
+				target: tPlayer
 				
-				function onPositionChanged() {
-					slider.value = player.position;
-					slider.to = player.length;
+				function onTrackChanged() {
+					tPlayer.seek(0)
 				}
-			}*/
+			}
 		}
 	}
 		
