@@ -16,7 +16,7 @@ Singleton {
 	
 	FileView {
 		id: jsonFileSink
-		path: `${Quickshell.configDir}/settings/settings.json`
+		path: Quickshell.shellDir + "/settings/settings.json"
 		
 		watchChanges: true
 		onFileChanged: {
@@ -45,7 +45,7 @@ Singleton {
 				property bool smoothEdgesShown: false
 			}
 			
-			property string currentWallpaper: Quickshell.shellPath("assets/default_blank.png")
+			property string currentWallpaper: Quickshell.shellDir + "/assets/default_blank.png"
 			
 			onCurrentWallpaperChanged: {
 				Wallpaper.loadWallpaper()

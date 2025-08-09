@@ -51,7 +51,7 @@ ColumnLayout {
 					bigText: Network.textLabel
 					iconCode: Network.getIcon()
 					
-					toRun: () => Quickshell.execDetached([ `${Quickshell.configDir}/scripts/network.out` ])
+					toRun: () => Quickshell.execDetached([ Quickshell.configDir + "/scripts/network.out" ])
 				}
 				
 				QuickToggleButton {
@@ -60,7 +60,7 @@ ColumnLayout {
 					bigText: Nightmode.getText()
 					iconCode: Nightmode.getIcon()
 					
-					toRun: () => Quickshell.execDetached([ `${Quickshell.configDir}/scripts/Nightmode` ])
+					toRun: () => Quickshell.execDetached([ Quickshell.shellDir + "/scripts/Nightmode" ])
 				}
 			}
 			

@@ -28,7 +28,7 @@ Singleton {
 	Process {
 		id: isConnectedProc
 
-		command: [ Quickshell.shellPath("/scripts/Nightmode"), "--info" ]
+		command: [ Quickshell.shellDir("/scripts/Nightmode"), "--info" ]
 		running: true
 
 		stdout: SplitParser {

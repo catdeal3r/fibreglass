@@ -30,7 +30,7 @@ Singleton {
 	}
 	
 	Process {
-		command: [ Quickshell.shellPath("/scripts/workspaces.out") ]
+		command: [ Quickshell.shellDir + "/scripts/workspaces.out" ]
 		running: true
 		
 		stdout: SplitParser {

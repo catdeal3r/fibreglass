@@ -25,7 +25,7 @@ Singleton {
 	Process {
 		id: isConnectedProc
 
-		command: [ Quickshell.shellPath("/scripts/network.out"), "--info" ]
+		command: [ Quickshell.shellDir + "/scripts/network.out", "--info" ]
 		running: true
 
 		stdout: SplitParser {

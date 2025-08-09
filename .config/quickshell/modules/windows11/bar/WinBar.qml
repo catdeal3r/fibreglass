@@ -201,7 +201,7 @@ Scope {
 					anchors.centerIn: parent
 					
 					IconImage {
-						source: `file:/${Quickshell.shellPath("assets/windows/REPLACE_startmenu_icon.svg")}`
+						source: `file:/${Quickshell.shellDir("assets/windows/REPLACE_startmenu_icon.svg")}`
 						Layout.preferredWidth: 35
 						Layout.preferredHeight: 35
 					}

@@ -72,16 +72,39 @@ ColumnLayout {
 			id: art
 			
 			radius: Config.settings.borderRadius
-			Layout.preferredWidth: 90
-			Layout.preferredHeight: 90
+			Layout.preferredWidth: 80
+			Layout.preferredHeight: 80
 			
 			Layout.alignment: Qt.AlignLeft
 								
 			color: Colours.palette.surface_container
-		
-			Image {
-				source: root.artUrl
-				fillMode: Image.PreserveAspectCrop
+			
+			Rectangle {
+				anchors.fill: parent
+				color: "transparent"
+			
+				Loader {
+					active: ( root.artUrl != "" )
+				
+					sourceComponent: Image {
+						source: root.artUrl
+						fillMode: Image.PreserveAspectCrop
+					}
+				}
+				
+				Loader {
+					anchors.centerIn: parent
+					active: ( root.artUrl == "" )
+				
+					sourceComponent: Text {
+						anchors.centerIn: parent
+						
+						color: Colours.palette.outline
+						text: "music_note"
+						font.family: Config.settings.iconFont
+						font.pixelSize: art.Layout.preferredWidth * (35 / 90)
+					}
+				}
 			}
         }
         
@@ -96,7 +119,6 @@ ColumnLayout {
 		
 			ColumnLayout {
 				anchors.left: parent.left
-				anchors.leftMargin: 20
 				
 				anchors.top: parent.top
 				anchors.topMargin: (parent.height / 2) - 25
@@ -144,79 +166,104 @@ ColumnLayout {
 		}
 	}
 	
-	Slider {
-		id: slider
+	Rectangle {
 		Layout.preferredWidth: 400
-		Layout.preferredHeight: 10
-		//color: Colours.palette.surface_container
-		//radius: Config.settings.borderRadius
+		Layout.preferredHeight: 15
 		
-		//clip: true
+		color: "transparent"
 		
-		/*Rectangle {
+		Slider {
+			id: slider
 			anchors.left: parent.left
-			height: parent.Layout.preferredHeight
+			width: parent.Layout.preferredWidth
 			
-			radius: Config.settings.borderRadius
-			topRightRadius: 0
-			bottomRightRadius: 0
+			height: 10
 			
-			color: Colours.palette.tertiary
-			
-			width: Math.max(0, (parent.width - 5) * (root.player?.position / root.player?.length))
-		}*/
-		
-		background: Item {
-			Rectangle {
-				anchors.top: parent.top
-				anchors.bottom: parent.bottom
-				anchors.right: parent.right
-				anchors.topMargin: parent.implicitHeight / 3
-				anchors.bottomMargin: parent.implicitHeight / 3
-
-				implicitWidth: parent.width
-
-				color: Colours.palette.surface_container
-				radius: Config.settings.borderRadius
-				topLeftRadius: parent.implicitHeight / 15
-				bottomLeftRadius: parent.implicitHeight / 15
+			Behavior on height {
+				PropertyAnimation {
+					duration: 200
+					easing.type: Easing.InSine
+				}
 			}
 			
-			Rectangle {
-				anchors.top: parent.top
-				anchors.bottom: parent.bottom
-				anchors.left: parent.left
-				anchors.topMargin: parent.implicitHeight / 3
-				anchors.bottomMargin: parent.implicitHeight / 3
+			background: Item {
+				width: parent.width
+				height: parent.height
+				
+				
+				Rectangle {
+					anchors.fill: parent
+					radius: Config.settings.borderRadius
 
-				implicitWidth: (slider.value / parent.parent.to) * parent.width
+					color: Colours.palette.surface_container
+					
+				}
+				
+				ClippingWrapperRectangle {
+					anchors.top: parent.top
+					anchors.bottom: parent.bottom
+					anchors.left: parent.left
+					
+					implicitWidth: (slider.value / slider.to) * parent.width
+					clip: true
+					
+							
+					Component.onCompleted: {
+						console.log(`Other Width: ${implicitWidth}`)
+					}
 
-				color: Colours.palette.tertiary
-				radius: Config.settings.borderRadius
-				topRightRadius: parent.implicitHeight / 15
-				bottomRightRadius: parent.implicitHeight / 15
+					color: "transparent"
+					
+					radius: Config.settings.borderRadius
+					topRightRadius: 0
+					bottomRightRadius: 0
+					
+					Rectangle {
+						anchors.top: parent.top
+						anchors.bottom: parent.bottom
+						anchors.left: parent.left
+
+						implicitWidth: (slider.value / slider.to) * parent.parent.width
+						
+						
+						Component.onCompleted: {
+							console.log(`Width: ${implicitWidth}`)
+						}
+
+						color: Colours.palette.tertiary
+					}
+				}
+				
+				MouseArea {
+					anchors.fill: parent
+					hoverEnabled: true
+					cursorShape: Qt.PointingHandCursor
+					
+					onEntered: slider.height = 12
+					onExited: slider.height = 10
+				}
 			}
-		}
-		
-		enabled: root.player?.canSeek
-		
-		from: 0
-		value: root.player?.position
-		to: root.player?.length
-		
-		handle: Item {}
-		
-		onMoved: root.player.canSeek ? root.player.position = value : 0
-
-		property var player: root.player
-		
-		Connections {
-			target: player
 			
-			function onPositionChanged() {
-				slider.value = player.position;
-				slider.to = player.length;
-			}
+			enabled: root.player?.canSeek
+			
+			from: 0
+			value: root.player?.position
+			to: root.player?.length
+			
+			handle: Item {}
+			
+			onMoved: root.player.canSeek ? root.player.position = value : 0
+
+			property var player: root.player
+			
+			/*Connections {
+				target: player
+				
+				function onPositionChanged() {
+					slider.value = player.position;
+					slider.to = player.length;
+				}
+			}*/
 		}
 	}
 		

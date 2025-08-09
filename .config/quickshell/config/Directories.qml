@@ -7,6 +7,6 @@ import QtQuick
 Singleton {
 	id: root
 	
-	property string notificationsPath: Quickshell.shellPath("/cache/notifications.json")
-	property string coverArt: Quickshell.shellPath("/cache/coverArt")
+	property string notificationsPath: Quickshell.shellDir + "/cache/notifications.json"
+	property string coverArt: Quickshell.shellDir + "/cache/coverArt"
 }

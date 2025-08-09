@@ -14,7 +14,7 @@ Scope {
 	
 	SoundEffect {
 		id: effectSound
-		source: Quickshell.shellPath("/assets/break_notif.wav")
+		source: Quickshell.shellDir + "/assets/break_notif.wav"
 	}
 	
 	Timer {

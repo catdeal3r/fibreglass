@@ -48,7 +48,7 @@ Rectangle {
 			Layout.alignment: Qt.AlignHCenter
 																		
 			IconImage {
-				source: `file:/${Quickshell.shellPath("assets/pfp.png")}`
+				source: `file:/${Quickshell.shellDir("assets/pfp.png")}`
 			}
 		}
 			
