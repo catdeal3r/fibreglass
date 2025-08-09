@@ -44,15 +44,6 @@ ColumnLayout {
 
 		return title.trim();
 	}
-	
-	Timer {
-		running: root.player?.playbackState == MprisPlaybackState.Playing
-		interval: 1000
-		repeat: true
-		onTriggered: {
-			root.player.positionChanged()
-		}
-    }
     
     Process {
         id: cavaProc
