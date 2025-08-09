@@ -92,6 +92,15 @@ ColumnLayout {
 			width: 400
 			
 			color: "transparent"
+			
+			WaveVisualizer {
+				anchors.fill: parent
+				live: root.player?.isPlaying
+				points: root.visualizerPoints
+				maxVisualizerValue: 500
+				smoothing: 2
+				color: Colours.palette.surface_container_low
+			}
 		}
 	}
 	
@@ -283,6 +292,10 @@ ColumnLayout {
 				function onTrackChanged() {
 					tPlayer.position = 0 // break binding on track change as some dumbass players don't
 					// do this themselves
+				}
+				
+				function onIsPlayingChanged() {
+					tPlayer.position = tPlayer.position // same thing
 				}
 				
 				// borken (dont use until fixd)
