@@ -70,7 +70,7 @@ Rectangle {
 		Rectangle {
 			anchors.bottom: parent.bottom
 			width: (singleNotif.currentTime / singleNotif.modelData.timer.interval) * parent.width
-			height: 2
+			height: 4
 			color: Colours.palette.tertiary
 			visible: singleNotif.popup
 			
