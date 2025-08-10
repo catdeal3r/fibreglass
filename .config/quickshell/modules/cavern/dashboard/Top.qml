@@ -170,6 +170,7 @@ Rectangle {
 																				
 						IconImage {
 							source: `file:/${Quickshell.shellDir}/assets/pfp.png`
+							asynchronous: true
 						}
 					}
 												

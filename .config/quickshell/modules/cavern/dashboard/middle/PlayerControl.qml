@@ -111,10 +111,6 @@ ColumnLayout {
 								
 			color: Colours.palette.surface_container
 			
-			Component.onCompleted: {
-				console.log(`Art url: ${root.artUrl}`)
-			}
-			
 			Rectangle {
 				anchors.fill: parent
 				color: "transparent"

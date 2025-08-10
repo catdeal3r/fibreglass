@@ -66,7 +66,7 @@ Scope {
 					right: undefined
 				}
 				
-				anchors.leftMargin: InternalLoader.isDashboardOpen ? 0 : 600
+				anchors.leftMargin: IPCLoader.isDashboardOpen ? 0 : 600
 				
 				/*states: State {
 					name: "anchorTop"

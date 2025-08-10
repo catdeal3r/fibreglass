@@ -27,7 +27,7 @@ Scope {
 			}
 			
 			margins {
-				top: (Config.settings.bar.barLocation == "top") ? 40 : 0
+				top: (Config.settings.bar.barLocation == "top") ? 70 : 0
 			}
 		
 			aboveWindows: true
@@ -62,7 +62,7 @@ Scope {
 				anchors.topMargin: 20
 				
 				anchors.right: parent.right
-				anchors.rightMargin: 20
+				anchors.rightMargin: 24
 				
 				Behavior on implicitWidth {
 					NumberAnimation {

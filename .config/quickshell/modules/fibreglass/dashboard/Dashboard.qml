@@ -57,7 +57,7 @@ Scope {
 			
 			ScrollView {
 				id: maskId
-				implicitHeight: InternalLoader.isDashboardOpen ? 1070 : 0
+				implicitHeight: IPCLoader.isDashboardOpen ? 1070 : 0
 				implicitWidth: 500
 				
 				anchors {
@@ -67,7 +67,7 @@ Scope {
 					right: undefined
 				}
 				
-				anchors.leftMargin: InternalLoader.isDashboardOpen ? 0 : 600
+				anchors.leftMargin: IPCLoader.isDashboardOpen ? 0 : 600
 				anchors.topMargin: (Config.settings.bar.barLocation == "top") ? 50 : 0
 				anchors.bottomMargin: (Config.settings.bar.barLocation == "bottom") ? 40 : 0
 				

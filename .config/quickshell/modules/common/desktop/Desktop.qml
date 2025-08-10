@@ -5,6 +5,7 @@ import Quickshell.Services.SystemTray
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 
 import qs.modules
 import qs.modules.common.desktop
@@ -40,8 +41,33 @@ Scope {
 			exclusiveZone: 0
 			
 			Image {
+				id: background
 				anchors.fill: parent
 				source: Config.settings.currentWallpaper
+			}
+			
+			MultiEffect {
+				id: darkenEffect
+				source: background
+				anchors.fill: background
+				opacity: {
+					if (Config.settings.currentRice == "cavern") {
+						if (colorQuantizer.colors[0].hslLightness > 0.5)
+							return 1
+					}
+					return 0
+				}
+				
+				brightness: -0.5
+			}
+			
+			ColorQuantizer {
+				id: colorQuantizer
+				source: Qt.resolvedUrl(Config.settings.currentWallpaper)
+				depth: 0 
+				rescaleSize: 128
+			  
+				onColorsChanged: console.log(colors[0].hslLightness)
 			}
 		}
 	}

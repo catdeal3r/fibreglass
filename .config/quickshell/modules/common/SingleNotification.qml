@@ -69,10 +69,9 @@ Rectangle {
 		
 		Rectangle {
 			anchors.bottom: parent.bottom
-			width: (singleNotif.currentTime / singleNotif.modelData.timer.interval) * parent.width
+			width: singleNotif.popup ? (singleNotif.currentTime / singleNotif.modelData.timer.interval) * parent.width : 0
 			height: 4
 			color: Colours.palette.tertiary
-			visible: singleNotif.popup
 			
 			Behavior on width {
 				PropertyAnimation {
@@ -82,6 +81,7 @@ Rectangle {
 			}
 		}
 	}
+	
 
 	RowLayout {
 		anchors.centerIn: parent
@@ -96,7 +96,7 @@ Rectangle {
 						
 		ClippingWrapperRectangle { //image
 			visible: (modelData.appIcon == "") ? false : true
-			radius: 50
+			radius: Config.settings.borderRadius
 						
 			Layout.alignment: root.expanded ? Qt.AlignLeft | Qt.AlignTop : Qt.AlignLeft
 			Layout.leftMargin: 0

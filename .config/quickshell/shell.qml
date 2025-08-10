@@ -12,7 +12,7 @@ import qs.services
 import qs.config
 
 Scope {
-	IPCLoader {}
+	ThemeLoader {}
 	
 	Component.onCompleted: {
 		Notifications.dummyInit()

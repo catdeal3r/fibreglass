@@ -45,6 +45,10 @@ Scope {
 			
 			exclusionMode: ExclusionMode.Ignore
 			
+			Component.onCompleted: {
+				console.log("Completed loading dashboard")
+			}
+			
 			mask: Region {
 				item: maskId
 			}
@@ -57,7 +61,7 @@ Scope {
 			
 			ScrollView {
 				id: maskId
-				implicitHeight: InternalLoader.isDashboardOpen ? 1070 : 0
+				implicitHeight: 0
 				implicitWidth: 500
 				
 				anchors {
@@ -67,7 +71,25 @@ Scope {
 					right: undefined
 				}
 				
-				anchors.leftMargin: InternalLoader.isDashboardOpen ? 0 : 600
+				anchors.leftMargin: 600
+				
+				Connections {
+					target: IPCLoader
+					
+					function toggleDashboard() {
+						if (IPCLoader.isDashboardOpen) {
+							maskId.implicitHeight = 0
+							maskId.leftMargin = 600
+						}
+						IPCLoader.isDashboardOpen = !IPCLoader.isDashboardOpen
+					}
+				}
+				
+				Component.onCompleted: {
+					implicitHeight = 1070
+					anchors.leftMargin = 0
+				}
+				
 				anchors.topMargin: (Config.settings.bar.barLocation == "top") ? 50 : 0
 				anchors.bottomMargin: (Config.settings.bar.barLocation == "bottom") ? 40 : 0
 				
