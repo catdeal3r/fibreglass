@@ -7,7 +7,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import qs.modules
-import qs.modules.fibreglass.bar
+import qs.modules.cavern.bar
 import qs.config
 import qs.modules.common
 
@@ -30,95 +30,26 @@ Scope {
 				left: true
 				right: true
 			}
+			
+			margins {
+				top: 25
+				left: 25
+				right: 25
+			}
 
 			color: "transparent"
 			
-			implicitHeight: barBase.height + (Config.settings.borderRadius * 2)
-			
-			margins.top: (Config.settings.bar.barLocation == "top") ? -1 * Config.settings.borderRadius : 0
-			margins.bottom: (Config.settings.bar.barLocation == "bottom") ? -1 * Config.settings.borderRadius : 0
+			implicitHeight: barBase.height
 			
 			visible: true
-			
-			exclusiveZone: barBase.height + Config.settings.borderRadius + 2
-			
-			Rectangle {
-				id: cornerThingy
-				visible: Config.settings.bar.smoothEdgesShown
-				anchors.top: parent.top
-				width: parent.width
-				height: parent.height
-				
-				Behavior on visible {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
-				}
-				
-				color: "transparent"
-				
-				RRCorner {
-					anchors.top: parent.top
-					anchors.left: parent.left
-					color: Colours.palette.surface
-					corner: RRCorner.CornerEnum.BottomLeft
-					
-					size: Config.settings.borderRadius
-				}
-				
-				RRCorner {
-					anchors.top: parent.top
-					anchors.right: parent.right
-					color: Colours.palette.surface
-					corner: RRCorner.CornerEnum.BottomRight
-					
-					size: Config.settings.borderRadius
-				}
-			}
-			
-			Rectangle {
-				id: cornerThingyBottom
-				visible: Config.settings.bar.smoothEdgesShown
-				anchors.bottom: parent.bottom
-				width: parent.width
-				height: parent.height
-				
-				color: "transparent"
-				
-				Behavior on visible {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
-				}
-				
-				RRCorner {
-					anchors.bottom: parent.bottom
-					anchors.left: parent.left
-					color: Colours.palette.surface
-					corner: RRCorner.CornerEnum.TopLeft
-					
-					size: Config.settings.borderRadius
-				}
-				
-				RRCorner {
-					anchors.bottom: parent.bottom
-					anchors.right: parent.right
-					color: Colours.palette.surface
-					corner: RRCorner.CornerEnum.TopRight
-					
-					size: Config.settings.borderRadius
-				}
-			}
 			
 			Rectangle {
 				id: barBase
 				anchors.top: parent.top
-				anchors.topMargin: Config.settings.borderRadius
 				height: 40
 				width: parent.width
 				color: Colours.palette.surface
+				radius: Config.settings.borderRadius
 				
 				RowLayout {
 					height: 10

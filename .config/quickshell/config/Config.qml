@@ -54,7 +54,7 @@ Singleton {
 			property string currentRice: "fibreglass"
 			
 			onCurrentRiceChanged: {
-				if (currentRice == "fibreglass" || currentRice == "windows") {
+				if (currentRice == "fibreglass" || currentRice == "windows" || currentRice == "cavern") {
 					console.log(`Switched to rice: ${currentRice}`)
 				} else {
 					console.log(`Can't handle rice selection: ${currentRice}`)
@@ -79,8 +79,7 @@ Singleton {
 			}
 			
 			onBorderRadiusChanged: {
-				Quickshell.execDetached(["killall", "picom"])
-				picomTimer.running = true
+				Quickshell.execDetached(["swaymsg", "corner_radius", `${root.settings.borderRadius}`])
 			}
 			
 			property bool isInMinimalMode: false

@@ -9,6 +9,13 @@ import qs.modules.fibreglass.dashboard
 import qs.modules.fibreglass.notificationslist
 import qs.modules.fibreglass.lockscreen
 
+import qs.modules.cavern.bar
+import qs.modules.cavern.loadingscreen
+import qs.modules.cavern.launcher
+import qs.modules.cavern.dashboard
+import qs.modules.cavern.notificationslist
+import qs.modules.cavern.lockscreen
+
 import qs.modules.windows11.bar
 import qs.modules.windows11.launcher
 import qs.modules.windows11.dashboard
@@ -33,7 +40,15 @@ Scope {
 		id: dashboardLoader
 		active: root.isDashboardLoaded 
 		
-		sourceComponent: Config.settings.currentRice == "fibreglass" ? dashboardFibreglass : dashboardWindows
+		sourceComponent: {
+			if (Config.settings.currentRice == "fibreglass") {
+				return dashboardFibreglass
+			} else if (Config.settings.currentRice == "windows") {
+				return dashboardWindows
+			} else {
+				return dashboardCavern
+			}
+		}
 		
 		Component {
 			id: dashboardFibreglass
@@ -50,13 +65,29 @@ Scope {
 				onFinished: root.isDashboardLoaded = false
 			}
 		}
+		
+		Component {
+			id: dashboardCavern
+
+			CaveDashboard {
+				onFinished: root.isDashboardLoaded = false
+			}
+		}
 	}
 	
 	Loader {
 		id: notifLogLoader
 		active: root.isNotifLogLoaded 
 		
-		sourceComponent: Config.settings.currentRice == "fibreglass" ? notifLogFibreglass : notifLogWindows
+		sourceComponent: {
+			if (Config.settings.currentRice == "fibreglass") {
+				return notifLogFibreglass
+			} else if (Config.settings.currentRice == "windows") {
+				return notifLogWindows
+			} else {
+				return notifLogCavern
+			}
+		}
 		
 		Component {
 			id: notifLogFibreglass
@@ -73,13 +104,29 @@ Scope {
 				onFinished: root.isNotifLogLoaded = false
 			}
 		}
+		
+		Component {
+			id: notifLogCavern
+
+			CaveNotificationList {
+				onFinished: root.isNotifLogLoaded = false
+			}
+		}
 	}
 	
 	Loader {
 		id: barLoader
 		active: root.isBarOpen
 
-		sourceComponent: Config.settings.currentRice == "fibreglass" ? barFibreglass : barWindows
+		sourceComponent: {
+			if (Config.settings.currentRice == "fibreglass") {
+				return barFibreglass
+			} else if (Config.settings.currentRice == "windows") {
+				return barWindows
+			} else {
+				return barCavern
+			}
+		}
 		
 		Component {
 			id: barFibreglass
@@ -96,13 +143,29 @@ Scope {
 				onFinished: root.isBarOpen = false
 			}
 		}
+		
+		Component {
+			id: barCavern
+
+			CaveBar {
+				onFinished: root.isBarOpen = false
+			}
+		}
 	}
 	
 	Loader {
 		id: lockscreenLoader
 		active: true
 		
-		sourceComponent: Config.settings.currentRice == "fibreglass" ? lockFibreglass : lockWindows
+		sourceComponent: {
+			if (Config.settings.currentRice == "fibreglass") {
+				return lockFibreglass
+			} else if (Config.settings.currentRice == "windows") {
+				return lockWindows
+			} else {
+				return lockCavern
+			}
+		}
 		
 		Component {
 			id: lockFibreglass
@@ -114,6 +177,12 @@ Scope {
 			id: lockWindows
 			
 			WinLockscreen {}
+		}
+		
+		Component {
+			id: lockCavern
+			
+			CaveLockscreen {}
 		}
 	}
 	

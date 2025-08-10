@@ -7,7 +7,7 @@ import QtQuick.Effects
 import QtQuick.Controls
 import Quickshell.Widgets
 
-import qs.modules.fibreglass.dashboard
+import qs.modules.cavern.dashboard
 import qs.config
 import qs.modules.common
 import qs.modules

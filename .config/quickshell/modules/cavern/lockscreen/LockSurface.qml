@@ -8,11 +8,9 @@ import Quickshell.Wayland
 import Quickshell
 import Quickshell.Widgets
 
-import qs.modules.fibreglass.lockscreen
+import qs.modules.cavern.lockscreen
 import qs.config
 import qs.modules.common
-
-import qs.modules.fibreglass.lockscreen
 
 Rectangle {
 	id: root

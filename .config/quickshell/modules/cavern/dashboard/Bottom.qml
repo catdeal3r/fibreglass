@@ -10,8 +10,8 @@ import Quickshell.Widgets
 import qs.config
 import qs.modules.common
 import qs.services
-import qs.modules.fibreglass.dashboard.notifications
-import qs.modules.fibreglass.dashboard.bottom
+import qs.modules.cavern.dashboard.notifications
+import qs.modules.cavern.dashboard.bottom
 
 Rectangle {
 	id: root

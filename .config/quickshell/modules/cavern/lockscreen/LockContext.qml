@@ -2,7 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Services.Pam
 
-import qs.modules.fibreglass.lockscreen
+import qs.modules.cavern.lockscreen
 
 Scope {
 	id: root
