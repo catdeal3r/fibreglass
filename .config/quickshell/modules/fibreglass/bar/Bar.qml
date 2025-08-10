@@ -185,9 +185,23 @@ Scope {
 					anchors.centerIn: parent
 					text: {
 						if (windowName == "1" || windowName == "2" || windowName == "3" || windowName == "4" || windowName == "5" || windowName == "6" || windowName == "7" || windowName == "8")
-								return "Desktop"
-						return windowName
+								return "Desktop";
+						
+						// firck this was hard to do ...
+						// just copy and paste to save yourself the trouble
+						windowName = windowName.replace(/\\+/g, (match) => {
+							if (match.length === 1) {
+								// Single backslash → replace with a quote
+								return '"';
+							} else {
+								let slash = '\\';
+								return slash.repeat(match.length / 2);
+							}
+						});
+
+						return windowName;
 					}
+					
 					font.family: Config.settings.font
 					color: Colours.palette.on_surface
 					font.pixelSize: 13
