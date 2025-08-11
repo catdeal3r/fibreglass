@@ -14,7 +14,9 @@ import qs.modules.fibreglass.notificationslist
 
 Scope {
 	
-	Dashboard {}
+	Dashboard {
+		isDashboardOpen: IPCLoader.isDashboardOpen
+	}
 	
 	NotificationList {}
 	

@@ -6,7 +6,7 @@ import qs.config
 Rectangle {
 	id: root
 	property bool showToolTip: false
-	width: 50
+	width: 20
 	color: "transparent"
 	
 	ToolTip {
@@ -35,81 +35,59 @@ Rectangle {
 		onEntered: { parent.showToolTip = true }
 		onExited: { parent.showToolTip = false }
 	}
-		
-
-	Text {
-		text: "󱎕"
-		color: Colours.palette.outline
-		
-		font.pixelSize: 9
-		
-		anchors.right: borderBatt.left
-		anchors.top: parent.top
-		
-		anchors.topMargin: 8.5
-	}
 	
-	
-	// Three 'Rectangles' to create a border then the actual thing
 	Rectangle {
-		id: borderBatt
 		anchors.centerIn: parent
-		width: 32
-		height: 16
-		color: Colours.palette.outline
-		
-		radius: 4
-		
-		Rectangle {
-			anchors.centerIn: parent
 			
-			
-			width: parent.width - 3.5
-			height: parent.height - 3.5
-			color: Colours.palette.surface
-		
-			radius: 2
-			
-			Rectangle {
-				anchors.right: parent.right
-				anchors.top: parent.top
-				
-				anchors.rightMargin: 2.25
-				anchors.topMargin: 2.25
-				
-				// Size the battery rectangle depending on the battery percent
-				width: Math.max(0, (parent.width - 5) * (Battery.percent / 100))
-				height: parent.height - 5
-				color: Battery.getBatteryColour(Battery.percent)
-				
-				radius: 1
-			}
-		}
-	}
-	
-	// This is to make the next 'Text' object more readable
-	Text {
-		text: "󱐋"
+		width: 15
+		height: 20
 		color: Colours.palette.surface
 		
-		font.pixelSize: 30
-		anchors.centerIn: parent
-		
-		topPadding: 0.75
-		leftPadding: 0.5
-		
-		// Check whether the battery is plugged in to show
-		visible: {Battery.charging ? true : false}
-	}
+		border.color: Colours.palette.outline
+		border.width: 2
 	
-	Text {
-		text: "󱐋"
-		color: Colours.palette.on_surface
+		radius: 4
 		
-		font.pixelSize: 20
-		anchors.centerIn: parent
+		clip: true
 		
-		// Check whether the battery is plugged in to show
-		visible: {Battery.charging ? true : false}
+		Text {
+			text: "󱐋"
+			color: Battery.getBatteryColour(Battery.percent)
+			
+			font.pixelSize: 15
+			anchors.centerIn: parent
+				
+			// Check whether the battery is plugged in to show
+			visible: Battery.charging ? true : false
+		}
+		
+		Rectangle {
+			anchors.bottom: parent.bottom
+			
+			// Size the battery rectangle depending on the battery percent
+			width: parent.width
+			height: Math.max(0, (parent.height - 5) * (Battery.percent / 100))
+			color: Battery.getBatteryColour(Battery.percent)
+			
+			bottomLeftRadius: parent.radius
+			bottomRightRadius: parent.radius
+			
+			clip: true
+			
+			Text {
+				text: "󱐋"
+				color: Colours.palette.surface
+				
+				font.pixelSize: 15
+				anchors.bottom: parent.top
+				anchors.bottomMargin: -13
+				
+				anchors.left: parent.left
+				anchors.leftMargin: (parent.width / 2) - ((font.pixelSize - 6) / 2)
+				
+				// Check whether the battery is plugged in to show
+				visible: Battery.charging ? true : false
+			}
+		}
 	}
 }

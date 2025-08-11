@@ -53,7 +53,7 @@ Scope {
 				
 				RowLayout {
 					height: 10
-					spacing: 10
+					spacing: 5
 					anchors.left: parent.left
 					anchors.top: parent.top
 					
@@ -61,41 +61,9 @@ Scope {
 					anchors.topMargin: 5
 					anchors.leftMargin: 10
 					
-					Rectangle {
-						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-						
-						Layout.preferredWidth: 30
-						Layout.preferredHeight: 30
-						
-						radius: Config.settings.borderRadius - 5
-						color: Colours.palette.surface
-						
-						Behavior on color {
-							PropertyAnimation {
-								duration: 200
-								easing.type: Easing.InSine
-							}
-						}
-						
-						Text {
-							anchors.centerIn: parent
-							text: "layers"
-							font.family: Config.settings.iconFont
-							
-							color: Colours.palette.on_surface
-							font.pixelSize: 22
-							font.weight: 600
-						}
-						
-						MouseArea {
-							anchors.fill: parent
-							hoverEnabled: true
-							cursorShape: Qt.PointingHandCursor
-							
-							onEntered: parent.color = Colours.palette.surface_container
-							onExited: parent.color = Colours.palette.surface
-							//onClicked: banging
-						}
+					BatteryWidget {
+						Layout.leftMargin: 5
+						Layout.fillHeight: true
 					}
 				
 					WorkspacesWidget {
@@ -177,7 +145,7 @@ Scope {
 					}
 					
 					Rectangle {
-						Layout.preferredWidth: 115
+						Layout.preferredWidth: 90
 						color: Colours.palette.surface
 						Layout.preferredHeight: 30
 						
@@ -219,10 +187,6 @@ Scope {
 						
 							}
 					
-							BatteryWidget {
-								Layout.fillHeight: true
-							}
-					
 						}
 						
 						MouseArea {
@@ -232,7 +196,7 @@ Scope {
 							
 							onEntered: parent.color = Colours.palette.surface_container
 							onExited: parent.color = Colours.palette.surface
-							onClicked: InternalLoader.toggleDashboard()
+							onClicked: IPCLoader.toggleDashboard()
 						}
 					}
 					

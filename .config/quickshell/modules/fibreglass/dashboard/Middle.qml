@@ -51,7 +51,7 @@ ColumnLayout {
 					bigText: Network.textLabel
 					iconCode: Network.getIcon()
 					
-					toRun: () => Quickshell.execDetached([ Quickshell.configDir + "/scripts/network.out" ])
+					toRun: () => Quickshell.execDetached([ Quickshell.shellDir + "/scripts/network.out" ])
 				}
 				
 				QuickToggleButton {

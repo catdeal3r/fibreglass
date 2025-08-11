@@ -66,8 +66,6 @@ Scope {
 				source: Qt.resolvedUrl(Config.settings.currentWallpaper)
 				depth: 0 
 				rescaleSize: 128
-			  
-				onColorsChanged: console.log(colors[0].hslLightness)
 			}
 		}
 	}

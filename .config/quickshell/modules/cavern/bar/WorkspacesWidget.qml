@@ -23,17 +23,32 @@ Rectangle {
 		
 			Rectangle {
 				color: Workspaces.getWorkspaceColour(Workspaces.workspacesState[index])
-				width: 50
-				height: 10
 			
 				Layout.preferredWidth: Workspaces.getWorkspaceSize(Workspaces.workspacesState[index])
-				Layout.preferredHeight: Workspaces.getWorkspaceHeight(Workspaces.workspacesState[index])
+				Layout.preferredHeight: Workspaces.getWorkspaceSize(Workspaces.workspacesState[index])
 			
-				radius: 10
+				radius: 5
+				
+				rotation: ( color == Colours.palette.on_surface ) ? 45 : 0
+				transformOrigin: Item.Center
 			
 				Behavior on Layout.preferredWidth {
 					PropertyAnimation {
-						duration: 200
+						duration: 150
+						easing.type: Easing.InSine
+					}
+				}
+				
+				Behavior on Layout.preferredHeight {
+					PropertyAnimation {
+						duration: 150
+						easing.type: Easing.InSine
+					}
+				}
+				
+				Behavior on rotation {
+					PropertyAnimation {
+						duration: 100
 						easing.type: Easing.InSine
 					}
 				}

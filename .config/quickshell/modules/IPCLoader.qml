@@ -14,6 +14,7 @@ Singleton {
 	property bool isSettingsOpen: false
 	
 	property bool isDashboardOpen: false
+	
 	property bool isLauncherOpen: false
 	property bool isLockscreenOpen: false
 	

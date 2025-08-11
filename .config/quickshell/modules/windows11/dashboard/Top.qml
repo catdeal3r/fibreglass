@@ -169,7 +169,8 @@ Rectangle {
 						border.color: Colours.palette.outline_variant
 																				
 						IconImage {
-							source: `file:/${Quickshell.shellDir("assets/pfp.png")}`
+							source: `file:/${Quickshell.shellDir}/assets/pfp.png`
+							asynchronous: true
 						}
 					}
 												

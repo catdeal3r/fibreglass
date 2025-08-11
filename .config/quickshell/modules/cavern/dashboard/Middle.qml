@@ -37,6 +37,7 @@ ColumnLayout {
 		Layout.preferredHeight: 130
 									
 		color: "transparent"
+		radius: Config.settings.borderRadius
 		
 		RowLayout {
 			anchors.centerIn: parent
@@ -51,7 +52,7 @@ ColumnLayout {
 					bigText: Network.textLabel
 					iconCode: Network.getIcon()
 					
-					toRun: () => Quickshell.execDetached([ Quickshell.configDir + "/scripts/network.out" ])
+					toRun: () => Quickshell.execDetached([ Quickshell.shellDir + "/scripts/network.out" ])
 				}
 				
 				QuickToggleButton {
@@ -95,6 +96,7 @@ ColumnLayout {
 		Layout.preferredWidth: 500
 		Layout.preferredHeight: 240
 		color: "transparent"
+		radius: Config.settings.borderRadius
 		
 		PlayerControls {}
 	}

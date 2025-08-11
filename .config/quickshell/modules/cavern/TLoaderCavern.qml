@@ -14,13 +14,10 @@ import qs.modules.cavern.notificationslist
 
 Scope {
 
-	LazyLoader {
-		active: IPCLoader.isDashboardOpen
-		
-		onActiveChanged: console.log(`Is dashboard loader active: ${active}`)
-		
-		CaveDashboard {}
+	CaveDashboard {
+		isDashboardOpen: IPCLoader.isDashboardOpen
 	}
+	
 	
 	CaveNotificationList {}
 	

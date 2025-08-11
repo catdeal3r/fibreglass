@@ -19,6 +19,7 @@ Rectangle {
 	width: 500
 	height: 240
 	color: "transparent"
+	radius: Config.settings.borderRadius
 	
 	function isRealPlayer(player) {
         // return true
