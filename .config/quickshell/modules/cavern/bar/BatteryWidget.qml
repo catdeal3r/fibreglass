@@ -3,6 +3,9 @@ import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
 import qs.config
 
+import Quickshell
+import Quickshell.Widgets
+
 Rectangle {
 	id: root
 	property bool showToolTip: false
@@ -36,7 +39,7 @@ Rectangle {
 		onExited: { parent.showToolTip = false }
 	}
 	
-	Rectangle {
+	ClippingRectangle {
 		anchors.centerIn: parent
 			
 		width: 15
@@ -66,7 +69,7 @@ Rectangle {
 			
 			// Size the battery rectangle depending on the battery percent
 			width: parent.width
-			height: Math.max(0, (parent.height - 5) * (Battery.percent / 100))
+			height: Math.max(0, parent.height * (Battery.percent / 100))
 			color: Battery.getBatteryColour(Battery.percent)
 			
 			bottomLeftRadius: parent.radius

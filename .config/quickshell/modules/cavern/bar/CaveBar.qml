@@ -77,23 +77,20 @@ Scope {
 					
 				}
 				
-				/*TextMetrics {
+				TextMetrics {
 					id: currentWindowTextMetrics
 					property string windowName
-					property string cleanedWindowName: {
-						windowName = windowName.slice(1, -1)
+					text: {
 						if (windowName == "1" || windowName == "2" || windowName == "3" || windowName == "4" || windowName == "5" || windowName == "6" || windowName == "7" || windowName == "8")
 								return "Desktop";
 						
-						windowName = windowName.replace(/\\+/g, (match) => {
+						let windowNameChanged  = windowName.replace(/\\+/g, (match) => {
 							let slash = '\\';
 							return slash.repeat(match.length / 2);	
 						});
 
-						return windowName;
+						return windowNameChanged.slice(1, -1);
 					}
-				
-					text: cleanedWindowName
 					
 					font.family: Config.settings.font
 										
@@ -129,7 +126,7 @@ Scope {
 					color: Colours.palette.on_surface
 					font.pixelSize: 13
 					font.weight: 600
-				}*/
+				}
 						
 				RowLayout {
 					spacing: 10

@@ -183,15 +183,15 @@ Scope {
 					property string windowName
 				
 					text: {
-						if (windowName == "1" || windowName == "2" || windowName == "3" || windowName == "4" || windowName == "5" || windowName == "6" || windowName == "7" || windowName == "8")
+						if (windowName == "\"1\"" || windowName == "\"2\"" || windowName == "\"3\"" || windowName == "\"4\"" || windowName == "\"5\"" || windowName == "\"6\"" || windowName == "\"7\"" || windowName == "\"8\"")
 								return "Desktop";
 						
-						windowName = windowName.replace(/\\+/g, (match) => {
+						let windowNameChanged = windowName.replace(/\\+/g, (match) => {
 							let slash = '\\';
 							return slash.repeat(match.length / 2);	
 						});
 
-						return windowName.slice(1, -1);
+						return windowNameChanged.slice(1, -1);
 					}
 					
 					font.family: Config.settings.font
@@ -299,7 +299,7 @@ Scope {
 							
 							onEntered: parent.color = Colours.palette.surface_container
 							onExited: parent.color = Colours.palette.surface
-							onClicked: InternalLoader.toggleDashboard()
+							onClicked: IPCLoader.toggleDashboard()
 						}
 					}
 					

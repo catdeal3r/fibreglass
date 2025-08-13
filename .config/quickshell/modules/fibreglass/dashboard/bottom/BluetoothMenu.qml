@@ -47,10 +47,10 @@ Rectangle {
 				font.pixelSize: 30
 				font.family: Config.settings.font
 				
-				Component.onCompleted: {
+				/*Component.onCompleted: {
 					console.log("got here")
 					console.log(`name: ${modelData.name}`)
-				}
+				}*/
 			}
 		}
 	}

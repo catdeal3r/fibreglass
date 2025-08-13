@@ -175,7 +175,7 @@ ColumnLayout {
 					font.family: Config.settings.font
 										
 					elide: Qt.ElideRight
-					elideWidth: parent.parent.width - 170
+					elideWidth: parent.parent.width - 220
 				}
 					
 				Text {
@@ -194,7 +194,7 @@ ColumnLayout {
 					font.family: Config.settings.font
 										
 					elide: Qt.ElideRight
-					elideWidth: parent.parent.width - 170
+					elideWidth: parent.parent.width - 220
 				}
 			}
 		}
