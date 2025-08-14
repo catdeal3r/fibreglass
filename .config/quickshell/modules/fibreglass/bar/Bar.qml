@@ -42,6 +42,8 @@ Scope {
 			
 			exclusiveZone: barBase.height + Config.settings.borderRadius + 2
 			
+			
+			
 			Rectangle {
 				id: cornerThingy
 				visible: Config.settings.bar.smoothEdgesShown
@@ -120,6 +122,14 @@ Scope {
 				width: parent.width
 				color: Colours.palette.surface
 				
+				Rectangle {
+					visible: !Config.settings.bar.smoothEdgesShown
+					anchors.top: ( Config.settings.bar.barLocation == "top" ) ? parent.bottom : parent.top
+					width: parent.width
+					height: 2
+					color: Colours.palette.surface_container_high
+				}
+				
 				RowLayout {
 					height: 10
 					spacing: 10
@@ -130,42 +140,6 @@ Scope {
 					anchors.topMargin: 5
 					anchors.leftMargin: 10
 					
-					Rectangle {
-						Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-						
-						Layout.preferredWidth: 30
-						Layout.preferredHeight: 30
-						
-						radius: Config.settings.borderRadius - 5
-						color: Colours.palette.surface
-						
-						Behavior on color {
-							PropertyAnimation {
-								duration: 200
-								easing.type: Easing.InSine
-							}
-						}
-						
-						Text {
-							anchors.centerIn: parent
-							text: "layers"
-							font.family: Config.settings.iconFont
-							
-							color: Colours.palette.on_surface
-							font.pixelSize: 22
-							font.weight: 600
-						}
-						
-						MouseArea {
-							anchors.fill: parent
-							hoverEnabled: true
-							cursorShape: Qt.PointingHandCursor
-							
-							onEntered: parent.color = Colours.palette.surface_container
-							onExited: parent.color = Colours.palette.surface
-							//onClicked: banging
-						}
-					}
 				
 					WorkspacesWidget {
 						id: workspaces

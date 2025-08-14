@@ -77,9 +77,14 @@ Singleton {
     
     function reload(): void {
         if (Config.settings.weatherLocation)
-            location = Config.settings.weatherLocation;
+			if (location != Config.settings.weatherLocation)
+				location = Config.settings.weatherLocation;
+			else
+				location = "REPLACE";
         else if (!location)
-            location = "REPLACE"
+            location = "REPLACE";
+        else
+			reload();
     }
     
     onLocationChanged: Requests.get(`https://wttr.in/${location}?format=j1`, text => {
