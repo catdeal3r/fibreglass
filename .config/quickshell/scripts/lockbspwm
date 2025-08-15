@@ -1,5 +1,6 @@
 #!/bin/sh
 # Shitty i3lock-colors script by github.com/mehedirm6244
+# Adapted by github.com/dealerofallthecats
 
 declare -i SUSPEND
 declare BG_PATH
