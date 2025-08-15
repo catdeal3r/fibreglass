@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 CACHE_FILE=$HOME/.cache/$(whoami)/recording_state
 

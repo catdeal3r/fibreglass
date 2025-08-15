@@ -38,7 +38,7 @@ screenshot_select() {
       canberra-gtk-play -i "camera-shutter"
       notify-screenshot
     else
-      /usr/bin/notify-send "Screenshot cancelled" ""
+      /usr/bin/notify-send "Screenshot cancelled"
       rm "$file_loc/$file"
       echo "failed"
     fi
