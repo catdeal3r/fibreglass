@@ -40,6 +40,7 @@ Rectangle {
 				
 				MouseArea {
 					anchors.fill: parent
+					cursorShape: Qt.PointingHandCursor
 					
 					onClicked: Quickshell.execDetached(["swaymsg", "workspace", `${index + 1}`])
 				}
