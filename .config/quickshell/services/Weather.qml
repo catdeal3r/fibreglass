@@ -87,18 +87,20 @@ Singleton {
 			reload();
     }
     
-    onLocationChanged: Requests.get(`https://wttr.in/${location}?format=j1`, text => {
+    onLocationChanged: {
 		if (location == "REPLACE") {
 			root.icon = "❌"
 			root.desc = "No location set."
 			root.temp = "Error."
 			return;
 		}
-        const json = JSON.parse(text).current_condition[0];
-        root.icon = root.getWeatherIcon(json.weatherCode);
-        root.desc = json.weatherDesc[0].value;
-        root.temp = `${parseFloat(json.temp_C)}°C`;
-    })
+		Requests.get(`https://wttr.in/${location}?format=j1`, text => {
+			const json = JSON.parse(text).current_condition[0];
+			root.icon = root.getWeatherIcon(json.weatherCode);
+			root.desc = json.weatherDesc[0].value;
+			root.temp = `${parseFloat(json.temp_C)}°C`;
+		})
+    }
     
     Component.onCompleted: reload()
     

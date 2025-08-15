@@ -46,7 +46,7 @@ Rectangle {
 		anchors.right: borderBatt.left
 		anchors.top: parent.top
 		
-		anchors.topMargin: 8.5
+		anchors.topMargin: (borderBatt.height / 2)
 	}
 	
 	
@@ -54,11 +54,11 @@ Rectangle {
 	Rectangle {
 		id: borderBatt
 		anchors.centerIn: parent
-		width: 32
+		width: 30
 		height: 16
 		color: Colours.palette.outline
 		
-		radius: 4
+		radius: 5
 		
 		Rectangle {
 			anchors.centerIn: parent
@@ -68,18 +68,24 @@ Rectangle {
 			height: parent.height - 3.5
 			color: Colours.palette.surface
 		
-			radius: 2
+			radius: 3
 			
 			Rectangle {
 				anchors.right: parent.right
 				anchors.top: parent.top
 				
-				anchors.rightMargin: 2.25
-				anchors.topMargin: 2.25
+				anchors.rightMargin: 1
+				anchors.topMargin: 1
+				
+				topRightRadius: parent.radius
+				bottomRightRadius: parent.radius
+				
+				topLeftRadius: (Battery.percent == 100) ? parent.radius : 0
+				bottomLeftRadius: (Battery.percent == 100) ? parent.radius : 0
 				
 				// Size the battery rectangle depending on the battery percent
 				width: Math.max(0, (parent.width - 5) * (Battery.percent / 100))
-				height: parent.height - 5
+				height: parent.height - 2
 				color: Battery.getBatteryColour(Battery.percent)
 				
 				radius: 1

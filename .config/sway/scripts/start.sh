@@ -19,8 +19,9 @@ fcitx5 -d & disown
 # quickshell
 ~/.config/scripts/fibreglass --start
 
-# gtk theme
+# cursor and stuff theme
 gsettings set org.gnome.desktop.interface gtk-theme 'Awesthetic-dark'
+swaymsg seat seat0 xcursor_theme GoogleDot-Black 24
 
 # lxpolkit
 lxpolkit & disown
