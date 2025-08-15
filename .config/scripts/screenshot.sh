@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 time=$(date +%Y-%m-%d-%H-%M-%S)
 file="Screenshot_${time}.png"
