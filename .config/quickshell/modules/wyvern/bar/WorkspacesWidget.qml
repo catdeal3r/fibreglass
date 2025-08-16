@@ -50,6 +50,15 @@ Rectangle {
 					font.family: Config.settings.font
 					font.pixelSize: 12
 					font.weight: 600
+
+
+					Behavior on color {
+						PropertyAnimation {
+							duration: 100
+							easing.type: Easing.BezierSpline
+							easing.bezierCurve: Anim.standard
+						}
+					}	
 				}	
 				
 				MouseArea {
