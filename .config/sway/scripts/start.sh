@@ -2,6 +2,10 @@
 #
 # Starts other thingys .
 
+# turn off wifi and bluetooth
+nmcli n off
+bluetoothctl power off
+
 # mount drive
 ~/.config/sway/scripts/mount.sh
 
