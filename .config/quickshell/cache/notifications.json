@@ -1,13 +1,13 @@
 [
   {
-    "id": 4,
+    "id": 3,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "",
+    "body": "Log out and in for the gtk4 theme to take effect.",
     "image": "",
-    "summary": "Screenshot cancelled",
-    "time": 1755233009916,
+    "summary": "Wallpaper and theme set!",
+    "time": 1755318663897,
     "urgency": "1"
   }
 ]
