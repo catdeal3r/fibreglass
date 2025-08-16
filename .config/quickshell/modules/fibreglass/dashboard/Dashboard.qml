@@ -57,7 +57,7 @@ Loader {
 				aboveWindows: true
 				color: "transparent"
 				
-				implicitHeight: 1070
+				implicitHeight: 1080
 				implicitWidth: 510
 				
 				exclusionMode: ExclusionMode.Ignore
@@ -92,7 +92,7 @@ Loader {
 						interval: 5
 						onTriggered: {
 							maskId.implicitWidth = 500
-							maskId.implicitHeight = 1070
+							maskId.implicitHeight = 1020
 						}
 					}
 					
@@ -116,7 +116,7 @@ Loader {
 					}
 					
 					anchors.topMargin: (Config.settings.bar.barLocation == "top") ? 50 : 0
-					anchors.bottomMargin: (Config.settings.bar.barLocation == "bottom") ? 40 : 0
+					anchors.bottomMargin: (Config.settings.bar.barLocation == "bottom") ? 50 : 0
 					
 					states: State {
 						name: "anchorTop"

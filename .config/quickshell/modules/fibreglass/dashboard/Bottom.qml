@@ -17,7 +17,7 @@ Rectangle {
 	id: root
 	Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
 	Layout.preferredWidth: 480
-	Layout.preferredHeight: 440
+	Layout.preferredHeight: 350
 								
 	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
@@ -86,7 +86,7 @@ Rectangle {
 		anchors.left: parent.left
 		anchors.leftMargin: (parent.width- width) / 2
 		width: 480
-		height: 370
+		height: 300
 		
 		anchors.centerIn: parent
 		NotificationsLog {

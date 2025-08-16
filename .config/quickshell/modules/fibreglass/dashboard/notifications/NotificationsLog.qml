@@ -14,7 +14,7 @@ import qs.services
 Rectangle {
 	id: root
 	
-	height: 370
+	height: 300
 	width: 480
 	
 	anchors.top: parent.top
@@ -97,7 +97,7 @@ Rectangle {
 				values: [...Notifications.list].reverse()
 			}
 							
-			implicitHeight: 370
+			implicitHeight: root.height
 			implicitWidth: (root.notificationCount > 0) ? 400 : 0
 			clip: true
 			
@@ -158,7 +158,7 @@ Rectangle {
 		}
 		
 		Rectangle {
-			Layout.preferredHeight: 370
+			Layout.preferredHeight: root.height
 			Layout.preferredWidth: 120
 			Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 			
