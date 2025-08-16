@@ -1,24 +1,13 @@
 [
   {
-    "id": 9,
+    "id": 1,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "Log out and in for the gtk4 theme to take effect.",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1755327780155,
-    "urgency": "1"
-  },
-  {
-    "id": 10,
-    "actions": [],
-    "appIcon": "org.gnome.Nautilus",
-    "appName": "org.gnome.Nautilus",
-    "body": "Filesystem has been disconnected.",
-    "image": "image://icon/drive-harddisk-usb-symbolic",
-    "summary": "Backup unmounted",
-    "time": 1755328044495,
+    "summary": "Wallpaper and theme set!",
+    "time": 1755388034783,
     "urgency": "1"
   }
 ]

@@ -54,7 +54,7 @@ Singleton {
 			property string currentRice: "fibreglass"
 			
 			onCurrentRiceChanged: {
-				if (currentRice == "fibreglass" || currentRice == "windows" || currentRice == "cavern") {
+				if (currentRice == "fibreglass" || currentRice == "windows" || currentRice == "cavern" || currentRice == "wyvern") {
 					console.log(`Switched to rice: ${currentRice}`)
 				} else {
 					console.log(`Can't handle rice selection: ${currentRice}`)

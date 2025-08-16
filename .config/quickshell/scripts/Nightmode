@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cache_file=$HOME/.cache/redshift_state
 

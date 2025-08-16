@@ -98,7 +98,8 @@ int getWorkspaces()
 	
 	// Removes the extra ',' at the end of the buffer, then closes
 	// it with a ']'
-	buf.pop_back();
+	buf.append(focusedDesk);
+
 	buf.append("]");
 	
 	// Sends the json string to STD:OUT
