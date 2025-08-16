@@ -28,3 +28,6 @@ output_path = '~/.config/scripts/setBordersSway.sh'
 input_path = './templates/kitty-colours.conf'
 output_path = '~/.config/kitty/colours.conf'
 
+[templates.equibop_flatpak]
+input_path = './templates/discord.css'
+output_path = '~/.var/app/io.github.equicord.equibop/config/equibop/themes/theme.css'
