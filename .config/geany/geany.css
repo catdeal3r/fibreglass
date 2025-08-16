@@ -1,0 +1,66 @@
+/* custom GTK3 CSS for Geany */
+
+/* make close button on the editor's tabs smaller */
+#geany-close-tab-button {
+	outline-offset: 0;
+	outline-width: 0;
+	margin: 0;
+	margin-left: 0.5em;
+	min-width: 0;
+	min-height: 0;
+	padding: 0;
+}
+#geany-close-tab-button image {
+	padding: 0;
+}
+
+/* use monospaced font in search entries for easier reading of regexp (#1907117) */
+#GeanyDialogSearch entry {
+	/* use "Consolas" instead of "monospace" on Windows for better font in search entries */
+	font-family: monospace;
+}
+
+/* set red background for GtkEntries showing unmatched searches */
+#geany-search-entry-no-match {
+	color: #fff;
+	background: #ff6666;
+}
+#geany-search-entry-no-match selection {
+	color: #fff;
+	background-color: #771111;
+}
+
+/* document status colors */
+#geany-document-status-changed {
+	color: #ff3030;
+}
+#geany-document-status-disk-changed {
+	color: #ee8000;
+}
+#geany-document-status-readonly {
+	color: #309030;
+}
+
+/* compiler message colors */
+#geany-compiler-error {
+    color: #ff3030;
+}
+#geany-compiler-context {
+    color: #ee8000;
+}
+#geany-compiler-message {
+    color: #006eff;
+}
+
+/* red "Terminal" label when terminal dirty */
+#geany-terminal-dirty {
+	color: #ff3030;
+}
+
+/* Uncomment the following to reduce the size of the statusbar if needed */
+
+statusbar {
+	margin: -6px 0;
+}
+
+
