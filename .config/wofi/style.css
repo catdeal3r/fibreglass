@@ -4,9 +4,10 @@
 @define-color	crust  #ffffff;
 
 * {
-  font-family: 'Product Sans';
+  font-family: 'SF Pro Display';
   font-size: 14px;
   border-radius: 12px;
+  font-weight: 600;
 }
 
 /* Window */
@@ -37,6 +38,7 @@ window {
   border: none;
   background-color: @base;
   animation: fadeIn 0.5s ease-in-out both;
+  border-radius: 12px;
 }
 
 /* Fade In */
