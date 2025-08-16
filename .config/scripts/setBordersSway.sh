@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 swaymsg client.focused "#0e150f" "#0e150f" "#dde5da" "#0e150f"
 swaymsg client.unfocused "#1b211a" "#1b211a" "#dde5da" "#1b211a"

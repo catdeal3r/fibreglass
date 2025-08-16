@@ -2,6 +2,9 @@
 #
 # Starts other thingys .
 
+# mount drive
+~/.config/sway/scripts/mount.sh
+
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 # keyboard handler
@@ -11,7 +14,6 @@ fcitx5 -d & disown
 # open tablet driver
 ~/scripts/tools/restart-otd & disown
 
-
 # borders
 ~/.config/scripts/setBordersSway.sh
 
@@ -19,9 +21,6 @@ fcitx5 -d & disown
 # quickshell
 ~/.config/scripts/fibreglass --start
 
-# cursor and stuff theme
-gsettings set org.gnome.desktop.interface gtk-theme 'Awesthetic-dark'
+# cursor
 swaymsg seat seat0 xcursor_theme GoogleDot-Black 24
 
-# lxpolkit
-lxpolkit & disown

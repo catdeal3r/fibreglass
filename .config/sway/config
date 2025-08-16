@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term '~/.local/bin/kitty --detach'
+set $term 'kitty --detach'
 # Your preferred application launcher
 set $menu wofi
 
