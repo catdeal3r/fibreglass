@@ -211,6 +211,7 @@ cp -r ./runtime ~/fibreglass/.config/helix/
 - [End-4](https://github.com/end-4/), for helping me with notifications and other code.
 - [Rexiel](https://github.com/Rexcrazy804), for helping me with animations.
 - [Soramane](https://github.com/soramanew), for helping with animations / notifications.
+- [HauntedCupOfTea](https://github.com/hauntedcupoftea), for modernizing and cleaning up my code.
 
 ## ~~Who I stole designs from~~ Inspirations
 - [Namishh](https://github.com/namishh), for widget design and colours.
