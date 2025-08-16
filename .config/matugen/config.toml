@@ -20,11 +20,11 @@ output_path = '~/.config/gtk-4.0/gtk.css'
 input_path = './templates/rofi-colours.rasi'
 output_path = '~/.config/rofi/custom/accent_rofi.rasi'
 
-[templates.bspwm]
-input_path = './templates/border-colors.sh'
-output_path = '~/.config/scripts/setBorders.sh'
-
-[templates.swayfx]
+[templates.borders]
 input_path = './templates/swayfx.sh'
 output_path = '~/.config/scripts/setBordersSway.sh'
+
+[templates.kitty]
+input_path = './templates/kitty-colours.conf'
+output_path = '~/.config/kitty/colours.conf'
 
