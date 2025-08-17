@@ -104,7 +104,11 @@ Scope {
 				Text {
 					id: currentWindowText
 					text: currentWindowTextMetrics.elidedText
-					anchors.centerIn: parent
+					anchors.left: workspaces.right
+					anchors.leftMargin: 10
+
+					anchors.top: parent.top
+					anchors.topMargin: (parent.height / 2) - (19 / 2)
 					
 					font.family: Config.settings.font
 					color: Colours.palette.on_surface
@@ -117,7 +121,6 @@ Scope {
 					anchors.right: parent.right
 					anchors.rightMargin: 20
 					anchors.top: parent.top
-					anchors.topMargin: 5
 					
 					SysTray {
 						Layout.preferredWidth: (SystemTray.items.values.length * 25)
@@ -128,7 +131,7 @@ Scope {
 					Rectangle {
 						Layout.preferredWidth: 115
 						color: Colours.palette.surface
-						Layout.preferredHeight: 30
+						Layout.preferredHeight: 28
 						
 						radius: Config.settings.borderRadius - 3
 						

@@ -11,6 +11,7 @@ output_path = '~/.config/quickshell/settings/colours.json'
 [templates.gtk3]
 input_path = './templates/gtk-colours.css'
 output_path = '~/.config/gtk-3.0/gtk.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
 
 [templates.gtk4]
 input_path = './templates/gtk-colours.css'
@@ -27,6 +28,7 @@ output_path = '~/.config/scripts/setBordersSway.sh'
 [templates.kitty]
 input_path = './templates/kitty-colours.conf'
 output_path = '~/.config/kitty/colours.conf'
+post_hook = "kitty +kitten themes --reload-in=all colours"
 
 [templates.equibop_flatpak]
 input_path = './templates/discord.css'

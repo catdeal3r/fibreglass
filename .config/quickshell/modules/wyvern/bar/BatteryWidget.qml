@@ -84,7 +84,7 @@ Rectangle {
 				bottomLeftRadius: (Battery.percent == 100) ? parent.radius : 0
 				
 				// Size the battery rectangle depending on the battery percent
-				width: Math.max(0, (parent.width - 5) * (Battery.percent / 100))
+				width: Math.max(0, (parent.width - 2) * (Battery.percent / 100))
 				height: parent.height - 2
 				color: Battery.getBatteryColour(Battery.percent)
 				

@@ -8,7 +8,7 @@ import qs.modules.common
 
 Rectangle {
 	id: root
-	width: layoutThingy.width
+	width: height * Workspaces.workspaceCount
 	height: 30
 	color: Colours.palette.surface
 
