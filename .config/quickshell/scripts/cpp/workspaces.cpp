@@ -65,7 +65,7 @@ int getWorkspaces()
 	std::vector<std::string> desks = {"1", "2", "3", "4", "5", "6", "7", "8"};
 	
 	// Get the desks/workspaces that are focused/occupied 
-	std::string focusedDesk = getStdoutCmd("swaymsg -t get_workspaces | jq -r '.[] | select(.focused==true).name'");
+	std::string focusedDesk = getStdoutCmd("swaymsg -t get_workspaces | jq -r '.[] | select(.focused==true).name' | head -c+1");
 	std::string occupiedDesks = getStdoutCmd("swaymsg -t get_workspaces | jq -r '.[] | select(.nodes).name'");
 	
 	// Cycle through each workpace
@@ -98,8 +98,12 @@ int getWorkspaces()
 	
 	// Removes the extra ',' at the end of the buffer, then closes
 	// it with a ']'
-	buf.append(focusedDesk);
-
+	
+	//buf.append("\"");
+	//buf.append(focusedDesk);
+	//buf.append("\"");
+	
+	buf.pop_back();
 	buf.append("]");
 	
 	// Sends the json string to STD:OUT
