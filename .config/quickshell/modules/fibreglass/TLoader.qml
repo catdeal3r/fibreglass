@@ -27,6 +27,10 @@ Scope {
 			onFinished: IPCLoader.toggleBar()
 		}
 	}
+
+	Launcher {
+		isLauncherOpen: IPCLoader.isLauncherOpen
+	}
 	
 	Lockscreen {}
 }

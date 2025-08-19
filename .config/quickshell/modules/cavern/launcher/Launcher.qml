@@ -8,7 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Effects
 import QtQuick.Controls
 
-import qs.modules.fibreglass.launcher
+import qs.modules.cavern.launcher
 import qs.config
 import qs.modules.common
 import qs.modules
