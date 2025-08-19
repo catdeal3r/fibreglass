@@ -91,70 +91,73 @@ Rectangle {
 			}
 		}
 
-		ListView {
-			id: notifList
-			model: ScriptModel {
-				values: [...Notifications.list].reverse()
-			}
-							
+		ScrollView {
 			implicitHeight: root.height
 			implicitWidth: (root.notificationCount > 0) ? 400 : 0
-			clip: true
-			
-			Behavior on implicitWidth {
-				PropertyAnimation {
-					duration: 400
-					easing.type: Easing.InSine
-				}
-			}
-					
+
 			Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
 			Layout.topMargin: 10
 			
 			visible: (implicitWidth == 0) ? false : true
 						
-			spacing: 20
-			
+
+			ListView {
+				id: notifList
+				model: ScriptModel {
+					values: [...Notifications.list].reverse()
+				}
+
+				clip: true
+				
+				Behavior on implicitWidth {
+					PropertyAnimation {
+						duration: 400
+						easing.type: Easing.InSine
+					}
+				}
+						
 					
-			add: Transition {
-				NumberAnimation {
-					duration: 500
-					easing.bezierCurve: Anim.standard
-					from: 400
-					property: "x"
+				spacing: 20
+				
+						
+				add: Transition {
+					NumberAnimation {
+						duration: 500
+						easing.bezierCurve: Anim.standard
+						from: 400
+						property: "x"
+					}
+				}
+				
+				addDisplaced: Transition {
+					NumberAnimation {
+						duration: 500
+						easing.bezierCurve: Anim.standard
+						properties: "x,y"
+					}
+				}
+								
+				delegate: SingleNotification {
+					required property Notifications.Notif modelData
+				}
+								
+				remove: Transition {
+					NumberAnimation {
+						duration: 500
+						easing.bezierCurve: Anim.standard
+						property: "x"
+						to: 400
+					}
+				}
+				
+				removeDisplaced: Transition {
+					NumberAnimation {
+						duration: 500
+						easing.bezierCurve: Anim.standard
+						properties: "x,y"
+					}
 				}
 			}
-			
-			addDisplaced: Transition {
-				NumberAnimation {
-					duration: 500
-					easing.bezierCurve: Anim.standard
-					properties: "x,y"
-				}
-			}
-							
-			delegate: SingleNotification {
-				required property Notifications.Notif modelData
-			}
-							
-			remove: Transition {
-				NumberAnimation {
-					duration: 500
-					easing.bezierCurve: Anim.standard
-					property: "x"
-					to: 400
-				}
-			}
-			
-			removeDisplaced: Transition {
-				NumberAnimation {
-					duration: 500
-					easing.bezierCurve: Anim.standard
-					properties: "x,y"
-				}
-			}
-			
-			
 		}
 		
 		Rectangle {

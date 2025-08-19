@@ -50,7 +50,7 @@ Scope {
 			
 			ScrollView {
 				id: maskId
-				implicitHeight: InternalLoader.isLauncherOpen ? 400 : 0
+				implicitHeight: IPCLoader.isLauncherOpen ? 400 : 0
 				implicitWidth: 500
 				
 				anchors {
