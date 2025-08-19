@@ -56,6 +56,9 @@ Singleton {
 			onCurrentRiceChanged: {
 				if (currentRice == "fibreglass" || currentRice == "windows" || currentRice == "cavern" || currentRice == "wyvern") {
 					console.log(`Switched to rice: ${currentRice}`)
+					if (currentRice == "wyvern") {
+						Quickshell.execDetached(["swaymsg", "default_border", "none"])
+					} 
 				} else {
 					console.log(`Can't handle rice selection: ${currentRice}`)
 				}

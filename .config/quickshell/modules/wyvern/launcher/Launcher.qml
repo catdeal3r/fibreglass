@@ -143,26 +143,27 @@ Loader {
 
 							Keys.onDownPressed: {
 								if (launcher.entryIndex != launcher.appList.length - 1)
-									launcher.entryIndex += 1
+									launcher.entryIndex += 1;
 							}
 
 							Keys.onUpPressed: {
 								if (launcher.entryIndex != 0)
-									launcher.entryIndex -= 1
+									launcher.entryIndex -= 1;
 							}
 							Keys.onEscapePressed: IPCLoader.toggleLauncher()
 
 							Keys.onPressed: event => {
 								if (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) {
-									launcher.appList[launcher.entryIndex].execute()
-									IPCLoader.toggleLauncher()
+									launcher.appList[launcher.entryIndex].execute();
+									launcher.currentSearch = "";
+									IPCLoader.toggleLauncher();
 								} else if (event.key === Qt.Key_Backspace) {
 									launcher.currentSearch = launcher.currentSearch.slice(0, -1);
 								} else if (" abcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?".includes(event.text.toLowerCase())) {
 									launcher.currentSearch += event.text;
 								}
 								launcher.appList = Apps.fuzzyQuery(launcher.currentSearch);
-								launcher.entryIndex = 0
+								launcher.entryIndex = 0;
 							}
 							
 							Text {
