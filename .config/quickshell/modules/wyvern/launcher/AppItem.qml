@@ -8,22 +8,27 @@ import QtQuick.Effects
 import QtQuick.Controls
 
 import qs.config
+import qs.modules
 
 Rectangle {
     id: root
     property bool hovered: false
+    property bool selected: false
 
 	width: parent.width
     height: 40
     color: hovered ? Qt.alpha(Colours.palette.surface_container_low, 0.4) : Qt.alpha(Colours.palette.surface_container_low, 0.2)
     radius: Config.settings.borderRadius
 
-   Behavior on color {
+    Behavior on color {
 		PropertyAnimation {
 			duration: 200
 			easing.type: Easing.InSine
 		}
 	}
+
+    border.width: selected ? 2 : 0
+    border.color: Colours.palette.surface_container
 
     ClippingWrapperRectangle {
         id: entryIcon
@@ -72,7 +77,7 @@ Rectangle {
         onExited: root.hovered = false
         onClicked: {
             modelData.execute()
-            Quickshell.execDetached(["qs", "ipc", "call", "root", "toggleLauncher"])
+            IPCLoader.toggleLauncher()
         }
     }
 }

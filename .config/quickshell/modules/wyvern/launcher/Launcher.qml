@@ -1,15 +1,17 @@
 import Quickshell
 import Quickshell.Io
+import Quickshell.Widgets
+import Quickshell.Wayland
 
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
 import QtQuick.Controls
-import Quickshell.Widgets
 
 import qs.modules.wyvern.launcher
 import qs.config
 import qs.modules.common
+import qs.modules
 import qs.services
 
 Loader {
@@ -58,6 +60,8 @@ Loader {
 				}
 				
 				visible: true;
+				focusable: true;
+				WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
 				
 				ScrollView {
 					id: maskId
@@ -72,6 +76,7 @@ Loader {
 					anchors.leftMargin: (parent.width / 2) - (implicitWidth / 2)
 
 					visible: true
+					focus: true
 					
 					anchors.topMargin: 2000
 					
@@ -114,6 +119,7 @@ Loader {
 					Rectangle {
 						id: launcher
 						property string currentSearch: ""
+						property int entryIndex: 0
 						property list<DesktopEntry> appList: Apps.list
 
 						anchors.fill: parent
@@ -132,6 +138,28 @@ Loader {
 							anchors.leftMargin: (parent.width / 2) - (width / 2)
 							height: 40
 							radius: Config.settings.borderRadius
+
+							focus: true
+
+							Keys.onDownPressed: launcher.entryIndex += 1
+							Keys.onUpPressed: {
+								if (launcher.entryIndex != 0)
+									launcher.entryIndex -= 1
+							}
+							Keys.onEscapePressed: IPCLoader.toggleLauncher()
+
+							Keys.onPressed: event => {
+								if (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) {
+									launcher.appList[launcher.entryIndex].execute()
+									IPCLoader.toggleLauncher()
+								} else if (event.key === Qt.Key_Backspace) {
+									launcher.currentSearch = launcher.currentSearch.slice(0, -1);
+								} else if (" abcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?".includes(event.text.toLowerCase())) {
+									launcher.currentSearch += event.text;
+								}
+								launcher.appList = Apps.fuzzyQuery(launcher.currentSearch);
+								launcher.entryIndex = 0
+							}
 							
 							Text {
 								id: iconText
@@ -152,8 +180,8 @@ Loader {
 								anchors.left: iconText.right
 								anchors.leftMargin: 10
 								font.family: Config.settings.font
-								color: Colours.palette.outline
-								text: "Start typing to search ..."
+								color: (launcher.currentSearch != "") ? Colours.palette.on_surface : Colours.palette.outline
+								text: (launcher.currentSearch != "") ? launcher.currentSearch : "Start typing to search ..."
 								font.pixelSize: 13
 								anchors.top: parent.top
 								anchors.topMargin: (parent.height / 2) - ((font.pixelSize + 5) / 2)
@@ -183,9 +211,12 @@ Loader {
 								spacing: 10
 
 								model: launcher.appList
+								currentIndex: launcher.entryIndex
 
 								delegate: AppItem {
+									required property int index
 									required property DesktopEntry modelData
+									selected: index === launcher.entryIndex
 								}
 							}
 						}
