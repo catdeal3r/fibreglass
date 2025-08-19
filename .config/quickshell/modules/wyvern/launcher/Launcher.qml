@@ -127,7 +127,7 @@ Loader {
 						color: Colours.palette.surface
 						
 						radius: Config.settings.borderRadius
-						
+
 						Rectangle {
 							id: searchBox
 							anchors.top: parent.top
@@ -141,7 +141,11 @@ Loader {
 
 							focus: true
 
-							Keys.onDownPressed: launcher.entryIndex += 1
+							Keys.onDownPressed: {
+								if (launcher.entryIndex != launcher.appList.length - 1)
+									launcher.entryIndex += 1
+							}
+
 							Keys.onUpPressed: {
 								if (launcher.entryIndex != 0)
 									launcher.entryIndex -= 1

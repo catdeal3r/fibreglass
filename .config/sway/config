@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $term 'kitty --detach'
 # Your preferred application launcher
-set $menu wofi
+set $menu 'qs ipc call root toggleLauncher'
 
 # clipboard manager
 exec wl-paste -t text --watch clipman store --no-persist
