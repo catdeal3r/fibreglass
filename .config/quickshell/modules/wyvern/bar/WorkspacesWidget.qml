@@ -19,7 +19,7 @@ Rectangle {
 		width: root.height
 		height: root.height
 
-		color: Colours.palette.primary
+		color: Qt.alpha(Colours.palette.primary, 0.8)
 
 		Behavior on anchors.leftMargin {
 			PropertyAnimation {

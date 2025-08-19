@@ -111,7 +111,7 @@ Scope {
 					anchors.topMargin: (parent.height / 2) - (19 / 2)
 					
 					font.family: Config.settings.font
-					color: Colours.palette.on_surface
+					color: Qt.alpha(Colours.palette.on_surface, 0.8)
 					font.pixelSize: 13
 					font.weight: 600
 				}
@@ -148,7 +148,7 @@ Scope {
 							anchors.leftMargin: 10
 							
 							BluetoothWidget {
-								color: { Bluetooth.getBool() ? Colours.palette.on_surface : Colours.palette.outline }
+								color: Bluetooth.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
 							
 								font.family: Config.settings.iconFont
 								font.weight: 600
@@ -160,7 +160,7 @@ Scope {
 							}
 						
 							NetworkWidget {
-								color: { Network.getBool() ? Colours.palette.on_surface : Colours.palette.outline }
+								color: Network.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
 							
 								font.family: Config.settings.iconFont
 								font.weight: 600
@@ -190,7 +190,7 @@ Scope {
 					
 					TimeWidget {
 
-						color: Colours.palette.on_surface
+						color: Qt.alpha(Colours.palette.on_surface, 0.8)
 	
 						font.family: Config.settings.font
 						font.weight: 600

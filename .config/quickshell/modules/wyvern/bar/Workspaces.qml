@@ -16,7 +16,7 @@ Singleton {
 	
 	function getWorkspaceColour(state) {
 		if (state == "ws") return Colours.palette.outline
-		if (state == "wso") return Colours.palette.on_surface
+		if (state == "wso") return Qt.alpha(Colours.palette.on_surface, 0.8)
 		return Colours.palette.on_primary
 	}
 	

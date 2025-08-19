@@ -6,7 +6,7 @@ import qs.config
 Rectangle {
 	id: root
 	property bool showToolTip: false
-	width: 50
+	width: 40
 	color: "transparent"
 	
 	ToolTip {
@@ -36,25 +36,12 @@ Rectangle {
 		onExited: { parent.showToolTip = false }
 	}
 		
-
-	Text {
-		text: "󱎕"
-		color: Colours.palette.outline
-		
-		font.pixelSize: 9
-		
-		anchors.right: borderBatt.left
-		anchors.top: parent.top
-		
-		anchors.topMargin: (borderBatt.height / 2)
-	}
-	
 	
 	// Three 'Rectangles' to create a border then the actual thing
 	Rectangle {
 		id: borderBatt
 		anchors.centerIn: parent
-		width: 30
+		width: parent.width - 10
 		height: 16
 		color: Colours.palette.outline
 		
@@ -64,8 +51,8 @@ Rectangle {
 			anchors.centerIn: parent
 			
 			
-			width: parent.width - 3.5
-			height: parent.height - 3.5
+			width: parent.width - 2.5
+			height: parent.height - 2.5
 			color: Colours.palette.surface
 		
 			radius: 3
