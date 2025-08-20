@@ -122,9 +122,7 @@ Loader {
 						property int entryIndex: 0
 
 						property bool isNormalSearch: {
-							if (currentSearch == "")
-								return false
-							else if (currentSearch[0] == ">")
+							if (currentSearch[0] == ">")
 								return false
 							return true
 						}
@@ -285,7 +283,13 @@ Loader {
 							width: parent.width - 20
 							height: parent.height - searchBox.height - 20
 
-							opacity: launcher.isNormalSearch ? 1 : 0
+							opacity: {
+								if (!launcher.isNormalSearch)
+									return 0
+								if (launcher.currentSearch == "") 
+									return 0
+								return 1
+							}
 
 							Behavior on opacity {
 								NumberAnimation {
@@ -318,7 +322,7 @@ Loader {
 							width: parent.width - 20
 							height: parent.height - searchBox.height - 20
 							color: "transparent"
-							opacity: (launcher.appList.length == 0) ? 1 : 0
+							opacity: (launcher.appList.length == 0 && launcher.isNormalSearch) ? 1 : 0
 							Behavior on opacity {
 								NumberAnimation {
 									duration: 250
