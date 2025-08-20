@@ -168,7 +168,6 @@ Loader {
 									launcher.currentSearch = "";
 									IPCLoader.toggleLauncher();
 								} else if (event.key === Qt.Key_Backspace) {
-									//charList.model.remove(launcher.currentSearch.length)
 									launcher.currentSearch = launcher.currentSearch.slice(0, -1);
 								} else if (" abcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?".includes(event.text.toLowerCase())) {
 									launcher.currentSearch += event.text;

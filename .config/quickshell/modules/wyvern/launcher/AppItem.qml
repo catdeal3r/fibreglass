@@ -28,7 +28,7 @@ Rectangle {
 	}
 
     border.width: selected ? 2 : 0
-    border.color: Colours.palette.surface_container
+    border.color: Qt.alpha(Colours.palette.primary, 0.6)
 
     ClippingWrapperRectangle {
         id: entryIcon
