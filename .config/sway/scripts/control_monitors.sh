@@ -6,8 +6,9 @@ while (true); do
   if [[ "$(swaymsg -t get_outputs)" == *"HDMI-A-1"* ]]; then
     printf "HDMI connected\n"
     if [[ $isHDMIConnect != true ]]; then
-      swaymsg output eDP-1 disable
       swaymsg unbindswitch lid:on
+      swaymsg bindswitch lid:on output eDP-1 disable
+      swaymsg bindswitch lid:off output eDP-1 enable
     fi
     isHDMIConnected=true
   else
