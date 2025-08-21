@@ -28,3 +28,5 @@ fcitx5 -d & disown
 # cursor
 swaymsg seat seat0 xcursor_theme GoogleDot-Black 24
 
+# monitor handling
+~/.config/sway/scripts/control_monitors.sh & disown

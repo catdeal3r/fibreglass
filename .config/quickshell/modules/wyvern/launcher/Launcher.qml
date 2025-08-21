@@ -304,10 +304,44 @@ Loader {
 								model: launcher.appList
 								currentIndex: launcher.entryIndex
 
+								add: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										from: 500
+										property: "x"
+									}
+								}
+								
+								addDisplaced: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										properties: "x,y"
+									}
+								}
+
 								delegate: AppItem {
 									required property int index
 									required property DesktopEntry modelData
 									selected: index === launcher.entryIndex
+								}
+
+								remove: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										property: "x"
+										to: 500
+									}
+								}
+								
+								removeDisplaced: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										properties: "x,y"
+									}
 								}
 							}
 						}
@@ -412,7 +446,7 @@ Loader {
 								Text {
 									Layout.alignment: Qt.AlignHCenter
 									
-									color: asciiContainer.hovered ? Qt.alpha(Colours.palette.primary, 0.8) : Qt.alpha(Colours.palette.on_surface, 0.8)
+									color: asciiContainer.hovered ? Qt.alpha(Colours.palette.primary, 0.6) : Qt.alpha(Colours.palette.on_surface, 0.8)
 									font.family: Config.settings.font
 									font.pixelSize: 15
 									font.weight: 600

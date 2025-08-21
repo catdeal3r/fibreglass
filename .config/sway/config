@@ -58,7 +58,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 # sleep computer on lid down
-bindswitch lid:on exec 'systemctl suspend'
+# bindswitch lid:on exec 'systemctl suspend'
 
 # input configuration
 input * {
