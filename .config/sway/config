@@ -78,6 +78,12 @@ input "type:touchpad" {
 # hides mouse after 10 seconds
 seat * hide_cursor 10000
 
+# Tablet config
+input "1386:891:Wacom_One_by_Wacom_M_Pen" {
+    map_to_output HDMI-A-1
+    map_from_region 0.0x0.0 1.0x0.901
+}
+
 
 ### Blur and transparency
 
