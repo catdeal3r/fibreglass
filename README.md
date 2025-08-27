@@ -4,9 +4,9 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Roboto&weight=400&size=35&duration=3500&pause=2000&color=FFFFFF&center=true&vCenter=true&width=435&lines=Fibreglass+(v0.3))](https://github.com/dealerofallthecats/fibreglass)
 
-![commits](https://img.shields.io/github/last-commit/noctalia-dev/noctalia-shell?style=for-the-badge&labelColor=1B1919&color=A8AEFF)
+![commits](https://img.shields.io/github/last-commit/noctalia-dev/noctalia-shell?style=for-the-badge&labelColor=1B1919&color=74be88)
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
-![stars](https://img.shields.io/github/stars/dealerofallthecats/fibreglass?style=for-the-badge&labelColor=1B1919&color=A8AEFF)
+![stars](https://img.shields.io/github/stars/dealerofallthecats/fibreglass?style=for-the-badge&labelColor=1B1919&color=74be88)
 ![active-ness](https://img.shields.io/badge/is-under_active_development-blue?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 
 ---
