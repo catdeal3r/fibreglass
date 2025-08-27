@@ -16,16 +16,6 @@
 > You might notice that all the code/configs are gone. This is because I'm doing a complete refactor, as well as switching to using [`Quickshell`](https://quickshell.outfoxxed.me/) for the widgets.
 > If you would like to read the old code, check [here](https://github.com/dealerofallthecats/fibreglass/tree/old), or look through the branches.
 
-> [!WARNING]
-> I am currently in the process of switching this project to swayfx.
-> This means that this codebase will be very unstable. Until this move has been completed, do NOT update.
->
-> This process is almost complete, please just wait until I've updated the dependancies list.
-
-> [!WARNING]
-> I have switched to using an inbuilt lockscreen. This lockscreen has a button that lets the user out without a password.
-> So don't use this as actual security, at least until I've finished.
-
 ## Table of Contents
 - [Showcase](#showcase)
 - [Install](#install)

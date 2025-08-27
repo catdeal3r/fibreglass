@@ -26,7 +26,7 @@ fcitx5 -d & disown
 ~/.config/scripts/fibreglass --start
 
 # cursor
-swaymsg seat seat0 xcursor_theme GoogleDot-Black 24
+swaymsg seat seat0 xcursor_theme McMojave 24
 
 # monitor handling
 ~/.config/sway/scripts/control_monitors.sh & disown

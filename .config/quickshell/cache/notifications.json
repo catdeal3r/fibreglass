@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": 1,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Log out and in for the gtk4 theme to take effect.",
+    "image": "",
+    "summary": "Wallpaper and theme set!",
+    "time": 1756268286659,
+    "urgency": "1"
+  },
+  {
+    "id": 2,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Log out and in for the gtk4 theme to take effect.",
+    "image": "",
+    "summary": "Wallpaper and theme set!",
+    "time": 1756268294108,
+    "urgency": "1"
+  }
+]
