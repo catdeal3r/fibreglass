@@ -346,6 +346,85 @@ Loader {
 							}
 						}
 
+						ScrollView {
+							anchors.top: searchBox.bottom
+							anchors.topMargin: 10
+							
+							anchors.left: parent.left
+							anchors.leftMargin: (parent.width / 2) - (width / 2)
+							width: parent.width - 20
+							height: parent.height - searchBox.height - 20
+
+							opacity: {
+								if (launcher.isNormalSearch)
+									return 0
+								if (launcher.currentSearch == "") 
+									return 0
+								return 1
+							}
+
+							Behavior on opacity {
+								NumberAnimation {
+									duration: 250
+									easing.bezierCurve: Anim.standard
+								}
+							}
+
+							Text {
+									
+									text: "1234"
+									color: "#FFF"
+								}
+
+							ListView {
+								anchors.fill: parent
+								spacing: 10
+
+								//model: launcher.appList
+								currentIndex: 10
+
+								add: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										from: 500
+										property: "x"
+									}
+								}
+								
+								addDisplaced: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										properties: "x,y"
+									}
+								}
+
+								delegate: Text {
+									required property int index
+									text: index
+									color: "#FFF"
+								}
+
+								remove: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										property: "x"
+										to: 500
+									}
+								}
+								
+								removeDisplaced: Transition {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+										properties: "x,y"
+									}
+								}
+							}
+						}
+
 						Rectangle {
 							anchors.top: searchBox.bottom
 							anchors.topMargin: 10

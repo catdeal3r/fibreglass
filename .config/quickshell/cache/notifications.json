@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": 1,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1756272824405,
+    "urgency": "1"
+  }
+]
