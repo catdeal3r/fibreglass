@@ -92,7 +92,7 @@ Loader {
 					Timer {
 						running: root.ani
 						repeat: false
-						interval: 10
+						interval: 1
 						onTriggered: {
 							maskId.implicitWidth = 500
 							maskId.implicitHeight = 670
