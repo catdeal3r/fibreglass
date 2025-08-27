@@ -212,6 +212,11 @@ cp -r ./runtime ~/fibreglass/.config/helix/
 - [Soramane](https://github.com/soramanew), for widget design and colour schemes.
 - [End-4](https://github.com/end-4), for widget design.
 
+
+## Waho
+
+[![Stargazers over time](https://starchart.cc/dealerofallthecats/fibreglass.svg?variant=adaptive)](https://starchart.cc/dealerofallthecats/fibreglass)
+
 ---
 *[Back to top](#top_marker)*
 
