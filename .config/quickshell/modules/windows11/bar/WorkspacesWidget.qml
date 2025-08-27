@@ -1,7 +1,6 @@
 import QtQuick
 import Quickshell
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
 
 import qs.config
 import qs.modules.common

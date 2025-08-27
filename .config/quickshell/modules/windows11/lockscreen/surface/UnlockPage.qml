@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Fusion
 import QtQuick.Effects
-import Qt5Compat.GraphicalEffects
 
 import Quickshell.Wayland
 import Quickshell
