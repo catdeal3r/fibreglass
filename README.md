@@ -6,7 +6,7 @@
 
 ![commits](https://img.shields.io/github/last-commit/noctalia-dev/noctalia-shell?style=for-the-badge&labelColor=1B1919&color=A8AEFF)
 ![top language](https://img.shields.io/github/languages/top/dealerofallthecats/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
-![stars](https://img.shields.io/github/stars/dealerofallthecats/fibreglass?color=74be88&style=for-the-badge&labelColor=1B1919&color=A8AEFF)
+![stars](https://img.shields.io/github/stars/dealerofallthecats/fibreglass?style=for-the-badge&labelColor=1B1919&color=A8AEFF)
 ![active-ness](https://img.shields.io/badge/is-under_active_development-blue?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 
 ---
