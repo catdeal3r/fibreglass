@@ -201,7 +201,7 @@ cp -r ./runtime ~/fibreglass/.config/helix/
 - [Outfoxxed](https://outfoxxed.me/), for helping with this config and creating quickshell.
 - [End-4](https://github.com/end-4/), for helping me with notifications and other code.
 - [Rexiel](https://github.com/Rexcrazy804), for helping me with animations.
-- [Soramane](https://github.com/soramanew), for helping with animations / notifications.
+- [Soramane](https://github.com/soramanew), for helping with animations / notifications / other code.
 - [HauntedCupOfTea](https://github.com/hauntedcupoftea), for modernizing and cleaning up my code.
 
 ## ~~Who I stole designs from~~ Inspirations
