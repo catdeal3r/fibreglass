@@ -121,6 +121,8 @@ Loader {
 						property string currentSearch: ""
 						property int entryIndex: 0
 
+						property var actions: Actions.actions
+
 						property bool isNormalSearch: {
 							if (currentSearch[0] == ">")
 								return false
@@ -164,15 +166,41 @@ Loader {
 
 							Keys.onPressed: event => {
 								if (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) {
-									launcher.appList[launcher.entryIndex].execute();
-									launcher.currentSearch = "";
-									IPCLoader.toggleLauncher();
+									if (launcher.currentSearch[0] != ">") {
+
+										launcher.appList[launcher.entryIndex].execute();
+										launcher.currentSearch = "";
+										IPCLoader.toggleLauncher();
+
+									} else {
+										let action = launcher.actions[launcher.entryIndex];
+
+										if (action.execType == "external") {
+											Quickshell.execDetached({
+												command: action.execute,
+											});
+										} else {
+											action.execute();
+										}
+
+										launcher.currentSearch = "";
+
+										if (action.closeOnRun == true) {
+											IPCLoader.toggleLauncher();
+										}
+									}
 								} else if (event.key === Qt.Key_Backspace) {
 									launcher.currentSearch = launcher.currentSearch.slice(0, -1);
 								} else if (" abcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?".includes(event.text.toLowerCase())) {
 									launcher.currentSearch += event.text;
 								}
-								launcher.appList = Apps.fuzzyQuery(launcher.currentSearch);
+
+								if (launcher.currentSearch[0] != ">") {
+									launcher.appList = Apps.fuzzyQuery(launcher.currentSearch);
+								} else {
+									console.log(Actions.fuzzyQuery(launcher.currentSearch));
+								}
+								
 								launcher.entryIndex = 0;
 							}
 							
@@ -276,12 +304,11 @@ Loader {
 						ScrollView {
 							anchors.top: searchBox.bottom
 							anchors.topMargin: 10
-							
+								
 							anchors.left: parent.left
 							anchors.leftMargin: (parent.width / 2) - (width / 2)
 							width: parent.width - 20
 							height: parent.height - searchBox.height - 20
-
 							opacity: {
 								if (!launcher.isNormalSearch)
 									return 0
@@ -304,47 +331,15 @@ Loader {
 								model: launcher.appList
 								currentIndex: launcher.entryIndex
 
-								add: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										from: 500
-										property: "x"
-									}
-								}
-								
-								addDisplaced: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										properties: "x,y"
-									}
-								}
-
 								delegate: AppItem {
 									required property int index
 									required property DesktopEntry modelData
 									selected: index === launcher.entryIndex
-								}
-
-								remove: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										property: "x"
-										to: 500
-									}
-								}
-								
-								removeDisplaced: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										properties: "x,y"
-									}
+									isNormalItem: true
 								}
 							}
 						}
+					
 
 						ScrollView {
 							anchors.top: searchBox.bottom
@@ -370,57 +365,18 @@ Loader {
 								}
 							}
 
-							Text {
-									
-									text: "1234"
-									color: "#FFF"
-								}
-
 							ListView {
 								anchors.fill: parent
 								spacing: 10
 
-								//model: launcher.appList
-								currentIndex: 10
+								model: launcher.actions
+								currentIndex: launcher.entryIndex
 
-								add: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										from: 500
-										property: "x"
-									}
-								}
-								
-								addDisplaced: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										properties: "x,y"
-									}
-								}
-
-								delegate: Text {
+								delegate: AppItem {
 									required property int index
-									text: index
-									color: "#FFF"
-								}
-
-								remove: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										property: "x"
-										to: 500
-									}
-								}
-								
-								removeDisplaced: Transition {
-									NumberAnimation {
-										duration: 250
-										easing.bezierCurve: Anim.standard
-										properties: "x,y"
-									}
+									required property var modelData
+									selected: index === launcher.entryIndex
+									isNormalItem: false
 								}
 							}
 						}

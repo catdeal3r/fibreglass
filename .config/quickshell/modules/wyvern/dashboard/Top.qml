@@ -34,7 +34,6 @@ Rectangle {
 			anchors.fill: parent
 										
 			color: "transparent"
-			
 																				
 			Image {
 				source: Config.settings.currentWallpaper
