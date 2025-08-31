@@ -19,16 +19,15 @@ Scope {
 	Process {
 		id: isCurrentWorkspaceEmptyProc
 		running: true
-		command: [ "sh", "-c", "swaymsg -t get_workspaces | jq '.[] | select(.focus == []).num'" ]
+		// why tf does qs logic not work :( ?!?!?!
+		command: [ "sh", "-c", "if [[ \"$(swaymsg -t get_workspaces | jq -r '.[] | select(.focus == []).num')\" == \"\" ]]; then echo occupied; else echo unoccupied; fi" ]
 
 		stdout: SplitParser {
 			onRead: data => {
-				if (data.trim() == "") {
+				if (data == "occupied") {
 					root.isCurrentWorkspaceEmpty = false
-					console.log('false');
 				} else {
 					root.isCurrentWorkspaceEmpty = true
-					console.log('true');
 				}
 			}
 		}
@@ -37,12 +36,12 @@ Scope {
 	Timer {
 		running: true
 		repeat: true
-		interval: 100
+		interval: 10
 		onTriggered: isCurrentWorkspaceEmptyProc.running = true
 	}
 	
 	Desktop {
-		isDesktopOpen: IPCLoader.isDashboardOpen//root.isCurrentWorkspaceEmpty
+		isDesktopOpen: root.isCurrentWorkspaceEmpty
 	}
 	
 	NotificationList {}

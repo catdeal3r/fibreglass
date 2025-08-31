@@ -37,28 +37,20 @@ Loader {
 			model: Quickshell.screens;
 	  
 			PanelWindow {
-				id: dashboardWindow
+				id: desktopWindow
 			
 				property var modelData
 				screen: modelData
 				
 				anchors {
-					top: (Config.settings.bar.barLocation == "top")
-					bottom: (Config.settings.bar.barLocation == "bottom")
+					top: true
+					bottom: true
 					right: true
+					left: true
 				}
-				
-				/*margins {
-					top: (Config.settings.bar.barLocation == "top") ? 0 : 0
-					bottom: (Config.settings.bar.barLocation == "bottom") ? 0 : 0
-					right: 0
-				}*/
-				
+
 				aboveWindows: true
 				color: "transparent"
-				
-				implicitHeight: 1080
-				implicitWidth: 510
 				
 				exclusionMode: ExclusionMode.Ignore
 				
@@ -66,33 +58,26 @@ Loader {
 					item: maskId
 				}
 				
-				visible: {
-					if (maskId.leftMargin == 600) return false;
-					if (Config.settings.isInMinimalMode == true) return false;
-					else return true;
-				}
+				visible: true
 				
-				ScrollView {
+				Rectangle {
 					id: maskId
-					implicitHeight: 0
-					implicitWidth: 0
-					
-					anchors {
-						bottom: parent.bottom
-						top: undefined
-						left: undefined
-						right: parent.right
-					}
-					
-					anchors.rightMargin: 10
+					implicitHeight: desktopWindow.height
+					implicitWidth: desktopWindow.width
+					opacity: 0
+
+					color: "transparent"
+
+					anchors.top: parent.top
+					anchors.topMargin: desktopWindow.height
 					
 					Timer {
 						running: root.ani
 						repeat: false
-						interval: 1
+						interval: 80
 						onTriggered: {
-							maskId.implicitWidth = 500
-							maskId.implicitHeight = 1020
+							maskId.anchors.topMargin = 0
+							maskId.opacity = 1
 						}
 					}
 					
@@ -101,8 +86,8 @@ Loader {
 						repeat: false
 						interval: 1
 						onTriggered: {
-							maskId.implicitWidth = 0
-							maskId.implicitHeight = 0
+							maskId.anchors.topMargin = desktopWindow.height
+							maskId.opacity = 0
 						}
 					}
 					
@@ -115,58 +100,179 @@ Loader {
 						}
 					}
 					
-					anchors.topMargin: (Config.settings.bar.barLocation == "top") ? 50 : 0
-					anchors.bottomMargin: (Config.settings.bar.barLocation == "bottom") ? 50 : 0
-					
-					states: State {
-						name: "anchorTop"
-						when: (Config.settings.bar.barLocation == "top")
-							
-						AnchorChanges {
-							target: maskId
-							anchors {
-								bottom: undefined
-								top: parent.top
-								left: undefined
-								right: parent.right
-							}
-						}
-					}
-					
 					clip: true
 					
-					Behavior on implicitWidth {
+					Behavior on anchors.topMargin {
 						NumberAnimation {
 							duration: 250
 							easing.bezierCurve: Anim.standard
 						}
 					}
-					
-					
-					Behavior on implicitHeight {
+
+					Behavior on opacity {
 						NumberAnimation {
 							duration: 250
 							easing.bezierCurve: Anim.standard
 						}
+					}
+
+					Image {
+						id: background
+						anchors.fill: parent
+						source: Config.settings.currentWallpaper
+					}
+					
+					MultiEffect {
+						id: darkenEffect
+						source: background
+						anchors.fill: background
+						opacity: 1
+						
+						brightness: -0.1
 					}
 					
 					
 					Rectangle {
 						anchors.fill: parent
 						
-						color: Colours.palette.surface
+						color: "transparent"
 						
-						radius: Config.settings.borderRadius
-						
-						ColumnLayout {
-							
-							spacing: 10
-							
-							Top {}
-							
-							Middle {}
-							
-							Bottom {}
+						Rectangle {
+							anchors.left: parent.left
+							anchors.bottom: parent.bottom
+
+							anchors.leftMargin: 20
+							anchors.bottomMargin: 20
+
+							color: Colours.palette.surface
+
+							width: 300
+							height: 100
+
+							radius: Config.settings.borderRadius
+
+							Text {
+								id: toggleButton
+								anchors.left: parent.left
+								anchors.leftMargin: 15
+
+								anchors.top: parent.top
+								anchors.topMargin: 30
+								
+								text: "discover_tune"
+
+								opacity: 0
+
+								color: Colours.palette.on_surface
+								font.family: Config.settings.iconFont
+								font.pixelSize: 30
+
+								Behavior on opacity {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+									}
+								}
+							}
+
+							Rectangle {
+								id: timeBox
+								anchors.left: parent.left
+								anchors.leftMargin: 15
+
+								color: "transparent"
+								width: parent.width - 50
+								height: parent.height
+
+								Behavior on anchors.leftMargin {
+									NumberAnimation {
+										duration: 250
+										easing.bezierCurve: Anim.standard
+									}
+								}
+
+								Text {
+									id: timeText
+									property string time
+									anchors.left: parent.left
+
+									anchors.top: parent.top
+									anchors.topMargin: 12
+
+									text: time
+
+									color: Colours.palette.on_surface
+									font.family: Config.settings.font
+									font.pixelSize: 40
+
+									Process {
+										id: timeProc
+
+										command: [ "date", "+%I:%M %p" ]
+										running: true
+
+										stdout: SplitParser {
+											onRead: data => timeText.time = data
+										}
+									}
+
+									Timer {
+										interval: 1000
+										running: true
+										repeat: true
+										onTriggered: timeProc.running = true
+									}
+								}
+
+								Text {
+									id: dateText
+									property string date
+									anchors.left: parent.left
+									anchors.leftMargin: 3
+
+									anchors.top: timeText.bottom
+									anchors.topMargin: 1
+
+									text: date
+
+									color: Colours.palette.primary
+									font.family: Config.settings.font
+									font.pixelSize: 15
+
+									Process {
+										id: dateProc
+
+										command: [ "date", "+%A %d, %b" ]
+										running: true
+
+										stdout: SplitParser {
+											onRead: data => dateText.date = data
+										}
+									}
+
+									Timer {
+										interval: 1000
+										running: true
+										repeat: true
+										onTriggered: dateProc.running = true
+									}
+								}
+							}
+
+							MouseArea {
+								anchors.fill: parent
+								hoverEnabled: true
+
+								onEntered: {
+									timeBox.anchors.leftMargin = 60
+									toggleButton.opacity = 1
+								}
+
+								onExited: {
+									timeBox.anchors.leftMargin = 15
+									toggleButton.opacity = 0
+								}
+							}
 						}
 					}
 				}
