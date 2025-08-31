@@ -1,6 +1,7 @@
 #!/bin/sh
 
 isHDMIConnected=false
+swaymsg output eDP-1 disable
 
 while (true); do
   if [[ "$(swaymsg -t get_outputs)" == *"HDMI-A-1"* ]]; then
