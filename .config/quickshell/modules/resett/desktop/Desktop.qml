@@ -151,6 +151,7 @@ Loader {
 
 							radius: Config.settings.borderRadius
 
+							
 							Text {
 								id: toggleButton
 								anchors.left: parent.left
@@ -259,18 +260,20 @@ Loader {
 								}
 							}
 
-							MouseArea {
-								anchors.fill: parent
-								hoverEnabled: true
-
-								onEntered: {
-									timeBox.anchors.leftMargin = 60
-									toggleButton.opacity = 1
-								}
-
-								onExited: {
-									timeBox.anchors.leftMargin = 15
-									toggleButton.opacity = 0
+							HoverHandler {
+								id: hoverHandler
+								parent: parent
+								
+								acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+								
+								onHoveredChanged: {
+									if (hovered) {
+										timeBox.anchors.leftMargin = 60
+										toggleButton.opacity = 1
+									} else {
+										timeBox.anchors.leftMargin = 15
+										toggleButton.opacity = 0
+									}
 								}
 							}
 						}
