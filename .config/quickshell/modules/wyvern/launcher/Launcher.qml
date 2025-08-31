@@ -151,8 +151,13 @@ Loader {
 							focus: true
 
 							Keys.onDownPressed: {
-								if (launcher.entryIndex != launcher.appList.length - 1)
-									launcher.entryIndex += 1;
+								if (launcher.currentSearch[0] != ">") {
+									if (launcher.entryIndex != launcher.appList.length - 1)
+										launcher.entryIndex += 1;
+								} else {
+									if (launcher.entryIndex != launcher.actions.length - 1)
+										launcher.entryIndex += 1;
+								}
 							}
 
 							Keys.onUpPressed: {
@@ -166,13 +171,7 @@ Loader {
 
 							Keys.onPressed: event => {
 								if (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) {
-									if (launcher.currentSearch[0] != ">") {
-
-										launcher.appList[launcher.entryIndex].execute();
-										launcher.currentSearch = "";
-										IPCLoader.toggleLauncher();
-
-									} else {
+									if (launcher.currentSearch[0] == ">") {
 										let action = launcher.actions[launcher.entryIndex];
 
 										if (action.execType == "external") {
@@ -188,6 +187,12 @@ Loader {
 										if (action.closeOnRun == true) {
 											IPCLoader.toggleLauncher();
 										}
+
+									} else if (launcher.currentSearch != "") {
+										
+										launcher.appList[launcher.entryIndex].execute();
+										launcher.currentSearch = "";
+										IPCLoader.toggleLauncher();
 									}
 								} else if (event.key === Qt.Key_Backspace) {
 									launcher.currentSearch = launcher.currentSearch.slice(0, -1);
@@ -426,7 +431,6 @@ Loader {
 							height: parent.height - searchBox.height - 20
 
 							color: Colours.palette.surface
-
 							
 							opacity: (launcher.currentSearch == "") ? 1 : 0
 
