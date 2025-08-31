@@ -9,6 +9,7 @@ import qs.modules.cavern
 import qs.modules.windows11
 import qs.modules.fibreglass
 import qs.modules.wyvern
+import qs.modules.resett
 
 Scope {
 	id: root
@@ -24,8 +25,10 @@ Scope {
 				return windowsTheme
 			} else if (Config.settings.currentRice == "cavern") {
 				return cavernTheme
-			} else {
+			} else if (Config.settings.currentRice == "wyvern") {
 				return wyvernTheme
+			} else {
+				return resettTheme
 			}
 		}
 		
@@ -51,6 +54,12 @@ Scope {
 			id: wyvernTheme
 
 			TLoaderWyvern {}
+		}
+
+		Component {
+			id: resettTheme
+			
+			TLoaderResett {}
 		}
 	}
 }
