@@ -16,7 +16,7 @@ fi
 
 notify-screenshot() {
    cp "$file_loc/$file" "$cache_dir/$file"
-   action=$(/usr/bin/notify-send --action="View" --action="Open Folder" --icon="$cache_dir/$file" "Screenshot Saved" "Copied to clipboard")
+   action=$(notify-send --action="View" --action="Open Folder" --icon="$cache_dir/$file" "Screenshot Saved" "Copied to clipboard")
    echo "saved"
    if [[ "$action" == "0" ]]; then
      xdg-open "$file_loc/$file"
@@ -38,7 +38,7 @@ screenshot_select() {
       canberra-gtk-play -i "camera-shutter"
       notify-screenshot
     else
-      /usr/bin/notify-send "Screenshot cancelled"
+      notify-send "Screenshot cancelled"
       rm "$file_loc/$file"
       echo "failed"
     fi

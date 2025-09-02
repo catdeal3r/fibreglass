@@ -36,5 +36,23 @@
     <keybind key="W-Right">
       <action name="GoToDesktop" to="right"/>
     </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ +5%"/>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ -5%"/>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="pactl set-sink-mute @DEFAULT_SINK@ toggle"/>
+    </keybind>
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute" command="pactl set-source-mute @DEFAULT_SOURCE@ toggle"/>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set 5%+"/>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 5%-"/>
+    </keybind>
   </keyboard>
 </labwc_config>
