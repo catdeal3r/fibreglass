@@ -1,0 +1,40 @@
+
+<?xml version="1.0" ?>
+<labwc_config>
+  <theme>
+    <name>minimal</name>
+    <titlebar>
+      <layout>:</layout>
+      <showTitle>no</showTitle>
+    </titlebar>
+    <cornerRadius>0</cornerRadius>
+  </theme>
+  <desktops number="8" popupTime="1000" prefix="Workspace" />
+  <keyboard>
+    <!-- The W- prefix refers to the Super key -->
+    <keybind key="W-Return">
+      <action name="Execute" command="lab-sensible-terminal" />
+    </keybind>
+    <keybind key="A-Space">
+      <action name="Execute" command="wofi" />
+    </keybind>
+    <keybind key="W-w">
+      <action name="Close" />
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow" />
+    </keybind>
+    <keybind key="W-f">
+      <action name="ToggleFullscreen" />
+    </keybind>
+    <keybind key="W-Left">
+      <action name="GoToDesktop" to="left"/>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="GoToDesktop" to="right"/>
+    </keybind>
+  </keyboard>
+</labwc_config>
