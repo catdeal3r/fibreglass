@@ -1,40 +1,40 @@
+
 !! Menu
 menu.border.width: 8
-menu.border.color: #f9faf4
+menu.border.color: #252828
 menu.overlap.x: -10
 menu.title.bg: flat
-menu.title.bg.color: #f9faf4
-menu.title.text.color: #947e7b
+menu.title.bg.color: #252828
+menu.title.text.color: #E4E1DD
 menu.title.text.justify: center
 menu.items.bg: flat
-menu.items.bg.color: #f9faf4
-menu.items.text.color: #947e7b
+menu.items.bg.color: #252828
+menu.items.text.color: #E4E1DD
 menu.items.active.bg: flat
-menu.items.active.bg.color: #aecdad
-menu.items.active.text.color: #526b6e
-menu.items.disabled.text.color: #4d5066
-menu.items.justify: left
+menu.items.active.bg.color: #252828
+menu.items.active.text.color: #E4E1DD
+menu.items.disabled.text.color: #8F9E94
+menu.items.justify: center
 menu.separator.padding.height: 2
-menu.separator.color: #f9faf4
+menu.separator.color: #E4E1DD
 
 !! Titlebar
 window.*.title.bg: flat
 window.*.label.bg: parentrelative
-window.active.title.bg.color: #e3e2e3
-window.active.label.text.color: #70788d
-window.inactive.title.bg.color: #e7e8eb
-window.inactive.label.text.color: #d3d3d6
-window.label.text.justify: center
+window.active.title.bg.color: #252828
+window.active.label.text.color: #E4E1DD
+window.inactive.title.bg.color: #252828
+window.inactive.label.text.color: #E4E1DD
 
 !! Titlebar buttons
 window.*.button.*.bg: parentrelative
 window.*.button.*.pressed.bg: flat
-window.active.button.*.image.color: #70788d
-window.active.button.*.hover.image.color: #aecdad
-window.active.button.*.pressed.bg.color: #aecdad
-window.active.button.disabled.image.color: #d3d3d6
-window.inactive.button.*.image.color: #d3d3d6
-window.inactive.button.disabled.image.color: #d3d3d6
+window.active.button.*.image.color: #E4E1DD
+window.active.button.*.hover.image.color: #E4E1DD
+window.active.button.*.pressed.bg.color: #E4E1DD
+window.active.button.disabled.image.color: #E4E1DD
+window.inactive.button.*.image.color: #E4E1DD
+window.inactive.button.disabled.image.color: #E4E1DD
 
 !! Borders
 border.width: 0
@@ -42,7 +42,7 @@ padding.width: 12
 padding.height: 8
 window.client.padding.width: 0
 window.client.padding.height: 0
-window.handle.width: 2
+window.handle.width: 0
 window.active.border.color: #e7e8eb
 window.active.client.color:  #e7e8eb
 window.active.handle.bg: flat
@@ -58,13 +58,13 @@ window.inactive.client.color: #e7e8eb
 
 !! OSD
 osd.border.width: 1
-osd.border.color: #e7e8eb
-osd.label.text.color: #5c616c
+osd.border.color: #252828
+osd.label.text.color: #E4E1DD
 osd.bg: flat
-osd.bg.color: #e7e8eb
+osd.bg.color: #252828
 osd.label.bg: flat
-osd.label.bg.color: #e7e8eb
+osd.label.bg.color: #252828
 osd.hilight.bg: flat
-osd.hilight.bg.color: #aecdad
+osd.hilight.bg.color: #252828
 osd.unhilight.bg: flat solid
-osd.unhilight.bg.color: #70788d
+osd.unhilight.bg.color: #252828

@@ -4,9 +4,10 @@
   <theme>
     <name>minimal</name>
     <titlebar>
-      <layout>:</layout>
+      <layout>:close</layout>
       <showTitle>no</showTitle>
     </titlebar>
+    <keepBorder>no</keepBorder>
     <cornerRadius>0</cornerRadius>
   </theme>
   <desktops number="8" popupTime="1000" prefix="Workspace" />
@@ -14,6 +15,9 @@
     <!-- The W- prefix refers to the Super key -->
     <keybind key="W-Return">
       <action name="Execute" command="lab-sensible-terminal" />
+    </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute" command="~/.config/scripts/screenshot.sh --select"/>
     </keybind>
     <keybind key="A-Space">
       <action name="Execute" command="wofi" />
