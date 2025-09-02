@@ -1,6 +1,7 @@
 #!/bin/sh
 
 isHDMIConnected=false
+isEDPEnabled=false
 swaymsg output eDP-1 disable
 
 while (true); do
@@ -12,10 +13,16 @@ while (true); do
       swaymsg bindswitch lid:off output eDP-1 enable
     fi
     isHDMIConnected=true
+    isEDPEnabled=false
   else
     isHDMIConnected=false
     printf "Only eDP connected\n"
-    swaymsg output eDP-1 enable
+    
+    if [[ $isEDPEnabled != true ]]; then
+      swaymsg output eDP-1 enable
+      isEDPEnabled=true
+    fi
+  
     swaymsg bindswitch lid:on exec 'systemctl suspend'
   fi
   sleep 1

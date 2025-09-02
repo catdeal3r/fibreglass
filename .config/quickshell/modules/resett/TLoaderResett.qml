@@ -41,7 +41,15 @@ Scope {
 	}
 	
 	Desktop {
-		isDesktopOpen: root.isCurrentWorkspaceEmpty
+		isDesktopOpen: {
+			if (root.isCurrentWorkspaceEmpty) {
+				return true;
+			} else if (IPCLoader.isDashboardOpen) {
+				return IPCLoader.isDashboardOpen;
+			} else {
+				return false;
+			}
+		}
 	}
 	
 	NotificationList {}

@@ -32,6 +32,10 @@ Loader {
 	
 	sourceComponent: Scope {
 		signal finished();
+
+		Component.onCompleted: {
+			Quickshell.execDetached(["grim", "-l", "0", Quickshell.shellDir + "/cache/bg_image.png"]);
+		}
 		
 		Variants {
 			model: Quickshell.screens;
@@ -69,14 +73,14 @@ Loader {
 					color: "transparent"
 
 					anchors.top: parent.top
-					anchors.topMargin: desktopWindow.height
+					//anchors.topMargin: desktopWindow.height
 					
 					Timer {
 						running: root.ani
 						repeat: false
 						interval: 80
 						onTriggered: {
-							maskId.anchors.topMargin = 0
+							//maskId.anchors.topMargin = 0
 							maskId.opacity = 1
 						}
 					}
@@ -86,7 +90,7 @@ Loader {
 						repeat: false
 						interval: 1
 						onTriggered: {
-							maskId.anchors.topMargin = desktopWindow.height
+							//maskId.anchors.topMargin = desktopWindow.height
 							maskId.opacity = 0
 						}
 					}
@@ -119,14 +123,19 @@ Loader {
 					Image {
 						id: background
 						anchors.fill: parent
-						source: Config.settings.currentWallpaper
+						source: Quickshell.shellDir + "/cache/bg_image.png" //Config.settings.currentWallpaper
 					}
 					
 					MultiEffect {
 						id: darkenEffect
 						source: background
 						anchors.fill: background
+
+						autoPaddingEnabled: false
 						opacity: 1
+						blurEnabled: true
+   						blurMax: 64
+    					blur: 1.0
 						
 						brightness: -0.1
 					}
