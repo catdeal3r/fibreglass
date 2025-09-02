@@ -1,0 +1,7 @@
+backend = "wall"
+palette = "dark16"
+check_contrast = true
+
+[templates]
+kitty.template = "kitty.conf"
+kitty.target = "~/.config/kitty/colours.conf"
