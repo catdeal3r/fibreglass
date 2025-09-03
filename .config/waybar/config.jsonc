@@ -3,7 +3,7 @@
 	"margin": "8 16 0",
 	"mod": "dock",
 	"modules-left": [
-		"hyprland/workspaces"
+		"ext/workspaces"
 	],
 	"modules-center": [
 		"hyprland/window"
