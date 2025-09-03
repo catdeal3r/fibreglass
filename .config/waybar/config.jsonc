@@ -1,34 +1,14 @@
 {
-	"position": "top",
-	"margin": "8 16 0",
+	"position": "bottom",
+	"margin": "0 8 8 1600",
 	"mod": "dock",
-	"modules-left": [
-		"ext/workspaces"
-	],
-	"modules-center": [
-		"hyprland/window"
-	],
+	"height": 50,
 	"modules-right": [
 		"tray",
-		"network",
-		"bluetooth",
 		"battery",
-		"temperature",
 		"pulseaudio",
 		"clock"
 	],
-	"hyprland/window": {
-		"format": "{}"
-	},
-	"hyprland/workspaces": {
-		"persistent-workspaces": {
-			"*": [
-				1,
-				2,
-				3
-			]
-		}
-	},
 	"tray": {
 		"icon-size": 18,
 		"spacing": 20
@@ -106,7 +86,7 @@
 		}
 	},
 	"clock": {
-		"format": "{:%R %a %m/%d}",
+		"format": "{:%I:%M %p}",
 		"tooltip-format": "{calendar}",
 		"calendar": {
 			"format": {

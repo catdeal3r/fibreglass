@@ -1,1 +1,2 @@
 ~/.config/labwc/wallset.sh
+udisksctl mount -b /dev/sda1

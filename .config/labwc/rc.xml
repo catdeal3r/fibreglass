@@ -16,7 +16,7 @@
     <keepBorder>no</keepBorder>
     <cornerRadius>0</cornerRadius>
   </theme>
-  <desktops number="8" popupTime="1000" prefix="Workspace" />
+  <desktops number="8" popupTime="1000" prefix="w" />
   <keyboard>
     <!-- The W- prefix refers to the Super key -->
     <keybind key="W-Return">
