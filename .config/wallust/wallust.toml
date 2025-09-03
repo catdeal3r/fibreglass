@@ -8,3 +8,6 @@ kitty.target = "~/.config/kitty/colours.conf"
 
 openbox.template = "openbox_themerc"
 openbox.target = "~/.themes/minimal/openbox-3/themerc"
+
+waybar.template = "waybar.css"
+waybar.target = "~/.config/waybar/colors.css"
