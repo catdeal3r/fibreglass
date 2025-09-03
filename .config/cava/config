@@ -4,5 +4,5 @@ bar_width = 1
 
 [color]
 gradient = 1
-gradient_color_1 = '#E6E7E4'
-gradient_color_2 = '#676E5C'
+gradient_color_1 = '#DCDCDC'
+gradient_color_2 = '#554847'

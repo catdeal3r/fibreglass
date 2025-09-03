@@ -47,9 +47,13 @@ tooltip label {
 
 #battery {
     color: @color2;
+    padding-right: 20px;
 }
 
 #clock {
-    padding-right: 30px;
-    color: @color2;
+    padding-right: 25px;
+    padding-left: 20px;
+    background-color: @color2;
+    color: @background;
+    font-weight: 500
 }
