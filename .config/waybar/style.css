@@ -1,0 +1,85 @@
+* {
+    font-family: "JetBrainsMono Nerd Font, monospace, sans-serif";
+    font-weight: bold;
+    font-size: 16px;
+}
+
+window#waybar {
+    border-radius: 16px;
+    background: #0d1117;
+    color: #93B1A6;
+}
+
+tooltip {
+    background: #0d1117;
+    border-radius: 14px;
+    border: 1px solid #21262d
+}
+
+tooltip label {
+    color: #93B1A6;
+}
+
+#workspaces {
+    border-radius: 16px 24px 24px 16px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button {
+    min-width: 28px;
+    border-radius: 20px;
+    margin: 8px 0;
+}
+
+#workspaces button:not(:last-child) {
+    margin-right: 4px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button.active,
+#workspaces button.active:hover {
+    background: #5C8374;
+    color: #0d1117;
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#temperature,
+#workspaces,
+#backlight {
+    padding: 0px 14px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#tray {
+    padding: 0px 16px;
+}
+
+#network {
+    border-radius: 24px 0 0 24px;
+    padding-left: 24px;
+}
+
+#battery.warning {
+    color: orange;
+}
+
+#battery.critical {
+    color: red;
+}
+
+#temperature.critical {
+    color: red;
+}
+
+#clock {
+    padding-right: 16px;
+    border-radius: 0 16px 16px 0;
+}

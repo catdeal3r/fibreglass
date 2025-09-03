@@ -7,6 +7,12 @@
       <layout>:iconify,close</layout>
       <showTitle>yes</showTitle>
     </titlebar>
+    <font>
+      <name>CommitMono</name>
+      <size>11</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
+    </font>
     <keepBorder>no</keepBorder>
     <cornerRadius>0</cornerRadius>
   </theme>
