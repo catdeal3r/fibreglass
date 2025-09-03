@@ -6,16 +6,16 @@
 }
 
 window#waybar {
-    color: #93B1A6;
+    color: @background;
 }
 
 tooltip {
-    background-color: #0d1117;
-    border: 1px solid #21262d
+    background-color: @background;
+    border: 1px solid @color0;
 }
 
 tooltip label {
-    color: #93B1A6;
+    color: @foreground;
 }
 
 #clock,
@@ -26,7 +26,6 @@ tooltip label {
 #tray,
 #backlight {
     padding: 0px 14px;
-    background-color: rgba(255, 255, 255, 0.08);
 }
 
 #tray {
