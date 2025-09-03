@@ -14,3 +14,6 @@ waybar.target = "~/.config/waybar/colors.css"
 
 alacritty.template = "alacritty.toml"
 alacritty.target = "~/.config/alacritty/colors.toml"
+
+cava.template = "cava"
+cava.target = "~/.config/cava/config"

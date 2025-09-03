@@ -1,0 +1,8 @@
+
+[general]
+bar_width = 1
+
+[color]
+gradient = 1
+gradient_color_1 = '{{foreground}}'
+gradient_color_2 = '{{color9}}'
