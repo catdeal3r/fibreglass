@@ -22,7 +22,7 @@ menu.separator.color: {{foreground}}
 window.*.title.bg: flat
 window.*.label.bg: parentrelative
 window.active.title.bg.color: {{color2}}
-window.active.label.text.color: {{foreground}}
+window.active.label.text.color: {{background}}
 window.inactive.title.bg.color: {{background}}
 window.inactive.label.text.color: {{foreground}}
 

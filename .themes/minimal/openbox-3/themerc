@@ -22,7 +22,7 @@ menu.separator.color: #E6E7E4
 window.*.title.bg: flat
 window.*.label.bg: parentrelative
 window.active.title.bg.color: #818C96
-window.active.label.text.color: #E6E7E4
+window.active.label.text.color: #212425
 window.inactive.title.bg.color: #212425
 window.inactive.label.text.color: #E6E7E4
 
