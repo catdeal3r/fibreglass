@@ -1,9 +1,12 @@
 {
 	"position": "bottom",
-	"margin": "0 20 20 1750",
+	"margin": "0 20 20 1600",
 	"mod": "dock",
 	"height": 50,
 	"modules-right": [
+		"tray",
+		"network",
+		"bluetooth",
 		"battery",
 		"clock"
 	],
@@ -28,6 +31,7 @@
 	},
 	"bluetooth": {
 		"format": "󰂯",
+		"format-off": "󰂲",
 		"format-disabled": "󰂲",
 		"format-connected": "󰂱 {num_connections}",
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
