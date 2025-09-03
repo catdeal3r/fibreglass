@@ -1,40 +1,40 @@
 
 !! Menu
 menu.border.width: 8
-menu.border.color: #101111
+menu.border.color: #18181A
 menu.overlap.x: -10
 menu.title.bg: flat
-menu.title.bg.color: #101111
-menu.title.text.color: #F2F0EF
+menu.title.bg.color: #18181A
+menu.title.text.color: #F1F7FB
 menu.title.text.justify: center
 menu.items.bg: flat
-menu.items.bg.color: #101111
-menu.items.text.color: #F2F0EF
+menu.items.bg.color: #18181A
+menu.items.text.color: #F1F7FB
 menu.items.active.bg: flat
-menu.items.active.bg.color: #101111
-menu.items.active.text.color: #F2F0EF
-menu.items.disabled.text.color: #A2A7A4
+menu.items.active.bg.color: #18181A
+menu.items.active.text.color: #F1F7FB
+menu.items.disabled.text.color: #96ACB9
 menu.items.justify: center
 menu.separator.padding.height: 2
-menu.separator.color: #F2F0EF
+menu.separator.color: #F1F7FB
 
 !! Titlebar
 window.*.title.bg: flat
 window.*.label.bg: parentrelative
-window.active.title.bg.color: #6A534C
-window.active.label.text.color: #F2F0EF
-window.inactive.title.bg.color: #3A3C3B
-window.inactive.label.text.color: #F2F0EF
+window.active.title.bg.color: #546471
+window.active.label.text.color: #F1F7FB
+window.inactive.title.bg.color: #434245
+window.inactive.label.text.color: #F1F7FB
 
 !! Titlebar buttons
 window.*.button.*.bg: parentrelative
 window.*.button.*.pressed.bg: flat
-window.active.button.*.image.color: #F2F0EF
-window.active.button.*.hover.image.color: #F2F0EF
-window.active.button.*.pressed.bg.color: #F2F0EF
-window.active.button.disabled.image.color: #F2F0EF
-window.inactive.button.*.image.color: #F2F0EF
-window.inactive.button.disabled.image.color: #F2F0EF
+window.active.button.*.image.color: #F1F7FB
+window.active.button.*.hover.image.color: #F1F7FB
+window.active.button.*.pressed.bg.color: #F1F7FB
+window.active.button.disabled.image.color: #F1F7FB
+window.inactive.button.*.image.color: #F1F7FB
+window.inactive.button.disabled.image.color: #F1F7FB
 
 !! Borders
 border.width: 0
@@ -58,13 +58,13 @@ window.inactive.client.color: #e7e8eb
 
 !! OSD
 osd.border.width: 1
-osd.border.color: #101111
-osd.label.text.color: #F2F0EF
+osd.border.color: #18181A
+osd.label.text.color: #F1F7FB
 osd.bg: flat
-osd.bg.color: #101111
+osd.bg.color: #18181A
 osd.label.bg: flat
-osd.label.bg.color: #101111
+osd.label.bg.color: #18181A
 osd.hilight.bg: flat
-osd.hilight.bg.color: #101111
+osd.hilight.bg.color: #18181A
 osd.unhilight.bg: flat solid
-osd.unhilight.bg.color: #101111
+osd.unhilight.bg.color: #18181A
