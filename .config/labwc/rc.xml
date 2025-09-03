@@ -4,8 +4,8 @@
   <theme>
     <name>minimal</name>
     <titlebar>
-      <layout>:close</layout>
-      <showTitle>no</showTitle>
+      <layout>:iconify,close</layout>
+      <showTitle>yes</showTitle>
     </titlebar>
     <keepBorder>no</keepBorder>
     <cornerRadius>0</cornerRadius>

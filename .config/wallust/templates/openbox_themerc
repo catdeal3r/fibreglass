@@ -21,9 +21,9 @@ menu.separator.color: {{foreground}}
 !! Titlebar
 window.*.title.bg: flat
 window.*.label.bg: parentrelative
-window.active.title.bg.color: {{background}}
+window.active.title.bg.color: {{color1}}
 window.active.label.text.color: {{foreground}}
-window.inactive.title.bg.color: {{background}}
+window.inactive.title.bg.color: {{color0}}
 window.inactive.label.text.color: {{foreground}}
 
 !! Titlebar buttons
