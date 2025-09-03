@@ -1,6 +1,6 @@
 {
 	"position": "bottom",
-	"margin": "0 8 8 1600",
+	"margin": "0 16 16 1600",
 	"mod": "dock",
 	"height": 50,
 	"modules-right": [

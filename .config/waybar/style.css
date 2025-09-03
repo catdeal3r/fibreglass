@@ -3,6 +3,7 @@
 * {
     font-family: "CommitMono";
     font-size: 16px;
+    color: @foreground;
 }
 
 window#waybar {
@@ -11,7 +12,7 @@ window#waybar {
 
 tooltip {
     background-color: @background;
-    border: 1px solid @color0;
+    border: 1px solid @color2;
 }
 
 tooltip label {
@@ -46,4 +47,5 @@ tooltip label {
 
 #clock {
     padding-right: 16px;
+    color: @color2;
 }

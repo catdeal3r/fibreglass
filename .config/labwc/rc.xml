@@ -5,7 +5,7 @@
     <name>minimal</name>
     <titlebar>
       <layout>:iconify,close</layout>
-      <showTitle>yes</showTitle>
+      <showTitle>no</showTitle>
     </titlebar>
     <font>
       <name>CommitMono</name>
