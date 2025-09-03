@@ -1,1 +1,3 @@
-heh
+[font]
+normal = { family = "cherry", style = "Regular" }
+size = 13
