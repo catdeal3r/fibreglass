@@ -21,7 +21,7 @@ menu.separator.color: {{foreground}}
 !! Titlebar
 window.*.title.bg: flat
 window.*.label.bg: parentrelative
-window.active.title.bg.color: {{color2}}
+window.active.title.bg.color: {{color9}}
 window.active.label.text.color: {{background}}
 window.inactive.title.bg.color: {{background}}
 window.inactive.label.text.color: {{foreground}}
@@ -29,7 +29,7 @@ window.inactive.label.text.color: {{foreground}}
 !! Titlebar buttons
 window.*.button.*.bg: parentrelative
 window.*.button.*.pressed.bg: flat
-window.active.button.*.image.color: {{foreground}}
+window.active.button.*.image.color: {{background}}
 window.active.button.*.hover.image.color: {{foreground}}
 window.active.button.*.pressed.bg.color: {{foreground}}
 window.active.button.disabled.image.color: {{foreground}}

@@ -15,7 +15,7 @@
     </font>
     <keepBorder>no</keepBorder>
     <cornerRadius>0</cornerRadius>
-    <dropShadows>yes</dropShadows>
+    <dropShadows>no</dropShadows>
   </theme>
   <desktops number="8" popupTime="1000" prefix="w" />
   <keyboard>
