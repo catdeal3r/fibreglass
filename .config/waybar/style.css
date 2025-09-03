@@ -1,8 +1,8 @@
 @import url("colors.css");
 
 * {
-    font-family: "CommitMono";
-    font-size: 16px;
+    font-family: "cherry";
+    font-size: 13px;
     color: @foreground;
 }
 
@@ -45,7 +45,11 @@ tooltip label {
     color: red;
 }
 
+#battery {
+    color: @color2;
+}
+
 #clock {
-    padding-right: 16px;
+    padding-right: 30px;
     color: @color2;
 }

@@ -11,3 +11,6 @@ openbox.target = "~/.themes/minimal/openbox-3/themerc"
 
 waybar.template = "waybar.css"
 waybar.target = "~/.config/waybar/colors.css"
+
+alacritty.template = "alacritty.toml"
+alacritty.target = "~/.config/alacritty/colors.toml"
