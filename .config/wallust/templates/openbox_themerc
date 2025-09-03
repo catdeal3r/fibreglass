@@ -23,7 +23,7 @@ window.*.title.bg: flat
 window.*.label.bg: parentrelative
 window.active.title.bg.color: {{color2}}
 window.active.label.text.color: {{foreground}}
-window.inactive.title.bg.color: {{color0}}
+window.inactive.title.bg.color: {{background}}
 window.inactive.label.text.color: {{foreground}}
 
 !! Titlebar buttons

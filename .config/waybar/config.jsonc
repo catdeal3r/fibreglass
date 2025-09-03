@@ -1,12 +1,10 @@
 {
 	"position": "bottom",
-	"margin": "0 16 16 1600",
+	"margin": "0 20 20 1750",
 	"mod": "dock",
 	"height": 50,
 	"modules-right": [
-		"tray",
 		"battery",
-		"pulseaudio",
 		"clock"
 	],
 	"tray": {
