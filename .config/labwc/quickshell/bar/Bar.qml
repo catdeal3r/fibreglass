@@ -60,8 +60,7 @@ Scope {
 					TimeWidget {
 						anchors.centerIn: parent
 
-						color: Colours.palette.on_primary
-	
+						color: Colours.palette.surface	
 						font.family: Config.settings.font
 						
 						font.pixelSize: 13
