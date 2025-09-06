@@ -1,0 +1,7 @@
+{
+    "barLocation": "bottom",
+    "borderRadius": 0,
+    "font": "Cherry",
+    "iconFont": "Material Symbols Sharp",
+    "minutesBetweenHealthNotif": 30
+}

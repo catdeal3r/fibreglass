@@ -5,6 +5,7 @@
 	"height": 50,
 	"modules-right": [
 		"tray",
+		"mpris",
 		"network",
 		"bluetooth",
 		"battery",
@@ -13,6 +14,16 @@
 	"tray": {
 		"icon-size": 18,
 		"spacing": 20
+	},
+	"mpris": {
+	"format": "DEFAULT: {player_icon} {dynamic}",
+	"format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+	"player-icons": {
+		"default": "▶",
+		},
+		"status-icons": {
+			"paused": "⏸"
+		},
 	},
 	"network": {
 		"format-icons": [
