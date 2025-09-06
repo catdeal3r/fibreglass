@@ -27,7 +27,7 @@ Scope {
 			}
 			
 			margins {
-				top: (Config.settings.bar.barLocation == "top") ? 40 : 0
+				top: (Config.settings.barLocation == "top") ? 40 : 0
 			}
 		
 			aboveWindows: true

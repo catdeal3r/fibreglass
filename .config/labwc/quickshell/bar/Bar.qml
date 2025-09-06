@@ -32,7 +32,7 @@ Scope {
 			color: "transparent"
 			
 			implicitHeight: barBase.height + (Config.settings.borderRadius * 2)
-			implicitWidth: 300
+			implicitWidth: 550
 			
 			margins.top: (Config.settings.barLocation == "top") ? 20 : 0
 			margins.bottom: (Config.settings.barLocation == "bottom") ? 20 : 0
@@ -46,15 +46,34 @@ Scope {
 			Rectangle {
 				id: barBase
 				anchors.top: parent.top
-				anchors.topMargin: Config.settings.borderRadius
+				anchors.right: parent.right
 				height: 40
-				width: parent.width
+				width: playerControls.Layout.preferredWidth == 0 ? parent.width - 200 : parent.width
 				color: Colours.palette.surface
+
+				Rectangle {
+					id: time
+					anchors.right: parent.right
+					width: 140
+					height: barBase.height
+					color: Colours.palette.primary
+					
+					TimeWidget {
+						anchors.centerIn: parent
+
+						color: Colours.palette.on_primary
+	
+						font.family: Config.settings.font
+						
+						font.pixelSize: 12
+
+					}
+				}
 									
 				RowLayout {
 					spacing: 10
-					anchors.right: parent.right
-					anchors.rightMargin: 20
+					anchors.right: time.right
+					anchors.rightMargin: time.width + 10
 					anchors.top: parent.top
 					anchors.topMargin: 5
 					
@@ -65,7 +84,7 @@ Scope {
 					}
 					
 					Rectangle {
-						Layout.preferredWidth: 115
+						Layout.preferredWidth: 90
 						color: Colours.palette.surface
 						Layout.preferredHeight: 30
 						
@@ -84,14 +103,14 @@ Scope {
 
 								Layout.preferredWidth: 15
 						
-								font.pixelSize: 15
+								font.pixelSize: 13
 
 								
 								MouseArea {
 									anchors.fill: parent
 									cursorShape: Qt.PointingHandCursor
 							
-									onClicked: Quickshell.execDetached([ Quickshell.shellDir + "/scripts/network.out" ])
+									onClicked: Bluetooth.toggle()
 								}
 						
 							}
@@ -104,7 +123,7 @@ Scope {
 
 								Layout.preferredWidth: 15
 						
-								font.pixelSize: 15
+								font.pixelSize: 13
 
 								MouseArea {
 									anchors.fill: parent
@@ -122,22 +141,13 @@ Scope {
 									return Colours.palette.on_surface
 								}
 								font.family: Config.settings.font
-								font.pixelSize: 15
+								font.pixelSize: 13
 							}
-					
 						}
-						
 					}
-					
-					TimeWidget {
 
-						color: Colours.palette.on_surface
-	
-						font.family: Config.settings.font
-						Layout.preferredWidth: 110
-						
-						font.pixelSize: 13
-
+					PlayerControls {
+						id: playerControls
 					}
 				}
 			}
