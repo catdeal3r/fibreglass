@@ -17,16 +17,10 @@ Rectangle {
 	property bool popup: false
 	
 	property real currentTime: 5000
-	
-	property real notifSize: {
-		if (modelData.body == bodyPreviewMetrics.elidedText && expanded) return 100
-		if (modelData.body != bodyPreviewMetrics.elidedText && expanded) return 120
-		else return 80
-	}
-					
+
 	radius: Config.settings.borderRadius
 	color: Colours.palette.surface
-	implicitHeight:	notifSize
+	implicitHeight:	80
 	implicitWidth: 400
 	
 	border.width: 2
@@ -69,7 +63,7 @@ Rectangle {
 			anchors.bottom: parent.bottom
 			width: singleNotif.popup ? (singleNotif.currentTime / singleNotif.modelData.timer.interval) * parent.width : 0
 			height: 4
-			color: Colours.palette.tertiary
+			color: Colours.palette.primary
 			
 			Behavior on width {
 				PropertyAnimation {
@@ -96,7 +90,7 @@ Rectangle {
 			visible: (modelData.appIcon == "") ? false : true
 			radius: Config.settings.borderRadius
 						
-			Layout.alignment: root.expanded ? Qt.AlignLeft | Qt.AlignTop : Qt.AlignLeft
+			Layout.alignment: Qt.AlignLeft
 			Layout.leftMargin: 0
 			Layout.preferredWidth: 50
 			Layout.preferredHeight: 50
@@ -141,80 +135,9 @@ Rectangle {
 			id: textWrapper
 						
 			Layout.alignment: Qt.AlignLeft
-			Layout.preferredWidth: 240
+			Layout.preferredWidth: 280
 			Layout.leftMargin: 10
 			
-			RowLayout { //expanded bit
-				Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-				Layout.topMargin: expanded ? 0 : 15
-				spacing: 4
-				
-				visible: (Layout.topMargin == 0) ? true : false
-				
-				clip: true
-				
-				Behavior on Layout.topMargin {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
-				}
-				
-				Text {
-					text: modelData.appName
-					color: Colours.palette.primary
-										
-					font.family: Config.settings.font
-					font.weight: 600
-					font.pixelSize: 11
-					
-					visible: parent.visible
-					
-					Behavior on visible {
-						PropertyAnimation {
-							duration: 200
-							easing.type: Easing.InSine
-						}
-					}
-					
-				}
-				Text {
-					text: "·"
-					color: Colours.palette.on_surface
-									
-					font.family: Config.settings.font
-					font.weight: 600
-					font.pixelSize: 11
-					
-					visible: parent.visible
-					
-					Behavior on visible {
-						PropertyAnimation {
-							duration: 200
-							easing.type: Easing.InSine
-						}
-					}
-				}
-				Text {
-					color: Accents.disab
-									
-					text: NotificationUtils.getFriendlyNotifTimeString(modelData.time)
-									
-					font.family: Config.settings.font
-					font.weight: 600
-					font.pixelSize: 11
-					
-					visible: parent.visible
-					
-					Behavior on visible {
-						PropertyAnimation {
-							duration: 200
-							easing.type: Easing.InSine
-						}
-					}
-				}
-			
-			}
 			
 			// Text content
 				
@@ -249,7 +172,7 @@ Rectangle {
 				font.family: Config.settings.font
 									
 				elide: Qt.ElideRight
-				elideWidth: 210
+				elideWidth: 270
 			}
 								
 			Text {
@@ -285,7 +208,7 @@ Rectangle {
 				font.family: Config.settings.font
 									
 				elide: Qt.ElideRight
-				elideWidth: 240
+				elideWidth: 270
 			}
 			
 			ScrollView {
@@ -326,53 +249,6 @@ Rectangle {
 						duration: 150
 						easing.type: Easing.InSine
 					}
-				}
-			}
-		}
-		
-		// Expand button				
-		ColumnLayout {
-			Layout.alignment: Qt.AlignTop
-			Layout.preferredWidth: 45
-			Layout.preferredHeight: 25
-			Layout.leftMargin: 20
-								
-			Rectangle {	
-				Layout.alignment: Qt.AlignTop
-				id: expandBtn
-				width: 45
-				height: 25
-				color: Colours.palette.surface_container
-				radius: 50
-				visible: true 
-				
-				Behavior on color {
-					PropertyAnimation {
-						duration: 150
-						easing.type: Easing.InSine
-					}
-				}
-									
-				Text {
-					anchors.centerIn: parent
-										
-					color: Colours.palette.on_surface
-					text: singleNotif.expanded ? "expand_less" : "expand_more"
-										
-					font.family: Config.settings.iconFont
-					font.pixelSize: 24
-									
-				}
-									
-				MouseArea {
-					anchors.fill: parent
-					cursorShape: Qt.PointingHandCursor
-											
-					hoverEnabled: true
-										
-					onClicked: singleNotif.expanded = !singleNotif.expanded
-					onEntered: parent.color = Colours.palette.surface_container_high
-					onExited: parent.color = Colours.palette.surface_container
 				}
 			}
 		}

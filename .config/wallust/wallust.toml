@@ -17,3 +17,6 @@ alacritty.target = "~/.config/alacritty/colors.toml"
 
 cava.template = "cava"
 cava.target = "~/.config/cava/config"
+
+quickshell.template = "quickshell.json"
+quickshell.target = "~/.config/labwc/quickshell/settings/colours.json"
