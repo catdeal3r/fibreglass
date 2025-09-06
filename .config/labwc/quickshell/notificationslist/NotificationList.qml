@@ -91,7 +91,6 @@ Scope {
 				}
 				
 				delegate: SingleNotification {
-					popup: true
 					required property Notifications.Notif modelData
 				}
 				

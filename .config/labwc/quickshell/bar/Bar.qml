@@ -31,7 +31,7 @@ Scope {
 
 			color: "transparent"
 			
-			implicitHeight: barBase.height + (Config.settings.borderRadius * 2)
+			implicitHeight: barBase.height
 			implicitWidth: 550
 			
 			margins.top: (Config.settings.barLocation == "top") ? 20 : 0
@@ -40,14 +40,13 @@ Scope {
 			
 			visible: true
 			
-			exclusiveZone: barBase.height + Config.settings.borderRadius + 2
-			
-						
+			exclusiveZone: barBase.height + 10
+									
 			Rectangle {
 				id: barBase
 				anchors.top: parent.top
 				anchors.right: parent.right
-				height: 40
+				height: 50
 				width: playerControls.Layout.preferredWidth == 0 ? parent.width - 200 : parent.width
 				color: Colours.palette.surface
 
@@ -75,7 +74,7 @@ Scope {
 					anchors.right: time.right
 					anchors.rightMargin: time.width + 10
 					anchors.top: parent.top
-					anchors.topMargin: 5
+					anchors.topMargin: 11
 					
 					SysTray {
 						Layout.preferredWidth: (SystemTray.items.values.length * 25)
