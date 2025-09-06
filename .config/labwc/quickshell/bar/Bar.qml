@@ -64,7 +64,7 @@ Scope {
 	
 						font.family: Config.settings.font
 						
-						font.pixelSize: 12
+						font.pixelSize: 13
 
 					}
 				}

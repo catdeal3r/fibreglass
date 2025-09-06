@@ -62,31 +62,32 @@ Rectangle {
 	readonly property var realPlayers: Mpris.players.values.filter(player => isRealPlayer(player))
     readonly property var meaningfulPlayers: filterDuplicatePlayers(realPlayers)
 
-    Layout.preferredWidth: meaningfulPlayers.length == 0 ? 0 : 200
+    Layout.preferredWidth: meaningfulPlayers.length == 0 ? 0 : 210
 
     TextMetrics {
         id: titleMetrics
 
-        text: {
-            if (root.meaningfulPlayers.length == 0)
-                return ""
-            
-            if (root.meaningfulPlayers[0].isPlaying)
-                return root.meaningfulPlayers[0].trackTitle + " - " + root.meaningfulPlayers[0].trackArtist + " (Playing)"
-            else
-                return root.meaningfulPlayers[0].trackTitle + " - " + root.meaningfulPlayers[0].trackArtist + " (Paused)"
-        }
+        text: root.meaningfulPlayers[0].trackTitle + " - " + root.meaningfulPlayers[0].trackArtist
+        
         font.family: Config.settings.font
         
         elide: Qt.ElideRight
-        elideWidth: 190
+        elideWidth: 130
     }
 
     Text {
 	    color: Colours.palette.on_surface
-	    text: titleMetrics.elidedText
+	    text: {
+            if (root.meaningfulPlayers.length == 0)
+                return ""
+            
+            if (root.meaningfulPlayers[0].isPlaying)
+                return titleMetrics.elidedText + " (Playing)"
+            else
+                return titleMetrics.elidedText + " (Paused)"
+        }
 	    font.family: Config.settings.font
-	    font.pixelSize: 13
+	    font.pixelSize: 12
 	    anchors.centerIn: parent
 
 	    MouseArea {
