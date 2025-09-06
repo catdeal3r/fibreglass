@@ -1,3 +1,4 @@
 udisksctl mount -b /dev/sda1
 ~/.config/labwc/wallset.sh
 qs -p ~/.config/labwc/quickshell/shell.qml &
+wl-paste -t text --watch clipman store &

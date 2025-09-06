@@ -19,7 +19,7 @@ set $term 'kitty --detach'
 set $menu 'qs ipc call root toggleLauncher'
 
 # clipboard manager
-exec wl-paste -t text --watch clipman store --no-persist
+exec wl-paste -t text --watch clipman store
 
 ### Output configuration
 #
