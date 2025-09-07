@@ -44,6 +44,7 @@ Scope {
 				id: background
 				anchors.fill: parent
 				source: Config.settings.currentWallpaper
+				fillMode: Image.PreserveAspectCrop
 			}
 			
 			MultiEffect {
