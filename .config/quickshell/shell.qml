@@ -18,7 +18,7 @@ Scope {
 		SessionHandler.loadBasicSession()
 	}
 
-	Desktop {}
+	//Desktop {}
 	
 	EyeProtection {}
 }

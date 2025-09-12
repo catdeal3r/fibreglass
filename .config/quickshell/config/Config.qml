@@ -54,7 +54,7 @@ Singleton {
 			property string currentRice: "fibreglass"
 			
 			onCurrentRiceChanged: {
-				if (currentRice == "fibreglass" || currentRice == "windows" || currentRice == "cavern" || currentRice == "wyvern" || currentRice == "resett") {
+				if (currentRice == "fibreglass" || currentRice == "windows" || currentRice == "cavern" || currentRice == "wyvern" || currentRice == "resett" || currentRice == "oneb") {
 					console.log(`Switched to rice: ${currentRice}`)
 					if (currentRice == "wyvern") {
 						Quickshell.execDetached(["swaymsg", "default_border", "none"])

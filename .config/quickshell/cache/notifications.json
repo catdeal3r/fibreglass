@@ -172,5 +172,58 @@
     "summary": "Protect your eyes.",
     "time": 1757382601739,
     "urgency": "1"
+  },
+  {
+    "id": 56,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Log out and in for the gtk4 theme to take effect.",
+    "image": "",
+    "summary": "Wallpaper and theme set!",
+    "time": 1757653144376,
+    "urgency": "1"
+  },
+  {
+    "id": 57,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "",
+    "image": "",
+    "summary": "Screenshot cancelled",
+    "time": 1757653930296,
+    "urgency": "1"
+  },
+  {
+    "id": 58,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-12-17-13-03.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757653989147,
+    "urgency": "1"
+  },
+  {
+    "id": 59,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Look around and take a break.",
+    "image": "",
+    "summary": "Protect your eyes.",
+    "time": 1757655527171,
+    "urgency": "1"
   }
 ]
