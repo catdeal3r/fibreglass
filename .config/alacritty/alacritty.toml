@@ -5,7 +5,3 @@ import = [ "colors.toml" ]
 [window]
 dynamic_padding = true
 padding = { x = 15, y = 15 }
-
-[font]
-normal = { family = "cherry", style = "Regular" }
-size = 13
