@@ -56,20 +56,20 @@ Rectangle {
 			
 			Rectangle {
 				anchors.right: parent.right
-				anchors.top: parent.top
+				anchors.bottom: parent.bottom
 				
 				anchors.rightMargin: 1
 				anchors.topMargin: 1
 				
-				topRightRadius: parent.radius
+				bottomLeftRadius: parent.radius
 				bottomRightRadius: parent.radius
 				
 				topLeftRadius: (Battery.percent == 100) ? parent.radius : 0
-				bottomLeftRadius: (Battery.percent == 100) ? parent.radius : 0
+				topRightRadius: (Battery.percent == 100) ? parent.radius : 0
 				
 				// Size the battery rectangle depending on the battery percent
-				width: Math.max(0, (parent.width - 2) * (Battery.percent / 100))
-				height: parent.height - 2
+				height: Math.max(0, (parent.height - 2) * (Battery.percent / 100))
+				width: parent.width - 2
 				color: Battery.getBatteryColour(Battery.percent)
 				
 				radius: 1
