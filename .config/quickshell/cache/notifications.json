@@ -1,293 +1,57 @@
 [
   {
-    "id": 41,
+    "id": 66,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1757287782176,
+    "time": 1757742727674,
     "urgency": "1"
   },
   {
-    "id": 42,
+    "id": 67,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1757304230631,
+    "time": 1757752624156,
     "urgency": "1"
   },
   {
-    "id": 43,
+    "id": 68,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1757306030469,
+    "time": 1757752689553,
     "urgency": "1"
   },
   {
-    "id": 44,
-    "actions": [
-      {
-        "identifier": "0",
-        "text": "View"
-      },
-      {
-        "identifier": "1",
-        "text": "Open Folder"
-      }
-    ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-08-16-38-52.png",
-    "appName": "notify-send",
-    "body": "Copied to clipboard",
-    "image": "",
-    "summary": "Screenshot Saved",
-    "time": 1757306338649,
-    "urgency": "1"
-  },
-  {
-    "id": 45,
+    "id": 69,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1757307830106,
+    "time": 1757756947839,
     "urgency": "1"
   },
   {
-    "id": 46,
+    "id": 70,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1757309629970,
-    "urgency": "1"
-  },
-  {
-    "id": 47,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757324270148,
-    "urgency": "1"
-  },
-  {
-    "id": 48,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757326069995,
-    "urgency": "1"
-  },
-  {
-    "id": 49,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757327869824,
-    "urgency": "1"
-  },
-  {
-    "id": 50,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757368976796,
-    "urgency": "1"
-  },
-  {
-    "id": 51,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757370776732,
-    "urgency": "1"
-  },
-  {
-    "id": 52,
-    "actions": [],
-    "appIcon": "",
-    "appName": "",
-    "body": "“Sheepy” was created successfully.",
-    "image": "",
-    "summary": "Bottle Created",
-    "time": 1757371255178,
-    "urgency": "1"
-  },
-  {
-    "id": 53,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757378669070,
-    "urgency": "1"
-  },
-  {
-    "id": 54,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757380469779,
-    "urgency": "1"
-  },
-  {
-    "id": 55,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757382601739,
-    "urgency": "1"
-  },
-  {
-    "id": 56,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Log out and in for the gtk4 theme to take effect.",
-    "image": "",
-    "summary": "Wallpaper and theme set!",
-    "time": 1757653144376,
-    "urgency": "1"
-  },
-  {
-    "id": 57,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "",
-    "image": "",
-    "summary": "Screenshot cancelled",
-    "time": 1757653930296,
-    "urgency": "1"
-  },
-  {
-    "id": 58,
-    "actions": [
-      {
-        "identifier": "0",
-        "text": "View"
-      },
-      {
-        "identifier": "1",
-        "text": "Open Folder"
-      }
-    ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-12-17-13-03.png",
-    "appName": "notify-send",
-    "body": "Copied to clipboard",
-    "image": "",
-    "summary": "Screenshot Saved",
-    "time": 1757653989147,
-    "urgency": "1"
-  },
-  {
-    "id": 59,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757655527171,
-    "urgency": "1"
-  },
-  {
-    "id": 60,
-    "actions": [
-      {
-        "identifier": "0",
-        "text": "View"
-      },
-      {
-        "identifier": "1",
-        "text": "Open Folder"
-      }
-    ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-13-12-04-23.png",
-    "appName": "notify-send",
-    "body": "Copied to clipboard",
-    "image": "",
-    "summary": "Screenshot Saved",
-    "time": 1757721869354,
-    "urgency": "1"
-  },
-  {
-    "id": 61,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757722972042,
-    "urgency": "1"
-  },
-  {
-    "id": 62,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757726628727,
-    "urgency": "1"
-  },
-  {
-    "id": 63,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757733259837,
-    "urgency": "1"
-  },
-  {
-    "id": 65,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757736687583,
+    "time": 1757794378336,
     "urgency": "1"
   }
 ]
