@@ -15,7 +15,6 @@ Rectangle {
 	property var bar
 	
 	visible: SystemTray.items.values.length
-	width: 10
 	color: "transparent"
 	
 	ColumnLayout {
@@ -25,7 +24,7 @@ Rectangle {
 		Repeater {
 			model: SystemTray.items
 			
-			Rectangle {
+			delegate: Rectangle {
 				id: sysItem
 				required property var modelData
 				Layout.alignment: Qt.AlignCenter
@@ -45,8 +44,8 @@ Rectangle {
 
 					menu: sysItem.modelData.menu
 					anchor.window: root.bar
-					anchor.rect.x: 1200
-					anchor.rect.y: 3000
+					anchor.rect.y: sysItem.height + 700
+					anchor.rect.x: 40
 					anchor.rect.height: sysItem.height
 				}
 

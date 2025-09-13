@@ -14,6 +14,10 @@ import qs.modules.common
 Scope {
 	signal finished();
 	id: root
+
+	property bool isShown: false
+	property bool isAlwaysShown: false
+	property int smoothPadding: barBase.width
 	
 	Variants {
 		model: Quickshell.screens;
@@ -33,25 +37,69 @@ Scope {
 
 			color: "transparent"
 			
-			implicitWidth: barBase.width + (Config.settings.borderRadius * 2)
+			implicitWidth: barBase.width
 			
 			visible: true
 			
-			exclusiveZone: barBase.width + Config.settings.borderRadius
+			exclusiveZone: {
+				if (isAlwaysShown)
+					return barBase.width + Config.settings.borderRadius
+				if (isShown)
+					return barBase.width + Config.settings.borderRadius
+				else
+					return 0
+			}
+
+			MouseArea {
+				anchors.fill: parent
+				hoverEnabled: true
+				onEntered: root.isShown = true
+				acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
+				onExited: {
+					root.isShown = false
+					root.smoothPadding = barBase.width
+				}
+
+				onClicked: (mouse) => {
+					if (mouse.button == Qt.MiddleButton)
+						root.isAlwaysShown = !root.isAlwaysShown
+				}
+			}
 			
 			Rectangle {
 				id: barBase
 				anchors.left: parent.left
+				anchors.leftMargin: {
+					if (isAlwaysShown)
+						return 0
+					if (isShown)
+						return 0
+					else
+						-1 * width
+				}
+
 				width: 40
 				height: parent.height
 				color: Colours.palette.surface
 				
-				/*WorkspacesWidget {
-					id: workspaces
-					anchors.left: parent.left
+				Behavior on anchors.leftMargin {
+					PropertyAnimation {
+						duration: 200
+						easing.type: Easing.InSine
+					}
+				}
+
+				Text {
 					anchors.top: parent.top
-				}*/
-				
+					anchors.left: parent.left
+					anchors.leftMargin: (parent.width / 2) - ((font.pixelSize - 2) / 2)
+					anchors.topMargin: 5
+
+
+					text: ""
+					color: Colours.palette.on_surface
+					font.pixelSize: 26
+				}
 						
 				ColumnLayout {
 					spacing: 10
@@ -60,7 +108,8 @@ Scope {
 					
 					SysTray {
 						Layout.preferredHeight: (SystemTray.items.values.length * 25)
-						
+						Layout.preferredWidth: 20
+						Layout.leftMargin: 7
 						bar: barWindow
 					}
 					
