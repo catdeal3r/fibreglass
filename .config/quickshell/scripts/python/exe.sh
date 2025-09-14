@@ -2,8 +2,7 @@
 
 prev_pwd=$(pwd)
 
-# assuming the filename stays the same
-current_pwd=$(pwd)/$(printf $0 | head -c+9)
+current_pwd=$(cd "$(dirname "$0")" && pwd -P)
 
 cd $current_pwd 
 source ${current_pwd}/test/bin/activate
