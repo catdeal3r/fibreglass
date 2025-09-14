@@ -89,6 +89,10 @@ Scope {
 					}
 				}
 
+				WorkspacesWidget {
+					
+				}
+
 				Text {
 					anchors.top: parent.top
 					anchors.left: parent.left

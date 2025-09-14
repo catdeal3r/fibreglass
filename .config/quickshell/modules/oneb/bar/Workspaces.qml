@@ -44,7 +44,7 @@ Singleton {
 		id: focusedProc
 		running: true
 
-		command: [ "sh", "-c", "swaymsg -t get_workspaces | jq -r '.[] | select(.focused==true).name'" ];
+		command: [ Quickshell.shellDir + "/scripts/python/exe.sh", "i" ];
 		stdout: SplitParser {
 			onRead: data => focusedWorkspace = data
 		}

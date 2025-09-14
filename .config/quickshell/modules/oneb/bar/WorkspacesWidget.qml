@@ -7,65 +7,50 @@ import qs.modules.common
 
 Rectangle {
 	id: root
-	width: 30
-	height: width * Workspaces.workspaceCount
+	width: 40
+	height: 40 * workspaceCount
 	color: Colours.palette.surface
+
+	anchors.top: parent.top
+	anchors.topMargin: (parent.height / 2) - (height / 2)
+
+	anchors.left: parent.left
+	
+	property int workspaceCount: 3
 
 	Rectangle {
 		anchors.top: parent.top
-		anchors.topMargin: (Workspaces.focusedWorkspace - 1) * root.height
+		anchors.topMargin: (Workspaces.focusedWorkspace - 1) * parent.width
+		width: parent.width
+		height: parent.width
+		color: Colours.palette.primary
 
-		width: root.height
-		height: root.height
-
-		color: Qt.alpha(Colours.palette.primary, 0.8)
-
-		Behavior on anchors.leftMargin {
+		Behavior on anchors.topMargin {
 			PropertyAnimation {
 				duration: 100
 				easing.type: Easing.BezierSpline
 				easing.bezierCurve: Anim.standard
 			}
-		}	
-	}	
-	
+		}
+	}
+
 	ColumnLayout {
-		id: layoutThingy
-		anchors.fill: parent
-		spacing: 0	
-	
+		anchors.top: parent.top
+		anchors.topMargin: 12
+		spacing: 23
+
 		Repeater {
-			model: Workspaces.workspaceCount
-		
-			Rectangle {
-				color: "transparent"
-				Layout.preferredWidth: root.height
-				Layout.preferredHeight: root.height
-			
-				Text {
-					anchors.centerIn: parent
-					text: `${index + 1}`
-					color: Workspaces.getWorkspaceColour(Workspaces.workspacesState[index])
-					font.family: Config.settings.font
-					font.pixelSize: 12
-					font.weight: 600
+			model: workspaceCount
 
+			Text {
+				text: index + 1
+				color: (index + 1 == Workspaces.focusedWorkspace) ? Colours.palette.surface : Colours.palette.on_surface
 
-					Behavior on color {
-						PropertyAnimation {
-							duration: 100
-							easing.type: Easing.BezierSpline
-							easing.bezierCurve: Anim.standard
-						}
-					}	
-				}	
-				
-				MouseArea {
-					anchors.fill: parent
-					cursorShape: Qt.PointingHandCursor
-					
-					onClicked: Quickshell.execDetached(["swaymsg", "workspace", `${index + 1}`])
-				}
+				font.family: Config.settings.font
+				font.pixelSize: 14
+
+				anchors.left: parent.left
+				anchors.leftMargin: 15
 			}
 		}
 	}
