@@ -8,7 +8,7 @@ cd $current_pwd
 source ${current_pwd}/test/bin/activate
 
 y=$(python cfg.py | tr \' \" | jq '.workspace.y')
-x=$(python cfg.py | tr \' \" | jq '.workspace.x')
+#x=$(python cfg.py | tr \' \" | jq '.workspace.x')
 
 i=$((y+1))
 
