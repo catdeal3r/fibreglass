@@ -16,8 +16,7 @@ Scope {
 	id: root
 
 	property bool isShown: false
-	property bool isAlwaysShown: false
-	property int smoothPadding: barBase.width
+	property bool isAlwaysShown: true
 	
 	Variants {
 		model: Quickshell.screens;
@@ -89,93 +88,85 @@ Scope {
 					}
 				}
 
-				WorkspacesWidget {
-					
-				}
+				WorkspacesWidget {}
 
 				Text {
 					anchors.top: parent.top
 					anchors.left: parent.left
-					anchors.leftMargin: (parent.width / 2) - ((font.pixelSize - 3) / 2)
+					anchors.leftMargin: (parent.width / 2) - ((font.pixelSize - 2) / 2)
 					anchors.topMargin: 5
 
-
-					text: ""
+					text: ""
 					color: Colours.palette.on_surface
-					font.pixelSize: 26
+					font.pixelSize: 18
 				}
+
+				/*IconImage {
+					anchors.top: parent.top
+					anchors.left: parent.left
+					anchors.leftMargin: (parent.width / 2) - (size / 2) - 1
+					anchors.topMargin: 5
+
+					source: `file:/${Quickshell.shellDir}/assets/feather_logo.png`
+					asynchronous: true
+
+					property int size: 24
+					
+					width: size
+					height: size
+				}*/
 						
 				ColumnLayout {
-					spacing: 10
+					spacing: 15
 					anchors.left: parent.left
+
+					width: parent.width - 5
 					anchors.bottom: parent.bottom
 					
 					SysTray {
 						Layout.preferredHeight: (SystemTray.items.values.length * 25)
 						Layout.preferredWidth: 20
-						Layout.leftMargin: 7
+						Layout.alignment: Qt.AlignHCenter
 						bar: barWindow
 					}
 					
-					Rectangle {
-						Layout.preferredWidth: 28
-						color: Colours.palette.surface
-						Layout.preferredHeight: 115
-						Layout.leftMargin: 5
-						
-						radius: Config.settings.borderRadius - 3
-						
-						Behavior on color {
-							PropertyAnimation {
-								duration: 200
-								easing.type: Easing.InSine
-							}
-						}
-					
-						ColumnLayout {
-							spacing: 10
-							anchors.fill: parent
+					BluetoothWidget {
+						color: Bluetooth.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
 							
-							BluetoothWidget {
-								color: Bluetooth.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
-							
-								font.family: Config.settings.iconFont
-								font.weight: 600
+						font.family: Config.settings.iconFont
+						font.weight: 600
 
-								Layout.preferredHeight: 15
+						Layout.preferredHeight: 15
 						
-								font.pixelSize: 17
-								Layout.leftMargin: 4
-							}
+						font.pixelSize: 17
+						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+						Layout.leftMargin: 1
+					}
 						
-							NetworkWidget {
-								color: Network.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
-							
-								font.family: Config.settings.iconFont
-								font.weight: 600
+					NetworkWidget {
+						color: Network.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
+					
+						font.family: Config.settings.iconFont
+						font.weight: 600
 
-								Layout.preferredHeight: 15
+						Layout.preferredHeight: 15
 						
-								font.pixelSize: 17
-								Layout.leftMargin: 4
-							}
+						font.pixelSize: 17
+						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+						Layout.leftMargin: 1
+					}
 					
-							BatteryWidget {
-								Layout.fillWidth: true
-								Layout.preferredHeight: 30
-							}
+					BatteryWidget {
+						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 					
-						}
-						
-						MouseArea {
-							anchors.fill: parent
-							hoverEnabled: true
-							cursorShape: Qt.PointingHandCursor
-							
-							onEntered: parent.color = Colours.palette.surface_container
-							onExited: parent.color = Colours.palette.surface
-							onClicked: IPCLoader.toggleDashboard()
-						}
+						color: Qt.alpha(Colours.palette.on_surface, 0.8)
+
+						font.family: Config.settings.iconFont
+						font.weight: 600
+
+						Layout.preferredHeight: 19
+						Layout.leftMargin: 1
+						font.pixelSize: 21
 					}
 					
 					TimeWidget {
@@ -186,10 +177,10 @@ Scope {
 
 						Layout.preferredHeight: 60
 						
-						Layout.leftMargin: 9
+						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 						
 						font.pixelSize: 13
-
+						Layout.leftMargin: 2
 					}
 				}
 			}

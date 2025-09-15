@@ -20,10 +20,15 @@ Rectangle {
 
 	Rectangle {
 		anchors.top: parent.top
-		anchors.topMargin: (Workspaces.focusedWorkspace - 1) * parent.width
-		width: parent.width
-		height: parent.width
-		color: Colours.palette.primary
+		anchors.topMargin: (Workspaces.focusedWorkspace - 1) * parent.width + ((parent.width - width) / 2)
+
+		anchors.left: parent.left
+		anchors.leftMargin: (parent.width / 2) - (width / 2)
+
+		width: parent.width - 15
+		height: width
+
+		color: Qt.alpha(Colours.palette.on_surface, 0.8)//Colours.palette.primary
 
 		Behavior on anchors.topMargin {
 			PropertyAnimation {
@@ -39,6 +44,9 @@ Rectangle {
 		anchors.topMargin: 12
 		spacing: 23
 
+		anchors.left: parent.left
+		anchors.leftMargin: (parent.width / 2) - (width / 2) + 0.3
+
 		Repeater {
 			model: workspaceCount
 
@@ -47,10 +55,7 @@ Rectangle {
 				color: (index + 1 == Workspaces.focusedWorkspace) ? Colours.palette.surface : Colours.palette.on_surface
 
 				font.family: Config.settings.font
-				font.pixelSize: 14
-
-				anchors.left: parent.left
-				anchors.leftMargin: 15
+				font.pixelSize: 13
 			}
 		}
 	}

@@ -1,61 +1,72 @@
 [
   {
-    "id": 66,
+    "id": 77,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "Log out and in for the gtk4 theme to take effect.",
+    "image": "",
+    "summary": "Wallpaper and theme set!",
+    "time": 1757833377356,
+    "urgency": "1"
+  },
+  {
+    "id": 78,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1757742727674,
+    "time": 1757839258259,
     "urgency": "1"
   },
   {
-    "id": 67,
+    "id": 79,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "hey ohdfg",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757752624156,
+    "summary": "testing notifs",
+    "time": 1757839312235,
     "urgency": "1"
   },
   {
-    "id": 68,
+    "id": 83,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "hey ohdfg",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757752689553,
+    "summary": "testing notifs",
+    "time": 1757839349297,
     "urgency": "1"
   },
   {
-    "id": 69,
+    "id": 84,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "Log out and in for the gtk4 theme to take effect.",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757756947839,
+    "summary": "Wallpaper and theme set!",
+    "time": 1757841543978,
     "urgency": "1"
   },
   {
-    "id": 70,
+    "id": 85,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
-    "body": "Look around and take a break.",
+    "body": "Log out and in for the gtk4 theme to take effect.",
     "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757794378336,
+    "summary": "Wallpaper and theme set!",
+    "time": 1757841619029,
     "urgency": "1"
   },
   {
-    "id": 71,
+    "id": 86,
     "actions": [
       {
         "identifier": "0",
@@ -66,58 +77,27 @@
         "text": "Open Folder"
       }
     ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-15-26-31.png",
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-20-32.png",
     "appName": "notify-send",
     "body": "Copied to clipboard",
     "image": "",
     "summary": "Screenshot Saved",
-    "time": 1757820393224,
+    "time": 1757841637338,
     "urgency": "1"
   },
   {
-    "id": 72,
-    "actions": [],
-    "appIcon": "",
-    "appName": "notify-send",
-    "body": "Look around and take a break.",
-    "image": "",
-    "summary": "Protect your eyes.",
-    "time": 1757820416733,
-    "urgency": "1"
-  },
-  {
-    "id": 73,
-    "actions": [
-      {
-        "identifier": "0",
-        "text": "View"
-      },
-      {
-        "identifier": "1",
-        "text": "Open Folder"
-      }
-    ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-15-35-14.png",
-    "appName": "notify-send",
-    "body": "Copied to clipboard",
-    "image": "",
-    "summary": "Screenshot Saved",
-    "time": 1757820917492,
-    "urgency": "1"
-  },
-  {
-    "id": 74,
+    "id": 87,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "",
     "image": "",
     "summary": "Screenshot cancelled",
-    "time": 1757821254221,
+    "time": 1757841639639,
     "urgency": "1"
   },
   {
-    "id": 75,
+    "id": 88,
     "actions": [
       {
         "identifier": "0",
@@ -128,23 +108,223 @@
         "text": "Open Folder"
       }
     ],
-    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-15-45-02.png",
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-20-41.png",
     "appName": "notify-send",
     "body": "Copied to clipboard",
     "image": "",
     "summary": "Screenshot Saved",
-    "time": 1757821506243,
+    "time": 1757841642211,
     "urgency": "1"
   },
   {
-    "id": 76,
+    "id": 89,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-20-45.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757841647682,
+    "urgency": "1"
+  },
+  {
+    "id": 90,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-20-48.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757841651452,
+    "urgency": "1"
+  },
+  {
+    "id": 98,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-31-00.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757842264603,
+    "urgency": "1"
+  },
+  {
+    "id": 107,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-32-40.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757842362300,
+    "urgency": "1"
+  },
+  {
+    "id": 117,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-35-26.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757842529052,
+    "urgency": "1"
+  },
+  {
+    "id": 128,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-36-50.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757842612624,
+    "urgency": "1"
+  },
+  {
+    "id": 129,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-39-45.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757842788335,
+    "urgency": "1"
+  },
+  {
+    "id": 142,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-44-31.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757843074307,
+    "urgency": "1"
+  },
+  {
+    "id": 156,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-21-46-28.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757843191348,
+    "urgency": "1"
+  },
+  {
+    "id": 171,
+    "actions": [
+      {
+        "identifier": "0",
+        "text": "View"
+      },
+      {
+        "identifier": "1",
+        "text": "Open Folder"
+      }
+    ],
+    "appIcon": "/home/catdealer/.cache/catdealer/screenshot_cache//Screenshot_2025-09-14-22-01-34.png",
+    "appName": "notify-send",
+    "body": "Copied to clipboard",
+    "image": "",
+    "summary": "Screenshot Saved",
+    "time": 1757844095987,
+    "urgency": "1"
+  },
+  {
+    "id": 172,
     "actions": [],
     "appIcon": "",
     "appName": "notify-send",
     "body": "Look around and take a break.",
     "image": "",
     "summary": "Protect your eyes.",
-    "time": 1757822216731,
+    "time": 1757910554981,
     "urgency": "1"
   }
 ]

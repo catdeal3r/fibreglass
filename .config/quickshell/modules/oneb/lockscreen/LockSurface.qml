@@ -121,14 +121,6 @@ Rectangle {
 							root.context.currentText += event.text;
 						}
 					}
-					
-					
-					MouseArea {
-						anchors.fill: parent
-						
-						onEntered: parent.opacity = 0.4
-						onExited: parent.opacity = 0.2
-					}
 				}
 				
 				Text {

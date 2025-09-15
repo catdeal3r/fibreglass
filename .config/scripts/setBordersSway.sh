@@ -1,6 +1,6 @@
 #!/bin/sh
 
-swaymsg client.focused "#121314" "#121314" "#e3e2e3" "#121314"
-swaymsg client.unfocused "#1f2020" "#1f2020" "#e3e2e3" "#1f2020"
-swaymsg client.focused_inactive "#1f2020" "#1f2020" "#e3e2e3" "#1f2020"
-swaymsg client.urgent "#121314" "#121314" "#e3e2e3" "#121314"
+swaymsg client.focused "#141314" "#141314" "#e5e2e2" "#141314"
+swaymsg client.unfocused "#201f20" "#201f20" "#e5e2e2" "#201f20"
+swaymsg client.focused_inactive "#201f20" "#201f20" "#e5e2e2" "#201f20"
+swaymsg client.urgent "#141314" "#141314" "#e5e2e2" "#141314"

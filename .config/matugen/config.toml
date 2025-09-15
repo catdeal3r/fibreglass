@@ -8,14 +8,18 @@ post_hook = "$HOME/.config/scripts/setBorders.sh"
 input_path = './templates/quickshell-colours.json'
 output_path = '~/.config/quickshell/settings/colours.json'
 
-#[templates.gtk3]
-#input_path = './templates/gtk-colours.css'
-#output_path = '~/.config/gtk-3.0/gtk.css'
-#post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+[templates.gtk3]
+input_path = './templates/gtk-colours.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
 
-#[templates.gtk4]
-#input_path = './templates/gtk-colours.css'
-#output_path = '~/.config/gtk-4.0/gtk.css'
+[templates.gtk4]
+input_path = './templates/gtk-colours.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.alacritty]
+input_path = './templates/alacritty.toml'
+output_path = '~/.config/alacritty/colors.toml'
 
 [templates.rofi]
 input_path = './templates/rofi-colours.rasi'
