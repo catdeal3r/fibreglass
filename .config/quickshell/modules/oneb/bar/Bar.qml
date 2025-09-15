@@ -115,7 +115,7 @@ Scope {
 					width: size
 					height: size
 				}*/
-						
+				
 				ColumnLayout {
 					spacing: 15
 					anchors.left: parent.left
@@ -141,6 +141,13 @@ Scope {
 						font.pixelSize: 17
 						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 						Layout.leftMargin: 1
+
+						MouseArea {
+							anchors.fill: parent
+							cursorShape: Qt.PointingHandCursor
+
+							onClicked: Bluetooth.toggle()
+						}
 					}
 						
 					NetworkWidget {
@@ -154,6 +161,13 @@ Scope {
 						font.pixelSize: 17
 						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 						Layout.leftMargin: 1
+
+						MouseArea {
+							anchors.fill: parent
+							cursorShape: Qt.PointingHandCursor
+
+							onClicked: Quickshell.execDetached([ Quickshell.shellDir + "/scripts/network.out" ])
+						}
 					}
 					
 					BatteryWidget {
