@@ -13,6 +13,11 @@ Singleton {
 	property int workspaceCount: 8
 	property var workspacesState
 	property int focusedWorkspace: 1
+	property string monitor: "eDP-1"
+
+	function setMonitor(m) {
+		root.monitor = m;
+	}
 	
 	function getWorkspaceColour(state) {
 		if (state == "ws") return Colours.palette.outline
@@ -45,7 +50,7 @@ Singleton {
 		running: true
 
 		command: {
-			if (ShellScreen.name == "eDP-1")
+			if (root.monitor == "eDP-1")
 				return [ Quickshell.shellDir + "/scripts/python/exe.sh", "i", "1" ];
 			else
 				return [ Quickshell.shellDir + "/scripts/python/exe.sh", "i", "2" ];
@@ -60,6 +65,8 @@ Singleton {
 		running: true
 		interval: 100
 		repeat: true
-		onTriggered: focusedProc.running = true
+		onTriggered: {
+			focusedProc.running = true
+		}
 	}
 }

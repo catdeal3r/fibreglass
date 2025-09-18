@@ -15,6 +15,12 @@ Rectangle {
 	anchors.topMargin: (parent.height / 2) - (height / 2)
 
 	anchors.left: parent.left
+
+	required property string monitor
+
+	Component.onCompleted: {
+		Workspaces.setMonitor(monitor);
+	}
 	
 	property int workspaceCount: 3
 

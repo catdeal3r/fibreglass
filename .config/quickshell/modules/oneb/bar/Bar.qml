@@ -89,8 +89,6 @@ Scope {
 					}
 				}
 
-				WorkspacesWidget {}
-
 				Text {
 					anchors.top: parent.top
 					anchors.left: parent.left
@@ -100,6 +98,10 @@ Scope {
 					text: ""
 					color: Colours.palette.on_surface
 					font.pixelSize: 18
+				}
+
+				WorkspacesWidget {
+					monitor: modelData.name
 				}
 
 				/*IconImage {

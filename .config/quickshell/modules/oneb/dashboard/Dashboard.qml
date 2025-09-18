@@ -64,7 +64,7 @@ Loader {
 				
 				ScrollView {
 					id: maskId
-					implicitHeight: 1020
+					implicitHeight: 1080
 					implicitWidth: 550
 					
 					anchors {
@@ -78,7 +78,7 @@ Loader {
 						repeat: false
 						interval: 1
 						onTriggered: {
-							maskId.anchors.leftMargin = 60
+							maskId.anchors.leftMargin = 40
 						}
 					}
 					
