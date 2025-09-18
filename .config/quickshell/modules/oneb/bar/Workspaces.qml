@@ -44,7 +44,13 @@ Singleton {
 		id: focusedProc
 		running: true
 
-		command: [ Quickshell.shellDir + "/scripts/python/exe.sh", "i" ];
+		command: {
+			if (ShellScreen.name == "eDP-1")
+				return [ Quickshell.shellDir + "/scripts/python/exe.sh", "i", "1" ];
+			else
+				return [ Quickshell.shellDir + "/scripts/python/exe.sh", "i", "2" ];
+		}
+		
 		stdout: SplitParser {
 			onRead: data => focusedWorkspace = data
 		}

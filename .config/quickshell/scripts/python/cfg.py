@@ -3,5 +3,8 @@ import sys
 
 sock = WayfireSocket()
 
-opt = sock.wset_info(1)
+monitor_str = sys.argv[1]
+monitor = int(monitor_str)
+
+opt = sock.wset_info(monitor)
 print(f"{opt}")
