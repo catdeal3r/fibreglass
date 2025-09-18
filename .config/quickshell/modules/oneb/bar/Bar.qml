@@ -56,12 +56,13 @@ Scope {
 				acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
 				onExited: {
 					root.isShown = false
-					root.smoothPadding = barBase.width
 				}
 
 				onClicked: (mouse) => {
 					if (mouse.button == Qt.MiddleButton)
-						root.isAlwaysShown = !root.isAlwaysShown
+						root.isAlwaysShown = !root.isAlwaysShown;
+					else if (mouse.button == Qt.RightButton)
+						IPCLoader.toggleDashboard();
 				}
 			}
 			

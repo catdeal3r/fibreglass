@@ -7,7 +7,7 @@ import QtQuick.Effects
 import QtQuick.Controls
 import Quickshell.Widgets
 
-import qs.modules.fibreglass.dashboard
+import qs.modules.oneb.dashboard
 import qs.config
 import qs.modules.common
 import qs.modules
@@ -45,20 +45,14 @@ Loader {
 				anchors {
 					top: (Config.settings.bar.barLocation == "top")
 					bottom: (Config.settings.bar.barLocation == "bottom")
-					right: true
+					left: true
 				}
-				
-				/*margins {
-					top: (Config.settings.bar.barLocation == "top") ? 0 : 0
-					bottom: (Config.settings.bar.barLocation == "bottom") ? 0 : 0
-					right: 0
-				}*/
 				
 				aboveWindows: true
 				color: "transparent"
 				
 				implicitHeight: 1080
-				implicitWidth: 510
+				implicitWidth: 560
 				
 				exclusionMode: ExclusionMode.Ignore
 				
@@ -66,33 +60,25 @@ Loader {
 					item: maskId
 				}
 				
-				visible: {
-					if (maskId.leftMargin == 600) return false;
-					if (Config.settings.isInMinimalMode == true) return false;
-					else return true;
-				}
+				visible: true
 				
 				ScrollView {
 					id: maskId
-					implicitHeight: 0
-					implicitWidth: 0
+					implicitHeight: 1020
+					implicitWidth: 550
 					
 					anchors {
-						bottom: parent.bottom
-						top: undefined
-						left: undefined
-						right: parent.right
+						left: parent.left
 					}
 					
-					anchors.rightMargin: 10
+					anchors.leftMargin: -600
 					
 					Timer {
 						running: root.ani
 						repeat: false
 						interval: 1
 						onTriggered: {
-							maskId.implicitWidth = 500
-							maskId.implicitHeight = 1020
+							maskId.anchors.leftMargin = 60
 						}
 					}
 					
@@ -101,8 +87,7 @@ Loader {
 						repeat: false
 						interval: 1
 						onTriggered: {
-							maskId.implicitWidth = 0
-							maskId.implicitHeight = 0
+							maskId.anchors.leftMargin = -600
 						}
 					}
 					
@@ -115,35 +100,9 @@ Loader {
 						}
 					}
 					
-					anchors.topMargin: (Config.settings.bar.barLocation == "top") ? 50 : 0
-					anchors.bottomMargin: (Config.settings.bar.barLocation == "bottom") ? 50 : 0
-					
-					states: State {
-						name: "anchorTop"
-						when: (Config.settings.bar.barLocation == "top")
-							
-						AnchorChanges {
-							target: maskId
-							anchors {
-								bottom: undefined
-								top: parent.top
-								left: undefined
-								right: parent.right
-							}
-						}
-					}
-					
 					clip: true
 					
-					Behavior on implicitWidth {
-						NumberAnimation {
-							duration: 250
-							easing.bezierCurve: Anim.standard
-						}
-					}
-					
-					
-					Behavior on implicitHeight {
+					Behavior on anchors.leftMargin {
 						NumberAnimation {
 							duration: 250
 							easing.bezierCurve: Anim.standard

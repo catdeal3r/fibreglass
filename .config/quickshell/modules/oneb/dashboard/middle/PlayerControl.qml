@@ -157,6 +157,17 @@ ColumnLayout {
 				anchors.top: parent.top
 				anchors.topMargin: (parent.height / 2) - 25
 				
+
+				TextMetrics {
+					id: titleMetrics
+										
+					text: root.cleanMusicTitle(root.player?.trackTitle) || "Untitled"
+					font.family: Config.settings.font
+										
+					elide: Qt.ElideRight
+					elideWidth: 170
+				}
+
 				Text {
 					Layout.alignment: Qt.AlignLeft
 					font.pixelSize: 20
@@ -166,16 +177,6 @@ ColumnLayout {
 					color: Colours.palette.on_surface
 					text: titleMetrics.elidedText
 					
-				}
-				
-				TextMetrics {
-					id: titleMetrics
-										
-					text: root.cleanMusicTitle(root.player?.trackTitle) || "Untitled"
-					font.family: Config.settings.font
-										
-					elide: Qt.ElideRight
-					elideWidth: parent.parent.Layout.preferredWidth - 170
 				}
 					
 				Text {
@@ -194,7 +195,7 @@ ColumnLayout {
 					font.family: Config.settings.font
 										
 					elide: Qt.ElideRight
-					elideWidth: parent.parent.Layout.preferredWidth - 170
+					elideWidth: 170
 				}
 			}
 		}
