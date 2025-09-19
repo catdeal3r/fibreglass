@@ -19,6 +19,7 @@ Scope {
 
 	property int sliderValue: 0
 	property int barWidth: 40
+	property int dashWidth: 515
 	property bool isBar: true
 	
 	Variants {
@@ -208,14 +209,22 @@ Scope {
 					to: width
 
 					onMoved: {
-						root.sliderValue = value
-						if (value > root.barWidth + 35) {
-							root.isBar = false 
-						} else if (value > root.barWidth + 5 && value < root.barWidth + 35) {
-							root.sliderValue = root.barWidth + 5
-						} else if (value < root.barWidth + 36) {
-							root.isBar = true
+						let snapAmount = 105;
+						root.sliderValue = value;
+						if (value > root.barWidth + snapAmount) {
+							root.isBar = false;
+							root.sliderValue = root.dashWidth;
 						}
+						
+						if (value > root.barWidth + 5 && value < root.barWidth + snapAmount) {
+							root.sliderValue = root.barWidth + 5;
+						}
+						
+						if (value < root.barWidth + snapAmount + 1) {
+							root.isBar = true;
+						}
+
+						//console.log(value);
 					}
 					
 					handle: Rectangle {
