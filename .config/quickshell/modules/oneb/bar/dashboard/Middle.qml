@@ -10,8 +10,8 @@ import Quickshell.Widgets
 import qs.config
 import qs.modules.common
 import qs.services
-import qs.modules.oneb.dashboard.toggles
-import qs.modules.oneb.dashboard.middle
+import qs.modules.oneb.bar.dashboard.toggles
+import qs.modules.oneb.bar.dashboard.middle
 
 ColumnLayout {
 	Layout.alignment: Qt.AlignTop

@@ -10,8 +10,8 @@ import Quickshell.Widgets
 import qs.config
 import qs.modules.common
 import qs.services
-import qs.modules.oneb.dashboard.notifications
-import qs.modules.oneb.dashboard.bottom
+import qs.modules.oneb.bar.dashboard.notifications
+import qs.modules.oneb.bar.dashboard.bottom
 
 Rectangle {
 	id: root

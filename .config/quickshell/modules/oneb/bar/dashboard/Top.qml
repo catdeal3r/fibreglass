@@ -9,8 +9,8 @@ import Quickshell.Widgets
 
 import qs.config
 import qs.modules.common
-import qs.modules.oneb.dashboard
-import qs.modules.oneb.dashboard.toggles
+import qs.modules.oneb.bar.dashboard
+import qs.modules.oneb.bar.dashboard.toggles
 
 Rectangle {
 	id: base

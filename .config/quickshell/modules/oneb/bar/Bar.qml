@@ -1,5 +1,6 @@
 import Quickshell
 import Quickshell.Io
+import QtQuick.Controls
 import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 
@@ -10,13 +11,15 @@ import qs.modules
 import qs.modules.oneb.bar
 import qs.config
 import qs.modules.common
+import qs.modules.oneb.bar.dashboard
 
 Scope {
 	signal finished();
 	id: root
 
-	property bool isShown: false
-	property bool isAlwaysShown: true
+	property int sliderValue: 0
+	property int barWidth: 40
+	property bool isBar: true
 	
 	Variants {
 		model: Quickshell.screens;
@@ -36,168 +39,202 @@ Scope {
 
 			color: "transparent"
 			
-			implicitWidth: barBase.width
+			implicitWidth: 550
 			
 			visible: true
 			
-			exclusiveZone: {
-				if (isAlwaysShown)
-					return barBase.width + Config.settings.borderRadius
-				if (isShown)
-					return barBase.width + Config.settings.borderRadius
-				else
-					return 0
+			exclusiveZone: root.sliderValue
+
+			mask: Region {
+				item: maskId
 			}
 
-			MouseArea {
-				anchors.fill: parent
-				hoverEnabled: true
-				onEntered: root.isShown = true
-				acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
-				onExited: {
-					root.isShown = false
-				}
-
-				onClicked: (mouse) => {
-					if (mouse.button == Qt.MiddleButton)
-						root.isAlwaysShown = !root.isAlwaysShown;
-					else if (mouse.button == Qt.RightButton)
-						IPCLoader.toggleDashboard();
-				}
-			}
-			
 			Rectangle {
-				id: barBase
-				anchors.left: parent.left
-				anchors.leftMargin: {
-					if (isAlwaysShown)
-						return 0
-					if (isShown)
-						return 0
-					else
-						-1 * width
-				}
-
-				width: 40
+				id: maskId
+				width: root.barWidth + root.sliderValue
 				height: parent.height
-				color: Colours.palette.surface
-				
-				Behavior on anchors.leftMargin {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
-				}
+				color: "transparent"
 
-				Text {
-					anchors.top: parent.top
-					anchors.left: parent.left
-					anchors.leftMargin: (parent.width / 2) - ((font.pixelSize - 2) / 2)
-					anchors.topMargin: 5
-
-					text: ""
-					color: Colours.palette.on_surface
-					font.pixelSize: 18
-				}
-
-				WorkspacesWidget {
-					monitor: modelData.name
-				}
-
-				/*IconImage {
-					anchors.top: parent.top
-					anchors.left: parent.left
-					anchors.leftMargin: (parent.width / 2) - (size / 2) - 1
-					anchors.topMargin: 5
-
-					source: `file:/${Quickshell.shellDir}/assets/feather_logo.png`
-					asynchronous: true
-
-					property int size: 24
+				Loader {
+					active: root.isBar
 					
-					width: size
-					height: size
-				}*/
-				
-				ColumnLayout {
-					spacing: 15
-					anchors.left: parent.left
+					sourceComponent: Rectangle {
+						id: barBase
+						anchors.left: parent.left
+						anchors.leftMargin: {
+							if (root.sliderValue > width + 5) {
+								return 0
+							} else {
+								return root.sliderValue - width - 5
+							}
+						}
 
-					width: parent.width - 5
-					anchors.bottom: parent.bottom
-					
-					SysTray {
-						Layout.preferredHeight: (SystemTray.items.values.length * 25)
-						Layout.preferredWidth: 20
-						Layout.alignment: Qt.AlignHCenter
-						bar: barWindow
-					}
-					
-					BluetoothWidget {
-						color: Bluetooth.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
+						width: root.barWidth
+						height: barWindow.height
+						color: Colours.palette.surface
+
+						Text {
+							anchors.top: parent.top
+							anchors.left: parent.left
+							anchors.leftMargin: (parent.width / 2) - ((font.pixelSize - 2) / 2)
+							anchors.topMargin: 5
+
+							text: ""
+							color: Colours.palette.on_surface
+							font.pixelSize: 18
+						}
+
+						WorkspacesWidget {
+							monitor: modelData.name
+						}
+						
+						ColumnLayout {
+							spacing: 15
+							anchors.left: parent.left
+
+							width: parent.width - 5
+							anchors.bottom: parent.bottom
 							
-						font.family: Config.settings.iconFont
-						font.weight: 600
+							SysTray {
+								Layout.preferredHeight: (SystemTray.items.values.length * 25)
+								Layout.preferredWidth: 20
+								Layout.alignment: Qt.AlignHCenter
+								bar: barWindow
+							}
+							
+							BluetoothWidget {
+								color: Bluetooth.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
+									
+								font.family: Config.settings.iconFont
+								font.weight: 600
 
-						Layout.preferredHeight: 15
-						
-						font.pixelSize: 17
-						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-						Layout.leftMargin: 1
+								Layout.preferredHeight: 15
+								
+								font.pixelSize: 17
+								Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+								Layout.leftMargin: 1
 
-						MouseArea {
-							anchors.fill: parent
-							cursorShape: Qt.PointingHandCursor
+								MouseArea {
+									anchors.fill: parent
+									cursorShape: Qt.PointingHandCursor
 
-							onClicked: Bluetooth.toggle()
+									onClicked: Bluetooth.toggle()
+								}
+							}
+								
+							NetworkWidget {
+								color: Network.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
+							
+								font.family: Config.settings.iconFont
+								font.weight: 600
+
+								Layout.preferredHeight: 15
+								
+								font.pixelSize: 17
+								Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+								Layout.leftMargin: 1
+
+								MouseArea {
+									anchors.fill: parent
+									cursorShape: Qt.PointingHandCursor
+
+									onClicked: Quickshell.execDetached([ Quickshell.shellDir + "/scripts/network.out" ])
+								}
+							}
+							
+							BatteryWidget {
+								Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+							
+								color: Qt.alpha(Colours.palette.on_surface, 0.8)
+
+								font.family: Config.settings.iconFont
+								font.weight: 600
+
+								Layout.preferredHeight: 19
+								Layout.leftMargin: 1
+								font.pixelSize: 21
+							}
+							
+							TimeWidget {
+								color: Qt.alpha(Colours.palette.on_surface, 0.8)
+			
+								font.family: Config.settings.font
+								font.weight: 600
+
+								Layout.preferredHeight: 60
+								
+								Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+								
+								font.pixelSize: 13
+								Layout.leftMargin: 2
+							}
 						}
 					}
-						
-					NetworkWidget {
-						color: Network.getBool() ? Qt.alpha(Colours.palette.on_surface, 0.8) : Colours.palette.outline
+				}
+
+				Dashboard {
+					isDashboardOpen: !root.isBar
+					dash_width: root.sliderValue - 5
+				}
+
+				Slider {
+					id: slider
+					property bool is_hovered: false
+					anchors.top: parent.top
+					anchors.topMargin: (parent.height / 2) - (height / 2)
+					width: 520
 					
-						font.family: Config.settings.iconFont
-						font.weight: 600
+					height: 50
+					
+					background: Rectangle {
+						color: "transparent"
 
-						Layout.preferredHeight: 15
-						
-						font.pixelSize: 17
-						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-						Layout.leftMargin: 1
-
-						MouseArea {
-							anchors.fill: parent
-							cursorShape: Qt.PointingHandCursor
-
-							onClicked: Quickshell.execDetached([ Quickshell.shellDir + "/scripts/network.out" ])
+						HoverHandler {
+							parent: parent
+							cursorShape: Qt.DragMoveCursor
+							
+							acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+							
+							onHoveredChanged: {
+								slider.is_hovered = hovered
+							}
 						}
 					}
 					
-					BatteryWidget {
-						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+					enabled: true
 					
-						color: Qt.alpha(Colours.palette.on_surface, 0.8)
+					from: 5
+					value: root.sliderValue
+					to: width
 
-						font.family: Config.settings.iconFont
-						font.weight: 600
-
-						Layout.preferredHeight: 19
-						Layout.leftMargin: 1
-						font.pixelSize: 21
+					onMoved: {
+						root.sliderValue = value
+						if (value > root.barWidth + 35) {
+							root.isBar = false 
+						} else if (value > root.barWidth + 5 && value < root.barWidth + 35) {
+							root.sliderValue = root.barWidth + 5
+						} else if (value < root.barWidth + 36) {
+							root.isBar = true
+						}
 					}
 					
-					TimeWidget {
-						color: Qt.alpha(Colours.palette.on_surface, 0.8)
-	
-						font.family: Config.settings.font
-						font.weight: 600
+					handle: Rectangle {
+						height: parent.height
+						anchors.left: parent.left
+						anchors.leftMargin: (slider.value / slider.to) * slider.width
+						color: "#FFFFFF"
 
-						Layout.preferredHeight: 60
-						
-						Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-						
-						font.pixelSize: 13
-						Layout.leftMargin: 2
+						opacity: slider.is_hovered ? 1 : 0
+
+						Behavior on opacity {
+							PropertyAnimation {
+								duration: 200
+								easing.type: Easing.InSine
+							}
+						}
+
+						width: 5
+						radius: 10
 					}
 				}
 			}

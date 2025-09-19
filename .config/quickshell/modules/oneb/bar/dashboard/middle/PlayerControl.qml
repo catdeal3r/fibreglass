@@ -11,7 +11,6 @@ import Quickshell.Services.Mpris
 import qs.config
 import qs.modules.common
 import qs.services
-import qs.modules.fibreglass.dashboard.middle
 
 ColumnLayout {
 	id: root
@@ -224,7 +223,6 @@ ColumnLayout {
 			background: Item {
 				width: parent.width
 				height: parent.height
-				
 				
 				Rectangle {
 					id: bgRec
