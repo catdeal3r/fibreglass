@@ -19,7 +19,7 @@ Scope {
 
 	property int sliderValue: 0
 	property int barWidth: 40
-	property int dashWidth: 515
+	property int dashWidth: 450
 	property bool isBar: true
 	
 	Variants {
@@ -40,7 +40,7 @@ Scope {
 
 			color: "transparent"
 			
-			implicitWidth: 550
+			implicitWidth: root.dashWidth + 35
 			
 			visible: true
 			
@@ -180,10 +180,10 @@ Scope {
 
 				Slider {
 					id: slider
-					property bool is_hovered: false
+					property bool isHovered: false
 					anchors.top: parent.top
 					anchors.topMargin: (parent.height / 2) - (height / 2)
-					width: 520
+					width: root.dashWidth + 5
 					
 					height: 50
 					
@@ -197,7 +197,7 @@ Scope {
 							acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
 							
 							onHoveredChanged: {
-								slider.is_hovered = hovered
+								slider.isHovered = hovered
 							}
 						}
 					}
@@ -233,7 +233,7 @@ Scope {
 						anchors.leftMargin: (slider.value / slider.to) * slider.width
 						color: "#FFFFFF"
 
-						opacity: slider.is_hovered ? 1 : 0
+						opacity: slider.isHovered ? 1 : 0
 
 						Behavior on opacity {
 							PropertyAnimation {

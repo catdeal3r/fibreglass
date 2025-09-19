@@ -10,7 +10,7 @@ import Quickshell.Widgets
 import qs.config
 import qs.modules.common
 
-Rectangle {
+ColumnLayout {
 	id: root
 	
 	property bool isHovered: false
@@ -20,27 +20,31 @@ Rectangle {
 
 	property string bgColour: Colours.palette.primary
 	property string colour: Colours.palette.on_primary
+	property string colourText: Colours.palette.on_surface
 	
 	property string bgColourHovered: Colours.palette.primary
 	property string colourHovered: Colours.palette.on_primary
+	property string colourTextHovered: Colours.palette.on_surface
 	
 	property string bgColourUntoggled: Colours.palette.surface_container
 	property string colourUntoggled: Colours.palette.on_surface_variant
+	property string colourTextUntoggled: Colours.palette.outline
 	
 	property string bgColourHoveredUntoggled: Colours.palette.primary_container
 	property string colourHoveredUntoggled: Colours.palette.on_primary_container
+	property string colourTextHoveredUntoggled: Colours.palette.on_surface_variant
+	
 	
 	property string bigText: "Placeholder"
 	property string iconCode: "settings"
 	property real iconSize: 22
 	
 	function doToggle() {
-		//root.isToggled = !root.isToggled
 		root.toRun()
 	}
 
-	width: 200
-	height: 60
+	width: 100
+	height: 100
 	
 	function getColourBg() {
 		if (root.isToggled) {
@@ -67,91 +71,90 @@ Rectangle {
 		}
 		return root.colourUntoggled
 	}
-	
-	color: root.getColourBg()
-	
-	Behavior on color {
-		PropertyAnimation {
-			duration: 200
-			easing.type: Easing.InSine
+
+	function getColourText() {
+		if (root.isToggled) {
+			if (root.isHovered) {
+				return root.colourTextHovered
+			}
+			return root.colourText
 		}
+		if (root.isHovered) {
+			return root.colourTextHoveredUntoggled
+		}
+		return root.colourTextUntoggled
 	}
 	
-	radius: Config.settings.borderRadius
 	
-	RowLayout {
-		anchors.fill: parent
-		spacing: 0
-		
-		width: 200
-		height: 60
-		
-		Rectangle {
-			Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-			Layout.leftMargin: 15
+	Rectangle {
+		Layout.alignment: Qt.AlignHCenter
 			
-			width: 20
-			height: 30
-			color: "transparent"
-		
-			Text {
-				anchors.centerIn: parent
-				
-				text: iconCode
-				font.family: Config.settings.iconFont
-				
-				font.pixelSize: root.iconSize
-				font.weight: 500
-				color: root.getColour()
-				
-				Behavior on color {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
-				}
+		width: 40
+		height: 40
+		color: root.getColourBg()
+
+		radius: Config.settings.borderRadius + 5
+
+		Behavior on color {
+			PropertyAnimation {
+				duration: 200
+				easing.type: Easing.InSine
 			}
 		}
 		
-		Rectangle {
-			Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-			Layout.leftMargin: 10
-			
-			width: 140
-			height: 30
-			color: "transparent"
-			
-			Text {
-				anchors.left: parent.left
-				anchors.top: parent.top
+		Text {
+			anchors.centerIn: parent
 				
-				anchors.topMargin: parent.height / 5 
-				text: bigText
-				font.family: Config.settings.font
-			
-				font.pixelSize: 15
-				font.weight: 600
+			text: iconCode
+			font.family: Config.settings.iconFont
 				
-				color: root.getColour()
+			font.pixelSize: root.iconSize
+			font.weight: 500
+			color: root.getColour()
 				
-				Behavior on color {
-					PropertyAnimation {
-						duration: 200
-						easing.type: Easing.InSine
-					}
+			Behavior on color {
+				PropertyAnimation {
+					duration: 200
+					easing.type: Easing.InSine
 				}
 			}
 		}
+
+		MouseArea {
+			anchors.fill: parent
+			hoverEnabled: true
+			
+			cursorShape: Qt.PointingHandCursor
+			
+			onEntered: root.isHovered = true
+			onExited: root.isHovered = false
+			onClicked: root.doToggle()
+		}
 	}
-	
-	MouseArea {
-		anchors.fill: parent
-		hoverEnabled: true
 		
-		cursorShape: Qt.PointingHandCursor
-		
-		onEntered: parent.isHovered = true
-		onExited: parent.isHovered = false
-		onClicked: parent.doToggle()
+	Rectangle {
+		Layout.alignment: Qt.AlignHCenter
+			
+		width: 80
+		height: 30
+		color: "transparent"
+			
+		Text {
+			anchors.centerIn: parent
+			text: bigText
+			font.family: Config.settings.font
+			
+			font.pixelSize: 15
+			font.weight: 600
+				
+			color: root.getColourText()
+				
+			Behavior on color {
+				PropertyAnimation {
+					duration: 200
+					easing.type: Easing.InSine
+				}
+			}
+		}
 	}
 }

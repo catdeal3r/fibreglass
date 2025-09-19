@@ -14,33 +14,21 @@ import qs.modules.oneb.bar.dashboard.toggles
 import qs.modules.oneb.bar.dashboard.middle
 
 ColumnLayout {
-	Layout.alignment: Qt.AlignTop
-	Layout.preferredWidth: 500
+	Layout.alignment: Qt.AlignTop | Qt.AlignLeft
+	Layout.preferredWidth: 400
 	Layout.preferredHeight: 400
 	spacing: 20
-	
-	Text {
-		id: label
-		color: Colours.palette.on_surface
-		text: "Toggles"
-		font.family: Config.settings.font
-		font.pixelSize: 15
-			
-		font.weight: 600
-		Layout.alignment: Qt.AlignLeft
-		Layout.leftMargin: 40
-	}
 
 	Rectangle {
 		Layout.alignment: Qt.AlignTop
-		Layout.preferredWidth: 500
+		Layout.preferredWidth: 400
 		Layout.preferredHeight: 130
 									
 		color: "transparent"
 		
 		RowLayout {
 			anchors.centerIn: parent
-			spacing: 25
+			spacing: 105
 			
 			ColumnLayout {
 				spacing: 22
@@ -91,11 +79,11 @@ ColumnLayout {
 		}
 	}
 	
-	Rectangle {
+	/*Rectangle {
 		Layout.preferredWidth: 500
 		Layout.preferredHeight: 240
 		color: "transparent"
 		
 		PlayerControls {}
-	}
+	}*/
 }

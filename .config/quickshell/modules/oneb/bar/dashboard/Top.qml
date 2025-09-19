@@ -16,11 +16,10 @@ Rectangle {
 	id: base
 	property bool isPowermenuOpen: false
 	Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-	Layout.preferredWidth: 480
+	Layout.preferredWidth: 415
 	Layout.preferredHeight: 100
 								
-	color: Colours.palette.surface
-	radius: Config.settings.borderRadius
+	color: "transparent"
 	
 	Rectangle {
 		visible: base.isPowermenuOpen
@@ -101,7 +100,8 @@ Rectangle {
 	}
 			
 	RowLayout {
-		implicitHeight: 200
+		height: 200
+		width: 400
 				
 		visible: !base.isPowermenuOpen
 				
@@ -114,13 +114,15 @@ Rectangle {
 				
 		clip: true
 				
-		anchors.fill: parent
+		anchors.left: parent.left
+		anchors.top: parent.top
 		spacing: 5
 						
 		RowLayout {
-			Layout.alignment: Qt.AlignLeft
-			Layout.preferredHeight: 150
-			Layout.preferredWidth: 220
+			Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+			Layout.leftMargin: 20
+			Layout.topMargin: 20
+			Layout.preferredWidth: 320
 												
 			spacing: 0
 
@@ -161,8 +163,9 @@ Rectangle {
 		}
 				
 		RowLayout {
-			Layout.alignment: Qt.AlignRight
+			Layout.alignment: Qt.AlignRight | Qt.AlignTop
 			Layout.rightMargin: 20
+			Layout.topMargin: 30
 					
 			spacing: 8
 					

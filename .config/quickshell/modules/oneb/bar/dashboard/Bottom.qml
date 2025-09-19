@@ -15,90 +15,151 @@ import qs.modules.oneb.bar.dashboard.bottom
 
 Rectangle {
 	id: root
-	Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
-	Layout.preferredWidth: 480
-	Layout.preferredHeight: 350
-								
-	radius: Config.settings.borderRadius
-	color: Colours.palette.surface
-	
-	property int currentFocused: 0
-	
-	function setFocused(id) {
-		root.currentFocused = id
-	}
-				
-	RowLayout {
-		id: buttons
-		width: (spacing * 3) + (3 * 50) + 100
-		height: 20
-		
-		spacing: 10
-		
+	property int sliderValue: 0
+	property int maxHeight: 200
+
+	Layout.alignment: Qt.AlignBottom
+	Layout.topMargin: 340
+	width: 450
+	height: maxHeight
+	color: "transparent"
+
+	Rectangle {
+		id: drawer
+		width: root.width - 10
+		height: root.height
 		anchors.top: parent.top
-		
+		anchors.topMargin: {
+			if (root.sliderValue == root.maxHeight)
+				return 5
+			else
+				return root.maxHeight - root.sliderValue + 5
+		}
+
 		anchors.left: parent.left
-		anchors.leftMargin: (parent.width - width) / 2
+		anchors.leftMargin: 3
 		
-		
-			
-		SwipeViewButton {
-			isSelected: {
-				if (root.currentFocused == 0) return true
-				else return false
+		color: "transparent"
+		border.width: 2
+		border.color: Qt.alpha(Colours.palette.outline_variant, 0.2)
+
+		topLeftRadius: Config.settings.borderRadius + 10
+		topRightRadius: Config.settings.borderRadius + 10
+
+		ColumnLayout {
+			anchors.fill: parent
+			spacing: 10
+
+			RowLayout {
+				Layout.alignment: Qt.AlignTop
+				Layout.topMargin: 25
+				Layout.leftMargin: 25
+				height: 100
+				width: drawer.width - 10
+
+				spacing: 10
+
+				ClippingWrapperRectangle {
+					radius: Config.settings.borderRadius + 10
+																
+					Layout.alignment: Qt.AlignLeft
+					Layout.preferredWidth: 50
+					Layout.preferredHeight: 50
+												
+					color: "transparent"
+																				
+					IconImage {
+						source: `file:/${Quickshell.shellDir}/assets/pfp.png`
+						asynchronous: true
+					}
+				}
+												
+				ColumnLayout {
+					Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+					Layout.topMargin: 4
+					Layout.preferredWidth: 110
+					spacing: 5
+												
+					Text {
+						Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+														
+						text: User.username
+						font.family: Config.settings.font
+						font.pixelSize: 17
+															
+						font.weight: 600
+														
+						color: Colours.palette.on_surface
+					}
+													
+					Text {
+						Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+														
+						text: `Up: ${User.uptime}`
+						font.family: Config.settings.font
+						font.pixelSize: 9										
+															
+						color: Colours.palette.primary
+					}
+				}
 			}
-			selectedText: "Notifications"
-			iconCode: "message"
-			toRun: () => root.setFocused(0)
 		}
-		
-		SwipeViewButton {
-			isSelected: {
-				if (root.currentFocused == 1) return true
-				else return false
-			}
-			toRun: () => root.setFocused(1)
-		}
-		
-		SwipeViewButton {
-			isSelected: {
-				if (root.currentFocused == 2) return true
-				else return false
-			}
-			toRun: () => root.setFocused(2)
-		}
-		
-		SwipeViewButton {
-			isSelected: {
-				if (root.currentFocused == 3) return true
-				else return false
-			}
-			toRun: () => root.setFocused(3)
-		}
-		
 	}
-		
-	SwipeView {
-		id: view
-		interactive: false
-		currentIndex: root.currentFocused
-		anchors.top: buttons.bottom
+
+	Slider {
+		id: slider
+		property bool isHovered: false
+		anchors.bottom: parent.bottom
 		anchors.left: parent.left
-		anchors.leftMargin: (parent.width- width) / 2
-		width: 480
-		height: 300
-		
-		anchors.centerIn: parent
-		NotificationsLog {
-			width: 400
+		anchors.leftMargin: (parent.width / 2) - (width / 2)
+		width: 50
+				
+		height: root.maxHeight
+		orientation: Qt.Vertical
+
+		background: Rectangle {
+			color: "transparent"
+
+			HoverHandler {
+				parent: parent
+				cursorShape: Qt.DragMoveCursor
+							
+				acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+							
+				onHoveredChanged: {
+					slider.isHovered = hovered
+				}
+			}
 		}
-		
-		BluetoothMenu {
-			width: 400
+					
+		enabled: true
+				
+		from: 3
+		value: sliderValue
+		to: height
+
+		onMoved: {
+			root.sliderValue = value;
+			//console.log(value);
 		}
-		
-		Item {}
-		
-		Item {}
+					
+		handle: Rectangle {
+			width: parent.width
+			anchors.bottom: parent.bottom
+			anchors.bottomMargin: (slider.value / slider.to) * slider.height
+			color: "#FFFFFF"
+
+			opacity: slider.isHovered ? 1 : 0
+
+			Behavior on opacity {
+				PropertyAnimation {
+					duration: 200
+					easing.type: Easing.InSine
+				}
+			}
+
+			height: 5
+			radius: 10
+		}
 	}
 }

@@ -49,8 +49,7 @@ Loader {
 			radius: Config.settings.borderRadius
 						
 			ColumnLayout {
-							
-				spacing: 10
+				spacing: 20
 							
 				Top {}
 							
