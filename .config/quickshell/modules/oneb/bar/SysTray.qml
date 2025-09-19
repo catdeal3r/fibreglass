@@ -43,10 +43,9 @@ Rectangle {
 					id: menu
 
 					menu: sysItem.modelData.menu
-					anchor.window: root.bar
-					anchor.rect.y: sysItem.height + 700
-					anchor.rect.x: 40
-					anchor.rect.height: sysItem.height
+					anchor.item: sysItem
+					anchor.edges: Edges.Bottom | Edges.Left
+					anchor.gravity: Edges.Bottom | Edges.Left
 				}
 
 				MouseArea {

@@ -93,7 +93,7 @@ ColumnLayout {
 		height: 40
 		color: root.getColourBg()
 
-		radius: Config.settings.borderRadius + 5
+		radius: Config.settings.borderRadius
 
 		Behavior on color {
 			PropertyAnimation {
