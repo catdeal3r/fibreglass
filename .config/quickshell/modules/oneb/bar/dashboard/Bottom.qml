@@ -43,9 +43,9 @@ Rectangle {
 		border.width: 2
 		border.color: Qt.alpha(Colours.palette.outline_variant, 0.2)
 
-		topLeftRadius: Config.settings.borderRadius + 10
-		topRightRadius: Config.settings.borderRadius + 10
-
+		topLeftRadius: Config.settings.borderRadius
+		topRightRadius: Config.settings.borderRadius
+		
 		ColumnLayout {
 			anchors.fill: parent
 			spacing: 10

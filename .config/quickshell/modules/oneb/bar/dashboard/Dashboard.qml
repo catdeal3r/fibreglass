@@ -45,9 +45,7 @@ Loader {
 			anchors.fill: parent
 					
 			color: Colours.palette.surface
-						
-			radius: Config.settings.borderRadius
-						
+									
 			ColumnLayout {
 				spacing: 20
 							

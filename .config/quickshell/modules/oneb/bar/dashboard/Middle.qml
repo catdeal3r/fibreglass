@@ -79,11 +79,11 @@ ColumnLayout {
 		}
 	}
 	
-	/*Rectangle {
+	Rectangle {
 		Layout.preferredWidth: 500
 		Layout.preferredHeight: 240
 		color: "transparent"
 		
 		PlayerControls {}
-	}*/
+	}
 }

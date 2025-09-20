@@ -17,7 +17,7 @@ Scope {
 	signal finished();
 	id: root
 
-	property int sliderValue: 0
+	property int sliderValue: 45
 	property int barWidth: 40
 	property int dashWidth: 450
 	property bool isBar: true
@@ -77,7 +77,7 @@ Scope {
 						Text {
 							anchors.top: parent.top
 							anchors.left: parent.left
-							anchors.leftMargin: (parent.width / 2) - ((font.pixelSize - 2) / 2)
+							anchors.leftMargin: (parent.width / 2) - ((font.pixelSize + 2) / 2)
 							anchors.topMargin: 5
 
 							text: ""

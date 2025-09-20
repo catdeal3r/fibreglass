@@ -17,7 +17,7 @@ Rectangle {
 	id: root
 	anchors.centerIn: parent
 	width: 500
-	height: 240
+	height: 200
 	color: "transparent"
 	
 	function isRealPlayer(player) {
@@ -65,16 +65,6 @@ Rectangle {
 	readonly property var realPlayers: Mpris.players.values.filter(player => isRealPlayer(player))
     readonly property var meaningfulPlayers: filterDuplicatePlayers(realPlayers)
     
-	Text {
-		color: Colours.palette.on_surface
-		text: "Media"
-		font.family: Config.settings.font
-		font.pixelSize: 15
-			
-		font.weight: 600
-		anchors.left: parent.left
-		anchors.leftMargin: 40
-	}
 	
 	SwipeView {
 		id: view
