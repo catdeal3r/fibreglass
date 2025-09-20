@@ -86,5 +86,16 @@
     "summary": "Wallpaper and theme set!",
     "time": 1758328427276,
     "urgency": "1"
+  },
+  {
+    "id": 17,
+    "actions": [],
+    "appIcon": "",
+    "appName": "notify-send",
+    "body": "hey ohdfg",
+    "image": "",
+    "summary": "testing notifs",
+    "time": 1758341272888,
+    "urgency": "1"
   }
 ]
