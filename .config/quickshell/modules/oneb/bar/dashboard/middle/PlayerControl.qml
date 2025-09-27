@@ -139,7 +139,7 @@ RowLayout {
 					font.family: Config.settings.font
 										
 					elide: Qt.ElideRight
-					elideWidth: 170
+					elideWidth: 150
 				}
 
 				Text {
@@ -169,7 +169,7 @@ RowLayout {
 					font.family: Config.settings.font
 										
 					elide: Qt.ElideRight
-					elideWidth: 170
+					elideWidth: 150
 				}
 			}
 		}

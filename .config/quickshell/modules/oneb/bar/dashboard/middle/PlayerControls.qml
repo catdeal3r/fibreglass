@@ -16,7 +16,7 @@ import qs.modules.oneb.bar.dashboard.middle
 Rectangle {
 	id: root
 	anchors.centerIn: parent
-	width: 500
+	width: 400
 	height: 200
 	color: "transparent"
 	

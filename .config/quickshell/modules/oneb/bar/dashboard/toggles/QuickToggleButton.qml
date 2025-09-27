@@ -89,8 +89,8 @@ ColumnLayout {
 	Rectangle {
 		Layout.alignment: Qt.AlignHCenter
 			
-		width: 40
-		height: 40
+		width: 75
+		height: 55
 		color: root.getColourBg()
 
 		radius: Config.settings.borderRadius
