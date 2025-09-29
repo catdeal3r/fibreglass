@@ -216,7 +216,7 @@ cp -r ./runtime ~/fibreglass/.config/helix/
 
 ## Waho
 
-[![Stargazers over time](https://starchart.cc/dealerofallthecats/fibreglass.svg?variant=adaptive)](https://starchart.cc/dealerofallthecats/fibreglass)
+[![Stargazers over time](https://starchart.cc/catdeal3r/fibreglass.svg?variant=adaptive)](https://starchart.cc/dealerofallthecats/fibreglass)
 
 ---
 *[Back to top](#top_marker)*
