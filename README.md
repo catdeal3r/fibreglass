@@ -7,7 +7,7 @@
 ![commits](https://img.shields.io/github/last-commit/catdeal3r/fibreglass?style=for-the-badge&labelColor=1B1919&color=74be88)
 ![top language](https://img.shields.io/github/languages/top/catdeal3r/fibreglass?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 ![stars](https://img.shields.io/github/stars/catdeal3r/fibreglass?style=for-the-badge&labelColor=1B1919&color=74be88)
-![active-ness](https://img.shields.io/badge/is-under_active_development-blue?color=6d92bf&style=for-the-badge&labelColor=1B1919)
+![active-ness](https://img.shields.io/badge/is_not-under_active_development-blue?color=6d92bf&style=for-the-badge&labelColor=1B1919)
 
 ---
 
