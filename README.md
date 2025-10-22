@@ -14,8 +14,7 @@
 </div>
 
 > [!IMPORTANT]
-> You might notice that all the code/configs are gone. This is because I'm doing a complete refactor, as well as switching to using [`Quickshell`](https://quickshell.outfoxxed.me/) for the widgets.
-> If you would like to read the old code, check [here](https://github.com/dealerofallthecats/fibreglass/tree/old), or look through the branches.
+> This config is now old. My new rice (and code refactor!) is now [here](https://github.com/catdeal3r/chromex).
 
 ## Table of Contents
 - [Showcase](#showcase)
